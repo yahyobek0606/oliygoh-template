@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .border-3 {
+    border-width: 3px;
+  }
+  
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+  
+  .card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .diamond-separator {
+    font-size: 8px;
+    color: #9ca3af;
+    margin: 0 4px;
+  }
+  
+  .news-item-hover {
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .news-item-hover:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-1px);
+  }
+}
