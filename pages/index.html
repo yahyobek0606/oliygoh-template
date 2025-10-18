@@ -1,41 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliygoh Verstka</title>
+    <title>Oliygoh - Oliy ta'lim portali</title>
     <link href="../dist/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
-            Welcome to Oliygoh Verstka
-        </h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-xl font-semibold font-bold text-blue-700 mb-4">Card 2</h2>
-                <p class="text-blue-600">This is a sample card with Tailwind CSS styling.</p>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors">
-                    Click me
-                </button>
+<body class="bg-gray-50">
+    <!-- Top Banner -->
+    <div class="bg-green-800 text-white py-2">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-6 h-6 bg-yellow-400 rounded"></div>
+                    <span class="font-semibold">IMPACT BOOK</span>
+                </div>
+                <span class="text-sm">ENG SARA KITOBLAR IMPACT BOOK'DA!</span>
             </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 bg-green-600 rounded"></div>
+                <span class="bg-white text-green-800 px-2 py-1 rounded text-xs font-semibold">Reklama</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-blue-600">oliygoh</h1>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="izlash" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="absolute right-12 top-1/2 transform -translate-y-1/2 text-blue-600">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Section -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bell text-xl"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Profilga kirish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
             
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-xl font-semibold text-gray-700 mb-4">Card 2</h2>
-                <p class="text-gray-600">Another sample card to demonstrate the grid layout.</p>
-                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition-colors">
-                    Actionnnn
-                </button>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-xl font-semibold text-gray-700 mb-4">Card 3</h2>
-                <p class="text-gray-600">Third card showing responsive design capabilities.</p>
-                <button class="mt-4 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded transition-colors">
-                    Explore
-                </button>
-            </div>
+            <!-- Left Sidebar -->
+            <aside class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <!-- Navigation -->
+                    <nav class="space-y-2 mb-8">
+                        <a href="#" class="flex items-center space-x-3 text-blue-600 font-semibold py-2">
+                            <i class="fas fa-home"></i>
+                            <span>Asosiy sahifa</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-600 hover:text-blue-600 py-2">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Imtihon testlari</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-600 hover:text-blue-600 py-2">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Mandat 2025</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-600 hover:text-blue-600 py-2">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Foydali ma'lumotlar</span>
+                        </a>
+                    </nav>
+
+                    <!-- Popular Tags -->
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-gray-800 mb-4">Ommabop teglar:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">xalqaro grantlar</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">abituriyent</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">OTM</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">magistratura</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">milliy sertifikat</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">oliy ta'lim</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">o'qishni ko'chirish</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">imtiyoz</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">talaba</span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Links -->
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <a href="#" class="block hover:text-blue-600">Reklama</a>
+                        <a href="#" class="block hover:text-blue-600">Biz haqimizda</a>
+                        <a href="#" class="block hover:text-blue-600">Foydalanish shartlari</a>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600">
+                            <i class="fab fa-telegram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700">
+                            <i class="fas fa-share text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Copyright -->
+                    <p class="text-xs text-gray-500">© 2021-2025 Oliygoh.uz, Barcha huquqlar himoyalangan</p>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="lg:col-span-2">
+                <!-- Featured University Card -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">Tashkent International University of Education xalqaro universiteti</h2>
+                            <div class="flex items-center space-x-4 text-sm text-gray-600">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-star text-yellow-500"></i>
+                                    <span>7.8 (18 ta izoh)</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Toshkent sh.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Batafsil
+                        </button>
+                    </div>
+                    <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">NORDIC INTERNATIONAL UNIVERSITY</span>
+                    </div>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex space-x-4">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Hammasi</button>
+                        <button class="text-gray-600 hover:text-blue-600 px-4 py-2">Talabalar</button>
+                        <button class="text-gray-600 hover:text-blue-600 px-4 py-2">Mandat 2023</button>
+                        <button class="text-gray-600 hover:text-blue-600 px-4 py-2">Tanlovlar</button>
+                    </div>
+                    <button class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-sun text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- News Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- News Card 1 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Foydali</span>
+                                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                    <i class="fas fa-eye"></i>
+                                    <span>37523</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-32 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                                <span class="text-gray-500">Handshake Image</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda</h3>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>27-sentabr 20:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Abituriyent</span>
+                                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                    <i class="fas fa-eye"></i>
+                                    <span>74884</span>
+                                    <i class="fas fa-crown text-yellow-500"></i>
+                                </div>
+                            </div>
+                            <div class="w-full h-32 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                                <span class="text-gray-500">Teachers with Certificate</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...</h3>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>20-sentabr 08:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Abituriyent</span>
+                                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                    <i class="fas fa-eye"></i>
+                                    <span>74884</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-32 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                                <span class="text-gray-500">Article Submission</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">"Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun maqolalar qabuli boshlan...</h3>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>20-sentabr 08:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 4 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Abituriyent</span>
+                                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                    <i class="fas fa-eye"></i>
+                                    <span>74884</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-32 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                                <span class="text-gray-500">Students on Campus</span>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...</h3>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>20-sentabr 08:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="lg:col-span-1">
+                <!-- Urgent News -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <h3 class="font-bold text-gray-800 mb-4">Dolzarb</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800 mb-1">Nordic International University'da Orientation Week start oldi!</h4>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>74884</span>
+                                <span>20-sentabr 08:00</span>
+                                <i class="fas fa-arrow-up-right text-green-500"></i>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800 mb-1">O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda</h4>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>74884</span>
+                                <span>20-sentabr 08:00</span>
+                                <i class="fas fa-arrow-up-right text-green-500"></i>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800 mb-1">Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati</h4>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>74884</span>
+                                <span>20-sentabr 08:00</span>
+                                <i class="fas fa-arrow-up-right text-green-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advertisement -->
+                <div class="bg-green-600 rounded-lg shadow-sm p-6 text-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-white text-green-600 px-2 py-1 rounded text-xs font-semibold">Reklama</span>
+                    </div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                            <span class="text-green-600 font-bold text-sm">T</span>
+                        </div>
+                        <h3 class="font-bold">TASIR ACADEMY</h3>
+                    </div>
+                    <p class="text-sm mb-4">Biz bilan chet tillarini o'rganing maroq bilan o'rganing</p>
+                    <div class="w-full h-20 bg-yellow-400 rounded flex items-center justify-center">
+                        <span class="text-green-600 font-semibold">Character Illustration</span>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 </body>
