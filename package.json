@@ -8,8 +8,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss build src/styles.css -o dist/output.css",
-    "dev": "npx tailwindcss build src/styles.css -o dist/output.css --watch",
+    "build": "npx tailwindcss -i src/styles.css -o dist/output.css --minify",
+    "dev": "npm run watch:css",
+    "watch:css": "npx tailwindcss -i src/styles.css -o dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
