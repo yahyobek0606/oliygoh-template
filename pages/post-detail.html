@@ -1,407 +1,483 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O'qituvchilarga berilgan ayrim imtiyoz turlari haqida - Oliygoh</title>
-    <link href="../dist/output.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="gradient-bg bg-[#F2F3F7] min-h-screen">
-    <!-- Top Banner -->
-    <div class="bg-[#2A2C33] text-white py-[8px]">
-        <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
-    </div>
 
-    <!-- Main Header -->
-    <header class="bg-white border-b border-gray-200">
-      <div class="container mx-auto px-[16px] py-[16px]">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="flex items-center space-x-[12px]">
-            <div class="w-[40px] h-[40px] bg-primary rounded-full flex items-center justify-center">
-              <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="w-[24px] h-[24px]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O'qituvchilarga berilgan ayrim imtiyoz turlari haqida - Oliygoh</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] text-white py-[8px]">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+  </div>
+
+  <!-- Main Header -->
+  <header class="border-b border-gray-200">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="">
+        </div>
+
+        <!-- Search Bar and Settings Button -->
+        <div class="flex-1 max-w-[600px] mx-[32px] flex items-center space-x-4">
+          <div class="relative bg-white flex items-center rounded-[16px] flex-1">
+            <div class="relative flex flex-1">
+              <input type="text" id="search-input" placeholder="izlash"
+                class="w-full h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
+              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search text-[24px]"></i>
+              </span>
             </div>
-            <h1 class="text-[28px] font-bold text-primary">Oliygoh</h1>
-          </div>
 
-          <!-- Search Bar -->
-          <div class="flex-1 max-w-[600px] mx-[32px]">
-            <div class="relative flex items-center bg-gray-100 rounded-[24px]">
-              <div class="relative flex-1">
-                <input
-                  type="text"
-                  placeholder="izlash"
-                  class="w-full pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]"
-                />
-                <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
-                  <i class="fas fa-search text-[16px]"></i>
-                </span>
+          </div>
+          <button id="filter-btn" class="bg-primary p-4 rounded-[16px] hover:bg-primary/90 transition-colors">
+            <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[24px] h-[24px]">
+          </button>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="flex items-center space-x-[16px]">
+          <div class="relative">
+            <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
+              <div class="bg-white p-4 rounded-[16px]">
+                <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
-              <button class="bg-primary p-[12px] rounded-r-[8px] hover:bg-primary/90 transition-colors">
-                <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[16px] h-[16px]">
-              </button>
-            </div>
-          </div>
+              <!-- Notification Dropdown -->
+              <div id="notification-dropdown"
+                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
+                <!-- User Profile Header -->
+                <div class="flex items-center p-[16px] border-b border-gray-100">
+                  <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
+                  </div>
+                  <div>
+                    <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
+                  </div>
+                </div>
 
-          <!-- Profile Section -->
-          <div class="flex items-center space-x-[16px]">
-            <button class="text-gray-600 hover:text-primary">
-              <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[20px] h-[20px]">
-            </button>
-            <button
-              class="bg-primary text-white px-[16px] py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium"
-            >
-              Profilga kirish
+                <!-- Menu Items -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-check text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Natijalarim</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-bell text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-cog text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Sozlamalar</span>
+                  </a>
+                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center">
+                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                        <i class="fas fa-moon text-[12px] text-gray-600"></i>
+                      </div>
+                      <span class="text-[14px] text-gray-700">Tungi rejim</span>
+                    </div>
+                    <div class="relative">
+                      <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+                      <label for="dark-mode-toggle"
+                        class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                        <span
+                          class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Logout -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Profildan chiqish</span>
+                  </a>
+                </div>
+              </div>
             </button>
           </div>
+          <button id="login-btn"
+            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+          </button>
         </div>
       </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container mx-auto px-[16px] py-[24px]">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
-        <!-- Main Content Area -->
-        <main class="lg:col-span-3">
-          <!-- Back Navigation -->
-          <div class="bg-white rounded-[24px] shadow-soft p-[16px] mb-[24px]">
-            <div class="flex items-center justify-between">
-              <button onclick="window.history.back()" class="flex items-center space-x-[8px] text-gray-600 hover:text-primary transition-colors">
-                <i class="fas fa-arrow-left text-[14px]"></i>
-                <span class="text-[14px] font-medium">Qayitish</span>
-              </button>
-              <div class="flex items-center space-x-[12px]">
-                <button class="w-[32px] h-[32px] bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                  <i class="fas fa-share-alt text-[14px] text-gray-600"></i>
-                </button>
-                <button class="w-[32px] h-[32px] bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                  <i class="fas fa-bookmark text-[14px] text-gray-600"></i>
-                </button>
-                <button class="w-[32px] h-[32px] bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                  <i class="fas fa-link text-[14px] text-gray-600"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Post Content -->
-          <article class="bg-white rounded-[24px] shadow-soft p-[32px]">
-            <!-- Post Header -->
-            <div class="mb-[24px]">
-              <h1 class="text-[32px] font-bold text-gray-900 mb-[16px] leading-tight">
-                O'qituvchilarga berilgan ayrim imtiyoz turlari haqida
-              </h1>
-              <div class="flex items-center space-x-[16px] text-[14px] text-gray-600">
-                <span>20-sentabr</span>
-                <span>•</span>
-                <span>08:00</span>
-                <span>•</span>
-                <div class="flex items-center space-x-[4px]">
-                  <img src="../assets/icons/view.svg" alt="Views" class="w-[14px] h-[14px]">
-                  <span>74884</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Featured Image -->
-            <div class="mb-[32px] rounded-[24px] overflow-hidden">
-              <img src="../assets/ava.png" alt="Post Image" class="w-full h-auto object-cover">
-            </div>
-
-            <!-- Post Body -->
-            <div class="prose max-w-none">
-              <h2 class="text-[24px] font-bold text-gray-900 mb-[16px]">Kirish qismi. Imtiyozlar kimlar uchun?</h2>
-              <p class="text-[16px] text-gray-700 leading-relaxed mb-[16px]">
-                O'zbekiston Respublikasida pedagoglar uchun bir qator imtiyozlar belgilangan bo'lib, ular o'qituvchilarning ish faoliyati va hayotini qulaylashtirish maqsadida yaratilgan. Quyidagi asosiy imtiyozlar haqida batafsil ko'rsatamiz.
-              </p>
-
-              <h3 class="text-[20px] font-bold text-gray-900 mb-[12px] mt-[24px]">O'qituvchilar uchun dam olish va tibbiy imtiyozlar</h3>
-              <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
-                <li><strong>T-oʻqituvlar</strong> — "O'qituvchi va murabbiylari kuni" bayram kuni hisoblanadi va dam olish kuni sifatida belgilanadi.</li>
-                <li>Pedagoglar xodimlar davlat ravishda bepul tibbiy ko'rikdan o'tkaziladi;</li>
-                <li>O'qituvchilarga 56 kunlik yillik haq to'lanadigan uzaytirilgan ta'til beriladi.</li>
-              </ul>
-
-              <h3 class="text-[20px] font-bold text-gray-900 mb-[12px]">Ish vaqti va mehnat sharoitlari</h3>
-              <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
-                <li>Pedagoglar xodimlar haftasiga 36 soatdan oshmaydi;</li>
-                <li>Ko'p yillik stajga ega pedagoglar mablag'li attestatsiyaga jalb etilmaydi.</li>
-              </ul>
-
-              <h3 class="text-[20px] font-bold text-gray-900 mb-[12px]">Maosh va ustamalar</h3>
-              <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
-                <li>Maktab o'qituvchilariga faoliyat natijalariga ko'ra <strong>10-40% ustama, kutubxonachi</strong> va psixologlarga <strong>10-20% ustama belgilanadi.</strong></li>
-                <li>Ijtimoiy sinf o'qituvchilariga <strong>40% gacha ustama</strong> beriladi.</li>
-                <li>Oliy huquqlariga faoliyat yuritayotgan o'qituvchilarga <strong>50% gacha ustama belgilanadi.</strong></li>
-                <li>Xalqaro sertifikatga ega o'qituvchilarga <strong>60% ustama</strong> qo'llaniladi.</li>
-                <li>Xorijiy tillar fanlari o'qituvchilariga xorijda ustamalar belgilanadi.</li>
-              </ul>
-
-              <!-- Image Gallery -->
-              <div class="grid grid-cols-2 gap-[16px] my-[32px]">
-                <div class="rounded-[24px] overflow-hidden">
-                  <img src="../assets/property-1.png" alt="Gallery Image 1" class="w-full h-[200px] object-cover">
-                </div>
-                <div class="rounded-[24px] overflow-hidden">
-                  <img src="../assets/image-card.png" alt="Gallery Image 2" class="w-full h-[200px] object-cover">
-                </div>
-              </div>
-
-              <!-- Quote Section -->
-              <div class="bg-gray-50 border-l-4 border-primary p-[24px] rounded-r-[8px] my-[32px]">
-                <h4 class="text-[18px] font-bold text-gray-900 mb-[12px]">Xulosa</h4>
-                <p class="text-[16px] text-gray-700 leading-relaxed italic">
-                  O'zbekiston o'qituvchilariga yaratilgan imtiyozlar ularning mehnatini qadrlatish, madaniy rivojlanishni va mehnat sharoitlarini yaxshilashga qaratilgan. Bu esa natijada pedagoglarning ijtimoiy himoyasini mustahkamlayib, ta'lim tizimining oshishiga ham xizmat qiladi.
-                </p>
-              </div>
-            </div>
-
-            <!-- Tags -->
-            <div class="mt-[32px] pt-[24px] border-t border-gray-200">
-              <div class="flex flex-wrap gap-[8px]">
-                <span class="text-[13px] text-gray-600 mr-[8px]">Teglar:</span>
-                <a href="#" class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">ta'lim</a>
-                <a href="#" class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">o'qituvchilar</a>
-                <a href="#" class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">O'zbekiston</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Related Posts -->
-          <section class="mt-[32px]">
-            <h2 class="text-[24px] font-bold text-gray-900 mb-[24px]">Shu kabi xabarlar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
-              <!-- Related Post 1 -->
-              <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
-                <div class="relative">
-                  <span class="absolute top-[12px] left-[12px] bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Foydali</span>
-                  <img src="../assets/image-card.png" alt="Related Post" class="w-full h-[160px] object-cover">
-                </div>
-                <div class="p-[16px]">
-                  <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                    O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
-                  </h3>
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                    <span>27-sentabr</span>
-                    <span>•</span>
-                    <span>20:00</span>
-                    <span>•</span>
-                    <div class="flex items-center space-x-[4px]">
-                      <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                      <span>37523</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Related Post 2 -->
-              <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
-                <div class="relative">
-                  <span class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
-                  <img src="../assets/ava.png" alt="Related Post" class="w-full h-[160px] object-cover">
-                </div>
-                <div class="p-[16px]">
-                  <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                    O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...
-                  </h3>
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                    <span>20-sentabr</span>
-                    <span>•</span>
-                    <span>08:00</span>
-                    <span>•</span>
-                    <div class="flex items-center space-x-[4px]">
-                      <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                      <span>74884</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Related Post 3 -->
-              <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
-                <div class="relative">
-                  <span class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
-                  <img src="../assets/image-card.png" alt="Related Post" class="w-full h-[160px] object-cover">
-                </div>
-                <div class="p-[16px]">
-                  <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                    "Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun maqolalar qabuli boshlan...
-                  </h3>
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                    <span>20-sentabr</span>
-                    <span>•</span>
-                    <span>08:00</span>
-                    <span>•</span>
-                    <div class="flex items-center space-x-[4px]">
-                      <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                      <span>74884</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Related Post 4 -->
-              <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
-                <div class="relative">
-                  <span class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
-                  <img src="../assets/property-1.png" alt="Related Post" class="w-full h-[160px] object-cover">
-                </div>
-                <div class="p-[16px]">
-                  <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                    Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
-                  </h3>
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                    <span>20-sentabr</span>
-                    <span>•</span>
-                    <span>08:00</span>
-                    <span>•</span>
-                    <div class="flex items-center space-x-[4px]">
-                      <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                      <span>74884</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <!-- Right Sidebar -->
-        <aside class="lg:col-span-1">
-          <!-- Popular Posts -->
-          <div class="bg-white rounded-[24px] shadow-soft p-[24px] mb-[24px]">
-            <h3 class="font-bold text-gray-900 mb-[20px] text-[20px]">Hammabop</h3>
-            <div class="space-y-[16px]">
-              <!-- Popular Item 1 -->
-              <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
-                  Nordic International University'da Orientation Week start oldi!
-                </h4>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <span>20-sentabr</span>
-                    <span class="diamond-separator">◆</span>
-                    <span>08:00</span>
-                  </div>
-                  <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                    <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Popular Item 2 -->
-              <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
-                  O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
-                </h4>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <span>20-sentabr</span>
-                    <span class="diamond-separator">◆</span>
-                    <span>08:00</span>
-                  </div>
-                  <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                    <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Popular Item 3 -->
-              <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
-                  Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
-                </h4>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <span>20-sentabr</span>
-                    <span class="diamond-separator">◆</span>
-                    <span>08:00</span>
-                  </div>
-                  <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                    <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Advertisement -->
-          <div class="bg-green-600 rounded-[24px] shadow-soft p-[24px] text-white">
-            <div class="flex items-center justify-between mb-[16px]">
-              <span
-                class="bg-white text-green-600 px-[8px] py-[4px] rounded-[4px] text-[12px] font-semibold"
-                >Reklama</span
-              >
-            </div>
-            <div class="flex items-center space-x-[12px] mb-[16px]">
-              <div
-                class="w-[32px] h-[32px] bg-white rounded-[24px] flex items-center justify-center"
-              >
-                <span class="text-green-600 font-bold text-[16px]">T</span>
-              </div>
-              <h3 class="font-bold text-[18px]">TASIR ACADEMY</h3>
-            </div>
-            <p class="text-[14px] mb-[16px] leading-relaxed">
-              Biz bilan chet tillarini o'rganing maroq bilan o'rganing
-            </p>
-            <div
-              class="w-full h-[80px] bg-yellow-400 rounded-[24px] flex items-center justify-center overflow-hidden"
-            >
-              <img src="../assets/ads.png" alt="Character Illustration" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </aside>
-      </div>
     </div>
+  </header>
 
-    <script>
-      // Copy link functionality
-      document.querySelectorAll('.fa-link').forEach(btn => {
-        btn.parentElement.addEventListener('click', function() {
-          navigator.clipboard.writeText(window.location.href);
-          alert('Havola nusxalandi!');
-        });
-      });
+  <!-- Main Content -->
+  <div class="container mx-auto px-[16px] py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+      <!-- Main Content Area -->
+      <main class="lg:col-span-3">
+        <!-- Back Navigation -->
+        <div class=" p-[16px] mb-[24px]">
+          <div class="flex items-center justify-between">
+            <button onclick="window.history.back()"
+              class="bg-gray-200 rounded-[16px] p-4 flex items-center space-x-[8px] text-gray-600 hover:text-primary transition-colors">
+              <div class="w-5 h-5 rounded-[8px] p-4 bg-white flex items-center justify-center">
+                <i class="fas fa-arrow-left text-[14px]"></i>
+              </div>
+              <span class="text-[14px] font-medium">Qayitish</span>
+            </button>
+            <div class="bg-gray-200 rounded-[16px] p-4 flex items-center space-x-[12px]">
+              <button
+                class="w-[32px] h-[32px] bg-gray-100 rounded-[8px] flex items-center justify-center hover:bg-gray-200 transition-colors">
+                <i class="fas fa-share-alt text-[14px] text-gray-600"></i>
+              </button>
+              <button
+                class="w-[32px] h-[32px] bg-gray-100 rounded-[8px] flex items-center justify-center hover:bg-gray-200 transition-colors">
+                <i class="fas fa-bookmark text-[14px] text-gray-600"></i>
+              </button>
+              <button
+                class="w-[32px] h-[32px] bg-gray-100 rounded-[8px] flex items-center justify-center hover:bg-gray-200 transition-colors">
+                <i class="fas fa-link text-[14px] text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      // Bookmark functionality
-      document.querySelectorAll('.fa-bookmark').forEach(btn => {
-        btn.parentElement.addEventListener('click', function() {
-          btn.classList.toggle('fas');
-          btn.classList.toggle('far');
-          alert(btn.classList.contains('fas') ? 'Saqlandi!' : 'Saqlanganlardan o\'chirildi!');
-        });
-      });
+        <!-- Post Content -->
+        <article class="bg-white rounded-[24px] shadow-soft p-[32px]">
+          <!-- Post Header -->
+          <div class="mb-[24px]">
+            <h1 class="text-[32px] font-bold text-gray-900 mb-[16px] leading-tight">
+              O'qituvchilarga berilgan ayrim imtiyoz turlari haqida
+            </h1>
+            <div class="flex items-center space-x-[16px] text-[14px] text-gray-600">
+              <span>20-sentabr</span>
+              <span>•</span>
+              <span>08:00</span>
+              <span>•</span>
+              <div class="flex items-center space-x-[4px]">
+                <img src="../assets/icons/view.svg" alt="Views" class="w-[14px] h-[14px]">
+                <span>74884</span>
+              </div>
+            </div>
+          </div>
 
-      // Share functionality
-      document.querySelectorAll('.fa-share-alt').forEach(btn => {
-        btn.parentElement.addEventListener('click', function() {
-          if (navigator.share) {
-            navigator.share({
-              title: document.title,
-              url: window.location.href
-            });
-          } else {
-            alert('Ulashish funksiyasi bu brauzerda ishlamaydi');
-          }
-        });
+          <!-- Featured Image -->
+          <div class="mb-[32px] rounded-[24px] overflow-hidden">
+            <img src="../assets/image-card.png" alt="Post Image" class="w-full h-auto object-cover">
+          </div>
+
+          <!-- Post Body -->
+          <div class="prose max-w-none">
+            <h2 class="text-[24px] font-bold text-gray-900 mb-[16px]">Kirish qismi. Imtiyozlar kimlar uchun?</h2>
+            <p class="text-[16px] text-gray-700 leading-relaxed mb-[16px]">
+              O'zbekiston Respublikasida pedagoglar uchun bir qator imtiyozlar belgilangan bo'lib, ular
+              o'qituvchilarning ish faoliyati va hayotini qulaylashtirish maqsadida yaratilgan. Quyidagi asosiy
+              imtiyozlar haqida batafsil ko'rsatamiz.
+            </p>
+
+            <h3 class="text-[20px] font-bold text-gray-900 mb-[12px] mt-[24px]">O'qituvchilar uchun dam olish va tibbiy
+              imtiyozlar</h3>
+            <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
+              <li><strong>T-oʻqituvlar</strong> — "O'qituvchi va murabbiylari kuni" bayram kuni hisoblanadi va dam olish
+                kuni sifatida belgilanadi.</li>
+              <li>Pedagoglar xodimlar davlat ravishda bepul tibbiy ko'rikdan o'tkaziladi;</li>
+              <li>O'qituvchilarga 56 kunlik yillik haq to'lanadigan uzaytirilgan ta'til beriladi.</li>
+            </ul>
+
+            <h3 class="text-[20px] font-bold text-gray-900 mb-[12px]">Ish vaqti va mehnat sharoitlari</h3>
+            <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
+              <li>Pedagoglar xodimlar haftasiga 36 soatdan oshmaydi;</li>
+              <li>Ko'p yillik stajga ega pedagoglar mablag'li attestatsiyaga jalb etilmaydi.</li>
+            </ul>
+
+            <h3 class="text-[20px] font-bold text-gray-900 mb-[12px]">Maosh va ustamalar</h3>
+            <ul class="list-disc list-inside space-y-[8px] text-[16px] text-gray-700 mb-[24px]">
+              <li>Maktab o'qituvchilariga faoliyat natijalariga ko'ra <strong>10-40% ustama, kutubxonachi</strong> va
+                psixologlarga <strong>10-20% ustama belgilanadi.</strong></li>
+              <li>Ijtimoiy sinf o'qituvchilariga <strong>40% gacha ustama</strong> beriladi.</li>
+              <li>Oliy huquqlariga faoliyat yuritayotgan o'qituvchilarga <strong>50% gacha ustama belgilanadi.</strong>
+              </li>
+              <li>Xalqaro sertifikatga ega o'qituvchilarga <strong>60% ustama</strong> qo'llaniladi.</li>
+              <li>Xorijiy tillar fanlari o'qituvchilariga xorijda ustamalar belgilanadi.</li>
+            </ul>
+
+            <!-- Image Gallery -->
+            <div class="grid grid-cols-2 gap-[16px] my-[32px]">
+              <div class="rounded-[24px] overflow-hidden">
+                <img src="../assets/property-1.png" alt="Gallery Image 1" class="w-full h-[200px] object-cover">
+              </div>
+              <div class="rounded-[24px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Gallery Image 2" class="w-full h-[200px] object-cover">
+              </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="bg-gray-50 border-l-4 border-primary p-[24px] rounded-r-[8px] my-[32px]">
+              <h4 class="text-[18px] font-bold text-gray-900 mb-[12px]">Xulosa</h4>
+              <p class="text-[16px] text-gray-700 leading-relaxed italic">
+                O'zbekiston o'qituvchilariga yaratilgan imtiyozlar ularning mehnatini qadrlatish, madaniy rivojlanishni
+                va mehnat sharoitlarini yaxshilashga qaratilgan. Bu esa natijada pedagoglarning ijtimoiy himoyasini
+                mustahkamlayib, ta'lim tizimining oshishiga ham xizmat qiladi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="mt-[32px] pt-[24px] border-t border-gray-200">
+            <div class="flex flex-wrap gap-[8px]">
+              <span class="text-[13px] text-gray-600 mr-[8px]">Teglar:</span>
+              <a href="#"
+                class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">ta'lim</a>
+              <a href="#"
+                class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">o'qituvchilar</a>
+              <a href="#"
+                class="bg-gray-100 text-gray-700 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 transition-colors">O'zbekiston</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Related Posts -->
+        <section class="mt-[32px]">
+          <h2 class="text-[24px] font-bold text-gray-900 mb-[24px]">Shu kabi xabarlar</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
+            <!-- Related Post 1 -->
+            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
+              <div class="relative">
+                <span
+                  class="absolute top-[12px] left-[12px] bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Foydali</span>
+                <img src="../assets/image-card.png" alt="Related Post" class="w-full h-[160px] object-cover">
+              </div>
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                  O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
+                </h3>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <span>27-sentabr</span>
+                  <span>•</span>
+                  <span>20:00</span>
+                  <span>•</span>
+                  <div class="flex items-center space-x-[4px]">
+                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                    <span>37523</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Post 2 -->
+            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
+              <div class="relative">
+                <span
+                  class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
+                <img src="../assets/ava.png" alt="Related Post" class="w-full h-[160px] object-cover">
+              </div>
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                  O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...
+                </h3>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <span>20-sentabr</span>
+                  <span>•</span>
+                  <span>08:00</span>
+                  <span>•</span>
+                  <div class="flex items-center space-x-[4px]">
+                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                    <span>74884</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Post 3 -->
+            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
+              <div class="relative">
+                <span
+                  class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
+                <img src="../assets/image-card.png" alt="Related Post" class="w-full h-[160px] object-cover">
+              </div>
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                  "Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun maqolalar qabuli boshlan...
+                </h3>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <span>20-sentabr</span>
+                  <span>•</span>
+                  <span>08:00</span>
+                  <span>•</span>
+                  <div class="flex items-center space-x-[4px]">
+                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                    <span>74884</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Post 4 -->
+            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden hover:shadow-md transition-shadow">
+              <div class="relative">
+                <span
+                  class="absolute top-[12px] left-[12px] bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[16px] text-[12px] font-semibold">Abituriyent</span>
+                <img src="../assets/property-1.png" alt="Related Post" class="w-full h-[160px] object-cover">
+              </div>
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                  Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                </h3>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <span>20-sentabr</span>
+                  <span>•</span>
+                  <span>08:00</span>
+                  <span>•</span>
+                  <div class="flex items-center space-x-[4px]">
+                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                    <span>74884</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-1">
+        <!-- Popular Posts -->
+        <div class="bg-white rounded-[24px] shadow-soft p-[24px] mb-[24px]">
+          <h3 class="font-bold text-gray-900 mb-[20px] text-[20px]">Hammabop</h3>
+          <div class="space-y-[16px]">
+            <!-- Popular Item 1 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
+                Nordic International University'da Orientation Week start oldi!
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular Item 2 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
+                O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular Item 3 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[14px] leading-[1.4]">
+                Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advertisement -->
+        <div class="bg-green-600 rounded-[24px] shadow-soft p-[24px] text-white">
+          <div class="flex items-center justify-between mb-[16px]">
+            <span
+              class="bg-white text-green-600 px-[8px] py-[4px] rounded-[4px] text-[12px] font-semibold">Reklama</span>
+          </div>
+          <div class="flex items-center space-x-[12px] mb-[16px]">
+            <div class="w-[32px] h-[32px] bg-white rounded-[24px] flex items-center justify-center">
+              <span class="text-green-600 font-bold text-[16px]">T</span>
+            </div>
+            <h3 class="font-bold text-[18px]">TASIR ACADEMY</h3>
+          </div>
+          <p class="text-[14px] mb-[16px] leading-relaxed">
+            Biz bilan chet tillarini o'rganing maroq bilan o'rganing
+          </p>
+          <div class="w-full h-[80px] bg-yellow-400 rounded-[24px] flex items-center justify-center overflow-hidden">
+            <img src="../assets/ads.png" alt="Character Illustration" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Copy link functionality
+    document.querySelectorAll('.fa-link').forEach(btn => {
+      btn.parentElement.addEventListener('click', function () {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Havola nusxalandi!');
       });
-    </script>
-  </body>
+    });
+
+    // Bookmark functionality
+    document.querySelectorAll('.fa-bookmark').forEach(btn => {
+      btn.parentElement.addEventListener('click', function () {
+        btn.classList.toggle('fas');
+        btn.classList.toggle('far');
+        alert(btn.classList.contains('fas') ? 'Saqlandi!' : 'Saqlanganlardan o\'chirildi!');
+      });
+    });
+
+    // Share functionality
+    document.querySelectorAll('.fa-share-alt').forEach(btn => {
+      btn.parentElement.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({
+            title: document.title,
+            url: window.location.href
+          });
+        } else {
+          alert('Ulashish funksiyasi bu brauzerda ishlamaydi');
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
-
