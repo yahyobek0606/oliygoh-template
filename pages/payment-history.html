@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To'lovlar tarixi - Oliygoh</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+    <script>
+      // Initialize theme immediately to prevent flash
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+        
+        if (shouldUseDark) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <!-- Top Banner -->
+    <div class="bg-[#2A2C33] text-white py-[8px]">
+        <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white border-b border-gray-200">
+      <div class="container mx-auto px-[16px] py-[16px]">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-[12px]">
+            <div class="w-[40px] h-[40px] bg-primary rounded-full flex items-center justify-center">
+              <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="w-[24px] h-[24px]">
+            </div>
+            <h1 class="text-[28px] font-bold text-primary">Oliygoh</h1>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="flex-1 max-w-[600px] mx-[32px]">
+            <div class="relative flex items-center bg-gray-100 rounded-[24px]">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="izlash"
+                  class="w-full pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]"
+                />
+                <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <i class="fas fa-search text-[16px]"></i>
+                </span>
+              </div>
+              <button class="bg-primary p-[12px] rounded-r-[8px] hover:bg-primary/90 transition-colors">
+                <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[16px] h-[16px]">
+              </button>
+            </div>
+          </div>
+
+          <!-- Profile Section -->
+          <div class="flex items-center space-x-[16px]">
+            <button id="theme-toggle" class="text-gray-600 hover:text-primary p-[8px] transition-colors">
+              <i class="fas fa-sun text-[20px]"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-[16px] py-[24px]">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+        <!-- Left Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="bg-white rounded-[24px] shadow-soft p-[16px]">
+            <!-- Back Button -->
+            <a href="index.html" class="flex items-center space-x-[8px] text-gray-600 hover:text-primary transition-colors mb-[24px] w-full py-[12px] px-[12px] rounded-[24px] hover:bg-gray-50">
+              <i class="fas fa-arrow-left text-[14px]"></i>
+              <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="space-y-[8px]">
+              <a href="account.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-user text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Shaxsiyat</span>
+              </a>
+              <a href="login-security.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-cog text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Kirish va xavfsizlik</span>
+              </a>
+              <a href="notifications.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-bell text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Bildirishnomalar</span>
+              </a>
+              <a href="subscriptions.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-crown text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Obunalar</span>
+              </a>
+              <a href="wallet.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-wallet text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Hamyon</span>
+              </a>
+              <a href="payment-history.html" class="flex items-center space-x-[12px] text-gray-800 font-medium py-[12px] px-[12px] bg-gray-100 rounded-[24px]">
+                <i class="fas fa-clock text-[16px] text-gray-600"></i>
+                <span class="text-[14px]">To'lovlar tarixi</span>
+              </a>
+              <a href="my-results.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-chart-line text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Mening natijalarim</span>
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="lg:col-span-3">
+          <div class="bg-white rounded-[24px] shadow-soft p-[32px]">
+            <h2 class="text-[28px] font-bold text-gray-900 mb-[24px]">To'lovlar tarixi</h2>
+
+            <!-- Filter Tabs -->
+            <div class="flex space-x-[8px] mb-[24px]">
+              <button class="bg-gray-100 text-gray-800 px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium">
+                Hammasi
+              </button>
+              <button class="bg-gray-200 text-gray-600 px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium hover:bg-gray-300 transition-colors">
+                Kirim
+              </button>
+              <button class="bg-gray-200 text-gray-600 px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium hover:bg-gray-300 transition-colors">
+                Chiqim
+              </button>
+            </div>
+
+            <!-- Transaction List -->
+            <div class="space-y-[12px]">
+              <!-- Transaction 1 -->
+              <div class="flex items-center justify-between py-[12px] border-b border-gray-100">
+                <div>
+                  <p class="text-[14px] text-gray-900 font-medium">Click orqali hisob to'ldirildi</p>
+                  <p class="text-[12px] text-gray-500">13-oktabr 10:45</p>
+                </div>
+                <p class="text-[14px] font-semibold text-green-600">+50 000 so'm</p>
+              </div>
+
+              <!-- Transaction 2 -->
+              <div class="flex items-center justify-between py-[12px] border-b border-gray-100">
+                <div>
+                  <p class="text-[14px] text-gray-900 font-medium">Premium obuna sotib olindi</p>
+                  <p class="text-[12px] text-gray-500">13-oktabr 10:45</p>
+                </div>
+                <p class="text-[14px] font-semibold text-red-600">-35 200 so'm</p>
+              </div>
+
+              <!-- Transaction 3 -->
+              <div class="flex items-center justify-between py-[12px] border-b border-gray-100">
+                <div>
+                  <p class="text-[14px] text-gray-900 font-medium">Click orqali to'lov</p>
+                  <p class="text-[12px] text-gray-500">13-oktabr 10:45</p>
+                </div>
+                <p class="text-[14px] font-semibold text-green-600">+50 000 so'm</p>
+              </div>
+
+              <!-- Transaction 4 -->
+              <div class="flex items-center justify-between py-[12px] border-b border-gray-100">
+                <div>
+                  <p class="text-[14px] text-gray-900 font-medium">Premium obuna sotib olindi</p>
+                  <p class="text-[12px] text-gray-500">13-oktabr 10:45</p>
+                </div>
+                <p class="text-[14px] font-semibold text-red-600">-35 200 so'm</p>
+              </div>
+
+              <!-- Transaction 5 -->
+              <div class="flex items-center justify-between py-[12px]">
+                <div>
+                  <p class="text-[14px] text-gray-900 font-medium">Premium obuna sotib olindi</p>
+                  <p class="text-[12px] text-gray-500">13-oktabr 10:45</p>
+                </div>
+                <p class="text-[14px] font-semibold text-red-600">-35 200 so'm</p>
+              </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="mt-[20px] text-center">
+              <button class="bg-gray-100 text-gray-700 px-[24px] py-[8px] rounded-[6px] hover:bg-gray-200 transition-colors text-[14px] font-medium">
+                Hammasi
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Handle filter tabs
+      document.querySelectorAll('button').forEach(button => {
+        if (button.textContent.includes('Hammasi') || button.textContent.includes('Kirim') || button.textContent.includes('Chiqim')) {
+          button.addEventListener('click', function() {
+            // Remove active class from all tabs
+            document.querySelectorAll('button').forEach(btn => {
+              if (btn.textContent.includes('Hammasi') || btn.textContent.includes('Kirim') || btn.textContent.includes('Chiqim')) {
+                btn.classList.remove('bg-gray-100', 'text-gray-800');
+                btn.classList.add('bg-gray-200', 'text-gray-600');
+              }
+            });
+            
+            // Add active class to clicked tab
+            this.classList.remove('bg-gray-200', 'text-gray-600');
+            this.classList.add('bg-gray-100', 'text-gray-800');
+          });
+        }
+      });
+
+      // Handle view all button
+      document.querySelector('.bg-gray-100').addEventListener('click', function() {
+        if (this.textContent.includes('Hammasi')) {
+          alert('Barcha tranzaksiyalarni ko\'rish');
+        }
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+        
+        if (shouldUseDark) {
+          document.documentElement.classList.add('dark');
+          updateThemeIcon(true);
+        } else {
+          document.documentElement.classList.remove('dark');
+          updateThemeIcon(false);
+        }
+      }
+      
+      function updateThemeIcon(isDark) {
+        const icon = themeToggle.querySelector('i');
+        if (isDark) {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        } else {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        }
+      }
+      
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          updateThemeIcon(false);
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          updateThemeIcon(true);
+        }
+      }
+      
+      // Initialize theme and add listener
+      initializeTheme();
+      themeToggle.addEventListener('click', toggleTheme);
+    </script>
+  </body>
+</html>
+

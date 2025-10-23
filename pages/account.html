@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaxsiyat sozlamalari - Oliygoh</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+    <script>
+      // Initialize theme immediately to prevent flash
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+        
+        if (shouldUseDark) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <!-- Top Banner -->
+    <div class="bg-[#2A2C33] text-white py-[8px]">
+        <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white border-b border-gray-200">
+      <div class="container mx-auto px-[16px] py-[16px]">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-[12px]">
+            <div class="w-[40px] h-[40px] bg-primary rounded-full flex items-center justify-center">
+              <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="w-[24px] h-[24px]">
+            </div>
+            <h1 class="text-[28px] font-bold text-primary">Oliygoh</h1>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="flex-1 max-w-[600px] mx-[32px]">
+            <div class="relative flex items-center bg-gray-100 rounded-[24px]">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="izlash"
+                  class="w-full pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]"
+                />
+                <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <i class="fas fa-search text-[16px]"></i>
+                </span>
+              </div>
+              <button class="bg-primary p-[12px] rounded-r-[8px] hover:bg-primary/90 transition-colors">
+                <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[16px] h-[16px]">
+              </button>
+            </div>
+          </div>
+
+          <!-- Profile Section -->
+          <div class="flex items-center space-x-[16px]">
+            <button class="text-gray-600 hover:text-primary">
+              <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[20px] h-[20px]">
+            </button>
+            <button id="theme-toggle" class="text-gray-600 hover:text-primary p-[8px] transition-colors">
+              <i class="fas fa-sun text-[20px]"></i>
+            </button>
+            <button class="w-[40px] h-[40px] rounded-full overflow-hidden">
+              <img src="../assets/ava.png" alt="Profile" class="w-full h-full object-cover">
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-[16px] py-[24px]">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+        <!-- Left Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="bg-white rounded-[24px] shadow-soft p-[16px]">
+            <!-- Back Button -->
+            <a href="index.html" class="flex items-center space-x-[8px] text-gray-600 hover:text-primary transition-colors mb-[24px] w-full py-[12px] px-[12px] rounded-[24px] hover:bg-gray-50">
+              <i class="fas fa-arrow-left text-[14px]"></i>
+              <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="space-y-[8px]">
+              <a href="account.html" class="flex items-center space-x-[12px] text-gray-800 font-medium py-[12px] px-[12px] bg-gray-100 rounded-[24px]">
+                <i class="fas fa-user text-[16px] text-gray-600"></i>
+                <span class="text-[14px]">Shaxsiyat</span>
+              </a>
+              <a href="login-security.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-cog text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Kirish va xavfsizlik</span>
+              </a>
+              <a href="notifications.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-bell text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Bildirishnomalar</span>
+              </a>
+              <a href="subscriptions.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-crown text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Obunalar</span>
+              </a>
+              <a href="wallet.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-wallet text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Hamyon</span>
+              </a>
+              <a href="payment-history.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-clock text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">To'lovlar tarixi</span>
+              </a>
+              <a href="my-results.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
+                <i class="fas fa-chart-line text-[16px] text-gray-400"></i>
+                <span class="text-[14px]">Mening natijalarim</span>
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="lg:col-span-3">
+          <div class="bg-white rounded-[24px] shadow-soft p-[32px]">
+            <h2 class="text-[28px] font-bold text-gray-900 mb-[32px]">Shaxsiyat sozlamalari</h2>
+
+            <!-- Profile Picture Section -->
+            <div class="mb-[32px]">
+              <div class="flex items-center space-x-[24px]">
+                <div class="relative">
+                  <img src="../assets/ava.png" alt="Profile Picture" class="w-[100px] h-[100px] rounded-full object-cover">
+                  <button class="absolute bottom-0 right-0 w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary/90 transition-colors">
+                    <i class="fas fa-camera text-[14px]"></i>
+                  </button>
+                </div>
+                <div>
+                  <p class="text-[14px] text-gray-600 mb-[8px]">Ism, familiyangiz</p>
+                  <h3 class="text-[20px] font-semibold text-gray-900">Suxrobjon Xurramov</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Fields -->
+            <form class="space-y-[24px]">
+              <!-- Name Field -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Ism, familiyangiz</label>
+                <input type="text" value="Suxrobjon Xurramov" class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+              </div>
+
+              <!-- Gender Selection -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Jinsingiz</label>
+                <div class="flex space-x-[16px]">
+                  <label class="flex items-center space-x-[8px] cursor-pointer">
+                    <input type="radio" name="gender" value="male" checked class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+                    <span class="text-[14px] text-gray-700">Erkak</span>
+                  </label>
+                  <label class="flex items-center space-x-[8px] cursor-pointer">
+                    <input type="radio" name="gender" value="female" class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+                    <span class="text-[14px] text-gray-700">Ayol</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Birth Date -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Yoshingiz</label>
+                <input type="text" placeholder="kk.oy.yil" class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+              </div>
+
+              <!-- Category -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Toifangiz</label>
+                <div class="relative">
+                  <select class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>toifani tanlang</option>
+                    <option>Maktab o'quvchisi</option>
+                    <option>Abituriyent</option>
+                    <option selected>Talaba</option>
+                    <option>Magistr</option>
+                    <option>O'qituvchi</option>
+                    <option>Ota-ona</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- University -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">
+                  Oliygoh <span class="text-red-500 text-[12px]">(toifa tanlansa chiqadi)</span>
+                </label>
+                <div class="relative">
+                  <select class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>tanlanmagan</option>
+                    <option>Toshkent Davlat Iqtisodiyot Universiteti</option>
+                    <option>O'zbekiston Milliy Universiteti</option>
+                    <option>Toshkent Axborot Texnologiyalari Universiteti</option>
+                    <option>Samarqand Davlat Universiteti</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Region -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Viloyatingiz</label>
+                <div class="relative">
+                  <select class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>Viloyatni tanlang</option>
+                    <option>Toshkent shahri</option>
+                    <option>Toshkent viloyati</option>
+                    <option>Andijon</option>
+                    <option>Buxoro</option>
+                    <option>Farg'ona</option>
+                    <option>Jizzax</option>
+                    <option>Xorazm</option>
+                    <option>Namangan</option>
+                    <option>Navoiy</option>
+                    <option>Qashqadaryo</option>
+                    <option>Qoraqalpog'iston</option>
+                    <option>Samarqand</option>
+                    <option>Sirdaryo</option>
+                    <option>Surxondaryo</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Living Area -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">O'qish yoki yashash hududi</label>
+                <div class="relative">
+                  <select class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>kiritilmagan</option>
+                    <option>Toshkent shahri</option>
+                    <option>Toshkent viloyati</option>
+                    <option>Andijon</option>
+                    <option>Buxoro</option>
+                    <option>Farg'ona</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Save Button -->
+              <div class="pt-[16px]">
+                <button type="submit" class="w-full bg-primary text-white py-[14px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[16px]">
+                  Saqlash
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Form submission
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Ma\'lumotlar saqlandi!');
+      });
+
+      // Profile picture upload
+      document.querySelector('.fa-camera').parentElement.addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = function(e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              document.querySelector('img[alt="Profile Picture"]').src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        input.click();
+      });
+
+      // Custom select styling and functionality
+      document.querySelectorAll('select').forEach(select => {
+        // Add custom styling
+        select.style.backgroundImage = 'none';
+        
+        // Handle change events
+        select.addEventListener('change', function() {
+          // Update placeholder styling
+          if (this.value) {
+            this.classList.add('text-gray-900');
+            this.classList.remove('text-gray-500');
+          } else {
+            this.classList.add('text-gray-500');
+            this.classList.remove('text-gray-900');
+          }
+        });
+      });
+
+      // Dynamic category-based fields
+      const categorySelect = document.querySelectorAll('select')[1];
+      const universityField = document.querySelectorAll('select')[2].parentElement;
+      
+      categorySelect.addEventListener('change', function() {
+        if (this.value === 'Talaba' || this.value === 'O\'qituvchi') {
+          universityField.style.display = 'block';
+        } else {
+          universityField.style.display = 'none';
+        }
+      });
+
+      // Initialize select styling
+      document.querySelectorAll('select').forEach(select => {
+        if (!select.value || select.value === '') {
+          select.classList.add('text-gray-500');
+        } else {
+          select.classList.add('text-gray-900');
+        }
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+        
+        if (shouldUseDark) {
+          document.documentElement.classList.add('dark');
+          updateThemeIcon(true);
+        } else {
+          document.documentElement.classList.remove('dark');
+          updateThemeIcon(false);
+        }
+      }
+      
+      function updateThemeIcon(isDark) {
+        const icon = themeToggle.querySelector('i');
+        if (isDark) {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        } else {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        }
+      }
+      
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          updateThemeIcon(false);
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          updateThemeIcon(true);
+        }
+      }
+      
+      // Initialize theme and add listener
+      initializeTheme();
+      themeToggle.addEventListener('click', toggleTheme);
+    </script>
+  </body>
+</html>

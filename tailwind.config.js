@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./**/*.{html,js}", "./pages/**/*.html", "./*.html"],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'oliygoh-blue': '#2563eb',
+        'primary': '#0B7BE3',
+        'oliygoh-blue': '#0B7BE3',
         'oliygoh-green': '#166534',
         'oliygoh-yellow': '#facc15',
         'oliygoh-light-blue': '#e0f2fe',
@@ -12,6 +14,13 @@ module.exports = {
         'oliygoh-dark-gray': '#64748b',
         'oliygoh-accent-green': '#10b981',
         'oliygoh-tag-blue': '#1e40af',
+        // Dark mode colors
+        'dark-bg': '#1a1f2e',
+        'dark-card': '#252b3b',
+        'dark-text-primary': '#e5e7eb',
+        'dark-text-secondary': '#9ca3af',
+        'dark-border': '#374151',
+        'tab-gray': '#E4E6EE',
       },
       spacing: {
         '18': '4.5rem',
@@ -35,6 +44,7 @@ module.exports = {
         'xl': '0.75rem',
         '2xl': '1rem',
         '3xl': '1.5rem',
+        '24': '24px',
       },
       boxShadow: {
         'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
