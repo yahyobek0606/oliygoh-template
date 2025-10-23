@@ -143,8 +143,7 @@
         <div class="p-[24px]">
           <!-- Navigation -->
           <nav class="space-y-[12px] mb-[32px]">
-            <a href="index.html"
-              class="flex items-center space-x-[15px] text-black p-[8px] bg-white rounded-[16px]">
+            <a href="index.html" class="flex items-center space-x-[15px] text-black p-[8px] bg-white rounded-[16px]">
               <div class="w-[40px] h-[40px] bg-gray-100 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
@@ -175,9 +174,7 @@
 
           <!-- Popular Tags (Dynamic with forEach) -->
           <div class="mb-[32px]">
-            <h3 
-              class="mb-[16px]" 
-              style="color: #686E7E; font-size: 14px; font-weight: 400;">
+            <h3 class="mb-[16px]" style="color: #686E7E; font-size: 14px; font-weight: 400;">
               Ommabop teglar:
             </h3>
             <div id="popular-tags" class="flex flex-wrap gap-[8px]"></div>
@@ -315,100 +312,185 @@
 
         <!-- News Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
-          <!-- News Card 1 -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+          <!-- Card -->
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
             <div class="p-[16px]">
-              <div class="flex items-center justify-between mb-[12px]">
-                <span
-                  class="bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Foydali</span>
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                  <span>37523</span>
-                </div>
-              </div>
-              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
-                <img src="../assets/image-card.png" alt="Handshake Image" class="w-full h-full object-cover">
-              </div>
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar
-                ochilmoqda
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
-                <span>27-sentabr 20:00</span>
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
               </div>
             </div>
           </div>
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
 
-          <!-- News Card 2 -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <!-- Content -->
             <div class="p-[16px]">
-              <div class="flex items-center justify-between mb-[12px]">
-                <span
-                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                  <span>74884</span>
-                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
-                </div>
-              </div>
-              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
-                <img src="../assets/ava.png" alt="Teachers with Certificate" class="w-full h-full object-cover">
-              </div>
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
-                <span>20-sentabr 08:00</span>
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
               </div>
             </div>
           </div>
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
 
-          <!-- News Card 3 -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <!-- Content -->
             <div class="p-[16px]">
-              <div class="flex items-center justify-between mb-[12px]">
-                <span
-                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                  <span>74884</span>
-                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
-                </div>
-              </div>
-              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
-                <img src="../assets/image-card.png" alt="Article Submission" class="w-full h-full object-cover">
-              </div>
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                "Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun
-                maqolalar qabuli boshlan...
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
-                <span>20-sentabr 08:00</span>
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
               </div>
             </div>
           </div>
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
 
-          <!-- News Card 4 -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <!-- Content -->
             <div class="p-[16px]">
-              <div class="flex items-center justify-between mb-[12px]">
-                <span
-                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
-                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                  <span>74884</span>
-                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
-                </div>
-              </div>
-              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
-                <img src="../assets/property-1.png" alt="Students on Campus" class="w-full h-full object-cover">
-              </div>
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish
-                tizimi haqida batafsil ma'l...
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
-                <span>20-sentabr 08:00</span>
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="p-[16px]">
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+            <!-- Header with category badge and view count -->
+            <div class="absolute top-[16px] left-[16px] z-10">
+              <span
+                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+            </div>
+            <!-- Main image -->
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="p-[16px]">
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <div class="flex items-center space-x-[8px]">
+                  <span>20-sentabr 08:00</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span>74884</span>
+                </div>
+                <span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </span>
               </div>
             </div>
           </div>
