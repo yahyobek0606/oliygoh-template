@@ -1,777 +1,749 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oliygoh - Oliy ta'lim portali</title>
-    <link href="../dist/output.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="gradient-bg bg-[#F2F3F7] min-h-screen">
-    <script>
-      // Initialize theme immediately to prevent flash
-      (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-        
-        if (shouldUseDark) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-    <!-- Top Banner -->
-    <div class="bg-[#2A2C33] text-white py-[8px]">
-        <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
-    </div>
 
-    <!-- Main Header -->
-    <header class="bg-white border-b border-gray-200">
-      <div class="container mx-auto px-[16px] py-[16px]">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
-              <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="">
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oliygoh - Oliy ta'lim portali</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
 
-          <!-- Search Bar -->
-          <div class="flex-1 max-w-[600px] mx-[32px]">
-            <div class="relative flex items-center bg-gray-100 rounded-[24px]">
-              <div class="relative flex-1">
-                <input
-                  type="text"
-                  id="search-input"
-                  placeholder="izlash"
-                  class="w-full pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]"
-                />
-                <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
-                  <i class="fas fa-search text-[16px]"></i>
-                </span>
-              </div>
-              <button id="filter-btn" class="bg-primary p-[12px] rounded-r-[8px] hover:bg-primary/90 transition-colors">
-                <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[16px] h-[16px]">
-              </button>
+<body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+  <script>
+    // Initialize theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] text-white py-[8px]">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+  </div>
+
+  <!-- Main Header -->
+  <header class="border-b border-gray-200">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="">
+        </div>
+
+        <!-- Search Bar and Settings Button -->
+        <div class="flex-1 max-w-[600px] mx-[32px] flex items-center space-x-4">
+          <div class="relative bg-white flex items-center rounded-[16px] flex-1">
+            <div class="relative flex flex-1">
+              <input type="text" id="search-input" placeholder="izlash"
+                class="w-full h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
+              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search text-[24px]"></i>
+              </span>
             </div>
-          </div>
 
-          <!-- Profile Section -->
-          <div class="flex items-center space-x-[16px]">
-            <div class="relative">
-              <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
-                <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[20px] h-[20px]">
-                <!-- Notification Dropdown -->
-                <div id="notification-dropdown" class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
-                  <!-- User Profile Header -->
-                  <div class="flex items-center p-[16px] border-b border-gray-100">
-                    <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
-                      <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
-                    </div>
-                    <div>
-                      <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
-                    </div>
+          </div>
+          <button id="filter-btn" class="bg-primary p-4 rounded-[16px] hover:bg-primary/90 transition-colors">
+            <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[24px] h-[24px]">
+          </button>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="flex items-center space-x-[16px]">
+          <div class="relative">
+            <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
+              <div class="bg-white p-4 rounded-[16px]">
+                <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
+              </div>
+              <!-- Notification Dropdown -->
+              <div id="notification-dropdown"
+                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
+                <!-- User Profile Header -->
+                <div class="flex items-center p-[16px] border-b border-gray-100">
+                  <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
                   </div>
-                  
-                  <!-- Menu Items -->
-                  <div class="py-[8px]">
-                    <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-check text-[12px] text-gray-600"></i>
-                      </div>
-                      <span class="text-[14px] text-gray-700">Natijalarim</span>
-                    </a>
-                    <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-bell text-[12px] text-gray-600"></i>
-                      </div>
-                      <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
-                    </a>
-                    <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-cog text-[12px] text-gray-600"></i>
-                      </div>
-                      <span class="text-[14px] text-gray-700">Sozlamalar</span>
-                    </a>
-                    <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                      <div class="flex items-center">
-                        <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                          <i class="fas fa-moon text-[12px] text-gray-600"></i>
-                        </div>
-                        <span class="text-[14px] text-gray-700">Tungi rejim</span>
-                      </div>
-                      <div class="relative">
-                        <input type="checkbox" id="dark-mode-toggle" class="sr-only">
-                        <label for="dark-mode-toggle" class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
-                          <span class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Divider -->
-                  <div class="border-t border-gray-100"></div>
-                  
-                  <!-- Logout -->
-                  <div class="py-[8px]">
-                    <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
-                      </div>
-                      <span class="text-[14px] text-gray-700">Profildan chiqish</span>
-                    </a>
+                  <div>
+                    <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
                   </div>
                 </div>
+
+                <!-- Menu Items -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-check text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Natijalarim</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-bell text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-cog text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Sozlamalar</span>
+                  </a>
+                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center">
+                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                        <i class="fas fa-moon text-[12px] text-gray-600"></i>
+                      </div>
+                      <span class="text-[14px] text-gray-700">Tungi rejim</span>
+                    </div>
+                    <div class="relative">
+                      <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+                      <label for="dark-mode-toggle"
+                        class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                        <span
+                          class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Logout -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Profildan chiqish</span>
+                  </a>
+                </div>
+              </div>
             </button>
+          </div>
+          <button id="login-btn"
+            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto  py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+      <!-- Left Sidebar -->
+      <aside class="lg:col-span-1">
+        <div class="p-[24px]">
+          <!-- Navigation -->
+          <nav class="space-y-[12px] mb-[32px]">
+            <a href="index.html"
+              class="flex items-center space-x-[15px] text-black p-[8px] bg-white rounded-[16px]">
+              <div class="w-[40px] h-[40px] bg-gray-100 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px]">Asosiy sahifa</span>
+            </a>
+            <a href="#" onclick="showComingSoon('Imtihon testlari')"
+              class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
+              <div class="w-[40px] h-[40px] bg-white rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/quiz-02.svg" alt="Tests" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-[#686E7E]">Imtihon testlari</span>
+            </a>
+            <a href="#" onclick="showComingSoon('Mandat 2025')"
+              class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
+              <div class="w-[40px] h-[40px] bg-white rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-[#686E7E]">Mandat 2025</span>
+            </a>
+            <a href="#" onclick="showComingSoon('Oliygohlar')"
+              class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
+              <div class="w-[40px] h-[40px] bg-white rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-[#686E7E]">Oliygohlar</span>
+            </a>
+          </nav>
+
+          <!-- Popular Tags (Dynamic with forEach) -->
+          <div class="mb-[32px]">
+            <h3 
+              class="mb-[16px]" 
+              style="color: #686E7E; font-size: 14px; font-weight: 400;">
+              Ommabop teglar:
+            </h3>
+            <div id="popular-tags" class="flex flex-wrap gap-[8px]"></div>
+          </div>
+          <script>
+            // Popular tags array
+            const popularTags = [
+              "xalqaro grantlar",
+              "abituriyent",
+              "OTM",
+              "magistratura",
+              "milliy sertifikat",
+              "oliy ta'lim",
+              "o'qishni ko'chirish",
+              "imtiyoz",
+              "talaba"
+            ];
+
+            const tagsContainer = document.getElementById('popular-tags');
+            popularTags.forEach(tag => {
+              const span = document.createElement('span');
+              span.textContent = tag;
+              span.style.background = "#E4E6EE";
+              span.style.color = "#2A2C33";
+              span.style.fontSize = "12px";
+              span.style.borderRadius = "16px";
+              span.style.padding = "6px 12px";
+              span.style.fontWeight = "400";
+              tagsContainer.appendChild(span);
+            });
+          </script>
+
+          <!-- Footer Links -->
+          <div class="space-y-[8px] text-[13px] text-oliygoh-dark-gray mb-[24px]">
+            <a href="#" class="block hover:text-oliygoh-blue transition-colors">Reklama</a>
+            <a href="#" class="block hover:text-oliygoh-blue transition-colors">Biz haqimizda</a>
+            <a href="#" class="block hover:text-oliygoh-blue transition-colors">Foydalanish shartlari</a>
+          </div>
+
+          <!-- Social Media -->
+          <div class="flex space-x-[12px] mb-[16px]">
+            <a href="#"
+              class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center text-white hover:bg-gray-700 transition-colors">
+              <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[20px] h-[20px]">
+            </a>
+            <a href="#"
+              class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors">
+              <img src="../assets/icons/telegram.svg" alt="Telegram" class="w-[20px] h-[20px]">
+            </a>
+            <a href="#"
+              class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors">
+              <i class="fab fa-facebook-f text-[20px]"></i>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-[11px] text-gray-500">
+            © 2021-2025 Oliygoh.uz, Barcha huquqlar himoyalangan
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="lg:col-span-2">
+        <!-- Featured University Card -->
+        <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+          <div class="flex px-2">
+            <!-- Left Section - Text Content -->
+            <div class="flex-1 p-[24px]">
+              <h2 class="text-[20px] font-bold text-gray-900 mb-[12px] leading-tight">
+                Tashkent International University of Education xalqaro universiteti
+              </h2>
+
+              <!-- Rating and Location Pills -->
+              <div class="flex items-center space-x-[12px] mb-[20px]">
+                <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                  <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
+                  <span class="text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
+                </div>
+                <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                  <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
+                  <span class="text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
+                </div>
+              </div>
+
+              <!-- Batafsil Button -->
+              <button
+                class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+                Batafsil
+              </button>
             </div>
-            <button
-              id="login-btn"
-              class="bg-primary text-white px-[16px] py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium"
-            >
-              Profilga kirish
+
+            <!-- Right Section - Image -->
+            <div class="flex items-center justify-center">
+              <div class="w-[250px]">
+                <img src="../assets/uni.png" alt="University Building" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex items-center justify-between mb-[24px] mt-4">
+          <div class="flex space-x-[8px]">
+            <button id="tab-all"
+              class="bg-primary text-white px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors">
+              <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
+                <img src="../assets/icons/infinity.svg" alt="All" class="w-[12px] h-[12px]">
+              </div>
+              <span class="text-[14px] font-medium">Hammasi</span>
+            </button>
+            <button id="tab-students"
+              class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
+              <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
+                <i class="fas fa-user text-[12px] text-gray-600"></i>
+              </div>
+              <span class="text-[14px] font-medium">Talabalar</span>
+            </button>
+            <button id="tab-mandat"
+              class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
+              <div class="w-[20px] h-[20px] bg-white rounded-[6px] flex items-center justify-center">
+                <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[12px] h-[12px]">
+              </div>
+              <span class="text-[14px] font-medium">Mandat 2023</span>
+            </button>
+            <button id="tab-contests"
+              class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
+              <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
+                <i class="fas fa-trophy text-[12px] text-gray-600"></i>
+              </div>
+              <span class="text-[14px] font-medium">Tanlovlar</span>
             </button>
           </div>
         </div>
-      </div>
-    </header>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-[16px] py-[24px]">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
-        <!-- Left Sidebar -->
-        <aside class="lg:col-span-1">
-          <div class="bg-white rounded-[24px] shadow-soft p-[24px]">
-            <!-- Navigation -->
-            <nav class="space-y-[12px] mb-[32px]">
-              <a
-                href="index.html"
-                class="flex items-center space-x-[12px] text-primary font-medium py-[8px] px-[8px] bg-blue-50 rounded-[24px]"
-              >
-                <img src="../assets/icons/home-active.svg" alt="Home" class="w-[16px] h-[16px]">
-                <span class="text-[14px]">Asosiy sahifa</span>
-              </a>
-              <a
-                href="#"
-                onclick="showComingSoon('Imtihon testlari')"
-                class="flex items-center space-x-[12px] text-gray-500 py-[8px] px-[8px] hover:text-primary hover:bg-blue-50 rounded-[24px] transition-colors"
-              >
-                <img src="../assets/icons/quiz-02.svg" alt="Tests" class="w-[16px] h-[16px]">
-                <span class="text-[14px]">Imtihon testlari</span>
-              </a>
-              <a
-                href="#"
-                onclick="showComingSoon('Mandat 2025')"
-                class="flex items-center space-x-[12px] text-gray-500 py-[8px] px-[8px] hover:text-primary hover:bg-blue-50 rounded-[24px] transition-colors"
-              >
-                <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[16px] h-[16px]">
-                <span class="text-[14px]">Mandat 2025</span>
-              </a>
-              <a
-                href="#"
-                onclick="showComingSoon('Oliygohlar')"
-                class="flex items-center space-x-[12px] text-gray-500 py-[8px] px-[8px] hover:text-primary hover:bg-blue-50 rounded-[24px] transition-colors"
-              >
-                <img src="../assets/icons/university.svg" alt="Universities" class="w-[16px] h-[16px]">
-                <span class="text-[14px]">Oliygohlar</span>
-              </a>
-            </nav>
-
-            <!-- Popular Tags -->
-            <div class="mb-[32px]">
-              <h3 class="font-semibold text-gray-800 mb-[16px] text-[16px]">
-                Ommabop teglar:
-              </h3>
-              <div class="flex flex-wrap gap-[8px]">
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >xalqaro grantlar</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >abituriyent</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >OTM</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >magistratura</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >milliy sertifikat</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >oliy ta'lim</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >o'qishni ko'chirish</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >imtiyoz</span
-                >
-                <span
-                  class="bg-oliygoh-light-blue text-oliygoh-tag-blue px-[12px] py-[6px] rounded-[24px] text-[12px] font-medium"
-                  >talaba</span
-                >
-              </div>
-            </div>
-
-            <!-- Footer Links -->
-            <div
-              class="space-y-[8px] text-[13px] text-oliygoh-dark-gray mb-[24px]"
-            >
-              <a
-                href="#"
-                class="block hover:text-oliygoh-blue transition-colors"
-                >Reklama</a
-              >
-              <a
-                href="#"
-                class="block hover:text-oliygoh-blue transition-colors"
-                >Biz haqimizda</a
-              >
-              <a
-                href="#"
-                class="block hover:text-oliygoh-blue transition-colors"
-                >Foydalanish shartlari</a
-              >
-            </div>
-
-            <!-- Social Media -->
-            <div class="flex space-x-[12px] mb-[16px]">
-              <a
-                href="#"
-                class="w-[32px] h-[32px] bg-gray-600 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors"
-              >
-                <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[16px] h-[16px]">
-              </a>
-              <a
-                href="#"
-                class="w-[32px] h-[32px] bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
-              >
-                <img src="../assets/icons/telegram.svg" alt="Telegram" class="w-[16px] h-[16px]">
-              </a>
-              <a
-                href="#"
-                class="w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary/90 transition-colors"
-              >
-                <i class="fab fa-facebook-f text-[14px]"></i>
-              </a>
-            </div>
-
-            <!-- Copyright -->
-            <p class="text-[11px] text-gray-500">
-              © 2021-2025 Oliygoh.uz, Barcha huquqlar himoyalangan
-            </p>
-          </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="lg:col-span-2">
-          <!-- Featured University Card -->
+        <!-- News Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
+          <!-- News Card 1 -->
           <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
-            <div class="flex px-2">
-              <!-- Left Section - Text Content -->
-              <div class="flex-1 p-[24px]">
-                <h2 class="text-[20px] font-bold text-gray-900 mb-[12px] leading-tight">
-                  Tashkent International University of Education xalqaro universiteti
-                </h2>
-                
-                <!-- Rating and Location Pills -->
-                <div class="flex items-center space-x-[12px] mb-[20px]">
-                  <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
-                    <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
-                    <span class="text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
-                  </div>
-                  <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
-                    <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
-                    <span class="text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
-                  </div>
+            <div class="p-[16px]">
+              <div class="flex items-center justify-between mb-[12px]">
+                <span
+                  class="bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Foydali</span>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>37523</span>
                 </div>
-                
-                <!-- Batafsil Button -->
-                <button class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-                  Batafsil
-                </button>
               </div>
-              
-              <!-- Right Section - Image -->
-               <div class="flex items-center justify-center">
-                <div class="w-[250px]">
-                  <img src="../assets/uni.png" alt="University Building" class="w-full h-full object-cover">
-                </div>
+              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Handshake Image" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar
+                ochilmoqda
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <span>27-sentabr 20:00</span>
               </div>
             </div>
           </div>
 
-          <!-- Category Tabs -->
-          <div class="flex items-center justify-between mb-[24px] mt-4">
-            <div class="flex space-x-[8px]">
-              <button id="tab-all" class="bg-primary text-white px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors">
-                <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
-                  <img src="../assets/icons/infinity.svg" alt="All" class="w-[12px] h-[12px]">
+          <!-- News Card 2 -->
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <div class="p-[16px]">
+              <div class="flex items-center justify-between mb-[12px]">
+                <span
+                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
                 </div>
-                <span class="text-[14px] font-medium">Hammasi</span>
-              </button>
-              <button id="tab-students" class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
-                <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
-                  <i class="fas fa-user text-[12px] text-gray-600"></i>
-                </div>
-                <span class="text-[14px] font-medium">Talabalar</span>
-              </button>
-              <button id="tab-mandat" class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
-                <div class="w-[20px] h-[20px] bg-white rounded-[6px] flex items-center justify-center">
-                  <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[12px] h-[12px]">
-                </div>
-                <span class="text-[14px] font-medium">Mandat 2023</span>
-              </button>
-              <button id="tab-contests" class="bg-tab-gray text-gray-900 px-[16px] py-[10px] rounded-[24px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80">
-                <div class="w-[20px] h-[20px] bg-white rounded-full flex items-center justify-center">
-                  <i class="fas fa-trophy text-[12px] text-gray-600"></i>
-                </div>
-                <span class="text-[14px] font-medium">Tanlovlar</span>
-              </button>
+              </div>
+              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
+                <img src="../assets/ava.png" alt="Teachers with Certificate" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <span>20-sentabr 08:00</span>
+              </div>
             </div>
           </div>
 
-          <!-- News Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
-            <!-- News Card 1 -->
-            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
-              <div class="p-[16px]">
-                <div class="flex items-center justify-between mb-[12px]">
-                  <span
-                    class="bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold"
-                    >Foydali</span
-                  >
-                  <div
-                    class="flex items-center space-x-[8px] text-[12px] text-gray-500"
-                  >
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>37523</span>
+          <!-- News Card 3 -->
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <div class="p-[16px]">
+              <div class="flex items-center justify-between mb-[12px]">
+                <span
+                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </div>
+              </div>
+              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Article Submission" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                "Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun
+                maqolalar qabuli boshlan...
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <span>20-sentabr 08:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Card 4 -->
+          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
+            <div class="p-[16px]">
+              <div class="flex items-center justify-between mb-[12px]">
+                <span
+                  class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-500">
+                  <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                  <span>74884</span>
+                  <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+                </div>
+              </div>
+              <div class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden">
+                <img src="../assets/property-1.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
+                Talabalarga ijara to'lovlarining bir qismini qoplab berish
+                tizimi haqida batafsil ma'l...
+              </h3>
+              <div class="flex items-center justify-between text-[12px] text-gray-500">
+                <span>20-sentabr 08:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-1">
+        <!-- Urgent News -->
+        <div class="bg-white rounded-[24px] shadow-soft p-[24px] mb-[24px]">
+          <h3 class="font-bold text-gray-900 mb-[20px] text-[24px]">Dolzarb</h3>
+          <div class="space-y-[16px]">
+            <!-- News Item 1 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
+                Nordic International University'da Orientation Week start oldi!
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <i class="fas fa-eye text-[12px]"></i>
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
                   </div>
-                </div>
-                <div
-                  class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden"
-                >
-                  <img src="../assets/image-card.png" alt="Handshake Image" class="w-full h-full object-cover">
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                  O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar
-                  ochilmoqda
-                </h3>
-                <div
-                  class="flex items-center justify-between text-[12px] text-gray-500"
-                >
-                  <span>27-sentabr 20:00</span>
                 </div>
               </div>
             </div>
 
-            <!-- News Card 2 -->
-            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
-              <div class="p-[16px]">
-                <div class="flex items-center justify-between mb-[12px]">
-                  <span
-                    class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold"
-                    >Abituriyent</span
-                  >
-                  <div
-                    class="flex items-center space-x-[8px] text-[12px] text-gray-500"
-                  >
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+            <!-- News Item 2 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
+                O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <i class="fas fa-eye text-[12px]"></i>
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
                   </div>
-                </div>
-                <div
-                  class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden"
-                >
-                  <img src="../assets/ava.png" alt="Teachers with Certificate" class="w-full h-full object-cover">
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                  O'qituvchilarga berilgan ayrim imtiyoz turlari batafsil...
-                </h3>
-                <div
-                  class="flex items-center justify-between text-[12px] text-gray-500"
-                >
-                  <span>20-sentabr 08:00</span>
                 </div>
               </div>
             </div>
 
-            <!-- News Card 3 -->
-            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
-              <div class="p-[16px]">
-                <div class="flex items-center justify-between mb-[12px]">
-                  <span
-                    class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold"
-                    >Abituriyent</span
-                  >
-                  <div
-                    class="flex items-center space-x-[8px] text-[12px] text-gray-500"
-                  >
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
+            <!-- News Item 3 -->
+            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
+                Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
+              </h4>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
+                  <i class="fas fa-eye text-[12px]"></i>
+                  <span>74884</span>
+                  <span>20-sentabr</span>
+                  <span class="diamond-separator">◆</span>
+                  <span>08:00</span>
+                </div>
+                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
+                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
                   </div>
-                </div>
-                <div
-                  class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden"
-                >
-                  <img src="../assets/image-card.png" alt="Article Submission" class="w-full h-full object-cover">
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                  "Nordik" ilmiy-amaliy elektron jurnalining 5-soni uchun
-                  maqolalar qabuli boshlan...
-                </h3>
-                <div
-                  class="flex items-center justify-between text-[12px] text-gray-500"
-                >
-                  <span>20-sentabr 08:00</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- News Card 4 -->
-            <div class="bg-white rounded-[24px] shadow-soft overflow-hidden">
-              <div class="p-[16px]">
-                <div class="flex items-center justify-between mb-[12px]">
-                  <span
-                    class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold"
-                    >Abituriyent</span
-                  >
-                  <div
-                    class="flex items-center space-x-[8px] text-[12px] text-gray-500"
-                  >
-                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
-                    <span>74884</span>
-                    <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
-                  </div>
-                </div>
-                <div
-                  class="w-full h-[120px] rounded-[24px] mb-[12px] overflow-hidden"
-                >
-                  <img src="../assets/property-1.png" alt="Students on Campus" class="w-full h-full object-cover">
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                  Talabalarga ijara to'lovlarining bir qismini qoplab berish
-                  tizimi haqida batafsil ma'l...
-                </h3>
-                <div
-                  class="flex items-center justify-between text-[12px] text-gray-500"
-                >
-                  <span>20-sentabr 08:00</span>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+        </div>
 
-         <!-- Right Sidebar -->
-         <aside class="lg:col-span-1">
-           <!-- Urgent News -->
-           <div class="bg-white rounded-[24px] shadow-soft p-[24px] mb-[24px]">
-             <h3 class="font-bold text-gray-900 mb-[20px] text-[24px]">Dolzarb</h3>
-             <div class="space-y-[16px]">
-               <!-- News Item 1 -->
-               <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                 <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
-                   Nordic International University'da Orientation Week start oldi!
-                 </h4>
-                 <div class="flex items-center justify-between">
-                   <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                     <i class="fas fa-eye text-[12px]"></i>
-                     <span>74884</span>
-                     <span>20-sentabr</span>
-                     <span class="diamond-separator">◆</span>
-                     <span>08:00</span>
-                   </div>
-                   <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                     <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                       <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               
-               <!-- News Item 2 -->
-               <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                 <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
-                   O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
-                 </h4>
-                 <div class="flex items-center justify-between">
-                   <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                     <i class="fas fa-eye text-[12px]"></i>
-                     <span>74884</span>
-                     <span>20-sentabr</span>
-                     <span class="diamond-separator">◆</span>
-                     <span>08:00</span>
-                   </div>
-                   <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                     <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                       <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               
-               <!-- News Item 3 -->
-               <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-                 <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
-                   Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
-                 </h4>
-                 <div class="flex items-center justify-between">
-                   <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                     <i class="fas fa-eye text-[12px]"></i>
-                     <span>74884</span>
-                     <span>20-sentabr</span>
-                     <span class="diamond-separator">◆</span>
-                     <span>08:00</span>
-                   </div>
-                   <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                     <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                       <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-
-          <!-- Advertisement -->
-          <div class="rounded-[24px] shadow-soft">
-            <img src="../assets/ads.png" alt="Advertisement" class="w-full h-full rounded-[24px] object-cover">
-          </div>
-        </aside>
-      </div>
+        <!-- Advertisement -->
+        <div class="rounded-[24px] shadow-soft">
+          <img src="../assets/ads.png" alt="Advertisement" class="w-full h-full rounded-[24px] object-cover">
+        </div>
+      </aside>
     </div>
+  </div>
 
-    <!-- Authentication Modal -->
-    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
-      <div class="bg-white rounded-[24px] shadow-2xl w-[400px] max-w-[90vw] transform scale-95 transition-all duration-300">
-        <!-- Modal Header -->
-        <div class="flex items-center justify-between p-[24px] border-b border-gray-200">
-          <div class="flex items-center space-x-[12px]">
-            <div class="w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center">
-              <span class="text-white font-bold text-[16px]">O</span>
-            </div>
-            <h2 class="text-[20px] font-bold text-primary">Oliygoh</h2>
+  <!-- Authentication Modal -->
+  <div id="auth-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white rounded-[24px] shadow-2xl w-[400px] max-w-[90vw] transform scale-95 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-[24px] border-b border-gray-200">
+        <div class="flex items-center space-x-[12px]">
+          <div class="w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-[16px]">O</span>
           </div>
-          <button id="close-auth-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
-            <i class="fas fa-times text-[20px]"></i>
+          <h2 class="text-[20px] font-bold text-primary">Oliygoh</h2>
+        </div>
+        <button id="close-auth-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+          <i class="fas fa-times text-[20px]"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <!-- Tabs -->
+        <div class="flex bg-gray-100 rounded-[24px] p-[4px] mb-[24px]">
+          <button id="login-tab"
+            class="flex-1 py-[8px] px-[16px] rounded-[24px] bg-white text-gray-800 font-medium text-[14px] transition-all">
+            Kirish
+          </button>
+          <button id="register-tab"
+            class="flex-1 py-[8px] px-[16px] rounded-[24px] text-gray-500 font-medium text-[14px] transition-all">
+            Registratsiya
           </button>
         </div>
-        
-        <!-- Modal Content -->
-        <div class="p-[24px]">
-          <!-- Tabs -->
-          <div class="flex bg-gray-100 rounded-[24px] p-[4px] mb-[24px]">
-            <button id="login-tab" class="flex-1 py-[8px] px-[16px] rounded-[24px] bg-white text-gray-800 font-medium text-[14px] transition-all">
-              Kirish
-            </button>
-            <button id="register-tab" class="flex-1 py-[8px] px-[16px] rounded-[24px] text-gray-500 font-medium text-[14px] transition-all">
-              Registratsiya
+
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-[16px]">
+          <div>
+            <input type="text" id="email-phone" placeholder="Email yoki telefon raqami"
+              class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              required />
+          </div>
+          <div class="relative">
+            <input type="password" id="password" placeholder="Parol"
+              class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              required />
+            <button type="button" id="toggle-password"
+              class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye text-[16px]"></i>
             </button>
           </div>
-          
-          <!-- Login Form -->
-          <form id="login-form" class="space-y-[16px]">
-            <div>
-              <input
-                type="text"
-                id="email-phone"
-                placeholder="Email yoki telefon raqami"
-                class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
-                required
-              />
-            </div>
-            <div class="relative">
-              <input
-                type="password"
-                id="password"
-                placeholder="Parol"
-                class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
-                required
-              />
-              <button type="button" id="toggle-password" class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                <i class="fas fa-eye text-[16px]"></i>
-              </button>
-            </div>
+          <button type="submit"
+            class="w-full bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
+            Kirish
+          </button>
+        </form>
+
+        <!-- Forgot Password -->
+        <div class="text-center mt-[16px]">
+          <p class="text-[13px] text-gray-600">
+            Parolni unutdingizmi?
+            <a href="#" class="text-primary underline hover:text-primary/90">Parolni tiklash</a>
+          </p>
+        </div>
+
+        <!-- Social Login -->
+        <div class="mt-[24px] space-y-[12px]">
+          <button
+            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            <i class="fab fa-telegram text-[16px]"></i>
+            <span>Telegram orqali</span>
+          </button>
+          <button
+            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            <i class="fab fa-google text-[16px]"></i>
+            <span>Google orqali</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Modal -->
+  <div id="filter-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white rounded-[24px] shadow-2xl w-[500px] max-w-[90vw] transform scale-95 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-[24px] border-b border-gray-200">
+        <h2 class="text-[20px] font-bold text-gray-900">Filtrlash</h2>
+        <button id="close-filter-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+          <i class="fas fa-times text-[20px]"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <!-- Date Filter Section -->
+        <div class="mb-[24px]">
+          <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Sana bo'yicha</h3>
+          <div class="space-y-[12px]">
+            <label class="flex items-center space-x-[12px] cursor-pointer">
+              <input type="radio" name="date-filter" value="today"
+                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+              <span class="text-[14px] text-gray-700">Bugun</span>
+            </label>
+            <label class="flex items-center space-x-[12px] cursor-pointer">
+              <input type="radio" name="date-filter" value="week"
+                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+              <span class="text-[14px] text-gray-700">Shu hafta</span>
+            </label>
+            <label class="flex items-center space-x-[12px] cursor-pointer">
+              <input type="radio" name="date-filter" value="month"
+                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+              <span class="text-[14px] text-gray-700">Shu oy</span>
+            </label>
+            <label class="flex items-center space-x-[12px] cursor-pointer">
+              <input type="radio" name="date-filter" value="year"
+                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
+              <span class="text-[14px] text-gray-700">Shu yil</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Category Filter Section -->
+        <div class="mb-[24px]">
+          <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Kategoriya bo'yicha</h3>
+          <div class="grid grid-cols-2 gap-[12px]">
             <button
-              type="submit"
-              class="w-full bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]"
-            >
-              Kirish
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="students">
+              <i class="fas fa-user text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Talabalar</span>
             </button>
-          </form>
-          
-          <!-- Forgot Password -->
-          <div class="text-center mt-[16px]">
-            <p class="text-[13px] text-gray-600">
-              Parolni unutdingizmi? 
-              <a href="#" class="text-primary underline hover:text-primary/90">Parolni tiklash</a>
-            </p>
-          </div>
-          
-          <!-- Social Login -->
-          <div class="mt-[24px] space-y-[12px]">
-            <button class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
-              <i class="fab fa-telegram text-[16px]"></i>
-              <span>Telegram orqali</span>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="mandat">
+              <i class="fas fa-chart-bar text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Mandat 2023</span>
             </button>
-            <button class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
-              <i class="fab fa-google text-[16px]"></i>
-              <span>Google orqali</span>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="contests">
+              <i class="fas fa-paper-plane text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Tanlovlar</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="useful">
+              <i class="fas fa-thumbs-up text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Foydali</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="evening">
+              <i class="fas fa-moon text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Kechki ta'lim</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="privileges">
+              <i class="fas fa-medal text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Imtiyozlar</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="applicant">
+              <i class="fas fa-star text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Abituriyent</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="grants">
+              <i class="fas fa-gift text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Grantlar</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="transfer">
+              <i class="fas fa-exchange-alt text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">"Perevod" qilish</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="masters">
+              <i class="fas fa-graduation-cap text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Magistratura</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="distance">
+              <i class="fas fa-pencil-alt text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Sirtqi ta'lim</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="joint">
+              <i class="fas fa-plus text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Qo'shma ta'lim</span>
+            </button>
+            <button
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              data-category="super-contract">
+              <i class="fas fa-file-invoice-dollar text-[14px] text-gray-600"></i>
+              <span class="text-[12px] text-gray-700">Super kontrakt</span>
             </button>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Filter Modal -->
-    <div id="filter-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
-      <div class="bg-white rounded-[24px] shadow-2xl w-[500px] max-w-[90vw] transform scale-95 transition-all duration-300">
-        <!-- Modal Header -->
-        <div class="flex items-center justify-between p-[24px] border-b border-gray-200">
-          <h2 class="text-[20px] font-bold text-gray-900">Filtrlash</h2>
-          <button id="close-filter-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
-            <i class="fas fa-times text-[20px]"></i>
+        <!-- Action Buttons -->
+        <div class="flex space-x-[12px]">
+          <button id="filter-cancel"
+            class="flex-1 bg-white text-gray-600 py-[12px] rounded-[24px] border border-gray-300 hover:bg-gray-50 transition-colors font-medium text-[14px]">
+            Ortga qaytish
+          </button>
+          <button id="filter-apply"
+            class="flex-1 bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
+            Filtr qilish
           </button>
         </div>
-        
-        <!-- Modal Content -->
-        <div class="p-[24px]">
-          <!-- Date Filter Section -->
-          <div class="mb-[24px]">
-            <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Sana bo'yicha</h3>
-            <div class="space-y-[12px]">
-              <label class="flex items-center space-x-[12px] cursor-pointer">
-                <input type="radio" name="date-filter" value="today" class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                <span class="text-[14px] text-gray-700">Bugun</span>
-              </label>
-              <label class="flex items-center space-x-[12px] cursor-pointer">
-                <input type="radio" name="date-filter" value="week" class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                <span class="text-[14px] text-gray-700">Shu hafta</span>
-              </label>
-              <label class="flex items-center space-x-[12px] cursor-pointer">
-                <input type="radio" name="date-filter" value="month" class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                <span class="text-[14px] text-gray-700">Shu oy</span>
-              </label>
-              <label class="flex items-center space-x-[12px] cursor-pointer">
-                <input type="radio" name="date-filter" value="year" class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                <span class="text-[14px] text-gray-700">Shu yil</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Category Filter Section -->
-          <div class="mb-[24px]">
-            <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Kategoriya bo'yicha</h3>
-            <div class="grid grid-cols-2 gap-[12px]">
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="students">
-                <i class="fas fa-user text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Talabalar</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="mandat">
-                <i class="fas fa-chart-bar text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Mandat 2023</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="contests">
-                <i class="fas fa-paper-plane text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Tanlovlar</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="useful">
-                <i class="fas fa-thumbs-up text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Foydali</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="evening">
-                <i class="fas fa-moon text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Kechki ta'lim</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="privileges">
-                <i class="fas fa-medal text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Imtiyozlar</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="applicant">
-                <i class="fas fa-star text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Abituriyent</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="grants">
-                <i class="fas fa-gift text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Grantlar</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="transfer">
-                <i class="fas fa-exchange-alt text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">"Perevod" qilish</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="masters">
-                <i class="fas fa-graduation-cap text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Magistratura</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="distance">
-                <i class="fas fa-pencil-alt text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Sirtqi ta'lim</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="joint">
-                <i class="fas fa-plus text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Qo'shma ta'lim</span>
-              </button>
-              <button class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors" data-category="super-contract">
-                <i class="fas fa-file-invoice-dollar text-[14px] text-gray-600"></i>
-                <span class="text-[12px] text-gray-700">Super kontrakt</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex space-x-[12px]">
-            <button id="filter-cancel" class="flex-1 bg-white text-gray-600 py-[12px] rounded-[24px] border border-gray-300 hover:bg-gray-50 transition-colors font-medium text-[14px]">
-              Ortga qaytish
-            </button>
-            <button id="filter-apply" class="flex-1 bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
-              Filtr qilish
-            </button>
-          </div>
-        </div>
       </div>
     </div>
+  </div>
   <script>
     // Notification Dropdown Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const notificationBtn = document.getElementById('notification-btn');
       const dropdown = document.getElementById('notification-dropdown');
       const darkModeToggle = document.getElementById('dark-mode-toggle');
-      
+
       // Toggle dropdown visibility
-      notificationBtn.addEventListener('click', function(e) {
+      notificationBtn.addEventListener('click', function (e) {
         e.stopPropagation();
         dropdown.classList.toggle('opacity-0');
         dropdown.classList.toggle('invisible');
         dropdown.classList.toggle('opacity-100');
         dropdown.classList.toggle('visible');
       });
-      
+
       // Close dropdown when clicking outside
-      document.addEventListener('click', function(e) {
+      document.addEventListener('click', function (e) {
         if (!notificationBtn.contains(e.target) && !dropdown.contains(e.target)) {
           dropdown.classList.add('opacity-0', 'invisible');
           dropdown.classList.remove('opacity-100', 'visible');
         }
       });
-      
+
       // Dark mode toggle functionality in notification popup
-      darkModeToggle.addEventListener('change', function() {
+      darkModeToggle.addEventListener('change', function () {
         const htmlElement = document.documentElement;
         const toggleLabel = darkModeToggle.nextElementSibling;
         const toggleSpan = toggleLabel.querySelector('span');
-        
+
         if (darkModeToggle.checked) {
           // Enable dark mode
           htmlElement.classList.add('dark');
@@ -780,7 +752,7 @@
           toggleLabel.classList.add('bg-primary');
           toggleSpan.classList.remove('translate-x-[2px]');
           toggleSpan.classList.add('translate-x-[22px]');
-          
+
           // Update main navbar toggle icon
           const mainToggle = document.getElementById('theme-toggle');
           if (mainToggle) {
@@ -796,7 +768,7 @@
           toggleLabel.classList.add('bg-gray-300');
           toggleSpan.classList.remove('translate-x-[22px]');
           toggleSpan.classList.add('translate-x-[2px]');
-          
+
           // Update main navbar toggle icon
           const mainToggle = document.getElementById('theme-toggle');
           if (mainToggle) {
@@ -806,31 +778,31 @@
           }
         }
       });
-      
+
       // Prevent dropdown from closing when clicking inside it
-      dropdown.addEventListener('click', function(e) {
+      dropdown.addEventListener('click', function (e) {
         e.stopPropagation();
       });
     });
 
     // Filter Modal Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const filterBtn = document.getElementById('filter-btn');
       const filterModal = document.getElementById('filter-modal');
       const closeFilterModal = document.getElementById('close-filter-modal');
       const filterCancel = document.getElementById('filter-cancel');
       const filterApply = document.getElementById('filter-apply');
       const categoryBtns = document.querySelectorAll('.category-filter-btn');
-      
+
       // Open filter modal
-      filterBtn.addEventListener('click', function() {
+      filterBtn.addEventListener('click', function () {
         filterModal.classList.remove('opacity-0', 'invisible');
         filterModal.classList.add('opacity-100', 'visible');
         filterModal.querySelector('.bg-white').classList.remove('scale-95');
         filterModal.querySelector('.bg-white').classList.add('scale-100');
         document.body.style.overflow = 'hidden';
       });
-      
+
       // Close filter modal
       function closeFilterModalFunc() {
         filterModal.classList.add('opacity-0', 'invisible');
@@ -839,24 +811,24 @@
         filterModal.querySelector('.bg-white').classList.remove('scale-100');
         document.body.style.overflow = 'auto';
       }
-      
+
       closeFilterModal.addEventListener('click', closeFilterModalFunc);
       filterCancel.addEventListener('click', closeFilterModalFunc);
-      
+
       // Close modal when clicking outside
-      filterModal.addEventListener('click', function(e) {
+      filterModal.addEventListener('click', function (e) {
         if (e.target === filterModal) {
           closeFilterModalFunc();
         }
       });
-      
+
       // Category button selection
       categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           this.classList.toggle('bg-primary');
           this.classList.toggle('text-white');
           this.classList.toggle('border-primary');
-          
+
           // Update icon color
           const icon = this.querySelector('i');
           if (this.classList.contains('bg-primary')) {
@@ -868,29 +840,29 @@
           }
         });
       });
-      
+
       // Apply filter
-      filterApply.addEventListener('click', function() {
+      filterApply.addEventListener('click', function () {
         const selectedDate = document.querySelector('input[name="date-filter"]:checked');
         const selectedCategories = document.querySelectorAll('.category-filter-btn.bg-primary');
-        
+
         let filterData = {
           date: selectedDate ? selectedDate.value : null,
           categories: Array.from(selectedCategories).map(btn => btn.dataset.category)
         };
-        
+
         console.log('Filter applied:', filterData);
-        
+
         // Here you would implement the actual filtering logic
         // For now, we'll just show an alert
         alert(`Filtr qo'llanildi!\nSana: ${filterData.date || 'Tanlanmagan'}\nKategoriyalar: ${filterData.categories.length > 0 ? filterData.categories.join(', ') : 'Tanlanmagan'}`);
-        
+
         closeFilterModalFunc();
       });
     });
 
     // Authentication Modal Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const loginBtn = document.getElementById('login-btn');
       const authModal = document.getElementById('auth-modal');
       const closeAuthModal = document.getElementById('close-auth-modal');
@@ -899,16 +871,16 @@
       const loginForm = document.getElementById('login-form');
       const togglePassword = document.getElementById('toggle-password');
       const passwordInput = document.getElementById('password');
-      
+
       // Open modal
-      loginBtn.addEventListener('click', function() {
+      loginBtn.addEventListener('click', function () {
         authModal.classList.remove('opacity-0', 'invisible');
         authModal.classList.add('opacity-100', 'visible');
         authModal.querySelector('.bg-white').classList.remove('scale-95');
         authModal.querySelector('.bg-white').classList.add('scale-100');
         document.body.style.overflow = 'hidden';
       });
-      
+
       // Close modal
       function closeModal() {
         authModal.classList.add('opacity-0', 'invisible');
@@ -917,61 +889,61 @@
         authModal.querySelector('.bg-white').classList.remove('scale-100');
         document.body.style.overflow = 'auto';
       }
-      
+
       closeAuthModal.addEventListener('click', closeModal);
-      
+
       // Close modal when clicking outside
-      authModal.addEventListener('click', function(e) {
+      authModal.addEventListener('click', function (e) {
         if (e.target === authModal) {
           closeModal();
         }
       });
-      
+
       // Tab switching
-      loginTab.addEventListener('click', function() {
+      loginTab.addEventListener('click', function () {
         loginTab.classList.add('bg-white', 'text-gray-800');
         loginTab.classList.remove('text-gray-500');
         registerTab.classList.remove('bg-white', 'text-gray-800');
         registerTab.classList.add('text-gray-500');
       });
-      
-      registerTab.addEventListener('click', function() {
+
+      registerTab.addEventListener('click', function () {
         registerTab.classList.add('bg-white', 'text-gray-800');
         registerTab.classList.remove('text-gray-500');
         loginTab.classList.remove('bg-white', 'text-gray-800');
         loginTab.classList.add('text-gray-500');
       });
-      
+
       // Password visibility toggle
-      togglePassword.addEventListener('click', function() {
+      togglePassword.addEventListener('click', function () {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         const icon = togglePassword.querySelector('i');
         icon.classList.toggle('fa-eye');
         icon.classList.toggle('fa-eye-slash');
       });
-      
+
       // Form submission
-      loginForm.addEventListener('submit', function(e) {
+      loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const emailPhone = document.getElementById('email-phone').value;
         const password = document.getElementById('password').value;
-        
+
         // Basic validation
         if (!emailPhone || !password) {
           alert('Iltimos, barcha maydonlarni to\'ldiring');
           return;
         }
-        
+
         // Simulate login (replace with actual authentication)
         console.log('Login attempt:', { emailPhone, password });
         alert('Kirish muvaffaqiyatli!');
         closeModal();
       });
-      
+
       // Social login buttons
       document.querySelectorAll('.bg-blue-500').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           const provider = this.textContent.includes('Telegram') ? 'Telegram' : 'Google';
           console.log(`${provider} login clicked`);
           alert(`${provider} orqali kirish hozircha ishlamaydi`);
@@ -980,15 +952,15 @@
     });
 
     // Search and Category Tab Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const searchInput = document.getElementById('search-input');
       const tabButtons = document.querySelectorAll('[id^="tab-"]');
-      
+
       // Search functionality
-      searchInput.addEventListener('input', function() {
+      searchInput.addEventListener('input', function () {
         const searchTerm = this.value.toLowerCase();
         console.log('Searching for:', searchTerm);
-        
+
         // Here you would implement actual search logic
         // For now, we'll just log the search term
         if (searchTerm.length > 2) {
@@ -996,22 +968,22 @@
           console.log('Search results would be filtered here');
         }
       });
-      
+
       // Category tab switching
       tabButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           // Remove active state from all tabs
           tabButtons.forEach(tab => {
             tab.classList.remove('bg-primary', 'text-white');
             tab.classList.add('bg-tab-gray', 'text-gray-900');
-            
+
             // Update icon containers for inactive tabs
             const iconContainer = tab.querySelector('div');
             if (iconContainer) {
               iconContainer.classList.remove('bg-white');
               iconContainer.classList.add('bg-white');
             }
-            
+
             // Update icon colors for inactive tabs
             const icon = tab.querySelector('i, img');
             if (icon) {
@@ -1019,28 +991,28 @@
               icon.classList.add('text-gray-600');
             }
           });
-          
+
           // Add active state to clicked tab
           this.classList.remove('bg-tab-gray', 'text-gray-900');
           this.classList.add('bg-primary', 'text-white');
-          
+
           // Update icon container for active tab
           const iconContainer = this.querySelector('div');
           if (iconContainer) {
             iconContainer.classList.add('bg-white');
           }
-          
+
           // Update icon color for active tab
           const icon = this.querySelector('i, img');
           if (icon) {
             icon.classList.remove('text-gray-600');
             icon.classList.add('text-white');
           }
-          
+
           // Get tab category
           const tabCategory = this.id.replace('tab-', '');
           console.log('Switched to tab:', tabCategory);
-          
+
           // Here you would implement actual content filtering
           // For now, we'll just log the category
         });
@@ -1048,16 +1020,16 @@
     });
 
     // Theme toggle functionality with localStorage persistence
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const themeToggle = document.getElementById('theme-toggle');
-      
+
       function initializeTheme() {
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
+
         // Use saved theme or system preference
         const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-        
+
         if (shouldUseDark) {
           document.documentElement.classList.add('dark');
           updateThemeIcon(true);
@@ -1068,7 +1040,7 @@
           updateNotificationToggle(false);
         }
       }
-      
+
       function updateThemeIcon(isDark) {
         const icon = themeToggle.querySelector('i');
         if (isDark) {
@@ -1079,10 +1051,10 @@
           icon.classList.add('fa-sun');
         }
       }
-      
+
       function toggleTheme() {
         const isDark = document.documentElement.classList.contains('dark');
-        
+
         if (isDark) {
           document.documentElement.classList.remove('dark');
           localStorage.setItem('theme', 'light');
@@ -1094,17 +1066,17 @@
           updateThemeIcon(true);
           updateNotificationToggle(true);
         }
-        
+
         console.log('Theme toggled:', isDark ? 'Light' : 'Dark');
       }
-      
+
       function updateNotificationToggle(isDark) {
         const notificationToggle = document.getElementById('dark-mode-toggle');
         if (notificationToggle) {
           notificationToggle.checked = isDark;
           const toggleLabel = notificationToggle.nextElementSibling;
           const toggleSpan = toggleLabel.querySelector('span');
-          
+
           if (isDark) {
             toggleLabel.classList.remove('bg-gray-300');
             toggleLabel.classList.add('bg-primary');
@@ -1118,15 +1090,15 @@
           }
         }
       }
-      
+
       // Initialize theme on page load
       initializeTheme();
-      
+
       // Add click listener
       themeToggle.addEventListener('click', toggleTheme);
-      
+
       // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         if (!localStorage.getItem('theme')) {
           initializeTheme();
         }
@@ -1138,4 +1110,5 @@
       alert(`${feature} funksiyasi tez orada qo'shiladi!`);
     }
   </script>
+
 </html>
