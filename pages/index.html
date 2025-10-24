@@ -23,7 +23,7 @@
     })();
   </script>
   <!-- Top Banner -->
-  <div class="bg-[#2A2C33] text-white py-[8px]">
+  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
     <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
   </div>
 
@@ -33,7 +33,8 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
-          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="block dark:hidden">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh Logo Dark" class="hidden dark:block">
         </div>
 
         <!-- Search Bar and Settings Button -->
@@ -41,9 +42,9 @@
           <div class="relative bg-white flex items-center rounded-[16px] flex-1">
             <div class="relative flex flex-1">
               <input type="text" id="search-input" placeholder="izlash"
-                class="w-full h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
+                class="w-full text-[14px] h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
               <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
-                <i class="fas fa-search text-[24px]"></i>
+                <i class="fas fa-search text-[18px]"></i>
               </span>
             </div>
 
@@ -57,7 +58,7 @@
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
             <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
-              <div class="bg-white p-4 rounded-[16px]">
+              <div class="bg-white p-4 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
               <!-- Notification Dropdown -->
@@ -144,10 +145,11 @@
           <!-- Navigation -->
           <nav class="space-y-[12px] mb-[32px]">
             <a href="index.html" class="flex items-center space-x-[15px] text-black p-[8px] bg-white rounded-[16px]">
-              <div class="w-[40px] h-[40px] bg-gray-100 rounded-[10px] flex items-center justify-center">
+              <div
+                class="w-[40px] h-[40px] bg-gray-100 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px]">Asosiy sahifa</span>
+              <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
             </a>
             <a href="#" onclick="showComingSoon('Imtihon testlari')"
               class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
@@ -177,7 +179,7 @@
             <h3 class="mb-[16px]" style="color: #686E7E; font-size: 14px; font-weight: 400;">
               Ommabop teglar:
             </h3>
-            <div id="popular-tags" class="flex flex-wrap gap-[8px]"></div>
+            <div id="popular-tags" class="cursor-pointer flex flex-wrap gap-[8px]"></div>
           </div>
           <script>
             // Popular tags array
@@ -289,7 +291,7 @@
             <button id="tab-students"
               class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
               <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
-               <img src="../assets/icons/student.svg" alt="Talabalar" class="w-[24px] h-[24px]">
+                <img src="../assets/icons/student.svg" alt="Talabalar" class="w-[24px] h-[24px]">
               </div>
               <span class="text-[16px] font-medium">Talabalar</span>
             </button>
@@ -311,9 +313,9 @@
         </div>
 
         <!-- News Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
+        <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
           <!-- Card -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="applicant" data-date="2024-09-20" data-title="Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
@@ -343,11 +345,11 @@
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="students" data-date="2024-09-19" data-title="Nordic International University'da Orientation Week start oldi">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
-                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                class="bg-green-100 text-green-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Talabalar</span>
             </div>
             <!-- Main image -->
             <div class="w-full h-[200px] overflow-hidden">
@@ -357,15 +359,15 @@
             <!-- Content -->
             <div class="p-[16px]">
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                Nordic International University'da Orientation Week start oldi!
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
                 <div class="flex items-center space-x-[8px]">
-                  <span>20-sentabr 08:00</span>
+                  <span>19-sentabr 10:30</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                   </span>
-                  <span>74884</span>
+                  <span>45231</span>
                 </div>
                 <span>
                   <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
@@ -373,11 +375,11 @@
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="grants" data-date="2024-09-18" data-title="Xalqaro grantlar haqida yangi qoidalar">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
-                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                class="bg-purple-100 text-purple-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Grantlar</span>
             </div>
             <!-- Main image -->
             <div class="w-full h-[200px] overflow-hidden">
@@ -387,15 +389,15 @@
             <!-- Content -->
             <div class="p-[16px]">
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                Xalqaro grantlar haqida yangi qoidalar va talablar
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
                 <div class="flex items-center space-x-[8px]">
-                  <span>20-sentabr 08:00</span>
+                  <span>18-sentabr 14:15</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                   </span>
-                  <span>74884</span>
+                  <span>32156</span>
                 </div>
                 <span>
                   <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
@@ -403,11 +405,11 @@
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="mandat" data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
-                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                class="bg-orange-100 text-orange-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Mandat 2023</span>
             </div>
             <!-- Main image -->
             <div class="w-full h-[200px] overflow-hidden">
@@ -417,15 +419,15 @@
             <!-- Content -->
             <div class="p-[16px]">
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                Mandat 2025 uchun yangi testlar va imtihonlar
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
                 <div class="flex items-center space-x-[8px]">
-                  <span>20-sentabr 08:00</span>
+                  <span>17-sentabr 09:45</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                   </span>
-                  <span>74884</span>
+                  <span>67890</span>
                 </div>
                 <span>
                   <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
@@ -433,11 +435,11 @@
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="contests" data-date="2024-09-16" data-title="Oliy ta'lim tanlovlari boshlanadi">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
-                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                class="bg-red-100 text-red-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Tanlovlar</span>
             </div>
             <!-- Main image -->
             <div class="w-full h-[200px] overflow-hidden">
@@ -447,15 +449,15 @@
             <!-- Content -->
             <div class="p-[16px]">
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                Oliy ta'lim tanlovlari boshlanadi - qanday qatnashish kerak?
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
                 <div class="flex items-center space-x-[8px]">
-                  <span>20-sentabr 08:00</span>
+                  <span>16-sentabr 11:20</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                   </span>
-                  <span>74884</span>
+                  <span>54321</span>
                 </div>
                 <span>
                   <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
@@ -464,11 +466,11 @@
             </div>
           </div>
           <!-- Card -->
-          <div class="bg-white rounded-[24px] shadow-soft overflow-hidden relative">
+          <div class="news-card bg-white rounded-[24px] shadow-soft overflow-hidden relative" data-category="masters" data-date="2024-09-15" data-title="Magistratura uchun yangi yo'nalishlar">
             <!-- Header with category badge and view count -->
             <div class="absolute top-[16px] left-[16px] z-10">
               <span
-                class="bg-blue-100 text-blue-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Abituriyent</span>
+                class="bg-indigo-100 text-indigo-800 px-[12px] py-[4px] rounded-[24px] text-[12px] font-semibold">Magistratura</span>
             </div>
             <!-- Main image -->
             <div class="w-full h-[200px] overflow-hidden">
@@ -478,15 +480,15 @@
             <!-- Content -->
             <div class="p-[16px]">
               <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight">
-                Talabalarga ijara to'lovlarining bir qismini qoplab berish tizimi haqida batafsil ma'l...
+                Magistratura uchun yangi yo'nalishlar va imkoniyatlar
               </h3>
               <div class="flex items-center justify-between text-[12px] text-gray-500">
                 <div class="flex items-center space-x-[8px]">
-                  <span>20-sentabr 08:00</span>
+                  <span>15-sentabr 16:00</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                   </span>
-                  <span>74884</span>
+                  <span>28765</span>
                 </div>
                 <span>
                   <img src="../assets/icons/crown.svg" alt="Crown" class="w-[12px] h-[12px]">
@@ -495,73 +497,45 @@
             </div>
           </div>
         </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-[48px]">
+          <div class="w-[80px] h-[80px] bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-[16px]">
+            <i class="fas fa-search text-[32px] text-gray-400"></i>
+          </div>
+          <h3 class="text-[18px] font-semibold text-gray-600 mb-[8px]">Hech narsa topilmadi</h3>
+          <p class="text-[14px] text-gray-500">Qidiruv so'zingizni o'zgartiring yoki filtrlarni tozalang</p>
+          <button id="clear-filters" class="mt-[16px] bg-primary text-white px-[24px] py-[8px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            Filtrlarni tozalash
+          </button>
+        </div>
       </main>
 
       <!-- Right Sidebar -->
       <aside class="lg:col-span-1">
         <!-- Urgent News -->
-        <div class="bg-white rounded-[24px] shadow-soft p-[24px] mb-[24px]">
-          <h3 class="font-bold text-gray-900 mb-[20px] text-[24px]">Dolzarb</h3>
-          <div class="space-y-[16px]">
+        <div class="bg-white rounded-[24px] shadow-soft py-[8px] px-[16px] mb-[12px]">
+          <h3 class="font-bold text-gray-900 mb-[12px] text-[24px]">Dolzarb</h3>
+          <div class="space-y-[8px]">
             <!-- News Item 1 -->
-            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
+              <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4]">
                 Nordic International University'da Orientation Week start oldi!
               </h4>
               <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                  <i class="fas fa-eye text-[12px]"></i>
-                  <span>74884</span>
-                  <span>20-sentabr</span>
-                  <span class="diamond-separator">◆</span>
-                  <span>08:00</span>
-                </div>
-                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
+                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600 dark:text-gray-400">
+                  <div class="bg-gray-200 dark:bg-gray-700 flex items-center space-x-[8px] rounded-[8px] p-[6px]">
+                    <img src="../assets/icons/view.svg" alt="Views" class="w-[12px] h-[12px]">
+                    <span class="text-[10px]">74884</span>
+                  </div>
+                  <div class="bg-gray-200 dark:bg-gray-700 flex items-center space-x-[8px] rounded-[8px] p-[6px]">
+                    <span class="text-[10px]">20-sentabr</span>
+                    <img src="../assets/icons/caption.svg" alt="Caption" class="w-[12px] h-[12px]">
+                    <span class="text-[10px]">08:00</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- News Item 2 -->
-            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
-                O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
-              </h4>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                  <i class="fas fa-eye text-[12px]"></i>
-                  <span>74884</span>
-                  <span>20-sentabr</span>
-                  <span class="diamond-separator">◆</span>
-                  <span>08:00</span>
-                </div>
-                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- News Item 3 -->
-            <div class="bg-gray-50 rounded-[24px] p-[16px] news-item-hover cursor-pointer">
-              <h4 class="font-semibold text-gray-900 mb-[12px] text-[16px] leading-[1.4]">
-                Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
-              </h4>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-[8px] text-[12px] text-gray-600">
-                  <i class="fas fa-eye text-[12px]"></i>
-                  <span>74884</span>
-                  <span>20-sentabr</span>
-                  <span class="diamond-separator">◆</span>
-                  <span>08:00</span>
-                </div>
-                <div class="w-[32px] h-[32px] bg-gray-50 rounded-full flex items-center justify-center">
-                  <div class="w-[24px] h-[24px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <i class="fas fa-arrow-up-right text-primary text-[12px]"></i>
-                  </div>
+                <div class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                  <img src="../assets/icons/arrow-up-right-01.svg" alt="Arrow Up Right" class="w-[20px] h-[20px]">
                 </div>
               </div>
             </div>
@@ -661,122 +635,134 @@
     <div
       class="bg-white rounded-[24px] shadow-2xl w-[500px] max-w-[90vw] transform scale-95 transition-all duration-300">
       <!-- Modal Header -->
-      <div class="flex items-center justify-between p-[24px] border-b border-gray-200">
-        <h2 class="text-[20px] font-bold text-gray-900">Filtrlash</h2>
-        <button id="close-filter-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
-          <i class="fas fa-times text-[20px]"></i>
+      <div class="flex items-center justify-between p-[24px]">
+        <h2 class="text-[24px] font-bold text-gray-900">Filtrlash</h2>
+        <button id="close-filter-modal" class="w-[32px] h-[32px] bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+          <i class="fas fa-times text-[16px] text-gray-600"></i>
         </button>
       </div>
 
       <!-- Modal Content -->
-      <div class="p-[24px]">
+      <div class="px-[24px] pb-[24px]">
         <!-- Date Filter Section -->
-        <div class="mb-[24px]">
-          <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Sana bo'yicha</h3>
-          <div class="space-y-[12px]">
-            <label class="flex items-center space-x-[12px] cursor-pointer">
-              <input type="radio" name="date-filter" value="today"
-                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-              <span class="text-[14px] text-gray-700">Bugun</span>
+        <div class="mb-[32px]">
+          <h3 class="text-[18px] font-bold text-gray-900 mb-[16px]">Sana bo'yicha</h3>
+          <div class="flex space-x-[8px]">
+            <label class="flex items-center space-x-[8px] cursor-pointer">
+              <input type="radio" name="date-filter" value="today" class="sr-only">
+              <div class="date-filter-chip px-[16px] py-[8px] bg-gray-100 rounded-[20px] text-[14px] text-gray-700 hover:bg-gray-200 transition-colors">
+                Bugun
+              </div>
             </label>
-            <label class="flex items-center space-x-[12px] cursor-pointer">
-              <input type="radio" name="date-filter" value="week"
-                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-              <span class="text-[14px] text-gray-700">Shu hafta</span>
+            <label class="flex items-center space-x-[8px] cursor-pointer">
+              <input type="radio" name="date-filter" value="week" class="sr-only">
+              <div class="date-filter-chip px-[16px] py-[8px] bg-gray-100 rounded-[20px] text-[14px] text-gray-700 hover:bg-gray-200 transition-colors">
+                Shu hafta
+              </div>
             </label>
-            <label class="flex items-center space-x-[12px] cursor-pointer">
-              <input type="radio" name="date-filter" value="month"
-                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-              <span class="text-[14px] text-gray-700">Shu oy</span>
+            <label class="flex items-center space-x-[8px] cursor-pointer">
+              <input type="radio" name="date-filter" value="month" class="sr-only">
+              <div class="date-filter-chip px-[16px] py-[8px] bg-gray-100 rounded-[20px] text-[14px] text-gray-700 hover:bg-gray-200 transition-colors">
+                Shu oy
+              </div>
             </label>
-            <label class="flex items-center space-x-[12px] cursor-pointer">
-              <input type="radio" name="date-filter" value="year"
-                class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-              <span class="text-[14px] text-gray-700">Shu yil</span>
+            <label class="flex items-center space-x-[8px] cursor-pointer">
+              <input type="radio" name="date-filter" value="year" class="sr-only">
+              <div class="date-filter-chip px-[16px] py-[8px] bg-gray-100 rounded-[20px] text-[14px] text-gray-700 hover:bg-gray-200 transition-colors">
+                Shu yil
+              </div>
             </label>
           </div>
         </div>
 
         <!-- Category Filter Section -->
-        <div class="mb-[24px]">
-          <h3 class="text-[16px] font-semibold text-gray-800 mb-[16px]">Kategoriya bo'yicha</h3>
-          <div class="grid grid-cols-2 gap-[12px]">
+        <div class="mb-[32px]">
+          <h3 class="text-[18px] font-bold text-gray-900 mb-[16px]">Kategoriya bo'yicha</h3>
+          <div class="grid grid-cols-2 gap-[8px]">
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="students">
               <i class="fas fa-user text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Talabalar</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="mandat">
               <i class="fas fa-chart-bar text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Mandat 2023</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="contests">
-              <i class="fas fa-paper-plane text-[14px] text-gray-600"></i>
+              <i class="fas fa-mouse-pointer text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Tanlovlar</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="useful">
-              <i class="fas fa-thumbs-up text-[14px] text-gray-600"></i>
+              <span class="text-[14px]">👍</span>
               <span class="text-[12px] text-gray-700">Foydali</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="evening">
-              <i class="fas fa-moon text-[14px] text-gray-600"></i>
+              <img src="../assets/icons/sun_and_moon.svg" alt="Evening" class="w-[14px] h-[14px]">
               <span class="text-[12px] text-gray-700">Kechki ta'lim</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="privileges">
-              <i class="fas fa-medal text-[14px] text-gray-600"></i>
+              <div class="w-[14px] h-[14px] bg-red-500 rounded flex items-center justify-center">
+                <span class="text-[8px] text-white font-bold">100%</span>
+              </div>
               <span class="text-[12px] text-gray-700">Imtiyozlar</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="applicant">
-              <i class="fas fa-star text-[14px] text-gray-600"></i>
+              <i class="fas fa-asterisk text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Abituriyent</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="grants">
-              <i class="fas fa-gift text-[14px] text-gray-600"></i>
+              <div class="w-[14px] h-[14px] bg-red-500 rounded flex items-center justify-center">
+                <i class="fas fa-gift text-[8px] text-white"></i>
+              </div>
               <span class="text-[12px] text-gray-700">Grantlar</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="transfer">
-              <i class="fas fa-exchange-alt text-[14px] text-gray-600"></i>
+              <i class="fas fa-sync-alt text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">"Perevod" qilish</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="masters">
               <i class="fas fa-graduation-cap text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Magistratura</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="distance">
-              <i class="fas fa-pencil-alt text-[14px] text-gray-600"></i>
+              <i class="fas fa-ruler text-[14px] text-gray-600"></i>
               <span class="text-[12px] text-gray-700">Sirtqi ta'lim</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="joint">
-              <i class="fas fa-plus text-[14px] text-gray-600"></i>
+              <div class="w-[14px] h-[14px] bg-green-500 rounded flex items-center justify-center">
+                <i class="fas fa-plus text-[8px] text-white"></i>
+              </div>
               <span class="text-[12px] text-gray-700">Qo'shma ta'lim</span>
             </button>
             <button
-              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] border border-gray-300 rounded-[24px] hover:bg-blue-50 hover:border-blue-300 transition-colors"
+              class="category-filter-btn flex items-center space-x-[8px] px-[12px] py-[8px] bg-gray-100 rounded-[20px] hover:bg-gray-200 transition-colors"
               data-category="super-contract">
-              <i class="fas fa-file-invoice-dollar text-[14px] text-gray-600"></i>
+              <div class="w-[14px] h-[14px] bg-gray-600 rounded flex items-center justify-center">
+                <i class="fas fa-file-invoice-dollar text-[8px] text-white"></i>
+              </div>
               <span class="text-[12px] text-gray-700">Super kontrakt</span>
             </button>
           </div>
@@ -785,11 +771,11 @@
         <!-- Action Buttons -->
         <div class="flex space-x-[12px]">
           <button id="filter-cancel"
-            class="flex-1 bg-white text-gray-600 py-[12px] rounded-[24px] border border-gray-300 hover:bg-gray-50 transition-colors font-medium text-[14px]">
+            class="flex-1 bg-gray-100 text-gray-700 py-[12px] rounded-[20px] hover:bg-gray-200 transition-colors font-medium text-[14px]">
             Ortga qaytish
           </button>
           <button id="filter-apply"
-            class="flex-1 bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
+            class="flex-1 bg-primary text-white py-[12px] rounded-[20px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
             Filtr qilish
           </button>
         </div>
@@ -904,21 +890,54 @@
         }
       });
 
+      // Date filter chip selection
+      const dateFilterChips = document.querySelectorAll('.date-filter-chip');
+      dateFilterChips.forEach(chip => {
+        chip.addEventListener('click', function () {
+          // Remove active state from all date chips
+          dateFilterChips.forEach(c => {
+            c.classList.remove('bg-primary', 'text-white');
+            c.classList.add('bg-gray-100', 'text-gray-700');
+          });
+          
+          // Add active state to clicked chip
+          this.classList.remove('bg-gray-100', 'text-gray-700');
+          this.classList.add('bg-primary', 'text-white');
+          
+          // Update corresponding radio input
+          const radioInput = this.parentElement.querySelector('input[type="radio"]');
+          radioInput.checked = true;
+        });
+      });
+
       // Category button selection
       categoryBtns.forEach(btn => {
         btn.addEventListener('click', function () {
           this.classList.toggle('bg-primary');
           this.classList.toggle('text-white');
-          this.classList.toggle('border-primary');
+          this.classList.toggle('bg-gray-100');
 
           // Update icon color
-          const icon = this.querySelector('i');
+          const icon = this.querySelector('i, span, div, img');
           if (this.classList.contains('bg-primary')) {
-            icon.classList.remove('text-gray-600');
-            icon.classList.add('text-white');
+            if (icon.tagName === 'I') {
+              icon.classList.remove('text-gray-600');
+              icon.classList.add('text-white');
+            } else if (icon.tagName === 'SPAN') {
+              // For emoji, no color change needed
+            } else if (icon.tagName === 'DIV') {
+              // For colored divs, keep their colors
+            } else if (icon.tagName === 'IMG') {
+              // For images, add filter to make them white
+              icon.style.filter = 'brightness(0) invert(1)';
+            }
           } else {
-            icon.classList.remove('text-white');
-            icon.classList.add('text-gray-600');
+            if (icon.tagName === 'I') {
+              icon.classList.remove('text-white');
+              icon.classList.add('text-gray-600');
+            } else if (icon.tagName === 'IMG') {
+              icon.style.filter = 'none';
+            }
           }
         });
       });
@@ -935,9 +954,12 @@
 
         console.log('Filter applied:', filterData);
 
-        // Here you would implement the actual filtering logic
-        // For now, we'll just show an alert
-        alert(`Filtr qo'llanildi!\nSana: ${filterData.date || 'Tanlanmagan'}\nKategoriyalar: ${filterData.categories.length > 0 ? filterData.categories.join(', ') : 'Tanlanmagan'}`);
+        // Apply the filters to the global filter state
+        if (window.currentFilters) {
+          window.currentFilters.date = filterData.date;
+          window.currentFilters.categories = filterData.categories;
+          window.applyFilters();
+        }
 
         closeFilterModalFunc();
       });
@@ -1037,18 +1059,20 @@
     document.addEventListener('DOMContentLoaded', function () {
       const searchInput = document.getElementById('search-input');
       const tabButtons = document.querySelectorAll('[id^="tab-"]');
+      const newsCards = document.querySelectorAll('.news-card');
+      
+      // Make filters globally accessible
+      window.currentFilters = {
+        search: '',
+        category: 'all',
+        date: null,
+        categories: []
+      };
 
       // Search functionality
       searchInput.addEventListener('input', function () {
-        const searchTerm = this.value.toLowerCase();
-        console.log('Searching for:', searchTerm);
-
-        // Here you would implement actual search logic
-        // For now, we'll just log the search term
-        if (searchTerm.length > 2) {
-          // Simulate search results
-          console.log('Search results would be filtered here');
-        }
+        window.currentFilters.search = this.value.toLowerCase();
+        applyFilters();
       });
 
       // Category tab switching
@@ -1093,12 +1117,129 @@
 
           // Get tab category
           const tabCategory = this.id.replace('tab-', '');
-          console.log('Switched to tab:', tabCategory);
-
-          // Here you would implement actual content filtering
-          // For now, we'll just log the category
+          window.currentFilters.category = tabCategory;
+          applyFilters();
         });
       });
+
+      // Main filtering function
+      window.applyFilters = function() {
+        newsCards.forEach(card => {
+          let shouldShow = true;
+
+          // Search filter
+          if (window.currentFilters.search) {
+            const title = card.dataset.title.toLowerCase();
+            const category = card.dataset.category.toLowerCase();
+            if (!title.includes(window.currentFilters.search) && !category.includes(window.currentFilters.search)) {
+              shouldShow = false;
+            }
+          }
+
+          // Category filter
+          if (window.currentFilters.category !== 'all') {
+            if (card.dataset.category !== window.currentFilters.category) {
+              shouldShow = false;
+            }
+          }
+
+          // Date filter
+          if (window.currentFilters.date) {
+            const cardDate = new Date(card.dataset.date);
+            const now = new Date();
+            let dateMatch = false;
+
+            switch (window.currentFilters.date) {
+              case 'today':
+                dateMatch = cardDate.toDateString() === now.toDateString();
+                break;
+              case 'week':
+                const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                dateMatch = cardDate >= weekAgo;
+                break;
+              case 'month':
+                const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                dateMatch = cardDate >= monthAgo;
+                break;
+              case 'year':
+                const yearAgo = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000);
+                dateMatch = cardDate >= yearAgo;
+                break;
+            }
+
+            if (!dateMatch) {
+              shouldShow = false;
+            }
+          }
+
+          // Multiple categories filter
+          if (window.currentFilters.categories.length > 0) {
+            if (!window.currentFilters.categories.includes(card.dataset.category)) {
+              shouldShow = false;
+            }
+          }
+
+          // Show/hide card with smooth transition
+          if (shouldShow) {
+            card.style.display = 'block';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            setTimeout(() => {
+              if (card.style.opacity === '0') {
+                card.style.display = 'none';
+              }
+            }, 300);
+          }
+        });
+
+        // Update results count and show/hide no results message
+        const visibleCards = Array.from(newsCards).filter(card => card.style.display !== 'none');
+        const noResultsDiv = document.getElementById('no-results');
+        
+        if (visibleCards.length === 0) {
+          noResultsDiv.classList.remove('hidden');
+        } else {
+          noResultsDiv.classList.add('hidden');
+        }
+        
+        console.log(`Showing ${visibleCards.length} of ${newsCards.length} results`);
+      }
+
+      // Clear filters functionality
+      document.getElementById('clear-filters').addEventListener('click', function() {
+        // Reset search input
+        searchInput.value = '';
+        
+        // Reset tab to "all"
+        tabButtons.forEach(tab => {
+          tab.classList.remove('bg-primary', 'text-white');
+          tab.classList.add('bg-tab-gray', 'text-gray-900');
+        });
+        
+        // Set "all" tab as active
+        const allTab = document.getElementById('tab-all');
+        allTab.classList.remove('bg-tab-gray', 'text-gray-900');
+        allTab.classList.add('bg-primary', 'text-white');
+        
+        // Reset filter state
+        window.currentFilters = {
+          search: '',
+          category: 'all',
+          date: null,
+          categories: []
+        };
+        
+        // Apply filters
+        window.applyFilters();
+      });
+
+      // Initialize with all cards visible
+      window.applyFilters();
     });
 
     // Theme toggle functionality with localStorage persistence

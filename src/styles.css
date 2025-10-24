@@ -60,29 +60,37 @@
   
   /* Dark mode styles */
   .dark {
-    background-color: #1a1f2e !important;
+    background-color: #09131A !important;
     color: #e5e7eb !important;
   }
   
   /* Dark mode backgrounds */
   .dark .bg-white {
-    background-color: #252b3b !important;
+    background-color: #152732 !important;
   }
   
   .dark .bg-gray-50 {
-    background-color: #2a2f3e !important;
+    background-color: #152732 !important;
   }
   
   .dark .bg-gray-100 {
-    background-color: #374151 !important;
+    background-color: #1a2330 !important;
   }
   
   .dark .bg-gray-200 {
-    background-color: #4b5563 !important;
+    background-color: #1f2a38 !important;
+  }
+  
+  .dark .bg-gray-300 {
+    background-color: #243140 !important;
   }
   
   .dark .bg-blue-50 {
     background-color: #1e3a8a !important;
+  }
+  
+  .dark .bg-tab-gray {
+    background-color: #152732 !important;
   }
   
   /* Dark mode text colors */
@@ -95,37 +103,37 @@
   }
   
   .dark .text-gray-700 {
-    color: #d1d5db !important;
+    color: #98B4CC !important;
   }
   
   .dark .text-gray-600 {
-    color: #9ca3af !important;
+    color: #98B4CC !important;
   }
   
   .dark .text-gray-500 {
-    color: #9ca3af !important;
+    color: #98B4CC !important;
   }
   
   .dark .text-gray-400 {
-    color: #6b7280 !important;
+    color: #98B4CC !important;
   }
   
   /* Dark mode borders */
   .dark .border-gray-200 {
-    border-color: #374151 !important;
+    border-color: #152732 !important;
   }
   
   .dark .border-gray-100 {
-    border-color: #374151 !important;
+    border-color: #152732 !important;
   }
   
   .dark .border-gray-300 {
-    border-color: #4b5563 !important;
+    border-color: #1a2330 !important;
   }
   
   /* Dark mode shadows */
   .dark .shadow-soft {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
   }
   
   /* Dark mode form elements */
@@ -134,19 +142,19 @@
   .dark input[type="email"],
   .dark select,
   .dark textarea {
-    background-color: #252b3b !important;
-    border-color: #374151 !important;
+    background-color: #152732 !important;
+    border-color: #1a2330 !important;
     color: #e5e7eb !important;
   }
   
   .dark input::placeholder,
   .dark textarea::placeholder {
-    color: #9ca3af !important;
+    color: #98B4CC !important;
   }
   
   /* Dark mode buttons */
   .dark .hover\:bg-gray-50:hover {
-    background-color: #374151 !important;
+    background-color: #1a2330 !important;
   }
   
   .dark .hover\:bg-blue-50:hover {
@@ -155,12 +163,17 @@
   
   /* Dark mode modals */
   .dark .bg-black.bg-opacity-50 {
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
   }
   
   /* Dark mode gradients */
   .dark .gradient-bg {
-    background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%) !important;
+    background: linear-gradient(135deg, #09131A 0%, #152732 100%) !important;
+  }
+  
+  /* Dark mode news item hover */
+  .dark .news-item-hover:hover {
+    background-color: #1a2330 !important;
   }
   
   /* Authentication Modal Styles */

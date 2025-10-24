@@ -15,11 +15,12 @@ module.exports = {
         'oliygoh-accent-green': '#10b981',
         'oliygoh-tag-blue': '#1e40af',
         // Dark mode colors
-        'dark-bg': '#1a1f2e',
-        'dark-card': '#252b3b',
+        'dark-bg': '#09131A',
+        'dark-card': '#152732',
         'dark-text-primary': '#e5e7eb',
-        'dark-text-secondary': '#9ca3af',
-        'dark-border': '#374151',
+        'dark-text-secondary': '#98B4CC',
+        'dark-border': '#152732',
+        'tab-gray-dark': '#152732',
         'tab-gray': '#E4E6EE',
       },
       spacing: {

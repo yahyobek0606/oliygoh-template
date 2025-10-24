@@ -1,255 +1,359 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bildirishnomalar sozlamalari - Oliygoh</title>
-    <link href="../dist/output.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="gradient-bg bg-[#F2F3F7] min-h-screen">
-    <script>
-      // Initialize theme immediately to prevent flash
-      (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-        
-        if (shouldUseDark) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-    <!-- Top Banner -->
-    <div class="bg-[#2A2C33] text-white py-[8px]">
-        <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
-    </div>
 
-    <!-- Main Header -->
-    <header class="bg-white border-b border-gray-200">
-      <div class="container mx-auto px-[16px] py-[16px]">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="flex items-center space-x-[12px]">
-            <div class="w-[40px] h-[40px] bg-primary rounded-full flex items-center justify-center">
-              <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="w-[24px] h-[24px]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bildirishnomalar sozlamalari - Oliygoh</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+  <script>
+    // Initialize theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+  </div>
+
+  <!-- Main Header -->
+  <header class="border-b border-gray-200">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="block dark:hidden">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh Logo Dark" class="hidden dark:block">
+        </div>
+
+        <!-- Search Bar and Settings Button -->
+        <div class="flex-1 max-w-[600px] mx-[32px] flex items-center space-x-4">
+          <div class="relative bg-white flex items-center rounded-[16px] flex-1">
+            <div class="relative flex flex-1">
+              <input type="text" id="search-input" placeholder="izlash"
+                class="w-full text-[14px] h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
+              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search text-[18px]"></i>
+              </span>
             </div>
-            <h1 class="text-[28px] font-bold text-primary">Oliygoh</h1>
-          </div>
 
-          <!-- Search Bar -->
-          <div class="flex-1 max-w-[600px] mx-[32px]">
-            <div class="relative flex items-center bg-gray-100 rounded-[24px]">
-              <div class="relative flex-1">
-                <input
-                  type="text"
-                  placeholder="izlash"
-                  class="w-full pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]"
-                />
-                <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
-                  <i class="fas fa-search text-[16px]"></i>
-                </span>
+          </div>
+          <button id="filter-btn" class="bg-primary p-4 rounded-[16px] hover:bg-primary/90 transition-colors">
+            <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[24px] h-[24px]">
+          </button>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="flex items-center space-x-[16px]">
+          <div class="relative">
+            <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
+              <div class="bg-white p-4 rounded-[16px]">
+                <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
-              <button class="bg-primary p-[12px] rounded-r-[8px] hover:bg-primary/90 transition-colors">
-                <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[16px] h-[16px]">
-              </button>
-            </div>
-          </div>
+              <!-- Notification Dropdown -->
+              <div id="notification-dropdown"
+                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
+                <!-- User Profile Header -->
+                <div class="flex items-center p-[16px] border-b border-gray-100">
+                  <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
+                  </div>
+                  <div>
+                    <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
+                  </div>
+                </div>
 
-          <!-- Profile Section -->
-          <div class="flex items-center space-x-[16px]">
-            <button id="theme-toggle" class="text-gray-600 hover:text-primary p-[8px] transition-colors">
-              <i class="fas fa-sun text-[20px]"></i>
+                <!-- Menu Items -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-check text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Natijalarim</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-bell text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-cog text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Sozlamalar</span>
+                  </a>
+                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center">
+                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                        <i class="fas fa-moon text-[12px] text-gray-600"></i>
+                      </div>
+                      <span class="text-[14px] text-gray-700">Tungi rejim</span>
+                    </div>
+                    <div class="relative">
+                      <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+                      <label for="dark-mode-toggle"
+                        class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                        <span
+                          class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Logout -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Profildan chiqish</span>
+                  </a>
+                </div>
+              </div>
             </button>
           </div>
+          <button id="login-btn"
+            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+          </button>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-[16px] py-[24px]">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
-        <!-- Left Sidebar -->
-        <aside class="lg:col-span-1">
-          <div class="bg-white rounded-[24px] shadow-soft p-[16px]">
-            <!-- Back Button -->
-            <a href="index.html" class="flex items-center space-x-[8px] text-gray-600 hover:text-primary transition-colors mb-[24px] w-full py-[12px] px-[12px] rounded-[24px] hover:bg-gray-50">
-              <i class="fas fa-arrow-left text-[14px]"></i>
-              <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
+  <!-- Main Content -->
+  <div class="container mx-auto px-[16px] py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+      <!-- Left Sidebar -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white rounded-[24px] p-[16px]">
+          <!-- Back Button -->
+          <a href="index.html"
+            class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white border border-gray-200 rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
+          </a>
+
+          <!-- Navigation Menu -->
+          <nav class="space-y-[8px]">
+            <a href="account.html"
+              class="flex items-center space-x-[15px] text-black p-[8px] bg-gray-200 rounded-[16px]">
+              <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/user.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-black dark:text-white">Shaxsiyat</span>
+            </a>
+            <a href="account.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/settings-02.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-black dark:text-white">Kirish va xavfsizlik</span>
+            </a>
+            <a href="notifications.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/notification-02.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-black dark:text-white">Bildirishnomalar</span>
             </a>
 
-            <!-- Navigation Menu -->
-            <nav class="space-y-[8px]">
-              <a href="account.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-user text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">Shaxsiyat</span>
-              </a>
-              <a href="login-security.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-cog text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">Kirish va xavfsizlik</span>
-              </a>
-              <a href="notifications.html" class="flex items-center space-x-[12px] text-gray-800 font-medium py-[12px] px-[12px] bg-gray-100 rounded-[24px]">
-                <i class="fas fa-bell text-[16px] text-gray-600"></i>
-                <span class="text-[14px]">Bildirishnomalar</span>
-              </a>
-              <a href="subscriptions.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-crown text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">Obunalar</span>
-              </a>
-              <a href="wallet.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-wallet text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">Hamyon</span>
-              </a>
-              <a href="payment-history.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-clock text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">To'lovlar tarixi</span>
-              </a>
-              <a href="my-results.html" class="flex items-center space-x-[12px] text-gray-500 py-[12px] px-[12px] hover:bg-gray-50 rounded-[24px] transition-colors">
-                <i class="fas fa-chart-line text-[16px] text-gray-400"></i>
-                <span class="text-[14px]">Mening natijalarim</span>
-              </a>
-            </nav>
-          </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="lg:col-span-3">
-          <div class="bg-white rounded-[24px] shadow-soft p-[32px]">
-            <h2 class="text-[28px] font-bold text-gray-900 mb-[32px]">Bildirishnomalar</h2>
-
-            <!-- Notification Settings -->
-            <div class="space-y-[20px]">
-              <!-- Notification 1 -->
-              <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
-                <div class="flex-1">
-                  <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Imtihon natijalarini bildirish</h3>
-                  <p class="text-[14px] text-gray-600">Imtihon natijalari tayyor bo'lganda bildirishnoma olasiz</p>
-                </div>
-                <div class="relative">
-                  <input type="checkbox" id="exam-results" checked class="sr-only">
-                  <label for="exam-results" class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
-                    <span class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
-                  </label>
-                </div>
+            <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+            <a href="my-results.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/crown.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
-
-              <!-- Notification 2 -->
-              <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
-                <div class="flex-1">
-                  <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Eng sara OTM kirish tavsiyalarni olish</h3>
-                  <p class="text-[14px] text-gray-600">Sizga mos keladigan oliy ta'lim muassasalari haqida tavsiyalar</p>
-                </div>
-                <div class="relative">
-                  <input type="checkbox" id="university-recommendations" checked class="sr-only">
-                  <label for="university-recommendations" class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
-                    <span class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
-                  </label>
-                </div>
+              <span class="text-[16px] text-black dark:text-white">Obunalar</span>
+            </a>
+            <a href="my-results.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/credit-card.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
-
-              <!-- Notification 3 -->
-              <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
-                <div class="flex-1">
-                  <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Pochta orqali sayt yangiliklaridan xabardor qilish</h3>
-                  <p class="text-[14px] text-gray-600">Sayt yangiliklari va muhim xabarlar haqida email orqali xabar olasiz</p>
-                </div>
-                <div class="relative">
-                  <input type="checkbox" id="email-news" checked class="sr-only">
-                  <label for="email-news" class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
-                    <span class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
-                  </label>
-                </div>
+              <span class="text-[16px] text-black dark:text-white">Hamyon</span>
+            </a>
+            <a href="my-results.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/clock-02.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
+              <span class="text-[16px] text-black dark:text-white">To'lovlar tarixi</span>
+            </a>
+            <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+            <a href="my-results.html" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/checkmark-badge-02.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] text-black dark:text-white">Mening natijalarim</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
 
-              <!-- Notification 4 -->
-              <div class="flex items-center justify-between py-[16px]">
-                <div class="flex-1">
-                  <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Push bildirishnomalar</h3>
-                  <p class="text-[14px] text-gray-600">Brauzer orqali darhol bildirishnoma olasiz</p>
-                </div>
-                <div class="relative">
-                  <input type="checkbox" id="push-notifications" class="sr-only">
-                  <label for="push-notifications" class="block w-[48px] h-[24px] bg-gray-300 rounded-full cursor-pointer transition-colors">
-                    <span class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
-                  </label>
-                </div>
+      <!-- Main Content Area -->
+      <main class="lg:col-span-3">
+        <div class="bg-white rounded-[24px] shadow-soft p-[32px]">
+          <h2 class="text-[28px] font-bold text-gray-900 mb-[32px]">Bildirishnomalar</h2>
+
+          <!-- Notification Settings -->
+          <div class="space-y-[20px]">
+            <!-- Notification 1 -->
+            <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
+              <div class="flex-1">
+                <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Imtihon natijalarini bildirish</h3>
+                <p class="text-[14px] text-gray-600">Imtihon natijalari tayyor bo'lganda bildirishnoma olasiz</p>
+              </div>
+              <div class="relative">
+                <input type="checkbox" id="exam-results" checked class="sr-only">
+                <label for="exam-results"
+                  class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
+                  <span
+                    class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Notification 2 -->
+            <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
+              <div class="flex-1">
+                <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Eng sara OTM kirish tavsiyalarni olish</h3>
+                <p class="text-[14px] text-gray-600">Sizga mos keladigan oliy ta'lim muassasalari haqida tavsiyalar</p>
+              </div>
+              <div class="relative">
+                <input type="checkbox" id="university-recommendations" checked class="sr-only">
+                <label for="university-recommendations"
+                  class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
+                  <span
+                    class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Notification 3 -->
+            <div class="flex items-center justify-between py-[16px] border-b border-gray-100">
+              <div class="flex-1">
+                <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Pochta orqali sayt yangiliklaridan xabardor
+                  qilish</h3>
+                <p class="text-[14px] text-gray-600">Sayt yangiliklari va muhim xabarlar haqida email orqali xabar
+                  olasiz</p>
+              </div>
+              <div class="relative">
+                <input type="checkbox" id="email-news" checked class="sr-only">
+                <label for="email-news"
+                  class="block w-[48px] h-[24px] bg-primary rounded-full cursor-pointer transition-colors">
+                  <span
+                    class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[24px] translate-y-[2px]"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Notification 4 -->
+            <div class="flex items-center justify-between py-[16px]">
+              <div class="flex-1">
+                <h3 class="text-[16px] font-medium text-gray-900 mb-[4px]">Push bildirishnomalar</h3>
+                <p class="text-[14px] text-gray-600">Brauzer orqali darhol bildirishnoma olasiz</p>
+              </div>
+              <div class="relative">
+                <input type="checkbox" id="push-notifications" class="sr-only">
+                <label for="push-notifications"
+                  class="block w-[48px] h-[24px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                  <span
+                    class="block w-[20px] h-[20px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                </label>
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <script>
-      // Handle toggle switches
-      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-          const label = this.nextElementSibling;
-          const span = label.querySelector('span');
-          
-          if (this.checked) {
-            label.classList.remove('bg-gray-300');
-            label.classList.add('bg-primary');
-            span.classList.remove('translate-x-[2px]');
-            span.classList.add('translate-x-[24px]');
-          } else {
-            label.classList.remove('bg-primary');
-            label.classList.add('bg-gray-300');
-            span.classList.remove('translate-x-[24px]');
-            span.classList.add('translate-x-[2px]');
-          }
-        });
+  <script>
+    // Handle toggle switches
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const label = this.nextElementSibling;
+        const span = label.querySelector('span');
+
+        if (this.checked) {
+          label.classList.remove('bg-gray-300');
+          label.classList.add('bg-primary');
+          span.classList.remove('translate-x-[2px]');
+          span.classList.add('translate-x-[24px]');
+        } else {
+          label.classList.remove('bg-primary');
+          label.classList.add('bg-gray-300');
+          span.classList.remove('translate-x-[24px]');
+          span.classList.add('translate-x-[2px]');
+        }
       });
+    });
 
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
-      
-      function initializeTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-        
-        if (shouldUseDark) {
-          document.documentElement.classList.add('dark');
-          updateThemeIcon(true);
-        } else {
-          document.documentElement.classList.remove('dark');
-          updateThemeIcon(false);
-        }
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function initializeTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+        updateThemeIcon(true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcon(false);
       }
-      
-      function updateThemeIcon(isDark) {
-        const icon = themeToggle.querySelector('i');
-        if (isDark) {
-          icon.classList.remove('fa-sun');
-          icon.classList.add('fa-moon');
-        } else {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        }
+    }
+
+    function updateThemeIcon(isDark) {
+      const icon = themeToggle.querySelector('i');
+      if (isDark) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
       }
-      
-      function toggleTheme() {
-        const isDark = document.documentElement.classList.contains('dark');
-        
-        if (isDark) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-          updateThemeIcon(false);
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-          updateThemeIcon(true);
-        }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        updateThemeIcon(false);
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        updateThemeIcon(true);
       }
-      
-      // Initialize theme and add listener
-      initializeTheme();
-      themeToggle.addEventListener('click', toggleTheme);
-    </script>
-  </body>
+    }
+
+    // Initialize theme and add listener
+    initializeTheme();
+    themeToggle.addEventListener('click', toggleTheme);
+  </script>
+</body>
+
 </html>
-
