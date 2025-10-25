@@ -173,41 +173,23 @@
               <span class="text-[16px] text-black dark:text-white">Oliygohlar</span>
             </a>
           </nav>
-
-          <!-- Popular Tags (Dynamic with forEach) -->
+          <!-- Popular Tags (Hardcoded) -->
           <div class="mb-[32px]">
             <h3 class="mb-[16px]" style="color: #686E7E; font-size: 14px; font-weight: 400;">
               Ommabop teglar:
             </h3>
-            <div id="popular-tags" class="cursor-pointer flex flex-wrap gap-[8px]"></div>
+            <div class="cursor-pointer flex flex-wrap gap-[8px]">
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">xalqaro grantlar</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">abituriyent</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">OTM</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">magistratura</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">milliy sertifikat</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">oliy ta'lim</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">o'qishni ko'chirish</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">imtiyoz</span>
+              <span style="background: #E4E6EE; color: #2A2C33; font-size: 12px; border-radius: 16px; padding: 6px 12px; font-weight: 400;">talaba</span>
+            </div>
           </div>
-          <script>
-            // Popular tags array
-            const popularTags = [
-              "xalqaro grantlar",
-              "abituriyent",
-              "OTM",
-              "magistratura",
-              "milliy sertifikat",
-              "oliy ta'lim",
-              "o'qishni ko'chirish",
-              "imtiyoz",
-              "talaba"
-            ];
-
-            const tagsContainer = document.getElementById('popular-tags');
-            popularTags.forEach(tag => {
-              const span = document.createElement('span');
-              span.textContent = tag;
-              span.style.background = "#E4E6EE";
-              span.style.color = "#2A2C33";
-              span.style.fontSize = "12px";
-              span.style.borderRadius = "16px";
-              span.style.padding = "6px 12px";
-              span.style.fontWeight = "400";
-              tagsContainer.appendChild(span);
-            });
-          </script>
 
           <!-- Footer Links -->
           <div class="space-y-[8px] text-[13px] text-oliygoh-dark-gray mb-[24px]">
