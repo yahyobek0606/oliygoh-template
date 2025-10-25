@@ -211,143 +211,150 @@
 
       <!-- Main Content Area -->
       <main class="lg:col-span-3">
-        <div class="bg-white rounded-[24px] shadow-soft p-[32px]">
+        <div class="bg-white rounded-[16px] p-[32px]">
           <h2 class="text-[28px] font-bold text-gray-900 mb-[32px]">Shaxsiyat sozlamalari</h2>
 
-          <!-- Profile Picture Section -->
-          <div class="mb-[32px]">
-            <div class="flex items-center space-x-[24px]">
-              <div class="relative">
-                <img src="../assets/ava.png" alt="Profile Picture"
-                  class="w-[100px] h-[100px] rounded-full object-cover">
-                <button
-                  class="absolute bottom-0 right-0 w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary/90 transition-colors">
-                  <i class="fas fa-camera text-[14px]"></i>
-                </button>
-              </div>
-              <div>
-                <p class="text-[14px] text-gray-600 mb-[8px]">Ism, familiyangiz</p>
-                <h3 class="text-[20px] font-semibold text-gray-900">Suxrobjon Xurramov</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Form Fields -->
           <form class="space-y-[24px]">
-            <!-- Name Field -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Ism, familiyangiz</label>
-              <input type="text" value="Suxrobjon Xurramov"
-                class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+            <div class="flex items-center space-x-[24px]">
+              <div class="my-[24px]">
+                <div class="flex items-start space-x-[24px]">
+                  <div class="relative">
+                    <img src="../assets/ava-high.png" alt="Profile Picture"
+                      class="w-[120px] h-[120px] rounded-[32px] object-cover">
+                    <button
+                      class="absolute bottom-0 right-0 w-[32px] h-[32px] rounded-[14px] flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                      <img src="../assets/icons/user-edit-01.svg" alt="Camera" class="w-[24px] h-[24px]">
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Ism, familiyangiz</label>
+                <input type="text" value="Suxrobjon Xurramov"
+                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+              </div>
+
+            </div>
+            <div class="grid grid-cols-2 gap-[16px]">
+              <!-- Gender Selection -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Jinsingiz</label>
+                <div class="relative bg-gray-100 rounded-[24px] p-[4px] flex">
+                  <label class="flex-1 cursor-pointer">
+                    <input type="radio" name="gender" value="male" checked class="sr-only">
+                    <div
+                      class="text-center py-[8px] px-[16px] rounded-[20px] bg-white text-gray-700 text-[14px] transition-all duration-200">
+                      Erkak
+                    </div>
+                  </label>
+                  <label class="flex-1 cursor-pointer">
+                    <input type="radio" name="gender" value="female" class="sr-only">
+                    <div
+                      class="text-center py-[8px] px-[16px] rounded-[20px] text-gray-700 text-[14px] transition-all duration-200">
+                      Ayol
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Birth Date -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Yoshingiz</label>
+                <input type="text" placeholder="kk.oy.yil"
+                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+              </div>
             </div>
 
-            <!-- Gender Selection -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Jinsingiz</label>
-              <div class="flex space-x-[16px]">
-                <label class="flex items-center space-x-[8px] cursor-pointer">
-                  <input type="radio" name="gender" value="male" checked
-                    class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                  <span class="text-[14px] text-gray-700">Erkak</span>
+            <!-- Category and University Row -->
+            <div class="grid grid-cols-2 gap-[16px]">
+              <!-- Category -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Toifangiz</label>
+                <div class="relative">
+                  <select
+                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>toifani tanlang</option>
+                    <option>Maktab o'quvchisi</option>
+                    <option>Abituriyent</option>
+                    <option selected>Talaba</option>
+                    <option>Magistr</option>
+                    <option>O'qituvchi</option>
+                    <option>Ota-ona</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- University -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">
+                  Oliygoh <span class="text-red-500 text-[12px]">(toifa tanlansa chiqadi)</span>
                 </label>
-                <label class="flex items-center space-x-[8px] cursor-pointer">
-                  <input type="radio" name="gender" value="female"
-                    class="w-[18px] h-[18px] text-primary focus:ring-blue-500">
-                  <span class="text-[14px] text-gray-700">Ayol</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Birth Date -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Yoshingiz</label>
-              <input type="text" placeholder="kk.oy.yil"
-                class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
-            </div>
-
-            <!-- Category -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Toifangiz</label>
-              <div class="relative">
-                <select
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
-                  <option>toifani tanlang</option>
-                  <option>Maktab o'quvchisi</option>
-                  <option>Abituriyent</option>
-                  <option selected>Talaba</option>
-                  <option>Magistr</option>
-                  <option>O'qituvchi</option>
-                  <option>Ota-ona</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                  <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                <div class="relative">
+                  <select
+                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>tanlanmagan</option>
+                    <option>Toshkent Davlat Iqtisodiyot Universiteti</option>
+                    <option>O'zbekiston Milliy Universiteti</option>
+                    <option>Toshkent Axborot Texnologiyalari Universiteti</option>
+                    <option>Samarqand Davlat Universiteti</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- University -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">
-                Oliygoh <span class="text-red-500 text-[12px]">(toifa tanlansa chiqadi)</span>
-              </label>
-              <div class="relative">
-                <select
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
-                  <option>tanlanmagan</option>
-                  <option>Toshkent Davlat Iqtisodiyot Universiteti</option>
-                  <option>O'zbekiston Milliy Universiteti</option>
-                  <option>Toshkent Axborot Texnologiyalari Universiteti</option>
-                  <option>Samarqand Davlat Universiteti</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                  <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+            <!-- Region and Living Area Row -->
+            <div class="grid grid-cols-2 gap-[16px]">
+              <!-- Region -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Viloyatingiz</label>
+                <div class="relative">
+                  <select
+                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>Viloyatni tanlang</option>
+                    <option>Toshkent shahri</option>
+                    <option>Toshkent viloyati</option>
+                    <option>Andijon</option>
+                    <option>Buxoro</option>
+                    <option>Farg'ona</option>
+                    <option>Jizzax</option>
+                    <option>Xorazm</option>
+                    <option>Namangan</option>
+                    <option>Navoiy</option>
+                    <option>Qashqadaryo</option>
+                    <option>Qoraqalpog'iston</option>
+                    <option>Samarqand</option>
+                    <option>Sirdaryo</option>
+                    <option>Surxondaryo</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Region -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Viloyatingiz</label>
-              <div class="relative">
-                <select
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
-                  <option>Viloyatni tanlang</option>
-                  <option>Toshkent shahri</option>
-                  <option>Toshkent viloyati</option>
-                  <option>Andijon</option>
-                  <option>Buxoro</option>
-                  <option>Farg'ona</option>
-                  <option>Jizzax</option>
-                  <option>Xorazm</option>
-                  <option>Namangan</option>
-                  <option>Navoiy</option>
-                  <option>Qashqadaryo</option>
-                  <option>Qoraqalpog'iston</option>
-                  <option>Samarqand</option>
-                  <option>Sirdaryo</option>
-                  <option>Surxondaryo</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                  <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Living Area -->
-            <div>
-              <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">O'qish yoki yashash hududi</label>
-              <div class="relative">
-                <select
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
-                  <option>kiritilmagan</option>
-                  <option>Toshkent shahri</option>
-                  <option>Toshkent viloyati</option>
-                  <option>Andijon</option>
-                  <option>Buxoro</option>
-                  <option>Farg'ona</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                  <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+              <!-- Living Area -->
+              <div>
+                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">O'qish yoki yashash hududi</label>
+                <div class="relative">
+                  <select
+                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    <option>kiritilmagan</option>
+                    <option>Toshkent shahri</option>
+                    <option>Toshkent viloyati</option>
+                    <option>Andijon</option>
+                    <option>Buxoro</option>
+                    <option>Farg'ona</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
+                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -355,7 +362,7 @@
             <!-- Save Button -->
             <div class="pt-[16px]">
               <button type="submit"
-                class="w-full bg-primary text-white py-[14px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[16px]">
+                class="w-full bg-blue-600 text-white py-[14px] rounded-[8px] hover:bg-blue-700 transition-colors font-medium text-[16px]">
                 Saqlash
               </button>
             </div>
@@ -373,7 +380,7 @@
     });
 
     // Profile picture upload
-    document.querySelector('.fa-camera').parentElement.addEventListener('click', function () {
+    document.querySelector('.fa-plus').parentElement.addEventListener('click', function () {
       const input = document.createElement('input');
       input.type = 'file';
       input.accept = 'image/*';
@@ -388,6 +395,25 @@
         }
       };
       input.click();
+    });
+
+    // Pill-shaped radio button functionality
+    document.querySelectorAll('input[name="gender"]').forEach(radio => {
+      radio.addEventListener('change', function () {
+        const container = this.closest('.relative');
+        const labels = container.querySelectorAll('label');
+
+        labels.forEach(label => {
+          const div = label.querySelector('div');
+          if (label.querySelector('input').checked) {
+            div.classList.add('bg-white');
+            div.classList.remove('bg-transparent');
+          } else {
+            div.classList.remove('bg-white');
+            div.classList.add('bg-transparent');
+          }
+        });
+      });
     });
 
     // Custom select styling and functionality
