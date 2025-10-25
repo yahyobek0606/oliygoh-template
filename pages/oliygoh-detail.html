@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abu Ali Ibn Sino Nomidagi Buxoro Davlat Tibbiyot Instituti - Oliygoh</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Custom slider styling */
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #d1d5db;
+      outline: none;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0B7BE3;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0B7BE3;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .dark .slider {
+      background: #4b5563;
+    }
+    
+    .dark .slider::-webkit-slider-thumb {
+      background: #0B7BE3;
+    }
+    
+    .dark .slider::-moz-range-thumb {
+      background: #0B7BE3;
+    }
+  </style>
+</head>
+
+<body class="gradient-bg bg-[#F2F3F7] min-h-screen">
+  <script>
+    // Initialize theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+  </div>
+
+  <!-- Main Header -->
+  <header class="border-b border-gray-200">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-[12px] cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="block dark:hidden">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh Logo Dark" class="hidden dark:block">
+        </div>
+
+        <!-- Search Bar and Settings Button -->
+        <div class="flex-1 max-w-[600px] mx-[32px] flex items-center space-x-4">
+          <div class="relative bg-white flex items-center rounded-[16px] flex-1">
+            <div class="relative flex flex-1">
+              <input type="text" id="search-input" placeholder="izlash"
+                class="w-full text-[14px] h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
+              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search text-[18px]"></i>
+              </span>
+            </div>
+
+          </div>
+          <button id="filter-btn" class="bg-primary p-4 rounded-[16px] hover:bg-primary/90 transition-colors">
+            <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[24px] h-[24px]">
+          </button>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="flex items-center space-x-[16px]">
+          <div class="relative">
+            <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
+              <div class="bg-white p-4 rounded-[16px] flex items-center justify-center">
+                <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
+              </div>
+              <!-- Notification Dropdown -->
+              <div id="notification-dropdown"
+                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
+                <!-- User Profile Header -->
+                <div class="flex items-center p-[16px] border-b border-gray-100">
+                  <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
+                  </div>
+                  <div>
+                    <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
+                  </div>
+                </div>
+
+                <!-- Menu Items -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-check text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Natijalarim</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-bell text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
+                  </a>
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-cog text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Sozlamalar</span>
+                  </a>
+                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center">
+                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                        <i class="fas fa-moon text-[12px] text-gray-600"></i>
+                      </div>
+                      <span class="text-[14px] text-gray-700">Tungi rejim</span>
+                    </div>
+                    <div class="relative">
+                      <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+                      <label for="dark-mode-toggle"
+                        class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                        <span
+                          class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-100"></div>
+
+                <!-- Logout -->
+                <div class="py-[8px]">
+                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
+                    </div>
+                    <span class="text-[14px] text-gray-700">Profildan chiqish</span>
+                  </a>
+                </div>
+              </div>
+            </button>
+          </div>
+          <button id="login-btn"
+            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+      <!-- Left Sidebar - Contact Information -->
+      <aside class="lg:col-span-1">
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[24px]">
+          <!-- Back Button -->
+          <button onclick="window.location.href='oliygoh.html'" class="w-full flex items-center justify-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
+            <i class="fas fa-arrow-left text-[14px]"></i>
+            <span class="text-[14px] font-medium">Qaytish</span>
+          </button>
+
+          <!-- Contact Information -->
+          <div class="mb-[24px]">
+            <h3 class="text-[16px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygoh kontaktlari</h3>
+            
+            <!-- Phone -->
+            <div class="flex items-center space-x-[12px] mb-[16px]">
+              <div class="w-[40px] h-[40px] bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                <i class="fas fa-phone text-blue-600 dark:text-blue-400 text-[16px]"></i>
+              </div>
+              <div>
+                <p class="text-[14px] font-medium text-gray-900 dark:text-white">+998(95) 911 0050</p>
+                <p class="text-[12px] text-gray-600 dark:text-gray-400">Telefon raqami</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center space-x-[12px] mb-[16px]">
+              <div class="w-[40px] h-[40px] bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                <i class="fas fa-envelope text-green-600 dark:text-green-400 text-[16px]"></i>
+              </div>
+              <div>
+                <p class="text-[14px] font-medium text-gray-900 dark:text-white">info@bsmi.uz</p>
+                <p class="text-[12px] text-gray-600 dark:text-gray-400">Email manzili</p>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-center space-x-[12px] mb-[24px]">
+              <div class="w-[40px] h-[40px] bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-orange-600 dark:text-orange-400 text-[16px]"></i>
+              </div>
+              <div>
+                <p class="text-[14px] font-medium text-gray-900 dark:text-white">Buxoro shahar, G'ijduvon ko'chasi, 23</p>
+                <p class="text-[12px] text-gray-600 dark:text-gray-400">Manzil</p>
+              </div>
+            </div>
+
+            <!-- Official Website Button -->
+            <button class="w-full bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors text-[14px] font-medium">
+              Rasmiy sayti
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="lg:col-span-2">
+        <!-- University Title -->
+        <div class="mb-[24px]">
+          <h1 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[8px]">
+            Abu Ali Ibn Sino Nomidagi Buxoro Davlat Tibbiyot Instituti kirish ballari
+          </h1>
+        </div>
+
+        <!-- University Image -->
+        <div class="mb-[24px]">
+          <div class="w-full h-[300px] bg-gray-200 dark:bg-gray-700 rounded-[16px] overflow-hidden">
+            <img src="../assets/oliygoh_detail.png" alt="Buxoro Davlat Tibbiyot Instituti" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- University Description -->
+        <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[24px] mb-[24px]">
+          <h2 class="text-[18px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygoh haqida</h2>
+          <div class="space-y-[12px] text-[14px] text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p>
+              Abu Ali Ibn Sino nomidagi Buxoro davlat tibbiyot instituti 1990-yilda tashkil etilgan. 1991-yilda Abu Ali Ibn Sino nomi berilgan. Institutda stomatologiya, hamshiralik ishi, tibbiy pedagogika kabi yo'nalishlar joriy etilgan.
+            </p>
+            <p>
+              Bugungi kunda institutda 8500 dan ortiq mutaxassis tayyorlangan bo'lib, ulardan 5448 nafari umumiy tibbiyot, 2510 nafari stomatologiya, 544 nafari hamshiralik ishi yo'nalishlarida bitirgan.
+            </p>
+            <p>
+              Institut zamonaviy ta'lim texnologiyalari va innovatsion o'qitish usullarini qo'llaydi. Talabalar uchun keng imkoniyatlar va yuqori malakali o'qituvchilar jamoasi mavjud.
+            </p>
+          </div>
+        </div>
+
+        <!-- Entrance Scores Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[24px]">
+          <h2 class="text-[18px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygohga kirish ballari</h2>
+          
+          <!-- Filter Bar -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-[12px] mb-[20px]">
+            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="2024-2025">2024-2025</option>
+              <option value="2023-2024">2023-2024</option>
+              <option value="2022-2023">2022-2023</option>
+            </select>
+            
+            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="">Fanlar</option>
+              <option value="fizika-matematika">Fizika, Matematika</option>
+              <option value="kimyo-biologiya">Kimyo, Biologiya</option>
+              <option value="tarix-filologiya">Tarix, Filologiya</option>
+            </select>
+            
+            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="">Ta'lim tili</option>
+              <option value="uzbek">O'zbek</option>
+              <option value="russian">Rus</option>
+            </select>
+            
+            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <option value="">Ta'lim shakli</option>
+              <option value="kunduzgi">Kunduzgi</option>
+              <option value="kechki">Kechki</option>
+              <option value="sirtqi">Sirtqi</option>
+            </select>
+          </div>
+
+          <!-- Legend -->
+          <div class="flex items-center space-x-[16px] mb-[16px]">
+            <div class="flex items-center space-x-[6px]">
+              <div class="w-[12px] h-[12px] bg-green-500 rounded-full"></div>
+              <span class="text-[12px] text-gray-600 dark:text-gray-400">Grant</span>
+            </div>
+            <div class="flex items-center space-x-[6px]">
+              <div class="w-[12px] h-[12px] bg-blue-500 rounded-full"></div>
+              <span class="text-[12px] text-gray-600 dark:text-gray-400">Sharnoma</span>
+            </div>
+          </div>
+
+          <!-- Entrance Scores Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">#</th>
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Mutaxassislik</th>
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Kod va fanlar</th>
+                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Grant</th>
+                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Sharnoma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-100 dark:border-gray-700">
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">1</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">73</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">53.4</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100 dark:border-gray-700">
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">2</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">73</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">53.4</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100 dark:border-gray-700">
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">3</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">73</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">53.4</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100 dark:border-gray-700">
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">4</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Umumiy tibbiyot</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110100 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">85.2</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">67.8</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100 dark:border-gray-700">
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">5</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Stomatologiya</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110200 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">82.1</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">64.3</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">6</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Hamshiralik ishi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110300 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">78.5</span>
+                    </div>
+                  </td>
+                  <td class="py-[12px] px-[8px] text-center">
+                    <div class="flex items-center justify-center space-x-[6px]">
+                      <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                      <span class="text-[14px] font-medium text-gray-900 dark:text-white">58.7</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-1">
+        <!-- Advertisement -->
+        <div class="rounded-[24px] shadow-soft">
+          <img src="../assets/ads.png" alt="Advertisement" class="w-full h-full rounded-[24px] object-cover">
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Authentication Modal -->
+  <div id="auth-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-gray-800 rounded-[24px] shadow-2xl w-[400px] max-w-[90vw] transform scale-95 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-[24px] border-b border-gray-200 dark:border-gray-700">
+        <div class="flex items-center space-x-[12px]">
+          <div class="w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-[16px]">O</span>
+          </div>
+          <h2 class="text-[20px] font-bold text-primary">Oliygoh</h2>
+        </div>
+        <button id="close-auth-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+          <i class="fas fa-times text-[20px]"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <!-- Tabs -->
+        <div class="flex bg-gray-100 dark:bg-gray-700 rounded-[24px] p-[4px] mb-[24px]">
+          <button id="login-tab"
+            class="flex-1 py-[8px] px-[16px] rounded-[24px] bg-white dark:bg-gray-600 text-gray-800 dark:text-white font-medium text-[14px] transition-all">
+            Kirish
+          </button>
+          <button id="register-tab"
+            class="flex-1 py-[8px] px-[16px] rounded-[24px] text-gray-500 dark:text-gray-400 font-medium text-[14px] transition-all">
+            Registratsiya
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-[16px]">
+          <div>
+            <input type="text" id="email-phone" placeholder="Email yoki telefon raqami"
+              class="w-full px-[16px] py-[12px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              required />
+          </div>
+          <div class="relative">
+            <input type="password" id="password" placeholder="Parol"
+              class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              required />
+            <button type="button" id="toggle-password"
+              class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye text-[16px]"></i>
+            </button>
+          </div>
+          <button type="submit"
+            class="w-full bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors font-medium text-[14px]">
+            Kirish
+          </button>
+        </form>
+
+        <!-- Forgot Password -->
+        <div class="text-center mt-[16px]">
+          <p class="text-[13px] text-gray-600 dark:text-gray-400">
+            Parolni unutdingizmi?
+            <a href="#" class="text-primary underline hover:text-primary/90">Parolni tiklash</a>
+          </p>
+        </div>
+
+        <!-- Social Login -->
+        <div class="mt-[24px] space-y-[12px]">
+          <button
+            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            <i class="fab fa-telegram text-[16px]"></i>
+            <span>Telegram orqali</span>
+          </button>
+          <button
+            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            <i class="fab fa-google text-[16px]"></i>
+            <span>Google orqali</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Notification Dropdown Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const notificationBtn = document.getElementById('notification-btn');
+      const dropdown = document.getElementById('notification-dropdown');
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+      // Toggle dropdown visibility
+      notificationBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('opacity-0');
+        dropdown.classList.toggle('invisible');
+        dropdown.classList.toggle('opacity-100');
+        dropdown.classList.toggle('visible');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!notificationBtn.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('opacity-0', 'invisible');
+          dropdown.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      // Dark mode toggle functionality in notification popup
+      darkModeToggle.addEventListener('change', function () {
+        const htmlElement = document.documentElement;
+        const toggleLabel = darkModeToggle.nextElementSibling;
+        const toggleSpan = toggleLabel.querySelector('span');
+
+        if (darkModeToggle.checked) {
+          // Enable dark mode
+          htmlElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          toggleLabel.classList.remove('bg-gray-300');
+          toggleLabel.classList.add('bg-primary');
+          toggleSpan.classList.remove('translate-x-[2px]');
+          toggleSpan.classList.add('translate-x-[22px]');
+
+          // Update main navbar toggle icon
+          const mainToggle = document.getElementById('theme-toggle');
+          if (mainToggle) {
+            const icon = mainToggle.querySelector('i');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+          }
+        } else {
+          // Disable dark mode
+          htmlElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          toggleLabel.classList.remove('bg-primary');
+          toggleLabel.classList.add('bg-gray-300');
+          toggleSpan.classList.remove('translate-x-[22px]');
+          toggleSpan.classList.add('translate-x-[2px]');
+
+          // Update main navbar toggle icon
+          const mainToggle = document.getElementById('theme-toggle');
+          if (mainToggle) {
+            const icon = mainToggle.querySelector('i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+          }
+        }
+      });
+
+      // Prevent dropdown from closing when clicking inside it
+      dropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+
+    // Authentication Modal Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginBtn = document.getElementById('login-btn');
+      const authModal = document.getElementById('auth-modal');
+      const closeAuthModal = document.getElementById('close-auth-modal');
+      const loginTab = document.getElementById('login-tab');
+      const registerTab = document.getElementById('register-tab');
+      const loginForm = document.getElementById('login-form');
+      const togglePassword = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+
+      // Open modal
+      loginBtn.addEventListener('click', function () {
+        authModal.classList.remove('opacity-0', 'invisible');
+        authModal.classList.add('opacity-100', 'visible');
+        authModal.querySelector('.bg-white').classList.remove('scale-95');
+        authModal.querySelector('.bg-white').classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close modal
+      function closeModal() {
+        authModal.classList.add('opacity-0', 'invisible');
+        authModal.classList.remove('opacity-100', 'visible');
+        authModal.querySelector('.bg-white').classList.add('scale-95');
+        authModal.querySelector('.bg-white').classList.remove('scale-100');
+        document.body.style.overflow = 'auto';
+      }
+
+      closeAuthModal.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      authModal.addEventListener('click', function (e) {
+        if (e.target === authModal) {
+          closeModal();
+        }
+      });
+
+      // Tab switching
+      loginTab.addEventListener('click', function () {
+        loginTab.classList.add('bg-white', 'dark:bg-gray-600', 'text-gray-800', 'dark:text-white');
+        loginTab.classList.remove('text-gray-500', 'dark:text-gray-400');
+        registerTab.classList.remove('bg-white', 'dark:bg-gray-600', 'text-gray-800', 'dark:text-white');
+        registerTab.classList.add('text-gray-500', 'dark:text-gray-400');
+      });
+
+      registerTab.addEventListener('click', function () {
+        registerTab.classList.add('bg-white', 'dark:bg-gray-600', 'text-gray-800', 'dark:text-white');
+        registerTab.classList.remove('text-gray-500', 'dark:text-gray-400');
+        loginTab.classList.remove('bg-white', 'dark:bg-gray-600', 'text-gray-800', 'dark:text-white');
+        loginTab.classList.add('text-gray-500', 'dark:text-gray-400');
+      });
+
+      // Password visibility toggle
+      togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        const icon = togglePassword.querySelector('i');
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+      });
+
+      // Form submission
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const emailPhone = document.getElementById('email-phone').value;
+        const password = document.getElementById('password').value;
+
+        // Basic validation
+        if (!emailPhone || !password) {
+          alert('Iltimos, barcha maydonlarni to\'ldiring');
+          return;
+        }
+
+        // Simulate login (replace with actual authentication)
+        console.log('Login attempt:', { emailPhone, password });
+        alert('Kirish muvaffaqiyatli!');
+        closeModal();
+      });
+
+      // Social login buttons
+      document.querySelectorAll('.bg-blue-500').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const provider = this.textContent.includes('Telegram') ? 'Telegram' : 'Google';
+          console.log(`${provider} login clicked`);
+          alert(`${provider} orqali kirish hozircha ishlamaydi`);
+        });
+      });
+    });
+
+    // Coming Soon Functionality
+    function showComingSoon(feature) {
+      alert(`${feature} funksiyasi tez orada qo'shiladi!`);
+    }
+  </script>
+
+</html>
