@@ -12,8 +12,18 @@
     .slider {
       -webkit-appearance: none;
       appearance: none;
-      background: #d1d5db;
+      background: transparent;
       outline: none;
+    }
+
+    .slider::-webkit-slider-runnable-track {
+      background: transparent;
+      height: 6px;
+    }
+
+    .slider::-moz-range-track {
+      background: transparent;
+      height: 6px;
     }
 
     .slider::-webkit-slider-thumb {
@@ -25,6 +35,7 @@
       background: #0B7BE3;
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-top: -7px;
     }
 
     .slider::-moz-range-thumb {
@@ -38,7 +49,7 @@
     }
 
     .dark .slider {
-      background: #4b5563;
+      background: transparent;
     }
 
     .dark .slider::-webkit-slider-thumb {
@@ -185,15 +196,14 @@
       <aside class="lg:col-span-1">
         <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[24px]">
           <!-- Back Button -->
-          <button onclick="window.location.href='index.html'"
-            class="w-full flex items-center space-x-[8px] text-gray-700 dark:text-gray-300 px-0 py-[12px] hover:opacity-80 transition-opacity mb-[24px]">
+          <button onclick="window.location.href='index.html'" class="w-full flex items-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
             <img src="../assets/icons/arrow-left-02.svg" alt="Back" class="w-[20px] h-[20px]">
             <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
           </button>
 
           <!-- Filter Section -->
           <div class="mb-[24px]">
-            <h3 class="text-[16px] fot-bold text-gray-900 dark:text-white mb-[16px]">Oliygohlarni saralash</h3>
+            <h3 class="text-[16px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygohlarni saralash</h3>
 
             <!-- Language Filter -->
             <div class="mb-[20px]">
@@ -202,7 +212,7 @@
                 <label class="flex items-center space-x-[8px] cursor-pointer">
                   <input type="radio" name="language" value="all" checked class="text-primary focus:ring-primary">
                   <span class="text-[14px] text-gray-700 dark:text-gray-300">Hammasi</span>
-                </label>n
+                </label>
                 <label class="flex items-center space-x-[8px] cursor-pointer">
                   <input type="radio" name="language" value="uzbek" class="text-primary focus:ring-primary">
                   <span class="text-[14px] text-gray-700 dark:text-gray-300">O'zbek</span>
@@ -232,13 +242,14 @@
                   <span class="text-[14px] text-gray-700 dark:text-gray-300">Qoraqalpoq</span>
                 </label>
               </div>
+              <div class="border-t border-gray-200 dark:border-gray-700 mt-[16px]"></div>
             </div>
 
             <!-- Region Filter -->
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Hudud bo'yicha</h4>
               <select
-                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Viloyatni tanlash</option>
                 <option value="toshkent">Toshkent</option>
                 <option value="samarkand">Samarqand</option>
@@ -260,7 +271,7 @@
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Yo'nalish bo'yicha</h4>
               <select
-                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Viloyatni tanlash</option>
                 <option value="medicine">Tibbiyot</option>
                 <option value="engineering">Muhandislik</option>
@@ -271,14 +282,21 @@
                 <option value="agriculture">Qishloq xo'jaligi</option>
                 <option value="technology">Texnologiya</option>
               </select>
+              <div class="border-t border-gray-200 dark:border-gray-700 mt-[16px]"></div>
             </div>
 
             <!-- Score Range Filter -->
             <div class="mb-[24px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Kirish balli bo'yicha</h4>
               <div class="px-[8px]">
-                <input type="range" min="0" max="80" value="65"
-                  class="w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer slider">
+                <div class="relative w-full" style="height: 20px; padding-top: 7px; padding-bottom: 7px;">
+                  <div class="absolute w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg top-1/2 transform -translate-y-1/2"></div>
+                  <div class="absolute h-[6px] bg-primary rounded-lg top-1/2 transform -translate-y-1/2" id="score-range" style="left: 0%; width: 80%;"></div>
+                  <input type="range" min="0" max="80" value="0" id="score-min"
+                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2" style="z-index: 10;">
+                  <input type="range" min="0" max="80" value="64" id="score-max"
+                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2" style="z-index: 11;">
+                </div>
                 <div class="flex justify-between text-[12px] text-gray-600 dark:text-gray-400 mt-[4px]">
                   <span>0 ball</span>
                   <span>80 ball</span>
@@ -624,6 +642,38 @@
     function showComingSoon(feature) {
       alert(`${feature} funksiyasi tez orada qo'shiladi!`);
     }
+
+    // Dual Range Slider for Score Filter
+    document.addEventListener('DOMContentLoaded', function () {
+      const scoreMin = document.getElementById('score-min');
+      const scoreMax = document.getElementById('score-max');
+      const scoreRange = document.getElementById('score-range');
+
+      if (scoreMin && scoreMax && scoreRange) {
+        function updateRange() {
+          const minVal = parseInt(scoreMin.value);
+          const maxVal = parseInt(scoreMax.value);
+          const minPercent = (minVal / 80) * 100;
+          const maxPercent = (maxVal / 80) * 100;
+          const width = maxPercent - minPercent;
+
+          scoreRange.style.left = minPercent + '%';
+          scoreRange.style.width = width + '%';
+
+          // Prevent min from being greater than max
+          if (minVal > maxVal) {
+            scoreMin.value = maxVal;
+          }
+          if (maxVal < minVal) {
+            scoreMax.value = minVal;
+          }
+        }
+
+        scoreMin.addEventListener('input', updateRange);
+        scoreMax.addEventListener('input', updateRange);
+        updateRange(); // Initial update
+      }
+    });
   </script>
 
 </html>
