@@ -29,11 +29,13 @@
   </div>
 
   <!-- Mobile Header -->
-  <header class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+  <header
+    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
-        <button id="mobile-menu-toggle" class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+        <button id="mobile-menu-toggle"
+          class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/hamburger.svg" alt="Menu" class="w-[20px] h-[20px]">
         </button>
 
@@ -46,7 +48,8 @@
         <!-- Search and Profile -->
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
-          <button class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
             <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
           </button>
 
@@ -182,12 +185,15 @@
   </header>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu-overlay" class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+  <div id="mobile-menu-overlay"
+    class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu-drawer" class="w-full h-full">
       <!-- Menu Header -->
-      <div class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
-        <button id="mobile-menu-close" class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+      <div
+        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
+        <button id="mobile-menu-close"
+          class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
         </button>
         <div class="flex-1 flex justify-center">
@@ -196,7 +202,8 @@
         </div>
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
-          <button class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
             <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
           </button>
           <!-- Profile Picture -->
@@ -209,14 +216,17 @@
       <!-- Menu Content -->
       <div class="p-[16px]">
         <!-- Filter Button -->
-        <button id="mobile-filter-btn" onclick="openFilterModal(); closeMobileMenu();" class="w-full bg-primary text-white px-[16px] py-[12px] rounded-[16px] flex items-center justify-between mb-[16px] hover:bg-primary/90 transition-colors">
+        <button id="mobile-filter-btn" onclick="openFilterModal(); closeMobileMenu();"
+          class="w-full bg-primary text-white px-[16px] py-[12px] rounded-[16px] flex items-center justify-between mb-[16px] hover:bg-primary/90 transition-colors">
           <span class="text-[16px] font-medium">Filter</span>
-          <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[20px] h-[20px]" style="filter: brightness(0) invert(1);">
+          <img src="../assets/icons/filter-horizontal.svg" alt="Filter" class="w-[20px] h-[20px]"
+            style="filter: brightness(0) invert(1);">
         </button>
 
         <!-- Navigation -->
         <nav class="space-y-[12px] mb-[32px]">
-          <a href="index.html" onclick="closeMobileMenu();" class="flex items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 rounded-[16px]">
+          <a href="index.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-gray-100 dark:bg-gray-700 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
             </div>
@@ -236,7 +246,8 @@
             </div>
             <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Mandat 2025</span>
           </a>
-          <a href="oliygoh.html" onclick="closeMobileMenu();" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+          <a href="oliygoh.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
             </div>
@@ -248,18 +259,22 @@
         <div class="space-y-[8px] text-[13px] text-[#686E7E] dark:text-gray-400 mb-[24px]">
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Reklama</a>
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Biz haqimizda</a>
-          <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Foydalanish shartlari</a>
+          <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Foydalanish
+            shartlari</a>
         </div>
 
         <!-- Social Media -->
         <div class="flex space-x-[12px] mb-[24px]">
-          <a href="#" class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-gray-700 transition-colors">
+          <a href="#"
+            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-gray-700 transition-colors">
             <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[20px] h-[20px]">
           </a>
-          <a href="#" class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+          <a href="#"
+            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <img src="../assets/icons/telegram.svg" alt="Telegram" class="w-[20px] h-[20px]">
           </a>
-          <a href="#" class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+          <a href="#"
+            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <i class="fab fa-facebook-f text-[20px] text-white"></i>
           </a>
         </div>
@@ -402,7 +417,8 @@
             <!-- Right Section - Image -->
             <div class="flex items-center justify-center md:justify-center p-[16px] md:p-0 flex-shrink-0">
               <div class="w-full md:w-[250px] md:flex-shrink-0">
-                <img src="../assets/uni.png" alt="University Building" class="w-full h-full object-cover rounded-[12px] md:rounded-none">
+                <img src="../assets/uni.png" alt="University Building"
+                  class="w-full h-full object-cover rounded-[12px] md:rounded-none">
               </div>
             </div>
           </div>
@@ -445,82 +461,82 @@
         <!-- News Cards -->
         <div id="news-grid">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px] mb-[24px]">
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
 
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
                   </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
                 </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
               </div>
             </div>
-          </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
 
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
                   </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
                 </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
               </div>
             </div>
-          </div>
           </div>
 
           <!-- Dolzarb Section (Mobile) -->
@@ -530,7 +546,8 @@
               <div class="space-y-[8px]">
                 <!-- News Item 1 -->
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] cursor-pointer">
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
                     Nordic International University'da Orientation Week start oldi!
                   </h4>
                   <div class="flex flex-wrap items-center justify-between gap-[8px]">
@@ -545,14 +562,16 @@
                         <span class="text-[10px]">08:00</span>
                       </div>
                     </div>
-                    <div class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                    <div
+                      class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
                       <img src="../assets/icons/arrow-up-right-01.svg" alt="Arrow Up Right" class="w-[20px] h-[20px]">
                     </div>
                   </div>
                 </div>
                 <!-- News Item 2 -->
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] cursor-pointer">
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
                     O'zbekiston-Finlandiya: Ta'lim sohasida yangi ufqlar ochilmoqda
                   </h4>
                   <div class="flex flex-wrap items-center justify-between gap-[8px]">
@@ -567,14 +586,16 @@
                         <span class="text-[10px]">08:00</span>
                       </div>
                     </div>
-                    <div class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                    <div
+                      class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
                       <img src="../assets/icons/arrow-up-right-01.svg" alt="Arrow Up Right" class="w-[20px] h-[20px]">
                     </div>
                   </div>
                 </div>
                 <!-- News Item 3 -->
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] cursor-pointer">
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
                     Oliy ta'lim, fan va innovatsiyalar vazirligi rahbariyati
                   </h4>
                   <div class="flex flex-wrap items-center justify-between gap-[8px]">
@@ -589,7 +610,8 @@
                         <span class="text-[10px]">08:00</span>
                       </div>
                     </div>
-                    <div class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                    <div
+                      class="bg-gray-200 dark:bg-gray-700 w-[40px] h-[40px] rounded-full flex items-center justify-center">
                       <img src="../assets/icons/arrow-up-right-01.svg" alt="Arrow Up Right" class="w-[20px] h-[20px]">
                     </div>
                   </div>
@@ -602,7 +624,8 @@
           <div class="lg:hidden mb-[24px]">
             <div class="bg-white rounded-[24px] overflow-hidden relative">
               <div class="absolute top-[8px] right-[8px] z-10">
-                <span class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-gray-700 backdrop-blur-[12px]">Reklama</span>
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-gray-700 backdrop-blur-[12px]">Reklama</span>
               </div>
               <img src="../assets/ads.png" alt="Advertisement" class="w-full h-auto rounded-[24px]">
             </div>
@@ -610,286 +633,286 @@
 
           <!-- Continue with more news cards -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
 
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
                   </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
                 </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
+              data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
+              <!-- Header with category badge and view count -->
+              <div class="absolute top-[8px] left-[8px] z-10">
+                <span
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  2023</span>
+              </div>
+              <!-- Main image -->
+              <div class="w-full h-[200px] overflow-hidden">
+                <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
+              </div>
+
+              <!-- Content -->
+              <div class="p-[16px]">
+                <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
+                  Mandat 2025 uchun yangi testlar va imtihonlar
+                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
+                  <div class="flex flex-wrap items-center gap-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <span>17-sentabr</span>
+                      <span>
+                        <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                      </span>
+                      <span>09:45</span>
+                    </div>
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                      <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
+                      <span>67890</span>
+                    </div>
+                  </div>
+                  <span>
+                    <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
 
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
+          <!-- No Results Message -->
+          <div id="no-results" class="hidden text-center py-[48px]">
+            <div class="w-[80px] h-[80px] bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-[16px]">
+              <i class="fas fa-search text-[32px] text-gray-400"></i>
             </div>
+            <h3 class="text-[18px] font-semibold text-gray-600 mb-[8px]">Hech narsa topilmadi</h3>
+            <p class="text-[14px] text-gray-500">Qidiruv so'zingizni o'zgartiring yoki filtrlarni tozalang</p>
+            <button id="clear-filters"
+              class="mt-[16px] bg-primary text-white px-[24px] py-[8px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+              Filtrlarni tozalash
+            </button>
           </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="news-card bg-white rounded-[24px] overflow-hidden relative" data-category="mandat"
-            data-date="2024-09-17" data-title="Mandat 2025 uchun yangi testlar">
-            <!-- Header with category badge and view count -->
-            <div class="absolute top-[8px] left-[8px] z-10">
-              <span
-                class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
-                2023</span>
-            </div>
-            <!-- Main image -->
-            <div class="w-full h-[200px] overflow-hidden">
-              <img src="../assets/image-card.png" alt="Students on Campus" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Content -->
-            <div class="p-[16px]">
-              <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                Mandat 2025 uchun yangi testlar va imtihonlar
-              </h3>
-              <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
-                <div class="flex flex-wrap items-center gap-[8px]">
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <span>17-sentabr</span>
-                    <span>
-                      <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
-                    </span>
-                    <span>09:45</span>
-                  </div>
-                  <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
-                    <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
-                    <span>67890</span>
-                  </div>
-                </div>
-                <span>
-                  <img src="../assets/icons/crown_golden.svg" alt="Crown" class="w-[20px] h-[20px]">
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- No Results Message -->
-        <div id="no-results" class="hidden text-center py-[48px]">
-          <div class="w-[80px] h-[80px] bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-[16px]">
-            <i class="fas fa-search text-[32px] text-gray-400"></i>
-          </div>
-          <h3 class="text-[18px] font-semibold text-gray-600 mb-[8px]">Hech narsa topilmadi</h3>
-          <p class="text-[14px] text-gray-500">Qidiruv so'zingizni o'zgartiring yoki filtrlarni tozalang</p>
-          <button id="clear-filters"
-            class="mt-[16px] bg-primary text-white px-[24px] py-[8px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-            Filtrlarni tozalash
-          </button>
-        </div>
       </main>
 
       <!-- Right Sidebar -->
@@ -899,7 +922,8 @@
           <h3 class="font-bold text-gray-900 mb-[12px] text-[24px]">Dolzarb</h3>
           <div class="space-y-[8px]">
             <!-- News Item 1 -->
-            <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] news-item-hover cursor-pointer overflow-hidden">
+            <div
+              class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] news-item-hover cursor-pointer overflow-hidden">
               <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
                 Nordic International University'da Orientation Week start oldi!
               </h4>
@@ -1013,9 +1037,11 @@
   <!-- Filter Modal -->
   <div id="filter-modal"
     class="fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto lg:bg-black lg:bg-opacity-50 lg:flex lg:items-center lg:justify-center">
-    <div class="w-full h-full lg:h-auto lg:bg-white lg:rounded-[24px] lg:w-[500px] lg:max-w-[90vw] lg:transform lg:scale-95 lg:transition-all lg:duration-300">
+    <div
+      class="w-full h-full lg:h-auto lg:bg-white lg:rounded-[24px] lg:w-[500px] lg:max-w-[90vw] lg:transform lg:scale-95 lg:transition-all lg:duration-300">
       <!-- Modal Header - Mobile Style -->
-      <div class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800 lg:hidden">
+      <div
+        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800 lg:hidden">
         <button id="close-filter-modal-mobile"
           class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
@@ -1025,7 +1051,8 @@
           <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
         </div>
         <div class="flex items-center space-x-[12px]">
-          <button class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
             <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
           </button>
           <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
@@ -1033,7 +1060,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Modal Header - Desktop Style -->
       <div class="hidden lg:flex items-center justify-between p-[24px]">
         <h2 class="text-[32px] font-bold text-gray-900">Filtrlash</h2>
@@ -1169,7 +1196,8 @@
         <!-- Navigation Links Section (Mobile only) -->
         <div class="mb-[32px] lg:hidden">
           <nav class="space-y-[12px]">
-            <a href="index.html" onclick="closeFilterModal();" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <a href="index.html" onclick="closeFilterModal();"
+              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
               <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
               </div>
@@ -1189,7 +1217,8 @@
               </div>
               <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Mandat 2025</span>
             </a>
-            <a href="oliygoh.html" onclick="closeFilterModal();" class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <a href="oliygoh.html" onclick="closeFilterModal();"
+              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
               <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
               </div>
@@ -1244,7 +1273,7 @@
       window.closeMobileMenu = closeMobileMenu;
 
       // Function to open filter modal (for mobile menu)
-      window.openFilterModal = function() {
+      window.openFilterModal = function () {
         const filterModal = document.getElementById('filter-modal');
         if (filterModal) {
           filterModal.classList.remove('opacity-0', 'invisible');
