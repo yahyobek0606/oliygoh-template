@@ -196,10 +196,13 @@
       <aside class="lg:col-span-1">
         <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[24px]">
           <!-- Back Button -->
-          <button onclick="window.location.href='index.html'" class="w-full flex items-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
-            <img src="../assets/icons/arrow-left-02.svg" alt="Back" class="w-[20px] h-[20px]">
-            <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
-          </button>
+          <a href="index.html"
+            class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white border border-gray-200 rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
+          </a>
 
           <!-- Filter Section -->
           <div class="mb-[24px]">
@@ -290,12 +293,17 @@
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Kirish balli bo'yicha</h4>
               <div class="px-[8px]">
                 <div class="relative w-full" style="height: 20px; padding-top: 7px; padding-bottom: 7px;">
-                  <div class="absolute w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg top-1/2 transform -translate-y-1/2"></div>
-                  <div class="absolute h-[6px] bg-primary rounded-lg top-1/2 transform -translate-y-1/2" id="score-range" style="left: 0%; width: 80%;"></div>
+                  <div
+                    class="absolute w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg top-1/2 transform -translate-y-1/2">
+                  </div>
+                  <div class="absolute h-[6px] bg-primary rounded-lg top-1/2 transform -translate-y-1/2"
+                    id="score-range" style="left: 0%; width: 80%;"></div>
                   <input type="range" min="0" max="80" value="0" id="score-min"
-                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2" style="z-index: 10;">
+                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2"
+                    style="z-index: 10;">
                   <input type="range" min="0" max="80" value="64" id="score-max"
-                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2" style="z-index: 11;">
+                    class="absolute w-full h-[6px] bg-transparent appearance-none cursor-pointer slider top-1/2 transform -translate-y-1/2"
+                    style="z-index: 11;">
                 </div>
                 <div class="flex justify-between text-[12px] text-gray-600 dark:text-gray-400 mt-[4px]">
                   <span>0 ball</span>
