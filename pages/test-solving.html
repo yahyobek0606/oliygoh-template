@@ -22,9 +22,27 @@
       }
     })();
   </script>
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
+    <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
+  </div>
 
-  <!-- Test Header -->
-  <header class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800">
+  <!-- Mobile Test Header -->
+  <header class="lg:hidden bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-[16px] py-[12px]">
+      <div class="flex items-center justify-between">
+        <h1 class="text-[16px] font-semibold text-gray-900 dark:text-white truncate flex-1 mr-[12px]">DTM Test 2025 (546789)</h1>
+        <button id="exit-test-btn-mobile"
+          class="bg-red-500 hover:bg-red-600 text-white px-[12px] py-[8px] rounded-[12px] transition-colors text-[12px] font-medium whitespace-nowrap">
+          Chiqish
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Desktop Test Header -->
+  <header class="hidden lg:block bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[12px]">
       <div class="flex items-center justify-between">
         <h1 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white">DTM Test 2025 (546789)</h1>
@@ -37,10 +55,10 @@
   </header>
 
   <!-- Main Content -->
-  <div class="container mx-auto px-[16px] py-[24px]">
+  <div class="container mx-auto px-[16px] py-[16px] md:py-[24px]">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-[16px] md:gap-[24px]">
-      <!-- Left Sidebar - Test Info -->
-      <aside class="lg:col-span-2">
+      <!-- Left Sidebar - Test Info (Hidden on mobile) -->
+      <aside class="hidden lg:block lg:col-span-2">
         <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] sticky top-[24px]">
           <!-- Timer -->
           <div class="mb-[20px]">
@@ -70,34 +88,53 @@
 
       <!-- Main Content Area - Questions -->
       <main class="lg:col-span-7">
+        <!-- Mobile Timer and Info Bar (shown only on mobile) -->
+        <div class="lg:hidden bg-white dark:bg-dark-card rounded-[16px] p-[16px] mb-[16px] flex items-center justify-between">
+          <div class="flex items-center space-x-[12px]">
+            <div>
+              <div class="text-[12px] text-gray-600 dark:text-gray-400 mb-[4px]">Qolgan vaqt</div>
+              <div class="text-[18px] font-bold text-gray-900 dark:text-white" id="timer-mobile">14:44:00</div>
+            </div>
+            <div class="w-px h-[40px] bg-gray-200 dark:bg-gray-700"></div>
+            <div>
+              <div class="text-[12px] text-gray-600 dark:text-gray-400 mb-[4px]">Ishtirokchilar</div>
+              <div class="text-[18px] font-bold text-gray-900 dark:text-white">390092</div>
+            </div>
+          </div>
+          <button id="exit-test-sidebar-btn-mobile"
+            class="bg-red-500 hover:bg-red-600 text-white px-[12px] py-[8px] rounded-[12px] transition-colors text-[12px] font-medium">
+            Chiqish
+          </button>
+        </div>
+
         <!-- Question 1 -->
-        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] md:p-[32px] mb-[16px] question-block"
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px] md:p-[20px] lg:p-[32px] mb-[16px] question-block"
           data-question="1" style="display: block;">
-          <h2 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[20px]">
+          <h2 class="text-[16px] md:text-[18px] lg:text-[20px] font-semibold text-gray-900 dark:text-white mb-[16px] md:mb-[20px]">
             1. Qaysi qatorda shaxs otidan yasalgan faoliyat jarayon oti vositasiz to'ldiruvchi vazifasida kelgan?
           </h2>
-          <div class="space-y-[12px]">
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-1" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary" checked>
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+          <div class="space-y-[10px] md:space-y-[12px]">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="a" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0" checked>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Xalq orasida: "Maqtanganni uyini ko'r" degan gap bor.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-1" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="b" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Yolqin akam traktor terimidan bo'shagandan keyin hovlining kamchiliklarini tuzatadi.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-1" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="c" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Shomurod asli yilqichining bolasi, dehqonchilikni xushlamaydi.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-1" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="d" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Bolalar eng quvonchli xabarni yurtdoshlariga yetkazishga oshiqayotgan elchilardek guvullab Usmonlarnikiga
                 jo'nashdi.
               </span>
@@ -113,27 +150,27 @@
             militsiyaning gapini asoslaydi?
           </h2>
           <div class="space-y-[12px]">
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-2" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="a" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Ot haydaydiganlar, odatda, kaska kiyib yurishadi.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-2" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="b" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Yolqin akam traktor terimidan bo'shagandan keyin hovlining kamchiliklarini tuzatadi.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-2" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="c" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Shomurod asli yilqichining bolasi, dehqonchilikni xushlamaydi.
               </span>
             </label>
-            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-              <input type="radio" name="question-2" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
-              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+            <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="d" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
                 Bolalar eng quvonchli xabarni yurtdoshlariga yetkazishga oshiqayotgan elchilardek guvullab Usmonlarnikiga
                 jo'nashdi.
               </span>
@@ -142,14 +179,14 @@
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between mt-[24px]">
+        <div class="flex items-center justify-between gap-[12px] mt-[16px] md:mt-[24px]">
           <button id="prev-btn"
-            class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[24px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] md:px-[24px] py-[10px] md:py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[13px] md:text-[14px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             disabled>
             Avvalgi
           </button>
           <button id="next-btn"
-            class="bg-primary text-white px-[24px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            class="flex-1 bg-primary text-white px-[16px] md:px-[24px] py-[10px] md:py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[13px] md:text-[14px] font-medium">
             Keyingi
           </button>
         </div>
@@ -157,10 +194,10 @@
 
       <!-- Right Sidebar - Question Navigation -->
       <aside class="lg:col-span-3">
-        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] sticky top-[24px]">
-          <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[16px]">Savollar</h3>
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px] md:p-[20px] sticky top-[24px]">
+          <h3 class="text-[14px] md:text-[16px] font-semibold text-gray-900 dark:text-white mb-[12px] md:mb-[16px]">Savollar</h3>
           <!-- Question Grid -->
-          <div class="grid grid-cols-5 gap-[8px] mb-[20px]" id="question-grid">
+          <div class="grid grid-cols-5 md:grid-cols-5 gap-[6px] md:gap-[8px] mb-[16px] md:mb-[20px]" id="question-grid">
             <!-- Questions 1-19 will be generated by JavaScript -->
           </div>
 
@@ -305,7 +342,7 @@
 
       for (let i = 1; i <= testState.totalQuestions; i++) {
         const btn = document.createElement('button');
-        btn.className = 'w-[40px] h-[40px] rounded-[8px] text-[14px] font-medium transition-colors question-nav-btn';
+        btn.className = 'w-[32px] h-[32px] md:w-[40px] md:h-[40px] rounded-[8px] text-[12px] md:text-[14px] font-medium transition-colors question-nav-btn';
         btn.textContent = i;
         btn.dataset.question = i;
         btn.addEventListener('click', () => navigateToQuestion(i));
@@ -343,7 +380,7 @@
       if (!btn) return;
 
       // Reset classes
-      btn.className = 'w-[40px] h-[40px] rounded-[8px] text-[14px] font-medium transition-colors question-nav-btn';
+      btn.className = 'w-[32px] h-[32px] md:w-[40px] md:h-[40px] rounded-[8px] text-[12px] md:text-[14px] font-medium transition-colors question-nav-btn';
 
       switch (state) {
         case 'current':
@@ -419,21 +456,21 @@
           ${questionNum}. Savol ${questionNum}
         </h2>
         <div class="space-y-[12px]">
-          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-            <input type="radio" name="question-${questionNum}" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary">
-            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">A) Variant A</span>
+          <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="a" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+            <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">A) Variant A</span>
           </label>
-          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-            <input type="radio" name="question-${questionNum}" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
-            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">B) Variant B</span>
+          <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="b" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+            <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">B) Variant B</span>
           </label>
-          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-            <input type="radio" name="question-${questionNum}" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
-            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">C) Variant C</span>
+          <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="c" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+            <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">C) Variant C</span>
           </label>
-          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-            <input type="radio" name="question-${questionNum}" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
-            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">D) Variant D</span>
+          <label class="flex items-start space-x-[10px] md:space-x-[12px] cursor-pointer p-[10px] md:p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="d" class="mt-[4px] w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-primary flex-shrink-0">
+            <span class="text-[13px] md:text-[14px] lg:text-[16px] text-gray-700 dark:text-gray-300 flex-1">D) Variant D</span>
           </label>
         </div>
       `;
@@ -469,6 +506,7 @@
     // Timer functionality
     function updateTimer() {
       const timerElement = document.getElementById('timer');
+      const timerMobileElement = document.getElementById('timer-mobile');
       if (testState.timer.seconds > 0) {
         testState.timer.seconds--;
       } else if (testState.timer.minutes > 0) {
@@ -487,7 +525,9 @@
       const h = String(testState.timer.hours).padStart(2, '0');
       const m = String(testState.timer.minutes).padStart(2, '0');
       const s = String(testState.timer.seconds).padStart(2, '0');
-      timerElement.textContent = `${h}:${m}:${s}`;
+      const timeString = `${h}:${m}:${s}`;
+      if (timerElement) timerElement.textContent = timeString;
+      if (timerMobileElement) timerMobileElement.textContent = timeString;
     }
 
     // Track answers
@@ -544,13 +584,17 @@
 
       // Exit button handlers
       const exitTestBtn = document.getElementById('exit-test-btn');
+      const exitTestBtnMobile = document.getElementById('exit-test-btn-mobile');
       const exitTestSidebarBtn = document.getElementById('exit-test-sidebar-btn');
+      const exitTestSidebarBtnMobile = document.getElementById('exit-test-sidebar-btn-mobile');
       const closeExitModal = document.getElementById('close-exit-modal');
       const cancelExitBtn = document.getElementById('cancel-exit-btn');
       const confirmExitBtn = document.getElementById('confirm-exit-btn');
 
       if (exitTestBtn) exitTestBtn.addEventListener('click', showExitModal);
+      if (exitTestBtnMobile) exitTestBtnMobile.addEventListener('click', showExitModal);
       if (exitTestSidebarBtn) exitTestSidebarBtn.addEventListener('click', showExitModal);
+      if (exitTestSidebarBtnMobile) exitTestSidebarBtnMobile.addEventListener('click', showExitModal);
       if (closeExitModal) closeExitModal.addEventListener('click', hideExitModal);
       if (cancelExitBtn) cancelExitBtn.addEventListener('click', hideExitModal);
 
