@@ -15,7 +15,7 @@
       background: #d1d5db;
       outline: none;
     }
-    
+
     .slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -26,7 +26,7 @@
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     .slider::-moz-range-thumb {
       width: 20px;
       height: 20px;
@@ -36,15 +36,15 @@
       border: none;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     .dark .slider {
       background: #4b5563;
     }
-    
+
     .dark .slider::-webkit-slider-thumb {
       background: #0B7BE3;
     }
-    
+
     .dark .slider::-moz-range-thumb {
       background: #0B7BE3;
     }
@@ -183,52 +183,57 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
       <!-- Left Sidebar - Contact Information -->
       <aside class="lg:col-span-1">
-        <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[24px]">
+        <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[24px]">
           <!-- Back Button -->
-          <button onclick="window.location.href='oliygoh.html'" class="w-full flex items-center justify-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
-            <i class="fas fa-arrow-left text-[14px]"></i>
-            <span class="text-[14px] font-medium">Qaytish</span>
-          </button>
+          <a href="index.html"
+            class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white border border-gray-200 rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
+          </a>
 
           <!-- Contact Information -->
           <div class="mb-[24px]">
             <h3 class="text-[16px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygoh kontaktlari</h3>
-            
+
             <!-- Phone -->
             <div class="flex items-center space-x-[12px] mb-[16px]">
-              <div class="w-[40px] h-[40px] bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
-                <i class="fas fa-phone text-blue-600 dark:text-blue-400 text-[16px]"></i>
+              <div class="w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                <img src="../assets/icons/call-02.svg" alt="Phone" class="w-[24px] h-[24px]">
               </div>
               <div>
                 <p class="text-[14px] font-medium text-gray-900 dark:text-white">+998(95) 911 0050</p>
-                <p class="text-[12px] text-gray-600 dark:text-gray-400">Telefon raqami</p>
               </div>
             </div>
 
             <!-- Email -->
             <div class="flex items-center space-x-[12px] mb-[16px]">
-              <div class="w-[40px] h-[40px] bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-                <i class="fas fa-envelope text-green-600 dark:text-green-400 text-[16px]"></i>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                <img src="../assets/icons/mail-01.svg" alt="Email" class="w-[24px] h-[24px]">
               </div>
               <div>
                 <p class="text-[14px] font-medium text-gray-900 dark:text-white">info@bsmi.uz</p>
-                <p class="text-[12px] text-gray-600 dark:text-gray-400">Email manzili</p>
               </div>
             </div>
 
             <!-- Address -->
             <div class="flex items-center space-x-[12px] mb-[24px]">
-              <div class="w-[40px] h-[40px] bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
-                <i class="fas fa-map-marker-alt text-orange-600 dark:text-orange-400 text-[16px]"></i>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                <img src="../assets/icons/location-09.svg" alt="Location" class="w-[24px] h-[24px]">
+
               </div>
               <div>
-                <p class="text-[14px] font-medium text-gray-900 dark:text-white">Buxoro shahar, G'ijduvon ko'chasi, 23</p>
-                <p class="text-[12px] text-gray-600 dark:text-gray-400">Manzil</p>
+                <p class="text-[14px] font-medium text-gray-900 dark:text-white">Buxoro shahar, G'ijduvon ko'chasi, 23
+                </p>
               </div>
             </div>
 
             <!-- Official Website Button -->
-            <button class="w-full bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors text-[14px] font-medium">
+            <button
+              class="w-full bg-[#F2F3F7] dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors text-[16px] font-normal whitespace-nowrap">
               Rasmiy sayti
             </button>
           </div>
@@ -247,7 +252,8 @@
         <!-- University Image -->
         <div class="mb-[24px]">
           <div class="w-full h-[300px] bg-gray-200 dark:bg-gray-700 rounded-[16px] overflow-hidden">
-            <img src="../assets/oliygoh_detail.png" alt="Buxoro Davlat Tibbiyot Instituti" class="w-full h-full object-cover">
+            <img src="../assets/oliygoh_detail.png" alt="Buxoro Davlat Tibbiyot Instituti"
+              class="w-full h-full object-cover">
           </div>
         </div>
 
@@ -256,13 +262,17 @@
           <h2 class="text-[18px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygoh haqida</h2>
           <div class="space-y-[12px] text-[14px] text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              Abu Ali Ibn Sino nomidagi Buxoro davlat tibbiyot instituti 1990-yilda tashkil etilgan. 1991-yilda Abu Ali Ibn Sino nomi berilgan. Institutda stomatologiya, hamshiralik ishi, tibbiy pedagogika kabi yo'nalishlar joriy etilgan.
+              Abu Ali Ibn Sino nomidagi Buxoro davlat tibbiyot instituti 1990-yilda tashkil etilgan. 1991-yilda Abu Ali
+              Ibn Sino nomi berilgan. Institutda stomatologiya, hamshiralik ishi, tibbiy pedagogika kabi yo'nalishlar
+              joriy etilgan.
             </p>
             <p>
-              Bugungi kunda institutda 8500 dan ortiq mutaxassis tayyorlangan bo'lib, ulardan 5448 nafari umumiy tibbiyot, 2510 nafari stomatologiya, 544 nafari hamshiralik ishi yo'nalishlarida bitirgan.
+              Bugungi kunda institutda 8500 dan ortiq mutaxassis tayyorlangan bo'lib, ulardan 5448 nafari umumiy
+              tibbiyot, 2510 nafari stomatologiya, 544 nafari hamshiralik ishi yo'nalishlarida bitirgan.
             </p>
             <p>
-              Institut zamonaviy ta'lim texnologiyalari va innovatsion o'qitish usullarini qo'llaydi. Talabalar uchun keng imkoniyatlar va yuqori malakali o'qituvchilar jamoasi mavjud.
+              Institut zamonaviy ta'lim texnologiyalari va innovatsion o'qitish usullarini qo'llaydi. Talabalar uchun
+              keng imkoniyatlar va yuqori malakali o'qituvchilar jamoasi mavjud.
             </p>
           </div>
         </div>
@@ -270,29 +280,33 @@
         <!-- Entrance Scores Section -->
         <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[24px]">
           <h2 class="text-[18px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygohga kirish ballari</h2>
-          
+
           <!-- Filter Bar -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-[12px] mb-[20px]">
-            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+            <select
+              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
               <option value="2024-2025">2024-2025</option>
               <option value="2023-2024">2023-2024</option>
               <option value="2022-2023">2022-2023</option>
             </select>
-            
-            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+
+            <select
+              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
               <option value="">Fanlar</option>
               <option value="fizika-matematika">Fizika, Matematika</option>
               <option value="kimyo-biologiya">Kimyo, Biologiya</option>
               <option value="tarix-filologiya">Tarix, Filologiya</option>
             </select>
-            
-            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+
+            <select
+              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
               <option value="">Ta'lim tili</option>
               <option value="uzbek">O'zbek</option>
               <option value="russian">Rus</option>
             </select>
-            
-            <select class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+
+            <select
+              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
               <option value="">Ta'lim shakli</option>
               <option value="kunduzgi">Kunduzgi</option>
               <option value="kechki">Kechki</option>
@@ -317,18 +331,25 @@
             <table class="w-full">
               <thead>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">#</th>
-                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Mutaxassislik</th>
-                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Kod va fanlar</th>
-                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Grant</th>
-                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">Sharnoma</th>
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">#
+                  </th>
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">
+                    Mutaxassislik</th>
+                  <th class="text-left py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">
+                    Kod va fanlar</th>
+                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">
+                    Grant</th>
+                  <th class="text-center py-[12px] px-[8px] text-[12px] font-semibold text-gray-600 dark:text-gray-400">
+                    Sharnoma</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="border-b border-gray-100 dark:border-gray-700">
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">1</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot
+                    muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
@@ -344,8 +365,10 @@
                 </tr>
                 <tr class="border-b border-gray-100 dark:border-gray-700">
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">2</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot
+                    muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
@@ -361,8 +384,10 @@
                 </tr>
                 <tr class="border-b border-gray-100 dark:border-gray-700">
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">3</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot muhandisligi</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Biotibbiyot
+                    muhandisligi</td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60711100 Fizika Matematika
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
@@ -378,8 +403,10 @@
                 </tr>
                 <tr class="border-b border-gray-100 dark:border-gray-700">
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">4</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Umumiy tibbiyot</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110100 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Umumiy tibbiyot
+                  </td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110100 Kimyo Biologiya
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
@@ -395,8 +422,10 @@
                 </tr>
                 <tr class="border-b border-gray-100 dark:border-gray-700">
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">5</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Stomatologiya</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110200 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Stomatologiya
+                  </td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110200 Kimyo Biologiya
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
@@ -412,8 +441,10 @@
                 </tr>
                 <tr>
                   <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">6</td>
-                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Hamshiralik ishi</td>
-                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110300 Kimyo Biologiya</td>
+                  <td class="py-[12px] px-[8px] text-[14px] font-medium text-gray-900 dark:text-white">Hamshiralik ishi
+                  </td>
+                  <td class="py-[12px] px-[8px] text-[14px] text-gray-700 dark:text-gray-300">60110300 Kimyo Biologiya
+                  </td>
                   <td class="py-[12px] px-[8px] text-center">
                     <div class="flex items-center justify-center space-x-[6px]">
                       <div class="w-[8px] h-[8px] bg-green-500 rounded-full"></div>
