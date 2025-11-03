@@ -15,7 +15,7 @@
       background: #d1d5db;
       outline: none;
     }
-    
+
     .slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -26,7 +26,7 @@
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     .slider::-moz-range-thumb {
       width: 20px;
       height: 20px;
@@ -36,15 +36,15 @@
       border: none;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     .dark .slider {
       background: #4b5563;
     }
-    
+
     .dark .slider::-webkit-slider-thumb {
       background: #0B7BE3;
     }
-    
+
     .dark .slider::-moz-range-thumb {
       background: #0B7BE3;
     }
@@ -183,25 +183,26 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
       <!-- Left Sidebar - Filter Panel -->
       <aside class="lg:col-span-1">
-        <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[24px]">
+        <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[24px]">
           <!-- Back Button -->
-          <button onclick="window.location.href='index.html'" class="w-full flex items-center justify-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
-            <i class="fas fa-arrow-left text-[14px]"></i>
+          <button onclick="window.location.href='index.html'"
+            class="w-full flex items-center space-x-[8px] text-gray-700 dark:text-gray-300 px-0 py-[12px] hover:opacity-80 transition-opacity mb-[24px]">
+            <img src="../assets/icons/arrow-left-02.svg" alt="Back" class="w-[20px] h-[20px]">
             <span class="text-[14px] font-medium">Asosiy sahifaga o'tish</span>
           </button>
 
           <!-- Filter Section -->
           <div class="mb-[24px]">
-            <h3 class="text-[16px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygohlarni saralash</h3>
-            
+            <h3 class="text-[16px] fot-bold text-gray-900 dark:text-white mb-[16px]">Oliygohlarni saralash</h3>
+
             <!-- Language Filter -->
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[12px]">Ta'lim tili bo'yicha</h4>
-              <div class="space-y-[8px]">
+              <div class="grid grid-cols-3 gap-[8px]">
                 <label class="flex items-center space-x-[8px] cursor-pointer">
                   <input type="radio" name="language" value="all" checked class="text-primary focus:ring-primary">
                   <span class="text-[14px] text-gray-700 dark:text-gray-300">Hammasi</span>
-                </label>
+                </label>n
                 <label class="flex items-center space-x-[8px] cursor-pointer">
                   <input type="radio" name="language" value="uzbek" class="text-primary focus:ring-primary">
                   <span class="text-[14px] text-gray-700 dark:text-gray-300">O'zbek</span>
@@ -236,7 +237,8 @@
             <!-- Region Filter -->
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Hudud bo'yicha</h4>
-              <select class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <select
+                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Viloyatni tanlash</option>
                 <option value="toshkent">Toshkent</option>
                 <option value="samarkand">Samarqand</option>
@@ -257,7 +259,8 @@
             <!-- Direction Filter -->
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Yo'nalish bo'yicha</h4>
-              <select class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
+              <select
+                class="w-full px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
                 <option value="">Viloyatni tanlash</option>
                 <option value="medicine">Tibbiyot</option>
                 <option value="engineering">Muhandislik</option>
@@ -274,7 +277,8 @@
             <div class="mb-[24px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Kirish balli bo'yicha</h4>
               <div class="px-[8px]">
-                <input type="range" min="0" max="80" value="40" class="w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer slider">
+                <input type="range" min="0" max="80" value="65"
+                  class="w-full h-[6px] bg-gray-300 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer slider">
                 <div class="flex justify-between text-[12px] text-gray-600 dark:text-gray-400 mt-[4px]">
                   <span>0 ball</span>
                   <span>80 ball</span>
@@ -283,7 +287,8 @@
             </div>
 
             <!-- Clear Filter Button -->
-            <button class="w-full bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors text-[14px] font-medium">
+            <button
+              class="w-full bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors text-[14px] font-medium">
               Filtrni tozalash
             </button>
           </div>
@@ -293,169 +298,74 @@
       <!-- Main Content Area -->
       <main class="lg:col-span-2">
         <!-- Tab Buttons -->
-        <div class="flex space-x-[8px] mb-[24px]">
-          <button class="px-[20px] py-[10px] bg-primary text-white rounded-[24px] text-[14px] font-medium">
-            Hammasi
-          </button>
-          <button class="px-[20px] py-[10px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-[24px] text-[14px] font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-            Birinchi past ballilar
-          </button>
-          <button class="px-[20px] py-[10px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-[24px] text-[14px] font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors flex items-center space-x-[8px]">
-            <i class="fas fa-arrow-up text-[12px] text-green-500"></i>
-            Birinchi yuqori ballikar
-          </button>
+        <!-- Category Tabs -->
+        <div class="flex items-center justify-between mb-[24px] mt-4">
+          <div class="flex space-x-[8px] overflow-x-auto scrollbar-hide" style="white-space: nowrap;">
+            <button id="tab-all"
+              class="h-[52px] bg-primary text-white px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors flex-shrink-0">
+              <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
+                <img src="../assets/icons/red-down.svg" alt="All" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] font-medium">Hammasi</span>
+            </button>
+            <button id="tab-students"
+              class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
+              <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
+                <img src="../assets/icons/green-red-up-down.svg" alt="Talabalar" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] font-medium">Talabalar</span>
+            </button>
+            <button id="tab-mandat"
+              class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
+              <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
+                <img src="../assets/icons/cursor.svg" alt="Mandat" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] font-medium">Mandat 2023</span>
+            </button>
+            <button id="tab-contests"
+              class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
+              <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
+                <img src="../assets/icons/green-up.svg" alt="Tanlovlar" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[16px] font-medium">Tanlovlar</span>
+            </button>
+          </div>
         </div>
 
         <!-- University List -->
         <div class="space-y-[16px]">
           <!-- University Card 1 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
+          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col gap-[16px]">
+            <h3 class="text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
+              Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
+            </h3>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-[12px]">
+                <div
+                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
+                  <span class="text-black text-[16px] font-normal">14</span>
                 </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
+                <div
+                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
+                  <span class="text-black text-[16px] font-normal">105.5</span>
                 </div>
-                <div class="flex items-center space-x-[4px]">
+                <div
+                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
-              </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-            </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
-          </div>
-
-          <!-- University Card 2 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
-                </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
-                </div>
-                <div class="flex items-center space-x-[4px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
+                <div
+                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
+              <button onclick="window.location.href='oliygoh-detail.html'"
+                class="bg-primary h-[32px] text-white px-[10px] py-[3px] rounded-[12px] hover:bg-primary/90 transition-colors text-[16px] font-light whitespace-nowrap">
+                Batafsil
+              </button>
             </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
-          </div>
-
-          <!-- University Card 3 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
-                </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
-                </div>
-                <div class="flex items-center space-x-[4px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-              </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-            </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
-          </div>
-
-          <!-- University Card 4 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
-                </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
-                </div>
-                <div class="flex items-center space-x-[4px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-              </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-            </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
-          </div>
-
-          <!-- University Card 5 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
-                </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
-                </div>
-                <div class="flex items-center space-x-[4px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-              </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-            </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
-          </div>
-
-          <!-- University Card 6 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] shadow-soft p-[20px] flex items-center justify-between">
-            <div class="flex-1">
-              <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[8px] leading-tight">
-                Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-              </h3>
-              <div class="flex items-center space-x-[12px] mb-[8px]">
-                <div class="w-[24px] h-[24px] bg-blue-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">14</span>
-                </div>
-                <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[12px] font-bold">105.4</span>
-                </div>
-                <div class="flex items-center space-x-[4px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-              </div>
-              <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-            </div>
-            <button onclick="window.location.href='oliygoh-detail.html'" class="bg-primary text-white px-[20px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-              Batafsil
-            </button>
           </div>
         </div>
       </main>
