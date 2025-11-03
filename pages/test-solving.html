@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DTM Test 2025 (546789) - Oliygoh</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
+  <script>
+    // Initialize theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- Test Header -->
+  <header class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-[16px] py-[12px]">
+      <div class="flex items-center justify-between">
+        <h1 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white">DTM Test 2025 (546789)</h1>
+        <button id="exit-test-btn"
+          class="bg-red-500 hover:bg-red-600 text-white px-[20px] py-[10px] rounded-[12px] transition-colors text-[14px] font-medium">
+          Imtihondan chiqish
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-[16px] py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-[16px] md:gap-[24px]">
+      <!-- Left Sidebar - Test Info -->
+      <aside class="lg:col-span-2">
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] sticky top-[24px]">
+          <!-- Timer -->
+          <div class="mb-[20px]">
+            <div class="flex items-center space-x-[8px] mb-[8px]">
+              <i class="fas fa-clock text-[18px] text-gray-600 dark:text-gray-400"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Qolgan vaqt</span>
+            </div>
+            <div class="text-[24px] font-bold text-gray-900 dark:text-white" id="timer">14:44:00</div>
+          </div>
+
+          <!-- Participants -->
+          <div class="mb-[24px]">
+            <div class="flex items-center space-x-[8px] mb-[8px]">
+              <i class="fas fa-users text-[18px] text-gray-600 dark:text-gray-400"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Ishtirokchilar</span>
+            </div>
+            <div class="text-[20px] font-bold text-gray-900 dark:text-white">390092</div>
+          </div>
+
+          <!-- Exit Button -->
+          <button id="exit-test-sidebar-btn"
+            class="w-full bg-red-500 hover:bg-red-600 text-white px-[16px] py-[12px] rounded-[16px] transition-colors text-[14px] font-medium">
+            Imtihondan chiqish
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area - Questions -->
+      <main class="lg:col-span-7">
+        <!-- Question 1 -->
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] md:p-[32px] mb-[16px] question-block"
+          data-question="1" style="display: block;">
+          <h2 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[20px]">
+            1. Qaysi qatorda shaxs otidan yasalgan faoliyat jarayon oti vositasiz to'ldiruvchi vazifasida kelgan?
+          </h2>
+          <div class="space-y-[12px]">
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary" checked>
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Xalq orasida: "Maqtanganni uyini ko'r" degan gap bor.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Yolqin akam traktor terimidan bo'shagandan keyin hovlining kamchiliklarini tuzatadi.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Shomurod asli yilqichining bolasi, dehqonchilikni xushlamaydi.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-1" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Bolalar eng quvonchli xabarni yurtdoshlariga yetkazishga oshiqayotgan elchilardek guvullab Usmonlarnikiga
+                jo'nashdi.
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] md:p-[32px] mb-[16px] question-block"
+          data-question="2" style="display: none;">
+          <h2 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[20px]">
+            2. Militsiya: "Mototsikl haydaydigan hamma maxsus kaska kiyishi kerak". Quyidagilardan qaysi biri
+            militsiyaning gapini asoslaydi?
+          </h2>
+          <div class="space-y-[12px]">
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Ot haydaydiganlar, odatda, kaska kiyib yurishadi.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Yolqin akam traktor terimidan bo'shagandan keyin hovlining kamchiliklarini tuzatadi.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Shomurod asli yilqichining bolasi, dehqonchilikni xushlamaydi.
+              </span>
+            </label>
+            <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              <input type="radio" name="question-2" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
+              <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">
+                Bolalar eng quvonchli xabarni yurtdoshlariga yetkazishga oshiqayotgan elchilardek guvullab Usmonlarnikiga
+                jo'nashdi.
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center justify-between mt-[24px]">
+          <button id="prev-btn"
+            class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[24px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled>
+            Avvalgi
+          </button>
+          <button id="next-btn"
+            class="bg-primary text-white px-[24px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            Keyingi
+          </button>
+        </div>
+      </main>
+
+      <!-- Right Sidebar - Question Navigation -->
+      <aside class="lg:col-span-3">
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] sticky top-[24px]">
+          <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[16px]">Savollar</h3>
+          <!-- Question Grid -->
+          <div class="grid grid-cols-5 gap-[8px] mb-[20px]" id="question-grid">
+            <!-- Questions 1-19 will be generated by JavaScript -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex items-center space-x-[8px]">
+            <button id="prev-nav-btn"
+              class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled>
+              Avvalgi
+            </button>
+            <button id="next-nav-btn"
+              class="flex-1 bg-primary text-white px-[16px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+              Keyingi
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Exit Confirmation Modal -->
+  <div id="exit-confirm-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[500px] transform scale-95 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="relative flex items-center justify-between p-[24px] border-b border-gray-200 dark:border-gray-700">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white">Imtihondan chiqish</h2>
+        <button id="close-exit-modal"
+          class="w-[32px] h-[32px] rounded-[8px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <i class="fas fa-times text-[18px] text-gray-600 dark:text-gray-400"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <p class="text-[16px] text-gray-700 dark:text-gray-300 mb-[24px]">
+          Siz barcha savollarga javob bermasdan imtihonni yakunlamoqchimisiz?
+        </p>
+        <div class="flex items-center space-x-[12px]">
+          <button id="confirm-exit-btn"
+            class="flex-1 bg-red-500 hover:bg-red-600 text-white px-[20px] py-[12px] rounded-[16px] transition-colors text-[14px] font-medium">
+            Ha, Imtihonni yakunlash
+          </button>
+          <button id="cancel-exit-btn"
+            class="flex-1 bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            Yo'q, testni ishlayman
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Modal -->
+  <div id="results-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[600px] transform scale-95 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="relative flex items-center justify-between p-[24px] border-b border-gray-200 dark:border-gray-700">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white">Test natijalaringiz</h2>
+        <button id="close-results-modal"
+          class="w-[32px] h-[32px] rounded-[8px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <i class="fas fa-times text-[18px] text-gray-600 dark:text-gray-400"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <!-- Results Grid -->
+        <div class="grid grid-cols-2 gap-[16px] mb-[24px]">
+          <!-- Time Spent -->
+          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
+            <div class="flex items-center space-x-[12px] mb-[8px]">
+              <i class="fas fa-clock text-[24px] text-gray-600 dark:text-gray-400"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Sarflangan vaqt</span>
+            </div>
+            <div class="text-[24px] font-bold text-gray-900 dark:text-white">20:23</div>
+          </div>
+
+          <!-- Correct Answers -->
+          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
+            <div class="flex items-center space-x-[12px] mb-[8px]">
+              <i class="fas fa-check-circle text-[24px] text-green-500"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">To'g'ri javoblar</span>
+            </div>
+            <div class="text-[24px] font-bold text-gray-900 dark:text-white">28/105</div>
+          </div>
+
+          <!-- Result -->
+          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
+            <div class="flex items-center space-x-[12px] mb-[8px]">
+              <i class="fas fa-chart-bar text-[24px] text-gray-600 dark:text-gray-400"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Natija</span>
+            </div>
+            <div class="text-[24px] font-bold text-gray-900 dark:text-white">25.7%</div>
+          </div>
+
+          <!-- Score -->
+          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
+            <div class="flex items-center space-x-[12px] mb-[8px]">
+              <i class="fas fa-bullseye text-[24px] text-gray-600 dark:text-gray-400"></i>
+              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Ball</span>
+            </div>
+            <div class="text-[24px] font-bold text-gray-900 dark:text-white">52.8</div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center space-x-[12px]">
+          <button id="analyze-test-btn"
+            class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[20px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium">
+            Testni tahlil qilish
+          </button>
+          <button id="exit-from-results-btn"
+            class="flex-1 bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            Testdan chiqish
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Test state management
+    const testState = {
+      currentQuestion: 1,
+      totalQuestions: 19,
+      answers: {},
+      questionStates: {}, // 'answered', 'current', 'flagged', 'unvisited'
+      timer: {
+        hours: 14,
+        minutes: 44,
+        seconds: 0
+      }
+    };
+
+    // Initialize question grid
+    function initializeQuestionGrid() {
+      const grid = document.getElementById('question-grid');
+      grid.innerHTML = '';
+
+      for (let i = 1; i <= testState.totalQuestions; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'w-[40px] h-[40px] rounded-[8px] text-[14px] font-medium transition-colors question-nav-btn';
+        btn.textContent = i;
+        btn.dataset.question = i;
+        btn.addEventListener('click', () => navigateToQuestion(i));
+
+        // Set initial state
+        if (i === 1) {
+          // Question 1 is both current and answered
+          btn.classList.add('bg-primary', 'text-white', 'border-2', 'border-white');
+          testState.questionStates[i] = 'current';
+        } else if (i === 2) {
+          // Question 2 is visited (has blue border)
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-blue-600', 'dark:text-blue-400', 'border-2', 'border-blue-500', 'dark:border-blue-500');
+          testState.questionStates[i] = 'visited';
+        } else {
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-600', 'dark:text-gray-400', 'border', 'border-gray-200', 'dark:border-gray-700');
+          testState.questionStates[i] = 'unvisited';
+        }
+
+        grid.appendChild(btn);
+      }
+
+      // Add ellipsis if more questions
+      if (testState.totalQuestions > 19) {
+        const ellipsis = document.createElement('button');
+        ellipsis.className = 'w-[40px] h-[40px] rounded-[8px] text-[14px] font-medium bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700';
+        ellipsis.textContent = '...';
+        grid.appendChild(ellipsis);
+      }
+    }
+
+    // Update question states
+    function updateQuestionState(questionNum, state) {
+      testState.questionStates[questionNum] = state;
+      const btn = document.querySelector(`.question-nav-btn[data-question="${questionNum}"]`);
+      if (!btn) return;
+
+      // Reset classes
+      btn.className = 'w-[40px] h-[40px] rounded-[8px] text-[14px] font-medium transition-colors question-nav-btn';
+
+      switch (state) {
+        case 'current':
+          btn.classList.add('bg-primary', 'text-white', 'border-2', 'border-white');
+          break;
+        case 'answered':
+          btn.classList.add('bg-blue-100', 'dark:bg-blue-900', 'text-blue-700', 'dark:text-blue-300', 'border', 'border-blue-300', 'dark:border-blue-700');
+          break;
+        case 'visited':
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-blue-600', 'dark:text-blue-400', 'border-2', 'border-blue-500', 'dark:border-blue-500');
+          break;
+        case 'flagged':
+          btn.classList.add('bg-red-100', 'dark:bg-red-900', 'text-red-700', 'dark:text-red-300', 'border', 'border-red-300', 'dark:border-red-700');
+          break;
+        case 'correct':
+          btn.classList.add('bg-green-100', 'dark:bg-green-900', 'text-green-700', 'dark:text-green-300', 'border', 'border-green-300', 'dark:border-green-700');
+          break;
+        default:
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-600', 'dark:text-gray-400', 'border', 'border-gray-200', 'dark:border-gray-700');
+      }
+    }
+
+    // Navigate to question
+    function navigateToQuestion(questionNum) {
+      if (questionNum < 1 || questionNum > testState.totalQuestions) {
+        return;
+      }
+
+      // Hide all questions
+      document.querySelectorAll('.question-block').forEach(block => {
+        block.style.display = 'none';
+      });
+
+      // Show selected question
+      const questionBlock = document.querySelector(`.question-block[data-question="${questionNum}"]`);
+      if (questionBlock) {
+        questionBlock.style.display = 'block';
+      } else {
+        // If question doesn't exist, create a placeholder
+        createQuestionPlaceholder(questionNum);
+      }
+
+      // Update current question
+      const prevQuestion = testState.currentQuestion;
+      testState.currentQuestion = questionNum;
+
+      // Update states
+      if (prevQuestion !== questionNum) {
+        if (testState.answers[prevQuestion]) {
+          updateQuestionState(prevQuestion, 'answered');
+        } else {
+          // Mark as visited if we've seen it but not answered
+          updateQuestionState(prevQuestion, 'visited');
+        }
+      }
+      updateQuestionState(questionNum, 'current');
+
+      // Update navigation buttons
+      updateNavigationButtons();
+    }
+
+    // Create placeholder for questions that don't exist yet
+    function createQuestionPlaceholder(questionNum) {
+      const main = document.querySelector('main');
+      if (!main) return;
+      
+      const placeholder = document.createElement('div');
+      placeholder.className = 'bg-white dark:bg-dark-card rounded-[24px] p-[20px] md:p-[32px] mb-[16px] question-block';
+      placeholder.setAttribute('data-question', questionNum);
+      placeholder.style.display = 'block';
+      placeholder.innerHTML = `
+        <h2 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[20px]">
+          ${questionNum}. Savol ${questionNum}
+        </h2>
+        <div class="space-y-[12px]">
+          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="a" class="mt-[4px] w-[20px] h-[20px] text-primary">
+            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">A) Variant A</span>
+          </label>
+          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="b" class="mt-[4px] w-[20px] h-[20px] text-primary">
+            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">B) Variant B</span>
+          </label>
+          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="c" class="mt-[4px] w-[20px] h-[20px] text-primary">
+            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">C) Variant C</span>
+          </label>
+          <label class="flex items-start space-x-[12px] cursor-pointer p-[12px] rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <input type="radio" name="question-${questionNum}" value="d" class="mt-[4px] w-[20px] h-[20px] text-primary">
+            <span class="text-[14px] md:text-[16px] text-gray-700 dark:text-gray-300 flex-1">D) Variant D</span>
+          </label>
+        </div>
+      `;
+      
+      // Insert before navigation buttons
+      const navButtons = main.querySelector('.flex.items-center.justify-between');
+      if (navButtons) {
+        main.insertBefore(placeholder, navButtons);
+      } else {
+        main.appendChild(placeholder);
+      }
+    }
+
+    // Update navigation buttons
+    function updateNavigationButtons() {
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const prevNavBtn = document.getElementById('prev-nav-btn');
+      const nextNavBtn = document.getElementById('next-nav-btn');
+
+      const isFirst = testState.currentQuestion === 1;
+      const isLast = testState.currentQuestion === testState.totalQuestions;
+
+      [prevBtn, prevNavBtn].forEach(btn => {
+        btn.disabled = isFirst;
+      });
+
+      [nextBtn, nextNavBtn].forEach(btn => {
+        btn.disabled = isLast;
+      });
+    }
+
+    // Timer functionality
+    function updateTimer() {
+      const timerElement = document.getElementById('timer');
+      if (testState.timer.seconds > 0) {
+        testState.timer.seconds--;
+      } else if (testState.timer.minutes > 0) {
+        testState.timer.minutes--;
+        testState.timer.seconds = 59;
+      } else if (testState.timer.hours > 0) {
+        testState.timer.hours--;
+        testState.timer.minutes = 59;
+        testState.timer.seconds = 59;
+      } else {
+        // Time's up - show results
+        showResultsModal();
+        return;
+      }
+
+      const h = String(testState.timer.hours).padStart(2, '0');
+      const m = String(testState.timer.minutes).padStart(2, '0');
+      const s = String(testState.timer.seconds).padStart(2, '0');
+      timerElement.textContent = `${h}:${m}:${s}`;
+    }
+
+    // Track answers
+    document.addEventListener('change', function (e) {
+      if (e.target.type === 'radio' && e.target.name.startsWith('question-')) {
+        const questionNum = parseInt(e.target.name.split('-')[1]);
+        testState.answers[questionNum] = e.target.value;
+        // Only update state if it's not the current question (current question should stay "current")
+        if (questionNum !== testState.currentQuestion) {
+          updateQuestionState(questionNum, 'answered');
+        }
+      }
+    });
+
+    // Initialize all event listeners
+    function initializeEventListeners() {
+      // Navigation button handlers
+      const nextBtn = document.getElementById('next-btn');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextNavBtn = document.getElementById('next-nav-btn');
+      const prevNavBtn = document.getElementById('prev-nav-btn');
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (testState.currentQuestion < testState.totalQuestions) {
+            navigateToQuestion(testState.currentQuestion + 1);
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (testState.currentQuestion > 1) {
+            navigateToQuestion(testState.currentQuestion - 1);
+          }
+        });
+      }
+
+      if (nextNavBtn) {
+        nextNavBtn.addEventListener('click', () => {
+          if (testState.currentQuestion < testState.totalQuestions) {
+            navigateToQuestion(testState.currentQuestion + 1);
+          }
+        });
+      }
+
+      if (prevNavBtn) {
+        prevNavBtn.addEventListener('click', () => {
+          if (testState.currentQuestion > 1) {
+            navigateToQuestion(testState.currentQuestion - 1);
+          }
+        });
+      }
+
+      // Exit button handlers
+      const exitTestBtn = document.getElementById('exit-test-btn');
+      const exitTestSidebarBtn = document.getElementById('exit-test-sidebar-btn');
+      const closeExitModal = document.getElementById('close-exit-modal');
+      const cancelExitBtn = document.getElementById('cancel-exit-btn');
+      const confirmExitBtn = document.getElementById('confirm-exit-btn');
+
+      if (exitTestBtn) exitTestBtn.addEventListener('click', showExitModal);
+      if (exitTestSidebarBtn) exitTestSidebarBtn.addEventListener('click', showExitModal);
+      if (closeExitModal) closeExitModal.addEventListener('click', hideExitModal);
+      if (cancelExitBtn) cancelExitBtn.addEventListener('click', hideExitModal);
+
+      if (confirmExitBtn) {
+        confirmExitBtn.addEventListener('click', () => {
+          hideExitModal();
+          showResultsModal();
+        });
+      }
+
+      // Results modal handlers
+      const closeResultsModal = document.getElementById('close-results-modal');
+      const exitFromResultsBtn = document.getElementById('exit-from-results-btn');
+      const analyzeTestBtn = document.getElementById('analyze-test-btn');
+
+      if (closeResultsModal) closeResultsModal.addEventListener('click', hideResultsModal);
+      if (exitFromResultsBtn) {
+        exitFromResultsBtn.addEventListener('click', () => {
+          window.location.href = 'tests.html';
+        });
+      }
+      if (analyzeTestBtn) {
+        analyzeTestBtn.addEventListener('click', () => {
+          alert('Test tahlili funksiyasi tez orada qo\'shiladi!');
+        });
+      }
+
+      // Close modals when clicking outside
+      const exitConfirmModal = document.getElementById('exit-confirm-modal');
+      const resultsModal = document.getElementById('results-modal');
+
+      if (exitConfirmModal) {
+        exitConfirmModal.addEventListener('click', function (e) {
+          if (e.target === this) {
+            hideExitModal();
+          }
+        });
+      }
+
+      if (resultsModal) {
+        resultsModal.addEventListener('click', function (e) {
+          if (e.target === this) {
+            hideResultsModal();
+          }
+        });
+      }
+    }
+
+    // Exit modal functionality
+    function showExitModal() {
+      const modal = document.getElementById('exit-confirm-modal');
+      if (!modal) return;
+      const modalContent = modal.querySelector('div.bg-white, div.dark\\:bg-dark-card');
+      modal.classList.remove('opacity-0', 'invisible');
+      modal.classList.add('opacity-100', 'visible');
+      if (modalContent) {
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideExitModal() {
+      const modal = document.getElementById('exit-confirm-modal');
+      if (!modal) return;
+      const modalContent = modal.querySelector('div.bg-white, div.dark\\:bg-dark-card');
+      modal.classList.add('opacity-0', 'invisible');
+      modal.classList.remove('opacity-100', 'visible');
+      if (modalContent) {
+        modalContent.classList.add('scale-95');
+        modalContent.classList.remove('scale-100');
+      }
+      document.body.style.overflow = 'auto';
+    }
+
+    function showResultsModal() {
+      const modal = document.getElementById('results-modal');
+      if (!modal) return;
+      const modalContent = modal.querySelector('div.bg-white, div.dark\\:bg-dark-card');
+      modal.classList.remove('opacity-0', 'invisible');
+      modal.classList.add('opacity-100', 'visible');
+      if (modalContent) {
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideResultsModal() {
+      const modal = document.getElementById('results-modal');
+      if (!modal) return;
+      const modalContent = modal.querySelector('div.bg-white, div.dark\\:bg-dark-card');
+      modal.classList.add('opacity-0', 'invisible');
+      modal.classList.remove('opacity-100', 'visible');
+      if (modalContent) {
+        modalContent.classList.add('scale-95');
+        modalContent.classList.remove('scale-100');
+      }
+      document.body.style.overflow = 'auto';
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mark question 1 as answered (since it's pre-selected)
+      testState.answers[1] = 'a';
+      testState.questionStates[1] = 'answered';
+
+      // Initialize all components
+      initializeQuestionGrid();
+      initializeEventListeners();
+      updateNavigationButtons();
+      navigateToQuestion(1);
+
+      // Update question 1 state to show it's current (overrides answered for current question)
+      updateQuestionState(1, 'current');
+
+      // Start timer
+      setInterval(updateTimer, 1000);
+    });
+  </script>
+</body>
+
+</html>
+
