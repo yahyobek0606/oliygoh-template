@@ -29,11 +29,13 @@
   </div>
 
   <!-- Mobile Header -->
-  <header class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+  <header
+    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
-        <button id="mobile-menu-toggle" class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+        <button id="mobile-menu-toggle"
+          class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/hamburger.svg" alt="Menu" class="w-[20px] h-[20px]">
         </button>
 
@@ -46,7 +48,8 @@
         <!-- Search and Profile -->
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
-          <button class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
             <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
           </button>
 
@@ -187,38 +190,46 @@
       <aside class="hidden lg:block lg:col-span-1">
         <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[24px] sticky top-[24px]">
           <!-- Back Button -->
-          <button onclick="window.location.href='index.html'"
-            class="w-full flex items-center space-x-[8px] bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors mb-[24px]">
-            <img src="../assets/icons/arrow-left-02.svg" alt="Back" class="w-[20px] h-[20px]">
-            <span class="text-[14px] font-medium">Asosiy sahifaga</span>
-          </button>
-
-          <!-- View Toggle Buttons -->
-          <div class="flex items-center space-x-[8px] mb-[24px]">
-            <button id="list-view-btn"
-              class="flex-1 bg-primary text-white px-[16px] py-[10px] rounded-[16px] flex items-center justify-center transition-colors">
-              <i class="fas fa-list text-[18px]"></i>
-            </button>
-            <button id="grid-view-btn"
-              class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] py-[10px] rounded-[16px] flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-              <i class="fas fa-th text-[18px]"></i>
-            </button>
+          <div class="flex items-center justify-between mb-[16px]">
+            <a href="index.html" onclick="closeMobileMenu();"
+              class="flex h-[52px] items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[16px]">
+              <div
+                class="w-[40px] h-[40px] bg-gray-200 dark:bg-[#F2F3F7] rounded-[10px] flex items-center justify-center">
+                <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+              </div>
+              <span class="text-[14px] font-medium text-black dark:text-white">Asosiy sahifa</span>
+            </a>
+            <div
+              class="flex h-[52px] p-1 items-center bg-white dark:bg-white border border-2 border-gray-200 dark:border-gray-700 rounded-[14px] overflow-hidden">
+              <button id="list-view-btn" class="w-[44px] h-[44px] flex items-center justify-center p-2 focus:outline-none transition-all duration-200
+                  rounded-[12px]
+                  bg-[#F2F3F7] dark:bg-[#152732]
+                  hover:opacity-90" data-active="true">
+                <img src="../assets/icons/list-view-active.svg" alt="List" class="list-view-icon w-[20px] h-[20px]">
+              </button>
+              <button id="grid-view-btn" class="w-[44px] h-[44px] flex items-center justify-center p-2 focus:outline-none transition-all duration-200
+                  rounded-[12px]
+                  bg-transparent
+                  hover:bg-gray-100 dark:hover:bg-gray-700">
+                <img src="../assets/icons/grid-view-not-active.svg" alt="Grid" class="grid-view-icon w-[20px] h-[20px]">
+              </button>
+            </div>
           </div>
 
           <!-- Category Navigation -->
-          <div class="space-y-[4px]">
+          <div class="space-y-[8px]">
             <!-- Prezident maktablari (Active/Expanded) -->
-            <div class="mb-[8px]">
+            <div class="category-item mb-[8px]" data-category="prezident">
               <button
-                class="w-full flex items-center justify-between px-[12px] py-[10px] bg-primary text-white rounded-[12px] hover:bg-primary/90 transition-colors">
+                class="category-toggle w-full flex items-center justify-between px-[12px] py-[10px] bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-500 dark:border-blue-400 text-gray-900 dark:text-white rounded-[12px] transition-all">
                 <div class="flex items-center space-x-[8px]">
-                  <img src="../assets/icons/caption.svg" alt="Document" class="w-[16px] h-[16px] brightness-0 invert">
+                  <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Prezident maktablari</span>
                 </div>
                 <i class="fas fa-chevron-up text-[12px]"></i>
               </button>
               <!-- Sub-items -->
-              <div class="mt-[4px] pl-[24px] space-y-[4px]">
+              <div class="sub-items mt-[4px] pl-[24px] space-y-[4px]">
                 <button
                   class="w-full text-left px-[12px] py-[8px] text-[14px] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-[8px] transition-colors">
                   Matematik mantiq
@@ -235,31 +246,61 @@
             </div>
 
             <!-- Tanlovlar -->
-            <button class="w-full flex items-center justify-between px-[12px] py-[10px] text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-              <div class="flex items-center space-x-[8px]">
-                <img src="../assets/icons/caption.svg" alt="Document" class="w-[16px] h-[16px]">
-                <span class="text-[14px] font-medium">Tanlovlar</span>
+            <div class="category-item" data-category="tanlovlar">
+              <button
+                class="category-toggle w-full flex items-center justify-between px-[12px] py-[10px] bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+                <div class="flex items-center space-x-[8px]">
+                  <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
+                  <span class="text-[14px] font-medium">Tanlovlar</span>
+                </div>
+                <i class="fas fa-chevron-down text-[12px]"></i>
+              </button>
+              <!-- Sub-items (hidden by default) -->
+              <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
+                <button
+                  class="w-full text-left px-[12px] py-[8px] text-[14px] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-[8px] transition-colors">
+                  Sub-item 1
+                </button>
               </div>
-              <i class="fas fa-chevron-down text-[12px]"></i>
-            </button>
+            </div>
 
             <!-- Mavzulashtirilgan testlar -->
-            <button class="w-full flex items-center justify-between px-[12px] py-[10px] text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-              <div class="flex items-center space-x-[8px]">
-                <img src="../assets/icons/caption.svg" alt="Document" class="w-[16px] h-[16px]">
-                <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
+            <div class="category-item" data-category="mavzulashtirilgan">
+              <button
+                class="category-toggle w-full flex items-center justify-between px-[12px] py-[10px] bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+                <div class="flex items-center space-x-[8px]">
+                  <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
+                  <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
+                </div>
+                <i class="fas fa-chevron-down text-[12px]"></i>
+              </button>
+              <!-- Sub-items (hidden by default) -->
+              <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
+                <button
+                  class="w-full text-left px-[12px] py-[8px] text-[14px] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-[8px] transition-colors">
+                  Sub-item 1
+                </button>
               </div>
-              <i class="fas fa-chevron-down text-[12px]"></i>
-            </button>
+            </div>
 
             <!-- Mavzulashtirilgan testlar (Second instance) -->
-            <button class="w-full flex items-center justify-between px-[12px] py-[10px] text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-              <div class="flex items-center space-x-[8px]">
-                <img src="../assets/icons/caption.svg" alt="Document" class="w-[16px] h-[16px]">
-                <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
+            <div class="category-item" data-category="mavzulashtirilgan-2">
+              <button
+                class="category-toggle w-full flex items-center justify-between px-[12px] py-[10px] bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+                <div class="flex items-center space-x-[8px]">
+                  <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
+                  <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
+                </div>
+                <i class="fas fa-chevron-down text-[12px]"></i>
+              </button>
+              <!-- Sub-items (hidden by default) -->
+              <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
+                <button
+                  class="w-full text-left px-[12px] py-[8px] text-[14px] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-[8px] transition-colors">
+                  Sub-item 1
+                </button>
               </div>
-              <i class="fas fa-chevron-down text-[12px]"></i>
-            </button>
+            </div>
           </div>
         </div>
       </aside>
@@ -267,322 +308,86 @@
       <!-- Main Content Area -->
       <main class="lg:col-span-2 w-full">
         <!-- Page Title -->
-        <h1 class="text-[24px] md:text-[32px] font-bold text-gray-900 dark:text-white mb-[24px]">Imtihon testlari</h1>
+        <h1 class="text-[32px] md:text-[32px] font-bold text-gray-900 dark:text-white mb-[24px]">Imtihon testlari</h1>
 
         <!-- Test List -->
         <div id="test-list-view" class="space-y-[16px]">
           <!-- Test Card 1 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                  <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
+                  <span>
+                    <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
+                  </span>
+                  <span class="text-[12px] text-gray-600 dark:text-gray-400">09:45</span>
+                </div>
               </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
+              <h3 class="text-[24px] font-semibold text-gray-900 dark:text-white mb-[12px]">
                 Prezident maktabi testlari #1
               </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
+              <div class="flex justify-between items-center flex-wrap gap-[12px]">
+                <div class="flex items-center gap-[12px]">
+                  <div
+                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
+                    <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
+                  </div>
+                  <div
+                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
+                    <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
+                  </div>
                 </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
+                <button onclick="window.location.href='test-detail.html'"
+                  class="bg-primary h-[32px] text-white px-[20px] py-[12px] rounded-[12px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
+                  <span>Testni topshirish</span>
+                  <i class="fas fa-arrow-right text-[14px]"></i>
+                </button>
               </div>
             </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 2 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
-            <div class="flex-1 w-full">
-              <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-              </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
-                Prezident maktabi testlari #1
-              </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-                </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 3 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
-            <div class="flex-1 w-full">
-              <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-              </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
-                Prezident maktabi testlari #1
-              </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-                </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 4 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
-            <div class="flex-1 w-full">
-              <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-              </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
-                Prezident maktabi testlari #1
-              </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-                </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 5 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
-            <div class="flex-1 w-full">
-              <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-              </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
-                Prezident maktabi testlari #1
-              </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-                </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 6 -->
-          <div class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
-            <div class="flex-1 w-full">
-              <div class="flex items-center space-x-[12px] mb-[12px]">
-                <span class="text-[14px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-              </div>
-              <h3 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white mb-[12px]">
-                Prezident maktabi testlari #1
-              </h3>
-              <div class="flex items-center flex-wrap gap-[12px]">
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-question-circle text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-                </div>
-                <div class="flex items-center space-x-[6px]">
-                  <i class="fas fa-users text-[16px] text-gray-500"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-                </div>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center space-x-[8px] whitespace-nowrap w-full md:w-auto justify-center">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[14px]"></i>
-            </button>
           </div>
         </div>
 
         <!-- Grid View (Hidden by default) -->
-        <div id="test-grid-view" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px]">
+        <div id="test-grid-view" class="hidden grid grid-cols-1 md:grid-cols-2 gap-[16px]">
           <!-- Test Card 1 -->
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
+            <!-- Date and Time Badge -->
+            <div class="flex items-center mb-[12px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
+                <span>
+                  <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
+                </span>
+                <span class="text-[12px] text-gray-600 dark:text-gray-400">10:45</span>
+              </div>
             </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
+            
+            <!-- Test Title -->
+            <h3 class="text-[24px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
               Prezident maktabi testlari #1
             </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
+            
+            <!-- Test Details/Statistics Badges -->
+            <div class="flex flex-wrap gap-[8px] mb-[16px]">
+              <div class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
+                <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
+              <div class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
+                <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
             </div>
+            
+            <!-- Action Button -->
             <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
+              class="mt-auto h-[32px] bg-primary text-white px-[16px] py-[12px] rounded-[12px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
               <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 2 -->
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-            </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
-              Prezident maktabi testlari #1
-            </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-              </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 3 -->
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-            </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
-              Prezident maktabi testlari #1
-            </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-              </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 4 -->
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-            </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
-              Prezident maktabi testlari #1
-            </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-              </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 5 -->
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-            </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
-              Prezident maktabi testlari #1
-            </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-              </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
-            </button>
-          </div>
-
-          <!-- Test Card 6 -->
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
-            <div class="flex items-center space-x-[12px] mb-[12px]">
-              <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr 10:45</span>
-            </div>
-            <h3 class="text-[16px] md:text-[18px] font-semibold text-gray-900 dark:text-white mb-[12px] line-clamp-2">
-              Prezident maktabi testlari #1
-            </h3>
-            <div class="flex flex-col gap-[8px] mb-[16px]">
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-question-circle text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
-              </div>
-              <div class="flex items-center space-x-[6px]">
-                <i class="fas fa-users text-[14px] text-gray-500"></i>
-                <span class="text-[12px] md:text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
-              </div>
-            </div>
-            <button onclick="window.location.href='test-detail.html'"
-              class="mt-auto bg-primary text-white px-[16px] py-[10px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium flex items-center justify-center space-x-[8px]">
-              <span>Testni topshirish</span>
-              <i class="fas fa-arrow-right text-[12px]"></i>
+              <i class="fas fa-arrow-right text-[14px]"></i>
             </button>
           </div>
         </div>
@@ -854,28 +659,102 @@
       const testGridView = document.getElementById('test-grid-view');
 
       if (listViewBtn && gridViewBtn && testListView && testGridView) {
-        listViewBtn.addEventListener('click', function () {
-          listViewBtn.classList.add('bg-primary', 'text-white');
-          listViewBtn.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-          gridViewBtn.classList.remove('bg-primary', 'text-white');
-          gridViewBtn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+        const listViewIcon = listViewBtn.querySelector('.list-view-icon');
+        const gridViewIcon = gridViewBtn.querySelector('.grid-view-icon');
 
+        // Function to set active state
+        function setActiveButton(activeBtn, inactiveBtn, activeIcon, inactiveIcon, activeIconPath, inactiveIconPath) {
+          // Set active button - #F2F3F7 (gray) background
+          activeBtn.setAttribute('data-active', 'true');
+          activeBtn.classList.remove('bg-transparent', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
+          activeBtn.classList.add('bg-[#F2F3F7]', 'dark:bg-[#152732]', 'hover:opacity-90');
+          
+          // Update active button icon
+          if (activeIcon) {
+            activeIcon.setAttribute('src', activeIconPath);
+          }
+          
+          // Set inactive button - transparent (no background)
+          inactiveBtn.setAttribute('data-active', 'false');
+          inactiveBtn.classList.remove('bg-[#F2F3F7]', 'dark:bg-[#152732]', 'hover:opacity-90');
+          inactiveBtn.classList.add('bg-transparent', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
+          
+          // Update inactive button icon
+          if (inactiveIcon) {
+            inactiveIcon.setAttribute('src', inactiveIconPath);
+          }
+        }
+
+        // Initially set list view as active
+        setActiveButton(
+          listViewBtn, 
+          gridViewBtn, 
+          listViewIcon, 
+          gridViewIcon,
+          '../assets/icons/list-view-active.svg',
+          '../assets/icons/grid-view-not-active.svg'
+        );
+
+        listViewBtn.addEventListener('click', function () {
+          setActiveButton(
+            listViewBtn, 
+            gridViewBtn, 
+            listViewIcon, 
+            gridViewIcon,
+            '../assets/icons/list-view-active.svg',
+            '../assets/icons/grid-view-not-active.svg'
+          );
           testListView.classList.remove('hidden');
           testGridView.classList.add('hidden');
         });
 
         gridViewBtn.addEventListener('click', function () {
-          gridViewBtn.classList.add('bg-primary', 'text-white');
-          gridViewBtn.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-          listViewBtn.classList.remove('bg-primary', 'text-white');
-          listViewBtn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-
+          setActiveButton(
+            gridViewBtn, 
+            listViewBtn, 
+            gridViewIcon, 
+            listViewIcon,
+            '../assets/icons/grid-view-active.svg',
+            '../assets/icons/list-view.svg'
+          );
           testListView.classList.add('hidden');
           testGridView.classList.remove('hidden');
         });
       }
     });
+
+    // Category Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const categoryToggles = document.querySelectorAll('.category-toggle');
+
+      categoryToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const categoryItem = this.closest('.category-item');
+          const subItems = categoryItem.querySelector('.sub-items');
+          const chevron = this.querySelector('.fa-chevron-up, .fa-chevron-down');
+          const isExpanded = !subItems.classList.contains('hidden');
+
+          if (isExpanded) {
+            // Collapse
+            subItems.classList.add('hidden');
+            chevron.classList.remove('fa-chevron-up');
+            chevron.classList.add('fa-chevron-down');
+            // Remove active styling
+            this.classList.remove('bg-blue-50', 'dark:bg-blue-900/30', 'border-2', 'border-blue-500', 'dark:border-blue-400', 'text-gray-900', 'dark:text-white');
+            this.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          } else {
+            // Expand
+            subItems.classList.remove('hidden');
+            chevron.classList.remove('fa-chevron-down');
+            chevron.classList.add('fa-chevron-up');
+            // Add active styling
+            this.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+            this.classList.add('bg-blue-50', 'dark:bg-blue-900/30', 'border-2', 'border-blue-500', 'dark:border-blue-400', 'text-gray-900', 'dark:text-white');
+          }
+        });
+      });
+    });
+
   </script>
 
 </html>
-
