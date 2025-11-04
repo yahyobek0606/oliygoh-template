@@ -194,19 +194,6 @@
 
         <!-- Questions 3-19 -->
         <div id="questions-3-19"></div>
-
-        <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between gap-[12px] mt-[16px] md:mt-[24px]">
-          <button id="prev-btn"
-            class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[16px] md:px-[24px] py-[10px] md:py-[12px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[13px] md:text-[14px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled>
-            Avvalgi
-          </button>
-          <button id="next-btn"
-            class="flex-1 bg-primary text-white px-[16px] md:px-[24px] py-[10px] md:py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[13px] md:text-[14px] font-medium">
-            Keyingi
-          </button>
-        </div>
       </main>
 
       <!-- Right Sidebar - Question Navigation -->
@@ -500,32 +487,25 @@
         </div>
       `;
 
-      // Insert before navigation buttons
-      const navButtons = main.querySelector('.flex.items-center.justify-between');
-      if (navButtons) {
-        main.insertBefore(placeholder, navButtons);
-      } else {
-        main.appendChild(placeholder);
-      }
+      // Append to main content
+      main.appendChild(placeholder);
     }
 
     // Update navigation buttons
     function updateNavigationButtons() {
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
       const prevNavBtn = document.getElementById('prev-nav-btn');
       const nextNavBtn = document.getElementById('next-nav-btn');
 
       const isFirst = testState.currentQuestion === 1;
       const isLast = testState.currentQuestion === testState.totalQuestions;
 
-      [prevBtn, prevNavBtn].forEach(btn => {
-        btn.disabled = isFirst;
-      });
+      if (prevNavBtn) {
+        prevNavBtn.disabled = isFirst;
+      }
 
-      [nextBtn, nextNavBtn].forEach(btn => {
-        btn.disabled = isLast;
-      });
+      if (nextNavBtn) {
+        nextNavBtn.disabled = isLast;
+      }
     }
 
     // Timer functionality
@@ -570,26 +550,8 @@
     // Initialize all event listeners
     function initializeEventListeners() {
       // Navigation button handlers
-      const nextBtn = document.getElementById('next-btn');
-      const prevBtn = document.getElementById('prev-btn');
       const nextNavBtn = document.getElementById('next-nav-btn');
       const prevNavBtn = document.getElementById('prev-nav-btn');
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          if (testState.currentQuestion < testState.totalQuestions) {
-            navigateToQuestion(testState.currentQuestion + 1);
-          }
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          if (testState.currentQuestion > 1) {
-            navigateToQuestion(testState.currentQuestion - 1);
-          }
-        });
-      }
 
       if (nextNavBtn) {
         nextNavBtn.addEventListener('click', () => {
