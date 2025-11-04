@@ -9,6 +9,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tailwindcss -i src/styles.css -o dist/output.css --minify",
+    "prepare-public": "node scripts/prepare-public.js",
+    "build:vercel": "npm run build && npm run prepare-public",
     "dev": "npm run watch:css",
     "watch:css": "npx tailwindcss -i src/styles.css -o dist/output.css --watch",
     "serve": "npx serve . -l 8000",

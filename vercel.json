@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "public",
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/:path((?!assets|dist|node_modules).*)",
+      "destination": "/pages/:path.html"
+    },
+    {
+      "source": "/:path((?!assets|dist|node_modules).*).html",
+      "destination": "/pages/:path.html"
+    }
+  ]
+}
+
