@@ -11,6 +11,38 @@
 
 <body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
   <script>
+
+    // Mobile Menu Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+      function openMobileMenu() {
+        mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.add('opacity-100', 'visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+        document.body.style.overflow = 'auto';
+      }
+
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+      }
+
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Make closeMobileMenu globally accessible
+      window.closeMobileMenu = closeMobileMenu;
+    });
+
     // Initialize theme immediately to prevent flash
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -24,11 +56,46 @@
   </script>
   <!-- Top Banner -->
   <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
-    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+    <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
   </div>
 
-  <!-- Main Header -->
-  <header class="border-b border-gray-200 dark:border-gray-800">
+  <!-- Mobile Header -->
+  <header
+    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Hamburger Menu -->
+        <button id="mobile-menu-toggle"
+          class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <img src="../assets/icons/hamburger.svg" alt="Menu" class="w-[20px] h-[20px]">
+        </button>
+
+        <!-- Logo -->
+        <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="block dark:hidden h-[24px]">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh Logo Dark" class="hidden dark:block h-[24px]">
+        </div>
+
+        <!-- Search and Profile -->
+        <div class="flex items-center space-x-[12px]">
+          <!-- Search Button -->
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          </button>
+
+          <!-- Profile Picture -->
+          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
+            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Desktop Header -->
+  <header class="hidden lg:block border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Logo -->
@@ -39,11 +106,11 @@
 
         <!-- Search Bar and Settings Button -->
         <div class="flex-1 max-w-[600px] mx-[32px] flex items-center space-x-4">
-          <div class="relative bg-white flex items-center rounded-[16px] flex-1">
+          <div class="relative bg-white dark:bg-dark-card flex items-center rounded-[16px] flex-1">
             <div class="relative flex flex-1">
               <input type="text" id="search-input" placeholder="izlash"
-                class="w-full text-[14px] h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px]" />
-              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400">
+                class="w-full text-[14px] h-[56px] pl-[44px] pr-[16px] py-[12px] bg-transparent rounded-[24px] focus:outline-none text-[14px] dark:text-white dark:placeholder-gray-400" />
+              <span class="absolute left-[16px] top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-400">
                 <i class="fas fa-search text-[18px]"></i>
               </span>
             </div>
@@ -57,54 +124,63 @@
         <!-- Profile Section -->
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
-            <button id="notification-btn" class="text-gray-600 hover:text-primary relative">
-              <div class="bg-white p-4 rounded-[16px]">
+            <button id="notification-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white dark:bg-dark-card p-4 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
               <!-- Notification Dropdown -->
               <div id="notification-dropdown"
-                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white rounded-[24px] shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 z-50">
+                class="absolute top-full right-0 mt-[8px] w-[280px] max-w-[calc(100vw-32px)] bg-white dark:bg-dark-card rounded-[24px] shadow-lg border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] border-b border-gray-100">
-                  <div class="w-[40px] h-[40px] bg-gray-300 rounded-full flex items-center justify-center mr-[12px]">
+                <div class="flex items-center p-[16px] border-b border-gray-100 dark:border-gray-800">
+                  <div
+                    class="w-[40px] h-[40px] bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center mr-[12px]">
                     <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
                   </div>
                   <div>
-                    <p class="text-[14px] font-medium text-gray-900">Suxrobjon Xurram...</p>
+                    <p class="text-[14px] font-medium text-gray-900 dark:text-white">Suxrobjon Xurram...</p>
                   </div>
                 </div>
 
                 <!-- Menu Items -->
                 <div class="py-[8px]">
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-check text-[12px] text-gray-600"></i>
+                  <a href="#"
+                    class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-check text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
                     </div>
-                    <span class="text-[14px] text-gray-700">Natijalarim</span>
+                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Natijalarim</span>
                   </a>
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-bell text-[12px] text-gray-600"></i>
+                  <a href="#"
+                    class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-bell text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
                     </div>
-                    <span class="text-[14px] text-gray-700">Bildirishnomalar</span>
+                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Bildirishnomalar</span>
                   </a>
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-cog text-[12px] text-gray-600"></i>
+                  <a href="#"
+                    class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-cog text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
                     </div>
-                    <span class="text-[14px] text-gray-700">Sozlamalar</span>
+                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Sozlamalar</span>
                   </a>
-                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
+                  <div
+                    class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
                     <div class="flex items-center">
-                      <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-moon text-[12px] text-gray-600"></i>
+                      <div
+                        class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
+                        <i class="fas fa-moon text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
                       </div>
-                      <span class="text-[14px] text-gray-700">Tungi rejim</span>
+                      <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Tungi rejim</span>
                     </div>
                     <div class="relative">
                       <input type="checkbox" id="dark-mode-toggle" class="sr-only">
                       <label for="dark-mode-toggle"
-                        class="block w-[40px] h-[20px] bg-gray-300 rounded-full cursor-pointer transition-colors">
+                        class="block w-[40px] h-[20px] bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-colors">
                         <span
                           class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
                       </label>
@@ -113,15 +189,17 @@
                 </div>
 
                 <!-- Divider -->
-                <div class="border-t border-gray-100"></div>
+                <div class="border-t border-gray-100 dark:border-gray-800"></div>
 
                 <!-- Logout -->
                 <div class="py-[8px]">
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600"></i>
+                  <a href="#"
+                    class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
+                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
                     </div>
-                    <span class="text-[14px] text-gray-700">Profildan chiqish</span>
+                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Profildan chiqish</span>
                   </a>
                 </div>
               </div>
@@ -129,19 +207,120 @@
           </div>
           <button id="login-btn"
             class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
-            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+            <span class="text-[14px] font-medium">Profilga kirish</span>
           </button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay"
+    class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="w-full h-full">
+      <!-- Menu Header -->
+      <div
+        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
+        <button id="mobile-menu-close"
+          class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
+        </button>
+        <div class="flex-1 flex justify-center">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="block dark:hidden h-[24px]">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
+        </div>
+        <div class="flex items-center space-x-[12px]">
+          <!-- Search Button -->
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          </button>
+          <!-- Profile Picture -->
+          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
+            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Content -->
+      <div class="p-[16px]">
+        <!-- Back to Home -->
+        <a href="index.html" onclick="closeMobileMenu();"
+          class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[16px]">
+          <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-700 rounded-[10px] flex items-center justify-center">
+            <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+          </div>
+          <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="space-y-[8px] mb-[32px]">
+          <a href="account.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] bg-gray-200 dark:bg-gray-700 rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/user.svg" alt="Shaxsiyat" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Shaxsiyat</span>
+          </a>
+          <a href="login-security.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/settings-02.svg" alt="Kirish va xavfsizlik" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Kirish va xavfsizlik</span>
+          </a>
+          <a href="notifications.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/notification-02.svg" alt="Bildirishnomalar" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Bildirishnomalar</span>
+          </a>
+
+          <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+          <a href="subscriptions.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/crown.svg" alt="Obunalar" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Obunalar</span>
+          </a>
+          <a href="wallet.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/credit-card.svg" alt="Hamyon" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Hamyon</span>
+          </a>
+          <a href="payment-history.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/clock-02.svg" alt="To'lovlar tarixi" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">To'lovlar tarixi</span>
+          </a>
+          <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+          <a href="my-results.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/checkmark-badge-02.svg" alt="Mening natijalarim" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Mening natijalarim</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
   <!-- Main Content -->
-  <div class="container mx-auto px-[16px] py-[24px]">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-[16px] py-[16px] md:py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[16px] md:gap-[24px]">
       <!-- Left Sidebar -->
-      <aside class="lg:col-span-1">
-        <div class="bg-white rounded-[24px] p-[16px]">
+      <aside class="lg:col-span-1 hidden lg:block">
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px]">
           <!-- Back Button -->
           <a href="index.html"
             class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white border border-gray-200 rounded-[16px]">
@@ -211,13 +390,14 @@
 
       <!-- Main Content Area -->
       <main class="lg:col-span-3">
-        <div class="bg-white rounded-[24px] p-[32px]">
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px] md:p-[32px]">
 
           <!-- Notification Settings -->
           <div class="space-y-[20px]">
-            <div class="flex items-center justify-between">
+            <!-- Notification 1 -->
+            <div class="flex items-center justify-between mb-[32px]">
               <div class="flex-1">
-                <h2 class="text-[28px] font-bold text-gray-900">Bildirishnomalar</h2>
+                <h2 class="text-[20px] md:text-[28px] font-bold text-gray-900 dark:text-white">Bildirishnomalar</h2>
               </div>
               <div class="relative">
                 <input type="checkbox" id="exam-results" checked class="sr-only">
@@ -228,7 +408,6 @@
                 </label>
               </div>
             </div>
-            <!-- Notification 1 -->
             <div class="flex items-center justify-between">
               <div class="flex-1">
                 <h3 class="text-[16px] font-[400] text-gray-900 mb-[4px]">Imtihon natijalarini bildirish</h3>

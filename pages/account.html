@@ -24,11 +24,46 @@
   </script>
   <!-- Top Banner -->
   <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white py-[8px]">
-    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto">
+    <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
   </div>
 
-  <!-- Main Header -->
-  <header class="border-b border-gray-200 dark:border-gray-800">
+  <!-- Mobile Header -->
+  <header
+    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-[16px] py-[16px]">
+      <div class="flex items-center justify-between">
+        <!-- Hamburger Menu -->
+        <button id="mobile-menu-toggle"
+          class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <img src="../assets/icons/hamburger.svg" alt="Menu" class="w-[20px] h-[20px]">
+        </button>
+
+        <!-- Logo -->
+        <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh Logo" class="block dark:hidden h-[24px]">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh Logo Dark" class="hidden dark:block h-[24px]">
+        </div>
+
+        <!-- Search and Profile -->
+        <div class="flex items-center space-x-[12px]">
+          <!-- Search Button -->
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          </button>
+
+          <!-- Profile Picture -->
+          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
+            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Desktop Header -->
+  <header class="hidden lg:block border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Logo -->
@@ -63,7 +98,7 @@
               </div>
               <!-- Notification Dropdown -->
               <div id="notification-dropdown"
-                class="absolute top-full right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] shadow-lg border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
+                class="absolute top-full right-0 mt-[8px] w-[280px] max-w-[calc(100vw-32px)] bg-white dark:bg-dark-card rounded-[24px] shadow-lg border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
                 <div class="flex items-center p-[16px] border-b border-gray-100 dark:border-gray-800">
                   <div class="w-[40px] h-[40px] bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center mr-[12px]">
@@ -129,19 +164,124 @@
           </div>
           <button id="login-btn"
             class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
-            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
+            <span class="text-[14px] font-medium">Profilga kirish</span>
           </button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay"
+    class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="w-full h-full">
+      <!-- Menu Header -->
+      <div
+        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
+        <button id="mobile-menu-close"
+          class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
+        </button>
+        <div class="flex-1 flex justify-center">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="block dark:hidden h-[24px]">
+          <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
+        </div>
+        <div class="flex items-center space-x-[12px]">
+          <!-- Search Button -->
+          <button
+            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          </button>
+          <!-- Profile Picture -->
+          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
+            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Content -->
+      <div class="p-[16px]">
+        <!-- Back to Home -->
+        <a href="index.html" onclick="closeMobileMenu();"
+          class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[16px]">
+          <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-700 rounded-[10px] flex items-center justify-center">
+            <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="w-[24px] h-[24px]">
+          </div>
+          <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="space-y-[8px] mb-[32px]">
+          <a href="account.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] bg-gray-200 dark:bg-gray-700 rounded-[16px]">
+            <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/user.svg" alt="Shaxsiyat" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Shaxsiyat</span>
+          </a>
+          <a href="login-security.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/settings-02.svg" alt="Kirish va xavfsizlik" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Kirish va xavfsizlik</span>
+          </a>
+          <a href="notifications.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/notification-02.svg" alt="Bildirishnomalar" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Bildirishnomalar</span>
+          </a>
+
+          <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+          <a href="subscriptions.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/crown.svg" alt="Obunalar" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Obunalar</span>
+          </a>
+          <a href="wallet.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/credit-card.svg" alt="Hamyon" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Hamyon</span>
+          </a>
+          <a href="payment-history.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/clock-02.svg" alt="To'lovlar tarixi" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">To'lovlar tarixi</span>
+          </a>
+          <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
+          <a href="my-results.html" onclick="closeMobileMenu();"
+            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            <div
+              class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
+              <img src="../assets/icons/checkmark-badge-02.svg" alt="Mening natijalarim" class="w-[24px] h-[24px]">
+            </div>
+            <span class="text-[16px] text-black dark:text-white">Mening natijalarim</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
   <!-- Main Content -->
-  <div class="container mx-auto px-[16px] py-[24px]">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[24px]">
+  <div class="container mx-auto px-[16px] py-[16px] md:py-[24px]">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-[16px] md:gap-[24px]">
       <!-- Left Sidebar -->
-      <aside class="lg:col-span-1">
-        <div class="bg-white rounded-[24px] p-[16px]">
+      <aside class="lg:col-span-1 hidden lg:block">
+        <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px]">
           <!-- Back Button -->
           <a href="index.html"
             class="flex mb-[24px] items-center space-x-[15px] text-black p-[8px] bg-white border border-gray-200 rounded-[16px]">
@@ -211,69 +351,58 @@
 
       <!-- Main Content Area -->
       <main class="lg:col-span-3">
-        <div class="bg-white rounded-[16px] p-[32px]">
-          <h2 class="text-[28px] font-bold text-gray-900 mb-[32px]">Shaxsiyat sozlamalari</h2>
+        <div class="bg-white dark:bg-dark-card rounded-[16px] p-[16px] md:p-[32px]">
+          <h2 class="text-[20px] md:text-[28px] font-bold text-gray-900 dark:text-white mb-[24px] md:mb-[32px]">Shaxsiyat sozlamalari</h2>
 
-          <form class="space-y-[24px]">
-            <div class="flex items-center space-x-[24px]">
-              <div class="my-[24px]">
-                <div class="flex items-start space-x-[24px]">
-                  <div class="relative">
-                    <img src="../assets/ava-high.png" alt="Profile Picture"
-                      class="w-[120px] h-[120px] rounded-[32px] object-cover">
-                    <button
-                      class="absolute bottom-0 right-0 w-[32px] h-[32px] rounded-[14px] flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
-                      <img src="../assets/icons/user-edit-01.svg" alt="Camera" class="w-[24px] h-[24px]">
-                    </button>
-                  </div>
-                </div>
+          <form class="space-y-[20px] md:space-y-[24px]">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-[24px] space-y-[16px] md:space-y-0">
+              <div class="relative mx-auto md:mx-0">
+                <img src="../assets/ava-high.png" alt="Profile Picture"
+                  class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-[32px] object-cover">
+                <button
+                  class="absolute bottom-0 right-0 w-[28px] h-[28px] md:w-[32px] md:h-[32px] rounded-[14px] flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                  <img src="../assets/icons/user-edit-01.svg" alt="Camera" class="w-[20px] h-[20px] md:w-[24px] md:h-[24px]">
+                </button>
               </div>
 
-              <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Ism, familiyangiz</label>
+              <div class="flex-1 w-full">
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Ism, familiyangiz</label>
                 <input type="text" value="Suxrobjon Xurramov"
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+                  class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white">
               </div>
-
             </div>
-            <div class="grid grid-cols-2 gap-[16px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
               <!-- Gender Selection -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Jinsingiz</label>
-                <div class="relative bg-gray-100 rounded-[24px] p-[4px] flex">
-                  <label class="flex-1 cursor-pointer">
-                    <input type="radio" name="gender" value="male" checked class="sr-only">
-                    <div
-                      class="text-center py-[8px] px-[16px] rounded-[20px] bg-white text-gray-700 text-[14px] transition-all duration-200">
-                      Erkak
-                    </div>
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Jinsingiz</label>
+                <div class="relative p-1 w-full h-[56px] border-2 border-gray-300 rounded-[16px] bg-white dark:bg-dark-card dark:border-gray-700 flex overflow-hidden">
+                  <label class="flex-1 flex items-center justify-center cursor-pointer px-[16px] bg-gray-100 dark:bg-gray-800 rounded-[14px] transition-colors" data-gender="male">
+                    <input type="radio" name="gender" value="male" checked class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 accent-blue-600">
+                    <span class="ml-2 text-[14px] text-gray-900 dark:text-gray-300 font-medium">Erkak</span>
                   </label>
-                  <label class="flex-1 cursor-pointer">
-                    <input type="radio" name="gender" value="female" class="sr-only">
-                    <div
-                      class="text-center py-[8px] px-[16px] rounded-[20px] text-gray-700 text-[14px] transition-all duration-200">
-                      Ayol
-                    </div>
+                  <label class="flex-1 flex items-center justify-center cursor-pointer px-[16px] bg-white dark:bg-dark-card rounded-[14px] transition-colors" data-gender="female">
+                    <input type="radio" name="gender" value="female" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 accent-blue-600">
+                    <span class="ml-2 text-[14px] text-gray-500 dark:text-gray-400">Ayol</span>
                   </label>
                 </div>
               </div>
 
               <!-- Birth Date -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Yoshingiz</label>
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Yoshingiz</label>
                 <input type="text" placeholder="kk.oy.yil"
-                  class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white">
+                  class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white dark:placeholder-gray-400">
               </div>
             </div>
 
             <!-- Category and University Row -->
-            <div class="grid grid-cols-2 gap-[16px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
               <!-- Category -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Toifangiz</label>
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Toifangiz</label>
                 <div class="relative">
                   <select
-                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
                     <option>toifani tanlang</option>
                     <option>Maktab o'quvchisi</option>
                     <option>Abituriyent</option>
@@ -290,12 +419,12 @@
 
               <!-- University -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">
                   Oliygoh <span class="text-red-500 text-[12px]">(toifa tanlansa chiqadi)</span>
                 </label>
                 <div class="relative">
                   <select
-                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
                     <option>tanlanmagan</option>
                     <option>Toshkent Davlat Iqtisodiyot Universiteti</option>
                     <option>O'zbekiston Milliy Universiteti</option>
@@ -310,13 +439,13 @@
             </div>
 
             <!-- Region and Living Area Row -->
-            <div class="grid grid-cols-2 gap-[16px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
               <!-- Region -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">Viloyatingiz</label>
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Viloyatingiz</label>
                 <div class="relative">
                   <select
-                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
                     <option>Viloyatni tanlang</option>
                     <option>Toshkent shahri</option>
                     <option>Toshkent viloyati</option>
@@ -341,10 +470,10 @@
 
               <!-- Living Area -->
               <div>
-                <label class="block text-[14px] font-medium text-gray-700 mb-[8px]">O'qish yoki yashash hududi</label>
+                <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">O'qish yoki yashash hududi</label>
                 <div class="relative">
                   <select
-                    class="w-full px-[16px] py-[12px] border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white appearance-none cursor-pointer">
+                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
                     <option>kiritilmagan</option>
                     <option>Toshkent shahri</option>
                     <option>Toshkent viloyati</option>
@@ -362,7 +491,7 @@
             <!-- Save Button -->
             <div class="pt-[16px]">
               <button type="submit"
-                class="w-full h-[52px] bg-primary text-white px-[20px] py-[8px] rounded-[18px] hover:bg-primary/90 transition-colors font-medium text-[16px]">
+                class="w-full h-[48px] md:h-[52px] bg-primary text-white px-[20px] py-[8px] rounded-[18px] hover:bg-primary/90 transition-colors font-medium text-[14px] md:text-[16px]">
                 Saqlash
               </button>
             </div>
@@ -373,6 +502,37 @@
   </div>
 
   <script>
+    // Mobile Menu Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+      function openMobileMenu() {
+        mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.add('opacity-100', 'visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+        document.body.style.overflow = 'auto';
+      }
+
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+      }
+
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Make closeMobileMenu globally accessible
+      window.closeMobileMenu = closeMobileMenu;
+    });
+
     // Form submission
     document.querySelector('form').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -397,23 +557,32 @@
       input.click();
     });
 
-    // Pill-shaped radio button functionality
+    // Gender radio button visual state management
     document.querySelectorAll('input[name="gender"]').forEach(radio => {
       radio.addEventListener('change', function () {
-        const container = this.closest('.relative');
-        const labels = container.querySelectorAll('label');
-
+        const labels = document.querySelectorAll('label[data-gender]');
         labels.forEach(label => {
-          const div = label.querySelector('div');
-          if (label.querySelector('input').checked) {
-            div.classList.add('bg-white');
-            div.classList.remove('bg-transparent');
+          const isSelected = label.querySelector('input').checked;
+          const textSpan = label.querySelector('span');
+          
+          if (isSelected) {
+            label.classList.remove('bg-white', 'dark:bg-dark-card');
+            label.classList.add('bg-gray-100', 'dark:bg-gray-800');
+            textSpan.classList.remove('text-gray-500', 'dark:text-gray-400');
+            textSpan.classList.add('text-gray-900', 'dark:text-gray-300', 'font-medium');
           } else {
-            div.classList.remove('bg-white');
-            div.classList.add('bg-transparent');
+            label.classList.remove('bg-gray-100', 'dark:bg-gray-800');
+            label.classList.add('bg-white', 'dark:bg-dark-card');
+            textSpan.classList.remove('text-gray-900', 'dark:text-gray-300', 'font-medium');
+            textSpan.classList.add('text-gray-500', 'dark:text-gray-400');
           }
         });
       });
+      
+      // Trigger initial state
+      if (radio.checked) {
+        radio.dispatchEvent(new Event('change'));
+      }
     });
 
     // Custom select styling and functionality
