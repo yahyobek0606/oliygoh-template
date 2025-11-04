@@ -386,22 +386,24 @@
       <!-- Main Content Area -->
       <main class="lg:col-span-3">
         <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px] md:p-[32px]">
-          <h2 class="text-[28px] font-bold text-gray-900 mb-[24px]">To'lovlar tarixi</h2>
+          <h2 class="text-[20px] md:text-[28px] font-bold text-gray-900 dark:text-white mb-[24px]">To'lovlar tarixi</h2>
 
-          <!-- Filter Tabs (Redesigned) -->
-          <div class="flex mb-[24px]">
-            <div class="flex bg-white border border-gray-200 rounded-[20px] px-[4px] py-[4px]">
+          <!-- Filter Tabs -->
+          <div class="flex justify-center md:justify-start mb-[24px]">
+            <div class="flex bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-[20px] px-[4px] py-[4px] w-full md:w-auto">
               <button
-                class="px-[28px] py-[12px] rounded-[16px] text-[18px] font-semibold text-gray-700 bg-[#F6F7FA] border-none outline-none focus:outline-none transition-all duration-150"
-                style="box-shadow: none;" disabled>
+                class="flex-1 md:flex-none px-[16px] md:px-[28px] py-[12px] rounded-[16px] text-[14px] md:text-[18px] font-semibold text-gray-700 dark:text-gray-200 bg-[#F6F7FA] dark:bg-gray-600 border-none outline-none focus:outline-none transition-all duration-150 filter-tab active"
+                data-filter="all">
                 Hammasi
               </button>
               <button
-                class="px-[28px] py-[12px] rounded-[16px] text-[18px] font-normal text-gray-500 bg-transparent shadow-none border-none outline-none focus:outline-none transition-all duration-150 hover:bg-[#F6F7FA]">
+                class="flex-1 md:flex-none px-[16px] md:px-[28px] py-[12px] rounded-[16px] text-[14px] md:text-[18px] font-normal text-gray-500 dark:text-gray-400 bg-transparent shadow-none border-none outline-none focus:outline-none transition-all duration-150 hover:bg-[#F6F7FA] dark:hover:bg-gray-600 filter-tab"
+                data-filter="income">
                 Kirim
               </button>
               <button
-                class="px-[28px] py-[12px] rounded-[16px] text-[18px] font-normal text-gray-500 bg-transparent border-none outline-none focus:outline-none transition-all duration-150 hover:bg-[#F6F7FA]">
+                class="flex-1 md:flex-none px-[16px] md:px-[28px] py-[12px] rounded-[16px] text-[14px] md:text-[18px] font-normal text-gray-500 dark:text-gray-400 bg-transparent border-none outline-none focus:outline-none transition-all duration-150 hover:bg-[#F6F7FA] dark:hover:bg-gray-600 filter-tab"
+                data-filter="expense">
                 Chiqim
               </button>
             </div>
@@ -409,44 +411,96 @@
 
           <!-- Transaction List -->
           <div class="space-y-[12px]">
-            <!-- Transaction 1 -->
-            
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+            <!-- Transaction 1: Income -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px]">
+              <div class="flex flex-col gap-[12px]">
+                <p class="text-[18px] md:text-[20px] font-bold text-[#4CAF50] dark:text-green-400">+50 000 so'm</p>
+                <div class="flex flex-wrap items-center gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
-                    Click orqali to'lov</p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Click orqali hisob to'ldirildi</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#049741]">+50 000 so'm</p>
               </div>
             </div>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+
+            <!-- Transaction 2: Expense -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px]">
+              <div class="flex flex-col gap-[12px]">
+                <p class="text-[18px] md:text-[20px] font-bold text-[#F44336] dark:text-red-400">-35 200 so'm</p>
+                <div class="flex flex-wrap items-center gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Premium obuna sotib olindi</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transaction 3: Income -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px]">
+              <div class="flex flex-col gap-[12px]">
+                <p class="text-[18px] md:text-[20px] font-bold text-[#4CAF50] dark:text-green-400">+50 000 so'm</p>
+                <div class="flex flex-wrap items-center gap-[8px] sm:gap-4">
+                  <p
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
+                    13-oktabr
+                    <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
+                    10:45
+                  </p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
                     Click orqali to'lov</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
+              </div>
+            </div>
+
+            <!-- Transaction 4: Expense -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px]">
+              <div class="flex flex-col gap-[12px]">
+                <p class="text-[18px] md:text-[20px] font-bold text-[#F44336] dark:text-red-400">-35 200 so'm</p>
+                <div class="flex flex-wrap items-center gap-[8px] sm:gap-4">
+                  <p
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
+                    13-oktabr
+                    <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
+                    10:45
+                  </p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Premium obuna sotib olindi</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transaction 5: Expense -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px]">
+              <div class="flex flex-col gap-[12px]">
+                <p class="text-[18px] md:text-[20px] font-bold text-[#F44336] dark:text-red-400">-35 200 so'm</p>
+                <div class="flex flex-wrap items-center gap-[8px] sm:gap-4">
+                  <p
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
+                    13-oktabr
+                    <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
+                    10:45
+                  </p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Premium obuna sotib olindi</p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- View All Button -->
-          <div class="mt-[20px] text-start">
+          <div class="mt-[20px] text-center sm:text-start">
             <button
-              class="bg-gray-100 text-gray-700 w-[200px] h-[40px] px-[20px] py-[8px] rounded-[12px] hover:bg-gray-200 transition-colors text-[14px] font-medium">
+              class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-full sm:w-[200px] h-[40px] px-[20px] py-[8px] rounded-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium">
               Hammasi
             </button>
           </div>
@@ -456,29 +510,81 @@
   </div>
 
   <script>
-    // Handle filter tabs
-    document.querySelectorAll('button').forEach(button => {
-      if (button.textContent.includes('Hammasi') || button.textContent.includes('Kirim') || button.textContent.includes('Chiqim')) {
-        button.addEventListener('click', function () {
-          // Remove active class from all tabs
-          document.querySelectorAll('button').forEach(btn => {
-            if (btn.textContent.includes('Hammasi') || btn.textContent.includes('Kirim') || btn.textContent.includes('Chiqim')) {
-              btn.classList.remove('bg-gray-100', 'text-gray-800');
-              btn.classList.add('bg-gray-200', 'text-gray-600');
-            }
-          });
+    // Mobile Menu Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
 
-          // Add active class to clicked tab
-          this.classList.remove('bg-gray-200', 'text-gray-600');
-          this.classList.add('bg-gray-100', 'text-gray-800');
-        });
+      function openMobileMenu() {
+        mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.add('opacity-100', 'visible');
+        document.body.style.overflow = 'hidden';
       }
+
+      function closeMobileMenu() {
+        mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+        mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+        document.body.style.overflow = 'auto';
+      }
+
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+      }
+
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Make closeMobileMenu globally accessible
+      window.closeMobileMenu = closeMobileMenu;
     });
 
-    // Handle view all button
-    document.querySelector('.bg-gray-100').addEventListener('click', function () {
-      if (this.textContent.includes('Hammasi')) {
-        alert('Barcha tranzaksiyalarni ko\'rish');
+    // Handle filter tabs
+    document.querySelectorAll('.filter-tab').forEach(button => {
+      button.addEventListener('click', function () {
+        const isDark = document.documentElement.classList.contains('dark');
+        const filterType = this.dataset.filter;
+        
+        // Remove active class from all tabs
+        document.querySelectorAll('.filter-tab').forEach(btn => {
+          btn.classList.remove('font-semibold', 'text-gray-700', 'dark:text-gray-200');
+          btn.classList.add('font-normal', 'text-gray-500', 'dark:text-gray-400');
+          btn.style.backgroundColor = 'transparent';
+        });
+
+        // Add active class to clicked tab
+        this.classList.remove('font-normal', 'text-gray-500', 'dark:text-gray-400');
+        this.classList.add('font-semibold', 'text-gray-700', 'dark:text-gray-200');
+        this.style.backgroundColor = isDark ? '#4B5563' : '#F6F7FA';
+
+        // Filter transactions (simplified - in real app, you'd filter the actual data)
+        const transactions = document.querySelectorAll('div.bg-gray-100.dark\\:bg-gray-800');
+        transactions.forEach(transaction => {
+          const amount = transaction.querySelector('p.font-bold');
+          if (amount) {
+            const isIncome = amount.textContent.includes('+');
+            if (filterType === 'all') {
+              transaction.style.display = 'block';
+            } else if (filterType === 'income' && !isIncome) {
+              transaction.style.display = 'none';
+            } else if (filterType === 'expense' && isIncome) {
+              transaction.style.display = 'none';
+            } else {
+              transaction.style.display = 'block';
+            }
+          }
+        });
+      });
+    });
+
+    // Handle view all button (the bottom button, not the filter tab)
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.textContent.includes('Hammasi') && !btn.classList.contains('filter-tab')) {
+        btn.addEventListener('click', function () {
+          alert('Barcha tranzaksiyalarni ko\'rish');
+        });
       }
     });
 

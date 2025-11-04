@@ -390,20 +390,20 @@
           <h2 class="text-[20px] md:text-[24px] font-semibold text-[#2A2C33] dark:text-white mb-[24px] md:mb-[32px]">Hamyon</h2>
 
           <!-- Balance Section -->
-          <div class="mb-[32px]">
-            <div class="bg-gray-50 rounded-[20px] p-[16px] pl-[24px]">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-[12px] md:gap-0">
+          <div class="mb-[24px] md:mb-[32px]">
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-[20px] p-[16px] md:p-[16px] md:pl-[24px]">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-[16px] md:gap-0">
                 <div>
-                  <h3 class="text-[16px] font-[400] text-[#686E7E] mb-[8px]">Balans</h3>
-                  <p class="text-[20px] font-semibold text-[#2A2C33]">0 so'm</p>
+                  <h3 class="text-[14px] md:text-[16px] font-[400] text-[#686E7E] dark:text-gray-400 mb-[8px]">Balans</h3>
+                  <p class="text-[18px] md:text-[20px] font-semibold text-[#2A2C33] dark:text-white">0 so'm</p>
                 </div>
-                <div class="flex space-x-[12px]">
+                <div class="flex flex-col sm:flex-row gap-[12px] w-full sm:w-auto">
                   <button
-                    class="bg-gray-200 flex items-center justify-center text-center text-gray-700 h-[48px] px-[16px] md:px-[24px] py-[8px] rounded-[16px] hover:bg-gray-300 transition-colors text-[14px] font-medium">
+                    class="bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-700 dark:text-gray-300 h-[48px] px-[16px] md:px-[24px] py-[8px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium w-full sm:w-auto">
                     Vaucher bilan to'ldirish
                   </button>
                   <button
-                    class="bg-primary flex items-center justify-center text-center text-white h-[48px] px-[24px] py-[8px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+                    class="bg-primary flex items-center justify-center text-center text-white h-[48px] px-[24px] py-[8px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium w-full sm:w-auto">
                     To'ldirish
                   </button>
                 </div>
@@ -414,86 +414,80 @@
         <div class="bg-white dark:bg-dark-card rounded-[24px] p-[16px] md:p-[32px]">
           <!-- Transaction History -->
           <div>
-            <h3 class="text-[24px] font-semibold text-[#2A2C33] mb-[16px]">To'ldirishlar tarixi</h3>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+            <h3 class="text-[20px] md:text-[24px] font-semibold text-[#2A2C33] dark:text-white mb-[16px]">To'ldirishlar tarixi</h3>
+            
+            <!-- Transaction 1: Top-up -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px] mb-[12px]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[12px] sm:gap-4">
+                <div class="flex flex-wrap gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
                     Click orqali to'lov</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
+                <p class="text-[16px] md:text-[18px] font-bold text-[#4CAF50] dark:text-green-400">+50 000 so'm</p>
               </div>
             </div>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+            
+            <!-- Transaction 2: Deduction -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px] mb-[12px]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[12px] sm:gap-4">
+                <div class="flex flex-wrap gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
-                    Click orqali to'lov</p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Premium obuna sotib olindi</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
+                <p class="text-[16px] md:text-[18px] font-bold text-[#F44336] dark:text-red-400">-35 200 so'm</p>
               </div>
             </div>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+            
+            <!-- Transaction 3: Voucher top-up -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px] mb-[12px]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[12px] sm:gap-4">
+                <div class="flex flex-wrap gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
-                    Click orqali to'lov</p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Vaucher orqali balans to'ldirildi</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
+                <p class="text-[16px] md:text-[18px] font-bold text-[#4CAF50] dark:text-green-400">+50 000 so'm</p>
               </div>
             </div>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
+            
+            <!-- Transaction 4: Reward -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-[16px] p-[16px] mb-[12px]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[12px] sm:gap-4">
+                <div class="flex flex-wrap gap-[8px] sm:gap-4">
                   <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
+                    class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light flex items-center gap-2">
                     13-oktabr
                     <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
                     10:45
                   </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
-                    Click orqali to'lov</p>
+                  <p class="text-[12px] bg-white dark:bg-gray-700 px-[8px] py-[4px] rounded-[8px] text-[#686E7E] dark:text-gray-300 font-light">
+                    Yutuqli test uchun mukofot</p>
                 </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
+                <p class="text-[16px] md:text-[18px] font-bold text-[#4CAF50] dark:text-green-400">+30 000 so'm</p>
               </div>
             </div>
-            <div class="space-y-[12px] h-[54px] bg-gray-100 rounded-[16px] p-[16px] mb-[16px]">
-              <div class="flex items-center justify-between h-full">
-                <div class="flex gap-4">
-                  <p
-                    class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light flex items-center gap-2">
-                    13-oktabr
-                    <img src="../assets/icons/caption.svg" alt="caption" class="w-[10px] h-[10px]">
-                    10:45
-                  </p>
-                  <p class="text-[12px] bg-white px-[8px] py-[4px] rounded-[8px] text-[#686E7E] font-light">
-                    Click orqali to'lov</p>
-                </div>
-                <p class="text-[16px] font-bold text-[#2A2C33]">+50 000 so'm</p>
-              </div>
-            </div>
+            
             <!-- View All Button -->
-            <div class="mt-[20px] text-start">
+            <div class="mt-[20px] text-center sm:text-start">
               <button
-                class="bg-gray-100 text-gray-700 w-[200px] h-[40px] px-[20px] py-[8px] rounded-[12px] hover:bg-gray-200 transition-colors text-[14px] font-medium">
+                class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-full sm:w-[200px] h-[40px] px-[20px] py-[8px] rounded-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium">
                 Hammasi
               </button>
             </div>
