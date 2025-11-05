@@ -8,6 +8,12 @@
   <title>Shaxsiyat sozlamalari - Oliygoh</title>
   <link href="../dist/output.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Alpine.js x-cloak */
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
@@ -402,40 +408,146 @@
               <!-- Category -->
               <div>
                 <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Toifangiz</label>
-                <div class="relative">
-                  <select
-                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
-                    <option>toifani tanlang</option>
-                    <option>Maktab o'quvchisi</option>
-                    <option>Abituriyent</option>
-                    <option selected>Talaba</option>
-                    <option>Magistr</option>
-                    <option>O'qituvchi</option>
-                    <option>Ota-ona</option>
-                  </select>
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                <div class="relative" x-data="searchableSelect({
+                  items: [
+                    { value: 'maktab', label: 'Maktab o\'quvchisi' },
+                    { value: 'abituriyent', label: 'Abituriyent' },
+                    { value: 'talaba', label: 'Talaba' },
+                    { value: 'magistr', label: 'Magistr' },
+                    { value: 'oqituvchi', label: 'O\'qituvchi' },
+                    { value: 'otaona', label: 'Ota-ona' }
+                  ],
+                  placeholder: 'toifani tanlang',
+                  name: 'category',
+                  initialValue: 'talaba',
+                  onSelect: function(item) {
+                    // Show/hide university field based on selection
+                    const universityField = document.getElementById('university-field');
+                    if (item.value === 'talaba' || item.value === 'oqituvchi') {
+                      universityField.style.display = 'block';
+                    } else {
+                      universityField.style.display = 'none';
+                    }
+                  }
+                })" @keydown.escape.window="close()">
+                  <button type="button" @click="toggle()"
+                    class="w-full h-[56px] flex items-center justify-between px-[16px] py-[12px] border-2 border-gray-300 dark:border-gray-700 rounded-[16px] bg-white dark:bg-dark-card text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                    <span x-text="selectedLabel" class="truncate text-left"></span>
+                    <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                      class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                      :class="{ 'rotate-180': open }" />
+                  </button>
+
+                  <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                    class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                    <div x-show="showSearch" class="px-[8px] pt-[8px]">
+                      <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                        <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+                        <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
+                          class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
+                          @keydown.enter.stop @click.stop>
+                        <button x-show="search.length > 0" @click.stop="clearSearch()" type="button"
+                          class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                      :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                      <template x-if="filteredItems.length === 0">
+                        <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
+                          <span x-text="emptyMessage"></span>
+                        </li>
+                      </template>
+                      <template x-for="item in filteredItems" :key="item.value">
+                        <li>
+                          <button type="button" @click.stop="select(item)"
+                            class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                            :class="{ 'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value }"
+                            :aria-selected="selected === item.value" role="option">
+                            <span class="flex-1" x-text="item.label"></span>
+                            <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                              class="w-[20px] h-[20px]">
+                          </button>
+                        </li>
+                      </template>
+                    </ul>
                   </div>
+                  <input type="hidden" :name="name" :value="selected">
                 </div>
               </div>
 
               <!-- University -->
-              <div>
+              <div id="university-field">
                 <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">
                   Oliygoh <span class="text-red-500 text-[12px]">(toifa tanlansa chiqadi)</span>
                 </label>
-                <div class="relative">
-                  <select
-                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
-                    <option>tanlanmagan</option>
-                    <option>Toshkent Davlat Iqtisodiyot Universiteti</option>
-                    <option>O'zbekiston Milliy Universiteti</option>
-                    <option>Toshkent Axborot Texnologiyalari Universiteti</option>
-                    <option>Samarqand Davlat Universiteti</option>
-                  </select>
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                <div class="relative" x-data="searchableSelect({
+                  items: [
+                    { value: 'tashkent_iqtisodiyot', label: 'Toshkent Davlat Iqtisodiyot Universiteti' },
+                    { value: 'uzbekiston_milliy', label: 'O\'zbekiston Milliy Universiteti' },
+                    { value: 'tashkent_axborot', label: 'Toshkent Axborot Texnologiyalari Universiteti' },
+                    { value: 'samarqand_davlat', label: 'Samarqand Davlat Universiteti' }
+                  ],
+                  placeholder: 'tanlanmagan',
+                  name: 'university'
+                })" @keydown.escape.window="close()">
+                  <button type="button" @click="toggle()"
+                    class="w-full h-[56px] flex items-center justify-between px-[16px] py-[12px] border-2 border-gray-300 dark:border-gray-700 rounded-[16px] bg-white dark:bg-dark-card text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                    <span x-text="selectedLabel" class="truncate text-left"></span>
+                    <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                      class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                      :class="{ 'rotate-180': open }" />
+                  </button>
+
+                  <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                    class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                    <div x-show="showSearch" class="px-[8px] pt-[8px]">
+                      <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                        <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+                        <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
+                          class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
+                          @keydown.enter.stop @click.stop>
+                        <button x-show="search.length > 0" @click.stop="clearSearch()" type="button"
+                          class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                      :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                      <template x-if="filteredItems.length === 0">
+                        <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
+                          <span x-text="emptyMessage"></span>
+                        </li>
+                      </template>
+                      <template x-for="item in filteredItems" :key="item.value">
+                        <li>
+                          <button type="button" @click.stop="select(item)"
+                            class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                            :class="{ 'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value }"
+                            :aria-selected="selected === item.value" role="option">
+                            <span class="flex-1" x-text="item.label"></span>
+                            <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                              class="w-[20px] h-[20px]">
+                          </button>
+                        </li>
+                      </template>
+                    </ul>
                   </div>
+                  <input type="hidden" :name="name" :value="selected">
                 </div>
               </div>
             </div>
@@ -445,47 +557,144 @@
               <!-- Region -->
               <div>
                 <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">Viloyatingiz</label>
-                <div class="relative">
-                  <select
-                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
-                    <option>Viloyatni tanlang</option>
-                    <option>Toshkent shahri</option>
-                    <option>Toshkent viloyati</option>
-                    <option>Andijon</option>
-                    <option>Buxoro</option>
-                    <option>Farg'ona</option>
-                    <option>Jizzax</option>
-                    <option>Xorazm</option>
-                    <option>Namangan</option>
-                    <option>Navoiy</option>
-                    <option>Qashqadaryo</option>
-                    <option>Qoraqalpog'iston</option>
-                    <option>Samarqand</option>
-                    <option>Sirdaryo</option>
-                    <option>Surxondaryo</option>
-                  </select>
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                <div class="relative" x-data="searchableSelect({
+                  items: [
+                    { value: 'toshkent_shahri', label: 'Toshkent shahri' },
+                    { value: 'toshkent_viloyati', label: 'Toshkent viloyati' },
+                    { value: 'andijon', label: 'Andijon' },
+                    { value: 'buxoro', label: 'Buxoro' },
+                    { value: 'fargona', label: 'Farg\'ona' },
+                    { value: 'jizzax', label: 'Jizzax' },
+                    { value: 'xorazm', label: 'Xorazm' },
+                    { value: 'namangan', label: 'Namangan' },
+                    { value: 'navoiy', label: 'Navoiy' },
+                    { value: 'qashqadaryo', label: 'Qashqadaryo' },
+                    { value: 'qoraqalpoq', label: 'Qoraqalpog\'iston' },
+                    { value: 'samarqand', label: 'Samarqand' },
+                    { value: 'sirdaryo', label: 'Sirdaryo' },
+                    { value: 'surxondaryo', label: 'Surxondaryo' }
+                  ],
+                  placeholder: 'Viloyatni tanlang',
+                  name: 'region',
+                  searchThreshold: 10
+                })" @keydown.escape.window="close()">
+                  <button type="button" @click="toggle()"
+                    class="w-full h-[56px] flex items-center justify-between px-[16px] py-[12px] border-2 border-gray-300 dark:border-gray-700 rounded-[16px] bg-white dark:bg-dark-card text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                    <span x-text="selectedLabel" class="truncate text-left"></span>
+                    <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                      class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                      :class="{ 'rotate-180': open }" />
+                  </button>
+
+                  <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                    class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                    <div x-show="showSearch" class="px-[8px] pt-[8px]">
+                      <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                        <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+                        <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
+                          class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
+                          @keydown.enter.stop @click.stop>
+                        <button x-show="search.length > 0" @click.stop="clearSearch()" type="button"
+                          class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                      :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                      <template x-if="filteredItems.length === 0">
+                        <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
+                          <span x-text="emptyMessage"></span>
+                        </li>
+                      </template>
+                      <template x-for="item in filteredItems" :key="item.value">
+                        <li>
+                          <button type="button" @click.stop="select(item)"
+                            class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                            :class="{ 'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value }"
+                            :aria-selected="selected === item.value" role="option">
+                            <span class="flex-1" x-text="item.label"></span>
+                            <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                              class="w-[20px] h-[20px]">
+                          </button>
+                        </li>
+                      </template>
+                    </ul>
                   </div>
+                  <input type="hidden" :name="name" :value="selected">
                 </div>
               </div>
 
               <!-- Living Area -->
               <div>
                 <label class="block text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[8px]">O'qish yoki yashash hududi</label>
-                <div class="relative">
-                  <select
-                    class="w-full h-[56px] px-[16px] py-[12px] border-2 border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-dark-card dark:border-gray-700 dark:text-white appearance-none cursor-pointer">
-                    <option>kiritilmagan</option>
-                    <option>Toshkent shahri</option>
-                    <option>Toshkent viloyati</option>
-                    <option>Andijon</option>
-                    <option>Buxoro</option>
-                    <option>Farg'ona</option>
-                  </select>
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-[16px] pointer-events-none">
-                    <i class="fas fa-chevron-down text-gray-400 text-[12px]"></i>
+                <div class="relative" x-data="searchableSelect({
+                  items: [
+                    { value: 'toshkent_shahri', label: 'Toshkent shahri' },
+                    { value: 'toshkent_viloyati', label: 'Toshkent viloyati' },
+                    { value: 'andijon', label: 'Andijon' },
+                    { value: 'buxoro', label: 'Buxoro' },
+                    { value: 'fargona', label: 'Farg\'ona' }
+                  ],
+                  placeholder: 'kiritilmagan',
+                  name: 'living_area'
+                })" @keydown.escape.window="close()">
+                  <button type="button" @click="toggle()"
+                    class="w-full h-[56px] flex items-center justify-between px-[16px] py-[12px] border-2 border-gray-300 dark:border-gray-700 rounded-[16px] bg-white dark:bg-dark-card text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                    <span x-text="selectedLabel" class="truncate text-left"></span>
+                    <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                      class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                      :class="{ 'rotate-180': open }" />
+                  </button>
+
+                  <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                    class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                    <div x-show="showSearch" class="px-[8px] pt-[8px]">
+                      <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                        <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+                        <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
+                          class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
+                          @keydown.enter.stop @click.stop>
+                        <button x-show="search.length > 0" @click.stop="clearSearch()" type="button"
+                          class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                      :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                      <template x-if="filteredItems.length === 0">
+                        <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
+                          <span x-text="emptyMessage"></span>
+                        </li>
+                      </template>
+                      <template x-for="item in filteredItems" :key="item.value">
+                        <li>
+                          <button type="button" @click.stop="select(item)"
+                            class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                            :class="{ 'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value }"
+                            :aria-selected="selected === item.value" role="option">
+                            <span class="flex-1" x-text="item.label"></span>
+                            <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                              class="w-[20px] h-[20px]">
+                          </button>
+                        </li>
+                      </template>
+                    </ul>
                   </div>
+                  <input type="hidden" :name="name" :value="selected">
                 </div>
               </div>
             </div>
@@ -502,6 +711,74 @@
       </main>
     </div>
   </div>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('searchableSelect', (options = {}) => ({
+        open: false,
+        search: '',
+        selected: options.initialValue || null,
+        items: options.items || [],
+        placeholder: options.placeholder || 'Tanlash',
+        searchPlaceholder: options.searchPlaceholder || 'Izlash',
+        emptyMessage: options.emptyMessage || 'Hech narsa topilmadi',
+        searchThreshold: options.searchThreshold || 10,
+        name: options.name || 'select',
+
+        get showSearch() {
+          return this.items.length > this.searchThreshold;
+        },
+
+        get filteredItems() {
+          if (!this.search) return this.items;
+          const searchLower = this.search.toLowerCase();
+          return this.items.filter(item =>
+            item.label.toLowerCase().includes(searchLower)
+          );
+        },
+
+        get selectedLabel() {
+          if (!this.selected) return this.placeholder;
+          const item = this.items.find(item => item.value === this.selected);
+          return item ? item.label : this.placeholder;
+        },
+
+        toggle() {
+          this.open = !this.open;
+          if (this.open && this.showSearch) {
+            this.$nextTick(() => {
+              if (this.$refs.searchInput) {
+                this.$refs.searchInput.focus();
+              }
+            });
+          }
+        },
+
+        close() {
+          this.open = false;
+        },
+
+        select(item) {
+          this.selected = item.value;
+          this.search = '';
+          this.close();
+          if (options.onSelect) {
+            options.onSelect(item);
+          }
+        },
+
+        clearSearch() {
+          this.search = '';
+          if (this.$refs.searchInput) {
+            this.$refs.searchInput.focus();
+          }
+        }
+      }));
+    });
+  </script>
 
   <script>
     // Mobile Menu Functionality
@@ -587,44 +864,7 @@
       }
     });
 
-    // Custom select styling and functionality
-    document.querySelectorAll('select').forEach(select => {
-      // Add custom styling
-      select.style.backgroundImage = 'none';
-
-      // Handle change events
-      select.addEventListener('change', function () {
-        // Update placeholder styling
-        if (this.value) {
-          this.classList.add('text-gray-900');
-          this.classList.remove('text-gray-500');
-        } else {
-          this.classList.add('text-gray-500');
-          this.classList.remove('text-gray-900');
-        }
-      });
-    });
-
-    // Dynamic category-based fields
-    const categorySelect = document.querySelectorAll('select')[1];
-    const universityField = document.querySelectorAll('select')[2].parentElement;
-
-    categorySelect.addEventListener('change', function () {
-      if (this.value === 'Talaba' || this.value === 'O\'qituvchi') {
-        universityField.style.display = 'block';
-      } else {
-        universityField.style.display = 'none';
-      }
-    });
-
-    // Initialize select styling
-    document.querySelectorAll('select').forEach(select => {
-      if (!select.value || select.value === '') {
-        select.classList.add('text-gray-500');
-      } else {
-        select.classList.add('text-gray-900');
-      }
-    });
+    // University field visibility is now handled by Alpine.js onSelect callback in the category dropdown
 
     // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
