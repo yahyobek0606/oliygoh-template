@@ -9,11 +9,11 @@
       "destination": "/pages/index.html"
     },
     {
-      "source": "/:path((?!assets|dist|node_modules).*)",
+      "source": "/:path(.*)\\.html",
       "destination": "/pages/:path.html"
     },
     {
-      "source": "/:path((?!assets|dist|node_modules).*).html",
+      "source": "/:path((?!assets|dist|node_modules|pages).*)",
       "destination": "/pages/:path.html"
     }
   ]
