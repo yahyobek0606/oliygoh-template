@@ -51,13 +51,14 @@
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
           <button id="mobile-search-toggle"
-            class="bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+            class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
             <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
           </button>
 
           <!-- Profile Picture -->
           <div class="relative">
-            <button id="mobile-profile-btn" class="bg-white dark:bg-dark-card rounded-[12px]">
+            <button id="mobile-profile-btn"
+              class="h-[40px] w-[40px] bg-white dark:bg-dark-card rounded-[12px] flex items-center justify-center">
               <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
             </button>
             <!-- Mobile Profile Dropdown -->
@@ -116,7 +117,7 @@
                         class="w-[44px] h-[24px] bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 ease-in-out">
                         <span
                           class="absolute top-[2px] left-[2px] w-[20px] h-[20px] bg-white rounded-full transform transition-transform duration-200 ease-in-out"></span>
-                      </label>
+                    </label>
                     </label>
                   </div>
                 </div>
@@ -282,7 +283,7 @@
             class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[12px] flex items-center justify-center flex-shrink-0">
             <img src="../assets/icons/arrow-left-01.svg" alt="Back" class="w-[20px] h-[20px]">
           </button>
-          
+
           <!-- Search Input (Separated) -->
           <div class="relative flex flex-1 bg-white dark:bg-dark-card rounded-[10px]">
             <span class="absolute left-[12px] top-1/2 transform -translate-y-1/2 pointer-events-none">
@@ -298,7 +299,8 @@
       <div id="mobile-search-separator" class="border-t border-[#E1E2E5] dark:border-[#1a2330]"></div>
 
       <!-- Search Results Container -->
-      <div id="mobile-search-results" class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+      <div id="mobile-search-results"
+        class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
         <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[16px] mt-[16px]">Qidiruv natijalari</h3>
         <div id="mobile-search-results-grid" class="space-y-[16px]">
           <!-- Results will be populated here -->
@@ -306,7 +308,8 @@
       </div>
 
       <!-- Empty State -->
-      <div id="mobile-search-empty" class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+      <div id="mobile-search-empty"
+        class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
         <div class="text-center py-[48px]">
           <div
             class="w-[80px] h-[80px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-[16px]">
@@ -325,11 +328,10 @@
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu-drawer" class="w-full h-full">
       <!-- Menu Header -->
-      <div
-        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
+      <div class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px]">
         <button id="mobile-menu-close"
-          class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
+          class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[13px] flex items-center justify-center">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
         </button>
         <div class="flex-1 flex justify-center">
           <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="block dark:hidden h-[24px]">
@@ -338,12 +340,12 @@
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
           <button
-            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+            class="w-[40px] h-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+            <img src="../assets/icons/search.svg" alt="" class="w-[20px] h-[20px]">
           </button>
           <!-- Profile Picture -->
-          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
-            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          <div class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[13px] flex items-center justify-center">
+            <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[13px] object-cover">
           </div>
         </div>
       </div>
@@ -386,7 +388,7 @@
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-black dark:text-white">Oliygohlar</span>
+            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Oliygohlar</span>
           </a>
         </nav>
 
@@ -1085,21 +1087,34 @@
       <div
         class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800 lg:hidden">
         <button id="close-filter-modal-mobile"
-          class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
+          class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[13px] dark:border-gray-800 flex items-center justify-center">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
         </button>
         <div class="flex-1 flex justify-center">
           <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="block dark:hidden h-[24px]">
           <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
         </div>
         <div class="flex items-center space-x-[12px]">
-          <button
-            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          <button class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+            <img src="../assets/icons/search.svg" class="w-[20px] h-[20px]" alt="">
           </button>
-          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
-            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          <div class="h-[40px] w-[40px] bg-white dark:bg-dark-card rounded-[13px] dark:border-gray-800">
+            <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-full object-cover">
           </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons - Mobile (Top) -->
+      <div class="lg:hidden px-[16px] pt-[16px] pb-[16px]">
+        <div class="flex gap-[12px]">
+          <button id="filter-cancel-mobile"
+            class="h-[56px] flex-1 bg-gray-100 text-gray-700 px-[24px] py-[8px] rounded-[18px] hover:bg-gray-50 transition-colors font-medium text-[16px]">
+            Ortga qaytish
+          </button>
+          <button id="filter-apply-mobile"
+            class="h-[56px] flex-1 bg-primary text-white px-[24px] py-[8px] rounded-[18px] hover:bg-primary/90 transition-colors font-medium text-[16px]">
+            Filtr qilish
+          </button>
         </div>
       </div>
 
@@ -1264,13 +1279,13 @@
               <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Oliygohlar</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Oliygohlar</span>
             </a>
           </nav>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="flex gap-[12px] pb-[24px] lg:pb-0">
+        <!-- Action Buttons - Desktop (Bottom) -->
+        <div class="hidden lg:flex gap-[12px] pb-[24px]">
           <button id="filter-cancel"
             class="h-[56px] flex-1 bg-white border border-gray-200 text-gray-700 px-[24px] py-[8px] rounded-[18px] hover:bg-gray-50 transition-colors font-medium text-[16px]">
             Ortga qaytish
@@ -1635,6 +1650,8 @@
       const closeFilterModalMobile = document.getElementById('close-filter-modal-mobile');
       const filterCancel = document.getElementById('filter-cancel');
       const filterApply = document.getElementById('filter-apply');
+      const filterCancelMobile = document.getElementById('filter-cancel-mobile');
+      const filterApplyMobile = document.getElementById('filter-apply-mobile');
       const categoryBtns = document.querySelectorAll('.category-filter-btn');
 
       // Open filter modal
@@ -1652,7 +1669,7 @@
       }
 
       // Close filter modal
-      function closeFilterModalFunc() {
+      function closeFilterModalFunc(reopenMobileMenu = false) {
         filterModal.classList.add('opacity-0', 'invisible');
         filterModal.classList.remove('opacity-100', 'visible');
         const modalContent = filterModal.querySelector('.lg\\:bg-white, .lg\\:rounded-\\[24px\\]');
@@ -1661,6 +1678,16 @@
           modalContent.classList.remove('lg:scale-100');
         }
         document.body.style.overflow = 'auto';
+
+        // Reopen mobile menu if it was closed when opening filter
+        if (reopenMobileMenu && window.closeMobileMenu) {
+          const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+          if (mobileMenuOverlay) {
+            mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+          }
+        }
       }
 
       // Make closeFilterModal globally accessible
@@ -1674,6 +1701,11 @@
       }
       if (filterCancel) {
         filterCancel.addEventListener('click', closeFilterModalFunc);
+      }
+      if (filterCancelMobile) {
+        filterCancelMobile.addEventListener('click', function () {
+          closeFilterModalFunc(true); // Reopen mobile menu when closing filter from mobile
+        });
       }
 
       // Close modal when clicking outside (desktop only)
@@ -1735,8 +1767,8 @@
         });
       });
 
-      // Apply filter
-      filterApply.addEventListener('click', function () {
+      // Apply filter function
+      function applyFilterFunc() {
         const selectedDate = document.querySelector('input[name="date-filter"]:checked');
         const selectedCategories = document.querySelectorAll('.category-filter-btn.bg-primary');
 
@@ -1755,7 +1787,17 @@
         }
 
         closeFilterModalFunc();
-      });
+      }
+
+      // Apply filter - Desktop
+      if (filterApply) {
+        filterApply.addEventListener('click', applyFilterFunc);
+      }
+
+      // Apply filter - Mobile
+      if (filterApplyMobile) {
+        filterApplyMobile.addEventListener('click', applyFilterFunc);
+      }
     });
 
     // Authentication Modal Functionality
