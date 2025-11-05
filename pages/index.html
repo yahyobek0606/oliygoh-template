@@ -37,7 +37,7 @@
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
         <button id="mobile-menu-toggle"
-          class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+          class="bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
           <img src="../assets/icons/hamburger.svg" alt="Menu" class="w-[20px] h-[20px]">
         </button>
 
@@ -50,14 +50,14 @@
         <!-- Search and Profile -->
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
-          <button
-            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          <button id="mobile-search-toggle"
+            class="bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+            <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
           </button>
 
           <!-- Profile Picture -->
-          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
-            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          <div class="bg-white dark:bg-dark-card rounded-[12px]">
+            <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
           </div>
         </div>
       </div>
@@ -185,6 +185,60 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Search Overlay -->
+  <div id="mobile-search-overlay"
+    class="lg:hidden fixed inset-0 bg-[#F2F3F7] dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    <div class="w-full h-full flex flex-col">
+      <!-- Mobile Ad Banner -->
+      <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white">
+        <img src="../assets/top-banner-mobile.png" alt="Advertisement" class="w-full h-auto">
+      </div>
+
+      <!-- Search Header with Back Button and Search Bar -->
+      <div class="bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pt-[16px] pb-[16px]">
+        <div class="flex items-center gap-[12px]">
+          <!-- Back Button (Separated) -->
+          <button id="mobile-search-close"
+            class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[12px] flex items-center justify-center flex-shrink-0">
+            <img src="../assets/icons/arrow-left-01.svg" alt="Back" class="w-[20px] h-[20px]">
+          </button>
+          
+          <!-- Search Input (Separated) -->
+          <div class="relative flex flex-1 bg-white dark:bg-dark-card rounded-[10px]">
+            <span class="absolute left-[12px] top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+            </span>
+            <input type="text" id="mobile-search-input" placeholder="Qidirish"
+              class="w-full text-[12px] h-[40px] pl-[40px] pr-[8px] bg-transparent rounded-[10px] focus:outline-none dark:text-white dark:placeholder-gray-400" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Separator -->
+      <div id="mobile-search-separator" class="border-t border-[#E1E2E5] dark:border-[#1a2330]"></div>
+
+      <!-- Search Results Container -->
+      <div id="mobile-search-results" class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+        <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[16px] mt-[16px]">Qidiruv natijalari</h3>
+        <div id="mobile-search-results-grid" class="space-y-[16px]">
+          <!-- Results will be populated here -->
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="mobile-search-empty" class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+        <div class="text-center py-[48px]">
+          <div
+            class="w-[80px] h-[80px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-[16px]">
+            <i class="fas fa-search text-[32px] text-gray-400"></i>
+          </div>
+          <h3 class="text-[18px] font-semibold text-gray-600 dark:text-gray-400 mb-[8px]">Hech narsa topilmadi</h3>
+          <p class="text-[14px] text-gray-500 dark:text-gray-500">Qidiruv so'zingizni o'zgartiring</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu-overlay"
@@ -1151,6 +1205,117 @@
     </div>
   </div>
   <script>
+    // Mobile Search Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+      const mobileSearchOverlay = document.getElementById('mobile-search-overlay');
+      const mobileSearchClose = document.getElementById('mobile-search-close');
+      const mobileSearchInput = document.getElementById('mobile-search-input');
+      const mobileSearchResults = document.getElementById('mobile-search-results');
+      const mobileSearchEmpty = document.getElementById('mobile-search-empty');
+      const mobileSearchResultsGrid = document.getElementById('mobile-search-results-grid');
+      const mobileSearchSeparator = document.getElementById('mobile-search-separator');
+      const newsCards = document.querySelectorAll('.news-card');
+
+      function openMobileSearch() {
+        mobileSearchOverlay.classList.remove('opacity-0', 'invisible');
+        mobileSearchOverlay.classList.add('opacity-100', 'visible');
+        document.body.style.overflow = 'hidden';
+        // Focus on search input after a brief delay
+        setTimeout(() => {
+          mobileSearchInput.focus();
+        }, 100);
+      }
+
+      function closeMobileSearch() {
+        mobileSearchOverlay.classList.add('opacity-0', 'invisible');
+        mobileSearchOverlay.classList.remove('opacity-100', 'visible');
+        document.body.style.overflow = 'auto';
+        // Clear search input
+        mobileSearchInput.value = '';
+        mobileSearchResults.classList.add('hidden');
+        mobileSearchEmpty.classList.add('hidden');
+      }
+
+      if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener('click', openMobileSearch);
+      }
+
+      if (mobileSearchClose) {
+        mobileSearchClose.addEventListener('click', closeMobileSearch);
+      }
+
+      // Close on escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !mobileSearchOverlay.classList.contains('invisible')) {
+          closeMobileSearch();
+        }
+      });
+
+      // Search functionality
+      if (mobileSearchInput) {
+        let searchTimeout;
+
+        mobileSearchInput.addEventListener('input', function () {
+          const query = this.value.toLowerCase().trim();
+
+          // Debounce search for better performance
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            if (query.length === 0) {
+              mobileSearchResults.classList.add('hidden');
+              mobileSearchEmpty.classList.add('hidden');
+              return;
+            }
+
+            // Filter news cards based on search query
+            const matchingCards = Array.from(newsCards).filter(card => {
+              const title = card.dataset.title ? card.dataset.title.toLowerCase() : '';
+              const category = card.dataset.category ? card.dataset.category.toLowerCase() : '';
+              const cardText = card.textContent.toLowerCase();
+
+              return title.includes(query) ||
+                category.includes(query) ||
+                cardText.includes(query);
+            });
+
+            // Display results
+            if (matchingCards.length > 0) {
+              mobileSearchResults.classList.remove('hidden');
+              mobileSearchEmpty.classList.add('hidden');
+
+              // Clear previous results
+              mobileSearchResultsGrid.innerHTML = '';
+
+              // Create result cards
+              matchingCards.forEach(card => {
+                // Clone the card element
+                const resultCard = card.cloneNode(true);
+
+                // Remove any existing display styles that might interfere
+                resultCard.style.display = '';
+                resultCard.style.opacity = '';
+                resultCard.style.transform = '';
+
+                // Make cards clickable
+                resultCard.style.cursor = 'pointer';
+                resultCard.addEventListener('click', function () {
+                  // Navigate to post detail or handle click
+                  // You can add navigation logic here
+                  console.log('Card clicked:', card.dataset.title);
+                });
+
+                mobileSearchResultsGrid.appendChild(resultCard);
+              });
+            } else {
+              mobileSearchResults.classList.add('hidden');
+              mobileSearchEmpty.classList.remove('hidden');
+            }
+          }, 300);
+        });
+      }
+    });
+
     // Mobile Menu Functionality
     document.addEventListener('DOMContentLoaded', function () {
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
