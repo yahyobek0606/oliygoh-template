@@ -10,8 +10,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <style>
     /* Alpine.js x-cloak */
-    [x-cloak] { display: none !important; }
-    
+    [x-cloak] {
+      display: none !important;
+    }
+
     /* Custom slider styling */
     .slider {
       -webkit-appearance: none;
@@ -291,8 +293,7 @@
             <div class="mb-[20px]">
               <h4 class="text-[14px] font-semibold text-gray-800 dark:text-gray-200 mb-[8px]">Hudud bo'yicha</h4>
               <!-- Reusable Component Template - Copy this entire div block for other selects -->
-              <div class="relative" 
-                x-data="searchableSelect({
+              <div class="relative" x-data="searchableSelect({
                   items: [
                     { value: 'andijan', label: 'Andijon' },
                     { value: 'bukhara', label: 'Buxoro' },
@@ -310,103 +311,63 @@
                   ],
                   placeholder: 'Viloyatni tanlash',
                   name: 'region'
-                })"
-                @keydown.escape.window="close()">
+                })" @keydown.escape.window="close()">
                 <!-- Select Button -->
-                <button 
-                  type="button"
-                  @click="toggle()"
-                  class="w-full flex items-center justify-between px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                  :class="{ 'ring-2 ring-primary': open }"
-                  aria-haspopup="listbox" 
-                  :aria-expanded="open">
+                <button type="button" @click="toggle()"
+                  class="w-full flex items-center justify-between px-[12px] py-[8px] border-2 border-[#E1E2E5] dark:border-[#2E3338] rounded-[16px] bg-white dark:bg-gray-800 text-[#686E7E] dark:text-white text-[16px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
                   <span x-text="selectedLabel" class="truncate text-left"></span>
-                  <svg 
-                    class="h-5 w-5 text-gray-400 ml-2 flex-shrink-0 transition-transform duration-200" 
-                    :class="{ 'rotate-180': open }" 
-                    fill="none" 
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                    class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                    :class="{ 'rotate-180': open }" />
                 </button>
-                
+
                 <!-- Dropdown -->
-                <div 
-                  x-show="open"
-                  x-cloak
-                  x-transition:enter="transition ease-out duration-200"
-                  x-transition:enter-start="opacity-0 scale-95"
-                  x-transition:enter-end="opacity-100 scale-100"
-                  x-transition:leave="transition ease-in duration-150"
-                  x-transition:leave-start="opacity-100 scale-100"
-                  x-transition:leave-end="opacity-0 scale-95"
-                  @click.away="close()"
+                <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
                   class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
-                  
+
                   <!-- Search Bar (only if more than threshold items) -->
                   <div x-show="showSearch" class="px-[8px] pt-[8px]">
-                    <div class="flex items-center rounded-[8px] bg-gray-100 dark:bg-gray-700 px-[10px] py-[8px]">
-                      <svg class="h-4 w-4 text-gray-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                      <input 
-                        x-ref="searchInput" 
-                        x-model="search" 
-                        type="text" 
-                        :placeholder="searchPlaceholder"
-                        class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-gray-400"
-                        @keydown.enter.stop
-                        @click.stop>
-                      <button 
-                        x-show="search.length > 0" 
-                        @click.stop="clearSearch()" 
-                        type="button" 
+                    <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                      <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
+                      <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
+                        class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
+                        @keydown.enter.stop @click.stop>
+                      <button x-show="search.length > 0" @click.stop="clearSearch()" type="button"
                         class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
                         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </button>
                     </div>
                   </div>
-                  
+
                   <!-- Options List -->
-                  <ul 
-                    class="max-h-60 overflow-y-auto" 
-                    :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" 
-                    role="listbox">
+                  <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2" :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
                     <template x-if="filteredItems.length === 0">
-                      <li class="px-4 py-2 text-[14px] text-gray-400 select-none cursor-default">
+                      <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
                         <span x-text="emptyMessage"></span>
                       </li>
                     </template>
                     <template x-for="item in filteredItems" :key="item.value">
                       <li>
-                        <button 
-                          type="button"
-                          @click.stop="select(item)"
-                          class="w-full text-left px-4 py-2 text-[14px] text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center justify-between transition-colors"
+                        <button type="button" @click.stop="select(item)"
+                          class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
                           :class="{
-                            'bg-gray-100 dark:bg-gray-700': selected === item.value
-                          }"
-                          :aria-selected="selected === item.value" 
-                          role="option">
+                            'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
+                          }" :aria-selected="selected === item.value" role="option">
                           <span class="flex-1" x-text="item.label"></span>
-                          <svg 
-                            x-show="selected === item.value" 
-                            class="ml-2 h-4 w-4 text-gray-900 dark:text-gray-100 flex-shrink-0" 
-                            fill="none"
-                            stroke="currentColor" 
-                            stroke-width="2.5" 
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                          </svg>
+                          <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick" class="w-[20px] h-[20px]">
                         </button>
                       </li>
                     </template>
                   </ul>
                 </div>
-                
+
                 <!-- Hidden input for form submission -->
                 <input type="hidden" :name="name" :value="selected">
               </div>
@@ -1455,7 +1416,7 @@
 
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- 
     Reusable Searchable Select Component
     =====================================
@@ -1475,17 +1436,17 @@
       onSelect: (item) => { console.log('Selected:', item); }
     })">
       <!-- Copy the HTML template from Region Filter section -->
-    </div>
-    
-    Options:
-    - items: Array of {value, label} objects (required)
-    - placeholder: Placeholder text (default: 'Tanlash')
-    - name: Form field name (default: 'select')
-    - searchPlaceholder: Search input placeholder (default: 'Izlash')
-    - emptyMessage: Message when no results (default: 'Hech narsa topilmadi')
-    - searchThreshold: Show search when items > this number (default: 10)
-    - initialValue: Initial selected value (default: null)
-    - onSelect: Callback function when item is selected
+  </div>
+
+  Options:
+  - items: Array of {value, label} objects (required)
+  - placeholder: Placeholder text (default: 'Tanlash')
+  - name: Form field name (default: 'select')
+  - searchPlaceholder: Search input placeholder (default: 'Izlash')
+  - emptyMessage: Message when no results (default: 'Hech narsa topilmadi')
+  - searchThreshold: Show search when items > this number (default: 10)
+  - initialValue: Initial selected value (default: null)
+  - onSelect: Callback function when item is selected
   -->
   <script>
     document.addEventListener('alpine:init', () => {
@@ -1499,25 +1460,25 @@
         emptyMessage: options.emptyMessage || 'Hech narsa topilmadi',
         searchThreshold: options.searchThreshold || 10,
         name: options.name || 'select',
-        
+
         get showSearch() {
           return this.items.length > this.searchThreshold;
         },
-        
+
         get filteredItems() {
           if (!this.search) return this.items;
           const searchLower = this.search.toLowerCase();
-          return this.items.filter(item => 
+          return this.items.filter(item =>
             item.label.toLowerCase().includes(searchLower)
           );
         },
-        
+
         get selectedLabel() {
           if (!this.selected) return this.placeholder;
           const item = this.items.find(item => item.value === this.selected);
           return item ? item.label : this.placeholder;
         },
-        
+
         toggle() {
           this.open = !this.open;
           if (this.open && this.showSearch) {
@@ -1528,11 +1489,11 @@
             });
           }
         },
-        
+
         close() {
           this.open = false;
         },
-        
+
         select(item) {
           this.selected = item.value;
           this.search = '';
@@ -1541,7 +1502,7 @@
             options.onSelect(item);
           }
         },
-        
+
         clearSearch() {
           this.search = '';
           if (this.$refs.searchInput) {
