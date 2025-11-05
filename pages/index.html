@@ -1005,12 +1005,12 @@
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
     <div class="bg-white rounded-[24px] w-[460px] max-w-[90vw] transform scale-95 transition-all duration-300">
       <!-- Modal Header -->
-      <div class="relative flex items-center justify-center p-[24px]">
-        <div class="flex items-center justify-center w-full">
-          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="w-[121px] h-[32px] mx-auto">
+      <div class="relative flex items-center p-[24px]">
+        <div class="flex items-center flex-1 justify-center">
+          <img src="../assets/icons/logo oliygoh.svg" alt="Oliygoh" class="w-[121px] h-[32px]">
         </div>
         <button id="close-auth-modal"
-          class="w-[40px] h-[40px] rounded-[12px] border border-[#E1E2E5] flex items-center justify-center hover:bg-[#E1E2E5] transition-colors">
+          class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] rounded-[12px] bg-white hover:bg-gray-200 flex items-center justify-center transition-colors">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
         </button>
       </div>
@@ -1035,16 +1035,16 @@
         <form id="login-form" class="space-y-[16px]">
           <div>
             <input type="text" id="email-phone" placeholder="Email yoki telefon raqami"
-              class="w-full px-[16px] py-[12px] border border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
               required />
           </div>
           <div class="relative">
             <input type="password" id="password" placeholder="Parol"
-              class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
               required />
             <button type="button" id="toggle-password"
               class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-              <i class="fas fa-eye text-[16px]"></i>
+              <i class="fas fa-eye-slash text-[16px]"></i>
             </button>
           </div>
           <button type="submit"
@@ -1053,8 +1053,35 @@
           </button>
         </form>
 
+        <!-- Registration Form -->
+        <form id="register-form" class="space-y-[16px] hidden">
+          <div>
+            <input type="text" id="register-name" placeholder="Ism yoki nom yozing"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-primary text-[14px]"
+              required />
+          </div>
+          <div>
+            <input type="text" id="register-email-phone" placeholder="Email yoki telefon raqami"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              required />
+          </div>
+          <div class="relative">
+            <input type="password" id="register-password" placeholder="Parol"
+              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-[#E1E2E5] rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              required />
+            <button type="button" id="toggle-register-password"
+              class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye text-[16px]"></i>
+            </button>
+          </div>
+          <button type="submit"
+            class="w-full h-[56px] bg-primary text-white font-medium py-[12px] rounded-[18px] hover:bg-primary/90 transition-colors font-medium text-[18px]">
+            Ro'yxatdan o'tish
+          </button>
+        </form>
+
         <!-- Forgot Password -->
-        <div class="text-center mt-[16px]">
+        <div id="forgot-password-section" class="text-center mt-[16px]">
           <p class="text-[16px] text-gray-600">
             Parolni unutdingizmi?
             <a href="#" class="text-primary underline hover:text-primary/90">Parolni tiklash</a>
@@ -1808,17 +1835,36 @@
       const loginTab = document.getElementById('login-tab');
       const registerTab = document.getElementById('register-tab');
       const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
       const togglePassword = document.getElementById('toggle-password');
+      const toggleRegisterPassword = document.getElementById('toggle-register-password');
       const passwordInput = document.getElementById('password');
+      const registerPasswordInput = document.getElementById('register-password');
+      const forgotPasswordSection = document.getElementById('forgot-password-section');
 
-      // Open modal
-      loginBtn.addEventListener('click', function () {
-        authModal.classList.remove('opacity-0', 'invisible');
-        authModal.classList.add('opacity-100', 'visible');
-        authModal.querySelector('.bg-white').classList.remove('scale-95');
-        authModal.querySelector('.bg-white').classList.add('scale-100');
-        document.body.style.overflow = 'hidden';
-      });
+      // Tab switching functions
+      function showLoginForm() {
+        loginTab.classList.add('bg-white', 'text-gray-800');
+        loginTab.classList.remove('text-gray-500');
+        registerTab.classList.remove('bg-white', 'text-gray-800');
+        registerTab.classList.add('text-gray-500');
+        loginForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+        forgotPasswordSection.classList.remove('hidden');
+      }
+
+      function showRegisterForm() {
+        registerTab.classList.add('bg-white', 'text-gray-800');
+        registerTab.classList.remove('text-gray-500');
+        loginTab.classList.remove('bg-white', 'text-gray-800');
+        loginTab.classList.add('text-gray-500');
+        registerForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        forgotPasswordSection.classList.add('hidden');
+      }
+
+      // Initialize form state - show login form by default
+      showLoginForm();
 
       // Close modal
       function closeModal() {
@@ -1829,6 +1875,17 @@
         document.body.style.overflow = 'auto';
       }
 
+      // Open modal
+      loginBtn.addEventListener('click', function () {
+        authModal.classList.remove('opacity-0', 'invisible');
+        authModal.classList.add('opacity-100', 'visible');
+        authModal.querySelector('.bg-white').classList.remove('scale-95');
+        authModal.querySelector('.bg-white').classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+        // Reset to login form when opening
+        showLoginForm();
+      });
+
       closeAuthModal.addEventListener('click', closeModal);
 
       // Close modal when clicking outside
@@ -1838,31 +1895,38 @@
         }
       });
 
-      // Tab switching
-      loginTab.addEventListener('click', function () {
-        loginTab.classList.add('bg-white', 'text-gray-800');
-        loginTab.classList.remove('text-gray-500');
-        registerTab.classList.remove('bg-white', 'text-gray-800');
-        registerTab.classList.add('text-gray-500');
-      });
+      loginTab.addEventListener('click', showLoginForm);
+      registerTab.addEventListener('click', showRegisterForm);
 
-      registerTab.addEventListener('click', function () {
-        registerTab.classList.add('bg-white', 'text-gray-800');
-        registerTab.classList.remove('text-gray-500');
-        loginTab.classList.remove('bg-white', 'text-gray-800');
-        loginTab.classList.add('text-gray-500');
-      });
-
-      // Password visibility toggle
+      // Password visibility toggle - Login
       togglePassword.addEventListener('click', function () {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         const icon = togglePassword.querySelector('i');
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
+        if (type === 'text') {
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        } else {
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        }
       });
 
-      // Form submission
+      // Password visibility toggle - Register
+      toggleRegisterPassword.addEventListener('click', function () {
+        const type = registerPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        registerPasswordInput.setAttribute('type', type);
+        const icon = toggleRegisterPassword.querySelector('i');
+        if (type === 'text') {
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        } else {
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      });
+
+      // Form submission - Login
       loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const emailPhone = document.getElementById('email-phone').value;
@@ -1877,6 +1941,25 @@
         // Simulate login (replace with actual authentication)
         console.log('Login attempt:', { emailPhone, password });
         alert('Kirish muvaffaqiyatli!');
+        closeModal();
+      });
+
+      // Form submission - Register
+      registerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('register-name').value;
+        const emailPhone = document.getElementById('register-email-phone').value;
+        const password = document.getElementById('register-password').value;
+
+        // Basic validation
+        if (!name || !emailPhone || !password) {
+          alert('Iltimos, barcha maydonlarni to\'ldiring');
+          return;
+        }
+
+        // Simulate registration (replace with actual authentication)
+        console.log('Registration attempt:', { name, emailPhone, password });
+        alert('Ro\'yxatdan o\'tish muvaffaqiyatli!');
         closeModal();
       });
 
