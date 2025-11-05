@@ -9,6 +9,10 @@
       "destination": "/pages/index.html"
     },
     {
+      "source": "/pages/:path*",
+      "destination": "/pages/:path*"
+    },
+    {
       "source": "/:path(.*)\\.html",
       "destination": "/pages/:path.html"
     },
