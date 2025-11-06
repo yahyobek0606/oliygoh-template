@@ -231,28 +231,32 @@
   <div id="exit-confirm-modal"
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
     <div
-      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[500px] transform scale-95 transition-all duration-300">
-      <!-- Modal Header -->
-      <div class="relative flex items-center justify-between p-[24px] border-b border-gray-200 dark:border-gray-700">
-        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white">Imtihondan chiqish</h2>
-        <button id="close-exit-modal"
-          class="w-[32px] h-[32px] rounded-[8px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-          <i class="fas fa-times text-[18px] text-gray-600 dark:text-gray-400"></i>
-        </button>
-      </div>
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[500px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-auth-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] rounded-[12px] bg-white hover:bg-gray-200 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
 
       <!-- Modal Content -->
       <div class="p-[24px]">
-        <p class="text-[16px] text-gray-700 dark:text-gray-300 mb-[24px]">
+        <!-- Question Text -->
+        <p
+          class="text-[24px] w-5/6 font-semibold text-gray-900 dark:text-white text-start mb-[32px] leading-relaxed">
           Siz barcha savollarga javob bermasdan imtihonni yakunlamoqchimisiz?
         </p>
-        <div class="flex items-center space-x-[12px]">
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col space-y-[12px]">
+          <!-- Confirm Exit Button -->
           <button id="confirm-exit-btn"
-            class="flex-1 bg-red-500 hover:bg-red-600 text-white px-[20px] py-[12px] rounded-[16px] transition-colors text-[14px] font-medium">
+            class="w-full bg-[#FFE5E5] dark:bg-[#4A1F1F] text-[#FF4444] dark:text-[#FF6B6B] px-[24px] py-[14px] rounded-[16px] hover:bg-[#FFD5D5] dark:hover:bg-[#5A2F2F] transition-colors text-[16px] font-medium">
             Ha, Imtihonni yakunlash
           </button>
+
+          <!-- Cancel Button -->
           <button id="cancel-exit-btn"
-            class="flex-1 bg-primary text-white px-[20px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+            class="w-full bg-primary text-white px-[24px] py-[14px] rounded-[16px] hover:bg-primary/90 transition-colors text-[16px] font-medium">
             Yo'q, testni ishlayman
           </button>
         </div>
