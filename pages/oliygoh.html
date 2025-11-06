@@ -237,13 +237,15 @@
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
             <button id="notification" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
-              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
+              <div
+                class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
             </button>
           </div>
-           <div class="relative flex">
-            <button id="notification-btn" class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
+          <div class="relative flex">
+            <button id="notification-btn"
+              class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
               <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card rounded-[16px] flex items-center justify-center">
                 <img src="../assets/ava.png" alt="Notifications" class="">
               </div>
@@ -674,7 +676,8 @@
 
                   <!-- Search Bar (only if more than threshold items) -->
                   <div x-show="showSearch" class="px-[8px] pt-[8px]">
-                    <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                    <div
+                      class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
                       <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
                       <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
                         class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
@@ -690,7 +693,8 @@
                   </div>
 
                   <!-- Options List -->
-                  <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2" :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                  <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                    :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
                     <template x-if="filteredItems.length === 0">
                       <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
                         <span x-text="emptyMessage"></span>
@@ -704,8 +708,10 @@
                             'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
                           }" :aria-selected="selected === item.value" role="option">
                           <span class="flex-1" x-text="item.label"></span>
-                          <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick" class="block dark:hidden w-[20px] h-[20px]">
-                          <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick" class="hidden dark:block w-[20px] h-[20px]">
+                          <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                            class="block dark:hidden w-[20px] h-[20px]">
+                          <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                            class="hidden dark:block w-[20px] h-[20px]">
                         </button>
                       </li>
                     </template>
@@ -798,29 +804,29 @@
         <div class="space-y-[12px] md:space-y-[16px]">
           <!-- University Card 1 -->
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -831,29 +837,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -864,29 +870,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -897,29 +903,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -930,29 +936,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -963,29 +969,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -996,29 +1002,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -1029,29 +1035,29 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
+            class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
             <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
               Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
             </h3>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
               <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[16px] font-normal">105.5</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <i class="fas fa-star text-yellow-500 text-[14px]"></i>
                   <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
                 </div>
                 <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
                   <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
                 </div>
               </div>
@@ -1061,105 +1067,7 @@
               </button>
             </div>
           </div>
-          <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
-            <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
-              Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-            </h3>
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
-              <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-                </div>
-              </div>
-              <button onclick="window.location.href='oliygoh-detail.html'"
-                class="bg-primary h-[32px] text-white px-[12px] py-[3px] rounded-[12px] hover:bg-primary/90 transition-colors text-[14px] md:text-[16px] font-light whitespace-nowrap w-full md:w-auto">
-                Batafsil
-              </button>
-            </div>
-          </div>
-          <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
-            <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
-              Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-            </h3>
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
-              <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-                </div>
-              </div>
-              <button onclick="window.location.href='oliygoh-detail.html'"
-                class="bg-primary h-[32px] text-white px-[12px] py-[3px] rounded-[12px] hover:bg-primary/90 transition-colors text-[14px] md:text-[16px] font-light whitespace-nowrap w-full md:w-auto">
-                Batafsil
-              </button>
-            </div>
-          </div>
-          <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[16px] md:p-[20px] flex flex-col gap-[12px] md:gap-[16px]">
-            <h3 class="text-[16px] md:text-[20px] font-medium text-gray-900 dark:text-white mb-[8px] leading-tight">
-              Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti
-            </h3>
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[12px]">
-              <div class="flex items-center flex-wrap gap-[8px] md:gap-[12px]">
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">14</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <div class="w-4 h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[16px] font-normal">105.5</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <i class="fas fa-star text-yellow-500 text-[14px]"></i>
-                  <span class="text-[14px] text-gray-600 dark:text-gray-400">7.8 (18 ta izoh)</span>
-                </div>
-                <div
-                  class="bg-[#F2F3F7] rounded-full flex gap-[8px] items-center justify-center pl-[12px] pr-[10px] py-[3px]">
-                  <p class="text-[14px] text-gray-600 dark:text-gray-400">Toshkent sh.</p>
-                </div>
-              </div>
-              <button onclick="window.location.href='oliygoh-detail.html'"
-                class="bg-primary h-[32px] text-white px-[12px] py-[3px] rounded-[12px] hover:bg-primary/90 transition-colors text-[14px] md:text-[16px] font-light whitespace-nowrap w-full md:w-auto">
-                Batafsil
-              </button>
-            </div>
-          </div>
+
 
           <!-- Advertisement (Mobile - After List Items) -->
           <div class="lg:hidden mt-[16px]">
@@ -1347,7 +1255,7 @@
             mobileMenuOverlay.classList.add('opacity-0', 'invisible');
             mobileMenuOverlay.classList.remove('opacity-100', 'visible');
           }
-          
+
           // Open filter modal
           filterModal.classList.remove('opacity-0', 'invisible');
           filterModal.classList.add('opacity-100', 'visible');
@@ -1671,7 +1579,8 @@
           <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
         </div>
         <div class="flex items-center space-x-[12px]">
-          <button class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+          <button
+            class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
             <img src="../assets/icons/search.svg" class="w-[20px] h-[20px]" alt="">
           </button>
           <div class="h-[40px] w-[40px] bg-white dark:bg-dark-card rounded-[13px] dark:border-gray-800">
@@ -1858,10 +1767,10 @@
                           'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
                         }" :aria-selected="selected === item.value" role="option">
                         <span class="flex-1" x-text="item.label"></span>
-                          <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
-                            class="block dark:hidden w-[20px] h-[20px]">
-                          <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
-                            class="hidden dark:block w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
                       </button>
                     </li>
                   </template>
@@ -1909,7 +1818,8 @@
 
                 <!-- Search Bar (only if more than threshold items) -->
                 <div x-show="showSearch" class="px-[8px] pt-[8px]">
-                  <div class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
+                  <div
+                    class="flex items-center rounded-[16px] bg-[#F2F3F7] dark:bg-gray-700 px-[12px] py-[8px] gap-[12px]">
                     <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
                     <input x-ref="searchInput" x-model="search" type="text" :placeholder="searchPlaceholder"
                       class="flex-1 text-[14px] bg-transparent outline-none border-0 text-gray-900 dark:text-white placeholder:text-[#686E7E]"
@@ -1925,7 +1835,8 @@
                 </div>
 
                 <!-- Options List -->
-                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2" :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
+                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2"
+                  :class="showSearch ? 'py-1 mt-1 mb-2' : 'py-2'" role="listbox">
                   <template x-if="filteredItems.length === 0">
                     <li class="px-4 py-2 text-[14px] text-[#686E7E] select-none cursor-default rounded-[16px]">
                       <span x-text="emptyMessage"></span>
@@ -1939,8 +1850,10 @@
                           'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
                         }" :aria-selected="selected === item.value" role="option">
                         <span class="flex-1" x-text="item.label"></span>
-                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick" class="block dark:hidden w-[20px] h-[20px]">
-                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick" class="hidden dark:block w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
                       </button>
                     </li>
                   </template>
@@ -2130,7 +2043,7 @@
       function applyFilterFunc() {
         const selectedDate = document.querySelector('input[name="date-filter"]:checked');
         // Add other filter selections here (language, region, etc.)
-        
+
         let filterData = {
           date: selectedDate ? selectedDate.value : null,
           // Add other filter values here
