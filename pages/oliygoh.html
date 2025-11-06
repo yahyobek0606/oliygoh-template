@@ -2087,19 +2087,9 @@
       initialValue: null,
       onSelect: (item) => { console.log('Selected:', item); }
     })">
-      <!-- Copy the HTML template from Region Filter section -->
+      -->
   </div>
 
-  Options:
-  - items: Array of {value, label} objects (required)
-  - placeholder: Placeholder text (default: 'Tanlash')
-  - name: Form field name (default: 'select')
-  - searchPlaceholder: Search input placeholder (default: 'Izlash')
-  - emptyMessage: Message when no results (default: 'Hech narsa topilmadi')
-  - searchThreshold: Show search when items > this number (default: 10)
-  - initialValue: Initial selected value (default: null)
-  - onSelect: Callback function when item is selected
-  -->
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.data('searchableSelect', (options = {}) => ({
