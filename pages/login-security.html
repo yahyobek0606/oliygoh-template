@@ -477,7 +477,7 @@
                   </div>
                   <p class="text-[16px] font-[400]">sukhrobjonkhurramov@gmail.com</p>
                 </div>
-                <button
+                <button id="change-email-btn"
                   class="bg-gray-200 h-[40px] text-[#2A2C33] dark:text-white px-[16px] md:px-[20px] py-[8px] text-[12px] md:text-[14px] rounded-[12px] hover:bg-gray/90 transition-colors text-[14px] font-medium">
                   Pochtani o'zgartirish
                 </button>
@@ -509,7 +509,7 @@
                   <label class="text-[14px] text-[#686E7E]">Telegram ID</label>
                   <p class="text-[16px] font-[400]">1118725634</p>
                 </div>
-                <button
+                <button id="disconnect-telegram-btn"
                   class="bg-gray-200 h-[40px] text-[#2A2C33] dark:text-white px-[16px] md:px-[20px] py-[8px] text-[12px] md:text-[14px] rounded-[12px] hover:bg-gray/90 transition-colors text-[14px] font-medium">
                   Telegramni uzish
                 </button>
@@ -523,7 +523,7 @@
                   <label class="text-[14px] text-[#686E7E] mb-[4px]">Parolingiz</label>
                   <p class="text-[16px] font-[400]">************</p>
                 </div>
-                <button
+                <button id="change-password-btn"
                   class="bg-gray-200 h-[40px] text-[#2A2C33] dark:text-white px-[16px] md:px-[20px] py-[8px] text-[12px] md:text-[14px] rounded-[12px] hover:bg-gray/90 transition-colors text-[14px] font-medium">
                   Parolni yangilash
                 </button>
@@ -533,13 +533,13 @@
         </div>
         <!-- Account Deletion Section -->
         <div class="mt-[12px] pt-[24px]">
-          <div class="bg-white rounded-[24px] p-[20px]">
-            <h3 class="text-[18px] font-bold text-gray-900 mb-[8px]">Akkauntni o'chirish</h3>
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px]">
+            <h3 class="text-[18px] font-bold text-gray-900 dark:text-white mb-[8px]">Akkauntni o'chirish</h3>
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-2 border-[#E1E2E5] dark:border-[#1D2A33] rounded-[20px] p-[16px] gap-4">
-              <p class="text-[16px] text-gray-600 flex-1">
+              <p class="text-[16px] text-gray-600 dark:text-gray-400 flex-1">
                 Qayta tiklash imkoniyatisiz hisob butunlay o'chiriladi, barcha ma'lumotlaringiz yo'qoladi.
               </p>
-              <button
+              <button id="delete-account-btn"
                 class="bg-[#F94B331F] text-[#F94B33] px-[20px] py-[8px] h-[40px] rounded-[12px] hover:bg-red-300 transition-colors text-[14px] font-medium whitespace-nowrap">
                 Akkauntni o'chirish
               </button>
@@ -547,6 +547,176 @@
           </div>
         </div>
       </main>
+    </div>
+  </div>
+
+  <!-- Change Email Modal -->
+  <div id="change-email-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[400px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-change-email-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white mb-[24px]">Pochtani o'zgartirish</h2>
+        <div class="space-y-[16px]">
+          <div class="relative">
+            <input type="email" id="new-email-input" placeholder="yangi email"
+              class="w-full h-[48px] px-[16px] py-[12px] border border-gray-200 dark:border-gray-700 rounded-[12px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          <button id="save-email-btn"
+            class="w-full bg-primary text-white h-[48px] rounded-[12px] hover:bg-primary/90 transition-colors text-[16px] font-medium">
+            Saqlash
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm Email Modal -->
+  <div id="confirm-email-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[400px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-confirm-email-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white mb-[16px]">Pochtani tasdiqlang</h2>
+        <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-[24px] leading-relaxed">
+          Biz sizning pochtangizga <span id="confirmation-email" class="text-primary font-medium">sukhrobkhurramov@gmail.com</span> ga tasdiqlash xabarini yubordik. Tasdiqlashdan o'tsangiz, pochtangiz yangilanadi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div id="change-password-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[400px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-change-password-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white mb-[24px]">Parolni o'zgartirish</h2>
+        <div class="space-y-[16px]">
+          <!-- Current Password -->
+          <div class="relative">
+            <input type="password" id="current-password-input" placeholder="Hozirgi parol"
+              class="w-full h-[48px] px-[16px] py-[12px] pr-[48px] border border-primary rounded-[12px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+            <button type="button" class="toggle-password absolute right-[16px] top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              data-target="current-password-input">
+              <img src="../assets/icons/view.svg" alt="Toggle visibility" class="w-[20px] h-[20px]">
+            </button>
+          </div>
+          <!-- New Password -->
+          <div class="relative">
+            <input type="password" id="new-password-input" placeholder="yangi parol"
+              class="w-full h-[48px] px-[16px] py-[12px] pr-[48px] border border-gray-200 dark:border-gray-700 rounded-[12px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+            <button type="button" class="toggle-password absolute right-[16px] top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              data-target="new-password-input">
+              <img src="../assets/icons/view.svg" alt="Toggle visibility" class="w-[20px] h-[20px]">
+            </button>
+          </div>
+          <!-- Repeat New Password -->
+          <div class="relative">
+            <input type="password" id="repeat-password-input" placeholder="yangi parolni takrorlash"
+              class="w-full h-[48px] px-[16px] py-[12px] pr-[48px] border border-gray-200 dark:border-gray-700 rounded-[12px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+            <button type="button" class="toggle-password absolute right-[16px] top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              data-target="repeat-password-input">
+              <img src="../assets/icons/view.svg" alt="Toggle visibility" class="w-[20px] h-[20px]">
+            </button>
+          </div>
+          <button id="save-password-btn"
+            class="w-full bg-primary text-white h-[48px] rounded-[12px] hover:bg-primary/90 transition-colors text-[16px] font-medium">
+            Saqlash
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disconnect Telegram Modal -->
+  <div id="disconnect-telegram-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[400px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-disconnect-telegram-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <p class="text-[16px] font-medium text-gray-900 dark:text-white mb-[24px] text-start leading-relaxed">
+          Telegram akkauntni saytdan uzishni tasdiqlaysizmi?
+        </p>
+        <div class="flex gap-[12px]">
+          <button id="cancel-disconnect-btn"
+            class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            Bekor qilish
+          </button>
+          <button id="confirm-disconnect-btn"
+            class="flex-1 bg-primary text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-primary/90 transition-colors">
+            Ha, tasdiqlash
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Account Modal -->
+  <div id="delete-account-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[500px] transform scale-95 transition-all duration-300 shadow-xl relative">
+      <!-- Close Button -->
+      <button id="close-delete-account-modal"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-[24px]">
+        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white mb-[24px]">
+          Siz rostdan ham saytdan akkauntingizni o'chirasizmi?
+        </h2>
+        <div class="space-y-[16px]">
+          <div>
+            <input type="text" id="captcha-input" placeholder="captchani kiriting"
+              class="w-full h-[48px] px-[16px] py-[12px] border border-gray-200 dark:border-gray-700 rounded-[12px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          <div class="flex items-center space-x-[8px]">
+            <span class="text-[14px] text-gray-600 dark:text-gray-400">captcha:</span>
+            <span id="captcha-code" class="text-[14px] font-mono text-[#F94B33] font-semibold">78B23SjkNmk15</span>
+          </div>
+          <div class="flex gap-[12px] pt-[8px]">
+            <button id="confirm-delete-btn"
+              class="flex-1 bg-[#F94B33] text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-[#E03A22] transition-colors">
+              Ha, o'chirish
+            </button>
+            <button id="cancel-delete-btn"
+              class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              Bekor qilish
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -815,22 +985,178 @@
       }
     });
 
-    // Handle button clicks
-    document.querySelectorAll('button').forEach(button => {
-      button.addEventListener('click', function () {
-        const buttonText = this.textContent.trim();
-        if (buttonText.includes('Pochtani')) {
-          alert('Pochtani o\'zgartirish funksiyasi');
-        } else if (buttonText.includes('Raqamni')) {
-          alert('Raqamni o\'zgartirish funksiyasi');
-        } else if (buttonText.includes('Telegramni')) {
-          alert('Telegramni uzish funksiyasi');
-        } else if (buttonText.includes('Parolni')) {
-          alert('Parolni yangilash funksiyasi');
-        } else if (buttonText.includes('Akkauntni')) {
-          if (confirm('Haqiqatan ham akkauntingizni o\'chirmoqchimisiz?')) {
-            alert('Akkaunt o\'chirildi');
+    // Modal utility functions
+    function showModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('opacity-0', 'invisible');
+        modal.classList.add('opacity-100', 'visible');
+        const modalContent = modal.querySelector('div > div');
+        if (modalContent) {
+          modalContent.classList.remove('scale-95');
+          modalContent.classList.add('scale-100');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function hideModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('opacity-0', 'invisible');
+        modal.classList.remove('opacity-100', 'visible');
+        const modalContent = modal.querySelector('div > div');
+        if (modalContent) {
+          modalContent.classList.add('scale-95');
+          modalContent.classList.remove('scale-100');
+        }
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Change Email Modal
+    const changeEmailBtn = document.getElementById('change-email-btn');
+    const changeEmailModal = document.getElementById('change-email-modal');
+    const closeChangeEmailModal = document.getElementById('close-change-email-modal');
+    const saveEmailBtn = document.getElementById('save-email-btn');
+    const confirmEmailModal = document.getElementById('confirm-email-modal');
+    const closeConfirmEmailModal = document.getElementById('close-confirm-email-modal');
+
+    if (changeEmailBtn) {
+      changeEmailBtn.addEventListener('click', () => showModal('change-email-modal'));
+    }
+    if (closeChangeEmailModal) {
+      closeChangeEmailModal.addEventListener('click', () => hideModal('change-email-modal'));
+    }
+    if (saveEmailBtn) {
+      saveEmailBtn.addEventListener('click', () => {
+        const newEmail = document.getElementById('new-email-input').value;
+        if (newEmail) {
+          document.getElementById('confirmation-email').textContent = newEmail;
+          hideModal('change-email-modal');
+          showModal('confirm-email-modal');
+          document.getElementById('new-email-input').value = '';
+        }
+      });
+    }
+    if (closeConfirmEmailModal) {
+      closeConfirmEmailModal.addEventListener('click', () => hideModal('confirm-email-modal'));
+    }
+
+    // Change Password Modal
+    const changePasswordBtn = document.getElementById('change-password-btn');
+    const changePasswordModal = document.getElementById('change-password-modal');
+    const closeChangePasswordModal = document.getElementById('close-change-password-modal');
+    const savePasswordBtn = document.getElementById('save-password-btn');
+
+    if (changePasswordBtn) {
+      changePasswordBtn.addEventListener('click', () => showModal('change-password-modal'));
+    }
+    if (closeChangePasswordModal) {
+      closeChangePasswordModal.addEventListener('click', () => hideModal('change-password-modal'));
+    }
+    if (savePasswordBtn) {
+      savePasswordBtn.addEventListener('click', () => {
+        const currentPassword = document.getElementById('current-password-input').value;
+        const newPassword = document.getElementById('new-password-input').value;
+        const repeatPassword = document.getElementById('repeat-password-input').value;
+        
+        if (newPassword !== repeatPassword) {
+          alert('Yangi parollar mos kelmaydi');
+          return;
+        }
+        if (currentPassword && newPassword && repeatPassword) {
+          // Here you would typically send the data to your backend
+          alert('Parol muvaffaqiyatli o\'zgartirildi');
+          hideModal('change-password-modal');
+          document.getElementById('current-password-input').value = '';
+          document.getElementById('new-password-input').value = '';
+          document.getElementById('repeat-password-input').value = '';
+        }
+      });
+    }
+
+    // Password visibility toggle
+    document.querySelectorAll('.toggle-password').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (input) {
+          if (input.type === 'password') {
+            input.type = 'text';
+          } else {
+            input.type = 'password';
           }
+        }
+      });
+    });
+
+    // Disconnect Telegram Modal
+    const disconnectTelegramBtn = document.getElementById('disconnect-telegram-btn');
+    const disconnectTelegramModal = document.getElementById('disconnect-telegram-modal');
+    const closeDisconnectTelegramModal = document.getElementById('close-disconnect-telegram-modal');
+    const cancelDisconnectBtn = document.getElementById('cancel-disconnect-btn');
+    const confirmDisconnectBtn = document.getElementById('confirm-disconnect-btn');
+
+    if (disconnectTelegramBtn) {
+      disconnectTelegramBtn.addEventListener('click', () => showModal('disconnect-telegram-modal'));
+    }
+    if (closeDisconnectTelegramModal) {
+      closeDisconnectTelegramModal.addEventListener('click', () => hideModal('disconnect-telegram-modal'));
+    }
+    if (cancelDisconnectBtn) {
+      cancelDisconnectBtn.addEventListener('click', () => hideModal('disconnect-telegram-modal'));
+    }
+    if (confirmDisconnectBtn) {
+      confirmDisconnectBtn.addEventListener('click', () => {
+        // Here you would typically send the request to your backend
+        alert('Telegram akkaunt uzildi');
+        hideModal('disconnect-telegram-modal');
+      });
+    }
+
+    // Delete Account Modal
+    const deleteAccountBtn = document.getElementById('delete-account-btn');
+    const deleteAccountModal = document.getElementById('delete-account-modal');
+    const closeDeleteAccountModal = document.getElementById('close-delete-account-modal');
+    const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
+    const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+
+    if (deleteAccountBtn) {
+      deleteAccountBtn.addEventListener('click', () => {
+        // Generate random CAPTCHA
+        const captchaCode = Math.random().toString(36).substring(2, 15).toUpperCase() + Math.random().toString(36).substring(2, 10);
+        document.getElementById('captcha-code').textContent = captchaCode;
+        document.getElementById('captcha-input').value = '';
+        showModal('delete-account-modal');
+      });
+    }
+    if (closeDeleteAccountModal) {
+      closeDeleteAccountModal.addEventListener('click', () => hideModal('delete-account-modal'));
+    }
+    if (cancelDeleteBtn) {
+      cancelDeleteBtn.addEventListener('click', () => hideModal('delete-account-modal'));
+    }
+    if (confirmDeleteBtn) {
+      confirmDeleteBtn.addEventListener('click', () => {
+        const captchaInput = document.getElementById('captcha-input').value;
+        const captchaCode = document.getElementById('captcha-code').textContent;
+        
+        if (captchaInput !== captchaCode) {
+          alert('CAPTCHA noto\'g\'ri');
+          return;
+        }
+        // Here you would typically send the request to your backend
+        alert('Akkaunt o\'chirildi');
+        hideModal('delete-account-modal');
+      });
+    }
+
+    // Close modals when clicking outside
+    document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          hideModal(this.id);
         }
       });
     });

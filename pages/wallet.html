@@ -696,11 +696,11 @@
                   <p class="text-[18px] md:text-[20px] font-semibold text-[#2A2C33] dark:text-white">0 so'm</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-[12px] w-full sm:w-auto">
-                  <button
+                  <button id="voucher-btn"
                     class="bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-700 dark:text-gray-300 h-[48px] px-[16px] md:px-[24px] py-[8px] rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium w-full sm:w-auto">
                     Vaucher bilan to'ldirish
                   </button>
-                  <button
+                  <button id="topup-btn"
                     class="bg-primary flex items-center justify-center text-center text-white h-[48px] px-[24px] py-[8px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium w-full sm:w-auto">
                     To'ldirish
                   </button>
@@ -843,15 +843,11 @@
       });
     });
 
-    // Handle button clicks
+    // Handle "Hammasi" button click
     document.querySelectorAll('button').forEach(button => {
       button.addEventListener('click', function () {
         const buttonText = this.textContent.trim();
-        if (buttonText.includes('Vaucher')) {
-          alert('Vaucher bilan to\'ldirish funksiyasi');
-        } else if (buttonText.includes('To\'ldirish')) {
-          alert('Balans to\'ldirish sahifasiga o\'tish');
-        } else if (buttonText.includes('Hammasi')) {
+        if (buttonText.includes('Hammasi')) {
           alert('Barcha tranzaksiyalarni ko\'rish');
         }
       });
@@ -901,6 +897,229 @@
     // Initialize theme and add listener
     initializeTheme();
     themeToggle.addEventListener('click', toggleTheme);
+  </script>
+
+  <!-- Voucher Entry Modal -->
+  <div id="voucher-modal" class="fixed inset-0 bg-black/50 dark:bg-black/70 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-dark-card rounded-[24px] w-full max-w-[400px] p-[24px] md:p-[32px] transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="relative flex items-center justify-start mb-[16px]">
+        <h3 class="text-[24px] md:text-[28px] font-bold text-[#2A2C33] dark:text-white">Vaucherni kiritish</h3>
+        <button id="voucher-modal-close" class="absolute right-0 top-0 w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+        </button>
+      </div>
+
+      <!-- Instructions -->
+      <p class="text-[14px] md:text-[16px] text-[#686E7E] dark:text-gray-400 mb-[24px]">
+        Sizga berilgan vaucher yoki sovg'a kartasida ko'rsatilgan 12 talik kodni kiriting. Va bonus oling
+      </p>
+
+      <!-- Input Field -->
+      <div class="mb-[24px]">
+        <input type="text" id="voucher-code" placeholder="**** **** ****" maxlength="14"
+          class="w-full h-[56px] px-[16px] py-[12px] bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-[16px] text-[16px] text-[#2A2C33] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+          oninput="let val = this.value.replace(/\D/g, ''); if (val.length > 12) val = val.slice(0, 12); this.value = val.replace(/(.{4})/g, '$1 ').trim();">
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-[12px]">
+        <button id="voucher-cancel-btn"
+          class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 h-[48px] rounded-[16px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[14px] font-medium">
+          Bekor qilish
+        </button>
+        <button id="voucher-submit-btn"
+          class="flex-1 bg-primary text-white h-[48px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+          Kiritish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top-up Modal -->
+  <div id="topup-modal" class="fixed inset-0 bg-black/50 dark:bg-black/70 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-dark-card rounded-[24px] w-full max-w-[400px] p-[24px] md:p-[32px] transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="relative flex items-center justify-start mb-[16px]">
+        <h3 class="text-[24px] md:text-[28px] font-bold text-[#2A2C33] dark:text-white">Hamyonni to'ldirish</h3>
+        <button id="topup-modal-close" class="absolute right-0 top-0 w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+        </button>
+      </div>
+
+      <!-- Instructions -->
+      <p class="text-[14px] md:text-[16px] text-[#686E7E] dark:text-gray-400 mb-[24px]">
+        Summani kiriting va to'lov tizimlari orqali hisobingizga pul o'tqazing.
+      </p>
+
+      <!-- Payment Method Section -->
+      <div class="mb-[24px]">
+        <label class="block text-[14px] font-medium text-[#2A2C33] dark:text-white mb-[12px]">To'lov usuli</label>
+        <div class="flex gap-[12px]">
+          <button id="payme-btn" class="flex-1 h-[48px] bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[16px] hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-[14px] font-medium payment-method-btn active">
+            Payme orqali
+          </button>
+          <button id="click-btn" class="flex-1 h-[48px] bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 rounded-[16px] hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors text-[14px] font-medium payment-method-btn">
+            Click orqali
+          </button>
+        </div>
+      </div>
+
+      <!-- Amount Input Section -->
+      <div class="mb-[24px]">
+        <label class="block text-[14px] font-medium text-[#2A2C33] dark:text-white mb-[12px]">Summa</label>
+        <input type="text" id="topup-amount" value="50 000"
+          class="w-full h-[56px] px-[16px] py-[12px] bg-gray-50 dark:bg-gray-800 border-2 border-primary rounded-[16px] text-[16px] text-[#2A2C33] dark:text-white focus:outline-none focus:border-primary transition-colors"
+          oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ')">
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-[12px]">
+        <button id="topup-cancel-btn"
+          class="flex-1 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 h-[48px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-[14px] font-medium">
+          Bekor qilish
+        </button>
+        <button id="topup-submit-btn"
+          class="flex-1 bg-primary text-white h-[48px] rounded-[16px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+          To'ldirishga o'tish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Voucher Modal Functionality
+    const voucherBtn = document.getElementById('voucher-btn');
+    const voucherModal = document.getElementById('voucher-modal');
+    const voucherModalClose = document.getElementById('voucher-modal-close');
+    const voucherCancelBtn = document.getElementById('voucher-cancel-btn');
+    const voucherSubmitBtn = document.getElementById('voucher-submit-btn');
+    const voucherCodeInput = document.getElementById('voucher-code');
+
+    function openVoucherModal() {
+      voucherModal.classList.remove('opacity-0', 'invisible');
+      voucherModal.classList.add('opacity-100', 'visible');
+      const modalContent = voucherModal.querySelector('div > div');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+      voucherCodeInput.focus();
+    }
+
+    function closeVoucherModal() {
+      voucherModal.classList.add('opacity-0', 'invisible');
+      voucherModal.classList.remove('opacity-100', 'visible');
+      const modalContent = voucherModal.querySelector('div > div');
+      modalContent.classList.add('scale-95');
+      modalContent.classList.remove('scale-100');
+      document.body.style.overflow = 'auto';
+      voucherCodeInput.value = '';
+    }
+
+    if (voucherBtn) {
+      voucherBtn.addEventListener('click', openVoucherModal);
+    }
+    if (voucherModalClose) {
+      voucherModalClose.addEventListener('click', closeVoucherModal);
+    }
+    if (voucherCancelBtn) {
+      voucherCancelBtn.addEventListener('click', closeVoucherModal);
+    }
+    if (voucherSubmitBtn) {
+      voucherSubmitBtn.addEventListener('click', function() {
+        const code = voucherCodeInput.value.replace(/\s/g, '');
+        if (code.length === 12) {
+          // Handle voucher submission
+          alert('Vaucher kiritildi: ' + code);
+          closeVoucherModal();
+        } else {
+          alert('Iltimos, 12 talik kodni kiriting');
+        }
+      });
+    }
+
+    // Close voucher modal when clicking outside
+    voucherModal.addEventListener('click', function(e) {
+      if (e.target === voucherModal) {
+        closeVoucherModal();
+      }
+    });
+
+    // Top-up Modal Functionality
+    const topupBtn = document.getElementById('topup-btn');
+    const topupModal = document.getElementById('topup-modal');
+    const topupModalClose = document.getElementById('topup-modal-close');
+    const topupCancelBtn = document.getElementById('topup-cancel-btn');
+    const topupSubmitBtn = document.getElementById('topup-submit-btn');
+    const topupAmountInput = document.getElementById('topup-amount');
+    const paymeBtn = document.getElementById('payme-btn');
+    const clickBtn = document.getElementById('click-btn');
+
+    function openTopupModal() {
+      topupModal.classList.remove('opacity-0', 'invisible');
+      topupModal.classList.add('opacity-100', 'visible');
+      const modalContent = topupModal.querySelector('div > div');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+      topupAmountInput.focus();
+    }
+
+    function closeTopupModal() {
+      topupModal.classList.add('opacity-0', 'invisible');
+      topupModal.classList.remove('opacity-100', 'visible');
+      const modalContent = topupModal.querySelector('div > div');
+      modalContent.classList.add('scale-95');
+      modalContent.classList.remove('scale-100');
+      document.body.style.overflow = 'auto';
+    }
+
+    if (topupBtn) {
+      topupBtn.addEventListener('click', openTopupModal);
+    }
+    if (topupModalClose) {
+      topupModalClose.addEventListener('click', closeTopupModal);
+    }
+    if (topupCancelBtn) {
+      topupCancelBtn.addEventListener('click', closeTopupModal);
+    }
+    if (topupSubmitBtn) {
+      topupSubmitBtn.addEventListener('click', function() {
+        const amount = topupAmountInput.value.replace(/\s/g, '');
+        const paymentMethod = paymeBtn.classList.contains('active') ? 'Payme' : 'Click';
+        if (amount && !isNaN(amount)) {
+          // Handle top-up submission
+          alert('To\'ldirish: ' + amount + ' so\'m, ' + paymentMethod + ' orqali');
+          closeTopupModal();
+        } else {
+          alert('Iltimos, to\'g\'ri summa kiriting');
+        }
+      });
+    }
+
+    // Payment method selection
+    if (paymeBtn && clickBtn) {
+      paymeBtn.addEventListener('click', function() {
+        paymeBtn.classList.add('active', 'bg-gray-200', 'dark:bg-gray-800');
+        paymeBtn.classList.remove('bg-white', 'dark:bg-gray-700', 'border-2', 'border-gray-200', 'dark:border-gray-600');
+        clickBtn.classList.remove('active', 'bg-gray-200', 'dark:bg-gray-800');
+        clickBtn.classList.add('bg-white', 'dark:bg-gray-700', 'border-2', 'border-gray-200', 'dark:border-gray-600');
+      });
+
+      clickBtn.addEventListener('click', function() {
+        clickBtn.classList.add('active', 'bg-gray-200', 'dark:bg-gray-800');
+        clickBtn.classList.remove('bg-white', 'dark:bg-gray-700', 'border-2', 'border-gray-200', 'dark:border-gray-600');
+        paymeBtn.classList.remove('active', 'bg-gray-200', 'dark:bg-gray-800');
+        paymeBtn.classList.add('bg-white', 'dark:bg-gray-700', 'border-2', 'border-gray-200', 'dark:border-gray-600');
+      });
+    }
+
+    // Close top-up modal when clicking outside
+    topupModal.addEventListener('click', function(e) {
+      if (e.target === topupModal) {
+        closeTopupModal();
+      }
+    });
   </script>
 </body>
 

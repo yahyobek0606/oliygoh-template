@@ -746,7 +746,7 @@
                 </div>
 
                 <!-- Buy Button -->
-                <button
+                <button id="buy-subscription-btn"
                   class="w-full bg-primary px-[20px] h-[48px] md:h-[52px] text-white py-[8px] rounded-[16px] hover:bg-primary/90 transition-colors font-medium text-[14px] md:text-[16px]">
                   Hoziroq sotib olish
                 </button>
@@ -755,6 +755,60 @@
           </div>
         </div>
       </main>
+    </div>
+  </div>
+
+  <!-- Payment Method Selection Modal -->
+  <div id="payment-modal-overlay"
+    class="fixed inset-0 bg-black/50 dark:bg-black/70 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4">
+    <div id="payment-modal"
+      class="bg-white dark:bg-dark-card rounded-[24px] w-full max-w-[500px] p-[24px] md:p-[32px] relative transform scale-95 transition-all duration-300">
+      <!-- Close Button -->
+      <button id="payment-modal-close"
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] dark:border-gray-700 rounded-[12px] bg-white dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center transition-colors">
+        <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
+      </button>
+
+      <!-- Title -->
+      <h3 class="text-[20px] md:text-[24px] font-bold text-[#2A2C33] dark:text-white mb-[24px] pr-[40px]">
+        Obunani sotib olish usulini tanlang
+      </h3>
+
+      <!-- Payment Method Selection -->
+      <div class="flex gap-[8px] mb-[24px]">
+        <button
+          class="payment-method-btn flex-1 px-[16px] py-[12px] rounded-[16px] text-[14px] md:text-[16px] font-medium text-[#686E7E] dark:text-[#98B4CC] bg-transparent border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+          data-method="account">
+          Hisobdan
+        </button>
+        <button
+          class="payment-method-btn flex-1 px-[16px] py-[12px] rounded-[16px] text-[14px] md:text-[16px] font-medium text-[#686E7E] dark:text-[#98B4CC] bg-transparent border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+          data-method="click">
+          Click
+        </button>
+        <button
+          class="payment-method-btn flex-1 px-[16px] py-[12px] rounded-[16px] text-[14px] md:text-[16px] font-medium text-[#2A2C33] dark:text-white bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all active"
+          data-method="payme">
+          Payme
+        </button>
+      </div>
+
+      <!-- Information Text -->
+      <p class="text-[14px] md:text-[16px] text-[#2A2C33] dark:text-gray-300 mb-[24px] leading-relaxed">
+        Tanlovingiz bo'yicha 1 oylik obunani <span class="font-bold text-[#4CAF50] dark:text-green-400">35 200 so'mga</span> sotib olyapiz. To'lovga o'tishni bosib to'lov qilib tizimga qayting
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-[12px]">
+        <button id="payment-modal-cancel"
+          class="flex-1 px-[20px] h-[48px] bg-gray-100 dark:bg-gray-800 text-[#2A2C33] dark:text-white py-[12px] rounded-[16px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium text-[14px] md:text-[16px]">
+          Bekor qilish
+        </button>
+        <button id="payment-modal-proceed"
+          class="flex-1 px-[20px] h-[48px] bg-primary text-white py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors font-medium text-[14px] md:text-[16px]">
+          To'lovga o'tish
+        </button>
+      </div>
     </div>
   </div>
 
@@ -842,11 +896,78 @@
       });
     });
 
-    // Handle buy button
-    document.querySelectorAll('button').forEach(btn => {
-      if (btn.textContent.includes('Hoziroq sotib olish')) {
+    // Payment Modal Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const paymentModalOverlay = document.getElementById('payment-modal-overlay');
+      const paymentModal = document.getElementById('payment-modal');
+      const paymentModalClose = document.getElementById('payment-modal-close');
+      const paymentModalCancel = document.getElementById('payment-modal-cancel');
+      const buySubscriptionBtn = document.getElementById('buy-subscription-btn');
+      const paymentMethodButtons = document.querySelectorAll('.payment-method-btn');
+
+      function openPaymentModal() {
+        paymentModalOverlay.classList.remove('opacity-0', 'invisible');
+        paymentModalOverlay.classList.add('opacity-100', 'visible');
+        paymentModal.classList.remove('scale-95');
+        paymentModal.classList.add('scale-100');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePaymentModal() {
+        paymentModalOverlay.classList.add('opacity-0', 'invisible');
+        paymentModalOverlay.classList.remove('opacity-100', 'visible');
+        paymentModal.classList.remove('scale-100');
+        paymentModal.classList.add('scale-95');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Open modal when buy button is clicked
+      if (buySubscriptionBtn) {
+        buySubscriptionBtn.addEventListener('click', openPaymentModal);
+      }
+
+      // Close modal handlers
+      if (paymentModalClose) {
+        paymentModalClose.addEventListener('click', closePaymentModal);
+      }
+
+      if (paymentModalCancel) {
+        paymentModalCancel.addEventListener('click', closePaymentModal);
+      }
+
+      // Close modal when clicking overlay
+      if (paymentModalOverlay) {
+        paymentModalOverlay.addEventListener('click', function (e) {
+          if (e.target === paymentModalOverlay) {
+            closePaymentModal();
+          }
+        });
+      }
+
+      // Payment method selection
+      paymentMethodButtons.forEach(btn => {
         btn.addEventListener('click', function () {
-          alert('Obuna sotib olish sahifasiga o\'tish');
+          // Remove active state from all buttons
+          paymentMethodButtons.forEach(b => {
+            b.classList.remove('active', 'bg-gray-100', 'dark:bg-gray-800', 'text-[#2A2C33]', 'dark:text-white');
+            b.classList.add('text-[#686E7E]', 'dark:text-[#98B4CC]', 'bg-transparent');
+          });
+
+          // Add active state to clicked button
+          this.classList.add('active', 'bg-gray-100', 'dark:bg-gray-800', 'text-[#2A2C33]', 'dark:text-white');
+          this.classList.remove('text-[#686E7E]', 'dark:text-[#98B4CC]', 'bg-transparent');
+        });
+      });
+
+      // Handle proceed to payment button
+      const paymentModalProceed = document.getElementById('payment-modal-proceed');
+      if (paymentModalProceed) {
+        paymentModalProceed.addEventListener('click', function () {
+          const selectedMethod = document.querySelector('.payment-method-btn.active')?.dataset.method || 'payme';
+          // Here you would typically redirect to payment gateway or process payment
+          console.log('Proceeding to payment with method:', selectedMethod);
+          // For now, just close the modal
+          closePaymentModal();
         });
       }
     });

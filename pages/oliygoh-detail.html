@@ -14,6 +14,11 @@
   <link href="../dist/output.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <style>
+    /* Alpine.js x-cloak */
+    [x-cloak] {
+      display: none !important;
+    }
+
     /* Custom slider styling */
     .slider {
       -webkit-appearance: none;
@@ -541,7 +546,7 @@
       <!-- Main Content Area -->
       <main class="lg:col-span-2 w-full">
         <!-- University Title -->
-        <div class="flex flex-col gap-[12px] md:gap-[16px] bg-white dark:bg-gray-800 p-[16px] md:p-[24px] rounded-[24px] mb-[16px] md:mb-[24px]">
+        <div class="flex flex-col gap-[12px] md:gap-[16px] bg-white dark:bg-[#0E1A22] p-[16px] md:p-[24px] rounded-[24px] mb-[16px] md:mb-[24px]">
           <h1 class="text-[18px] md:text-[24px] font-bold text-gray-900 dark:text-white leading-tight">
             Abu Ali Ibn Sino Nomidagi<br>
             Buxoro Davlat Tibbiyot Instituti<br>
@@ -573,7 +578,7 @@
         </div>
 
         <!-- Entrance Scores Section -->
-        <div class="bg-white dark:bg-gray-800 rounded-[24px] p-[16px] md:p-[24px] mb-[16px] md:mb-[24px]">
+        <div class="bg-white dark:bg-[#0E1A22] rounded-[24px] p-[16px] md:p-[24px] mb-[16px] md:mb-[24px]">
           <div class="flex items-center justify-between mb-[16px]">
             <h2 class="text-[16px] md:text-[18px] font-bold text-gray-900 dark:text-white">Oliygohga kirish ballari</h2>
             <button class="lg:hidden bg-gray-100 dark:bg-gray-700 p-[8px] rounded-[8px]">
@@ -583,35 +588,185 @@
 
           <!-- Filter Bar -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-[8px] md:gap-[12px] mb-[16px] md:mb-[20px]">
-            <select
-              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
-              <option value="2024-2025">2024-2025</option>
-              <option value="2023-2024">2023-2024</option>
-              <option value="2022-2023">2022-2023</option>
-            </select>
+            <!-- Year Select -->
+            <div class="relative" x-data="searchableSelect({
+                items: [
+                  { value: '2024-2025', label: '2024-2025' },
+                  { value: '2023-2024', label: '2023-2024' },
+                  { value: '2022-2023', label: '2022-2023' }
+                ],
+                placeholder: 'Yilni tanlash',
+                name: 'year',
+                initialValue: '2024-2025'
+              })" @keydown.escape.window="close()">
+              <button type="button" @click="toggle()"
+                class="w-full flex items-center justify-between px-[12px] py-[8px] border-2 border-[#E1E2E5] dark:border-[#2E3338] rounded-[16px] bg-white dark:bg-gray-800 text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                <span x-text="selectedLabel" class="truncate text-left"></span>
+                <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                  class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                  :class="{ 'rotate-180': open }" />
+              </button>
 
-            <select
-              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
-              <option value="">Fanlar</option>
-              <option value="fizika-matematika">Fizika, Matematika</option>
-              <option value="kimyo-biologiya">Kimyo, Biologiya</option>
-              <option value="tarix-filologiya">Tarix, Filologiya</option>
-            </select>
+              <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2 py-2" role="listbox">
+                  <template x-for="item in filteredItems" :key="item.value">
+                    <li>
+                      <button type="button" @click.stop="select(item)"
+                        class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                        :class="{
+                          'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
+                        }" :aria-selected="selected === item.value" role="option">
+                        <span class="flex-1" x-text="item.label"></span>
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
+                      </button>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <input type="hidden" :name="name" :value="selected">
+            </div>
 
-            <select
-              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
-              <option value="">Ta'lim tili</option>
-              <option value="uzbek">O'zbek</option>
-              <option value="russian">Rus</option>
-            </select>
+            <!-- Subject Select -->
+            <div class="relative" x-data="searchableSelect({
+                items: [
+                  { value: 'fizika-matematika', label: 'Fizika, Matematika' },
+                  { value: 'kimyo-biologiya', label: 'Kimyo, Biologiya' },
+                  { value: 'tarix-filologiya', label: 'Tarix, Filologiya' }
+                ],
+                placeholder: 'Fanlar',
+                name: 'subject'
+              })" @keydown.escape.window="close()">
+              <button type="button" @click="toggle()"
+                class="w-full flex items-center justify-between px-[12px] py-[8px] border-2 border-[#E1E2E5] dark:border-[#2E3338] rounded-[16px] bg-white dark:bg-gray-800 text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                <span x-text="selectedLabel" class="truncate text-left"></span>
+                <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                  class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                  :class="{ 'rotate-180': open }" />
+              </button>
 
-            <select
-              class="px-[12px] py-[8px] border border-gray-300 dark:border-gray-600 rounded-[8px] bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary">
-              <option value="">Ta'lim shakli</option>
-              <option value="kunduzgi">Kunduzgi</option>
-              <option value="kechki">Kechki</option>
-              <option value="sirtqi">Sirtqi</option>
-            </select>
+              <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2 py-2" role="listbox">
+                  <template x-for="item in filteredItems" :key="item.value">
+                    <li>
+                      <button type="button" @click.stop="select(item)"
+                        class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                        :class="{
+                          'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
+                        }" :aria-selected="selected === item.value" role="option">
+                        <span class="flex-1" x-text="item.label"></span>
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
+                      </button>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <input type="hidden" :name="name" :value="selected">
+            </div>
+
+            <!-- Language Select -->
+            <div class="relative" x-data="searchableSelect({
+                items: [
+                  { value: 'uzbek', label: 'O\'zbek' },
+                  { value: 'russian', label: 'Rus' }
+                ],
+                placeholder: 'Ta\'lim tili',
+                name: 'language'
+              })" @keydown.escape.window="close()">
+              <button type="button" @click="toggle()"
+                class="w-full flex items-center justify-between px-[12px] py-[8px] border-2 border-[#E1E2E5] dark:border-[#2E3338] rounded-[16px] bg-white dark:bg-gray-800 text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                <span x-text="selectedLabel" class="truncate text-left"></span>
+                <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                  class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                  :class="{ 'rotate-180': open }" />
+              </button>
+
+              <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2 py-2" role="listbox">
+                  <template x-for="item in filteredItems" :key="item.value">
+                    <li>
+                      <button type="button" @click.stop="select(item)"
+                        class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                        :class="{
+                          'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
+                        }" :aria-selected="selected === item.value" role="option">
+                        <span class="flex-1" x-text="item.label"></span>
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
+                      </button>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <input type="hidden" :name="name" :value="selected">
+            </div>
+
+            <!-- Education Form Select -->
+            <div class="relative" x-data="searchableSelect({
+                items: [
+                  { value: 'kunduzgi', label: 'Kunduzgi' },
+                  { value: 'kechki', label: 'Kechki' },
+                  { value: 'sirtqi', label: 'Sirtqi' }
+                ],
+                placeholder: 'Ta\'lim shakli',
+                name: 'education-form'
+              })" @keydown.escape.window="close()">
+              <button type="button" @click="toggle()"
+                class="w-full flex items-center justify-between px-[12px] py-[8px] border-2 border-[#E1E2E5] dark:border-[#2E3338] rounded-[16px] bg-white dark:bg-gray-800 text-[#686E7E] dark:text-white text-[14px] focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                :class="{ 'ring-2 ring-primary': open }" aria-haspopup="listbox" :aria-expanded="open">
+                <span x-text="selectedLabel" class="truncate text-left"></span>
+                <img src="../assets/icons/custom-dropdown.svg" alt="Dropdown"
+                  class="h-5 w-5 ml-2 flex-shrink-0 transition-transform duration-200"
+                  :class="{ 'rotate-180': open }" />
+              </button>
+
+              <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" @click.away="close()"
+                class="absolute z-50 w-full mt-2 rounded-[16px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl overflow-hidden">
+                <ul class="max-h-60 overflow-y-auto gap-[8px] flex flex-col p-2 py-2" role="listbox">
+                  <template x-for="item in filteredItems" :key="item.value">
+                    <li>
+                      <button type="button" @click.stop="select(item)"
+                        class="w-full text-left px-4 py-2 text-[14px] text-[#686E7E] dark:text-gray-100 hover:bg-[#F2F3F7] dark:hover:bg-gray-700 flex items-center justify-between transition-colors rounded-[16px]"
+                        :class="{
+                          'bg-[#F2F3F7] dark:bg-gray-700': selected === item.value
+                        }" :aria-selected="selected === item.value" role="option">
+                        <span class="flex-1" x-text="item.label"></span>
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02.svg" alt="Tick"
+                          class="block dark:hidden w-[20px] h-[20px]">
+                        <img x-show="selected === item.value" src="../assets/icons/tick-02-light.svg" alt="Tick"
+                          class="hidden dark:block w-[20px] h-[20px]">
+                      </button>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <input type="hidden" :name="name" :value="selected">
+            </div>
           </div>
 
           <!-- Table Header with Legend -->
@@ -625,14 +780,14 @@
               <span class="text-[12px] md:text-[14px] font-medium text-gray-700 dark:text-gray-300">Kirish ballari</span>
               <div class="flex items-center space-x-[8px] md:space-x-[12px]">
                 <div
-                  class="bg-white rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
+                  class="bg-white dark:bg-[#0E1A22] rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
                   <div class="w-3 h-3 md:w-4 md:h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[12px] md:text-[16px] font-normal">grand</span>
+                  <span class="text-black dark:text-white text-[12px] md:text-[16px] font-normal">grand</span>
                 </div>
                 <div
-                  class="bg-white rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
+                  class="bg-white dark:bg-[#0E1A22] rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
                   <div class="w-3 h-3 md:w-4 md:h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[12px] md:text-[16px] font-normal">sharnoma</span>
+                  <span class="text-black dark:text-white text-[12px] md:text-[16px] font-normal">sharnoma</span>
                 </div>
               </div>
             </div>
@@ -642,34 +797,34 @@
           <div class="space-y-[8px] md:space-y-[12px]">
             <!-- Entry 1 -->
             <div
-              class="bg-[#F2F3F7] rounded-[16px] p-[12px] md:p-[16px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[12px]">
+              class="bg-white dark:bg-[#0E1A22] rounded-[16px] p-[12px] md:p-[16px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[12px]">
 
               <div class="flex items-start space-x-[8px] md:space-x-[12px] flex-1 w-full">
                 <div
-                  class="w-[28px] h-[28px] md:w-[32px] md:h-[32px] bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+                  class="w-[28px] h-[28px] md:w-[32px] md:h-[32px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-full flex items-center justify-center flex-shrink-0">
                   <span class="text-[12px] md:text-[14px] font-medium text-gray-700 dark:text-gray-300">1</span>
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="text-[16px] md:text-[18px] font-medium text-gray-900 dark:text-white mb-[6px] md:mb-[8px]">Biotibbiyot muhandisligi</h3>
                   <div class="flex items-center space-x-[6px] md:space-x-[8px] flex-wrap gap-y-[4px]">
-                    <span class="text-[14px] md:text-[16px] rounded-[8px] bg-white px-[4px] md:px-[5px] py-[2px] md:py-[3px] gap-[5px] font-normal text-black dark:text-white">60711100</span>
+                    <span class="text-[14px] md:text-[16px] rounded-[8px] bg-[#F2F3F7] dark:bg-[#1a2330] px-[4px] md:px-[5px] py-[2px] md:py-[3px] gap-[5px] font-normal text-black dark:text-white">60711100</span>
                     <span
-                      class="px-[6px] md:px-[8px] py-[2px] bg-white rounded-[4px] text-[14px] md:text-[16px] font-normal text-gray-900 dark:text-white">Fizika</span>
+                      class="px-[6px] md:px-[8px] py-[2px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[4px] text-[14px] md:text-[16px] font-normal text-gray-900 dark:text-white">Fizika</span>
                     <span
-                      class="px-[6px] md:px-[8px] py-[2px] bg-white rounded-[4px] text-[14px] md:text-[16px] font-normal text-gray-900 dark:text-white">Matematika</span>
+                      class="px-[6px] md:px-[8px] py-[2px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[4px] text-[14px] md:text-[16px] font-normal text-gray-900 dark:text-white">Matematika</span>
                   </div>
                 </div>
               </div>
               <div class="flex items-center space-x-[8px] md:space-x-[12px] w-full md:w-auto justify-end md:justify-start ml-0 md:ml-[16px]">
                 <div
-                  class="bg-white rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
                   <div class="w-3 h-3 md:w-4 md:h-4 bg-[#0B7BE3] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[14px] md:text-[16px] font-normal">14</span>
+                  <span class="text-black dark:text-white text-[14px] md:text-[16px] font-normal">14</span>
                 </div>
                 <div
-                  class="bg-white rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
+                  class="bg-[#F2F3F7] dark:bg-[#0E1A22] rounded-full flex gap-[6px] md:gap-[8px] items-center justify-center pl-[8px] pr-[8px] md:pl-[12px] md:pr-[10px] py-[2px] md:py-[3px]">
                   <div class="w-3 h-3 md:w-4 md:h-4 bg-[#166534] rounded-full flex items-center justify-center"></div>
-                  <span class="text-black text-[14px] md:text-[16px] font-normal">105.5</span>
+                  <span class="text-black dark:text-white text-[14px] md:text-[16px] font-normal">105.5</span>
                 </div>
               </div>
             </div>
@@ -678,7 +833,7 @@
         </div>
 
         <!-- Mobile Contact Information (Shows after main content on mobile) -->
-        <div class="lg:hidden bg-white dark:bg-gray-800 rounded-[24px] p-[16px] md:p-[24px] mb-[16px]">
+        <div class="lg:hidden bg-white dark:bg-[#0E1A22] rounded-[24px] p-[16px] md:p-[24px] mb-[16px]">
           <h3 class="text-[16px] font-bold text-gray-900 dark:text-white mb-[16px]">Oliygoh kontaktlari</h3>
 
           <!-- Phone -->
@@ -1134,6 +1289,75 @@
     function showComingSoon(feature) {
       alert(`${feature} funksiyasi tez orada qo'shiladi!`);
     }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Searchable Select Component -->
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('searchableSelect', (options = {}) => ({
+        open: false,
+        search: '',
+        selected: options.initialValue || null,
+        items: options.items || [],
+        placeholder: options.placeholder || 'Tanlash',
+        searchPlaceholder: options.searchPlaceholder || 'Izlash',
+        emptyMessage: options.emptyMessage || 'Hech narsa topilmadi',
+        searchThreshold: options.searchThreshold || 10,
+        name: options.name || 'select',
+
+        get showSearch() {
+          return this.items.length > this.searchThreshold;
+        },
+
+        get filteredItems() {
+          if (!this.search) return this.items;
+          const searchLower = this.search.toLowerCase();
+          return this.items.filter(item =>
+            item.label.toLowerCase().includes(searchLower)
+          );
+        },
+
+        get selectedLabel() {
+          if (!this.selected) return this.placeholder;
+          const item = this.items.find(item => item.value === this.selected);
+          return item ? item.label : this.placeholder;
+        },
+
+        toggle() {
+          this.open = !this.open;
+          if (this.open && this.showSearch) {
+            this.$nextTick(() => {
+              if (this.$refs.searchInput) {
+                this.$refs.searchInput.focus();
+              }
+            });
+          }
+        },
+
+        close() {
+          this.open = false;
+        },
+
+        select(item) {
+          this.selected = item.value;
+          this.search = '';
+          this.close();
+          if (options.onSelect) {
+            options.onSelect(item);
+          }
+        },
+
+        clearSearch() {
+          this.search = '';
+          if (this.$refs.searchInput) {
+            this.$refs.searchInput.focus();
+          }
+        }
+      }));
+    });
   </script>
 
 </html>
