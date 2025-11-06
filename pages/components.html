@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light">
+  <title>UI Komponentlar - Oliygoh</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/favicons/site.webmanifest">
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
+  <script>
+    // Initialize theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const shouldUseDark = savedTheme === 'dark';
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- Top Banner -->
+  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white">
+    <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
+    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-[16px] py-[32px]">
+    <div class="max-w-[1200px] mx-auto">
+      <!-- Page Title -->
+      <div class="mb-[32px]">
+        <h1 class="text-[32px] font-bold text-gray-900 dark:text-white mb-[8px]">UI Komponentlar</h1>
+        <p class="text-gray-600 dark:text-gray-400">Kelajakda ishlatiladigan komponentlar</p>
+      </div>
+
+      <!-- Notifications Section -->
+      <section class="mb-[48px]">
+        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Bildirishnomalar</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+          <!-- Info/Warning Notification -->
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
+            <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
+            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+              <p class="text-[14px] text-gray-900 dark:text-white">Amalni tasdiqlash uchun Captchani kiriting</p>
+              <div class="w-[24px] h-[24px] bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <i class="fas fa-info text-white text-[12px]"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error Notification -->
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
+            <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
+            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+              <p class="text-[14px] text-gray-900 dark:text-white">Amaliyot bajarib bo'lmadi</p>
+              <div class="w-[24px] h-[24px] bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <i class="fas fa-info text-white text-[12px]"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Notification -->
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
+            <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
+            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+              <p class="text-[14px] text-gray-900 dark:text-white">Muvaffaqiyatli</p>
+              <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <i class="fas fa-check text-white text-[12px]"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Notification (Update) -->
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
+            <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
+            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+              <p class="text-[14px] text-gray-900 dark:text-white">Pochta yangilandi</p>
+              <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <i class="fas fa-check text-white text-[12px]"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Premium Dialogs Section -->
+      <section class="mb-[48px]">
+        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Premium Dialoglar</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+          <!-- Premium Content Dialog -->
+          <div class="relative">
+            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
+              <div class="flex items-center justify-between mb-[24px]">
+                <h3 class="text-[20px] font-bold text-gray-900 dark:text-white">Premium kontent</h3>
+                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
+                </button>
+              </div>
+              <div class="flex flex-col items-center mb-[24px]">
+                <div class="text-[64px] mb-[16px]">👑</div>
+                <p class="text-[14px] text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+                  Ushbu kontentni ko'rish uchun premium obunaga ulanishingiz lozim. Obuna sotib olish uchun 
+                  <span class="text-blue-600 dark:text-blue-400 font-medium">"obuna sotib olishga"</span> tugmasini bosing.
+                </p>
+              </div>
+              <div class="flex gap-[12px]">
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  Ortga qaytish
+                </button>
+                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
+                  Obuna sotib olishga
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Premium Test Dialog -->
+          <div class="relative">
+            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
+              <div class="flex items-center justify-between mb-[24px]">
+                <h3 class="text-[20px] font-bold text-gray-900 dark:text-white">Premium test</h3>
+                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
+                </button>
+              </div>
+              <div class="flex flex-col items-center mb-[24px]">
+                <div class="text-[64px] mb-[16px]">👑</div>
+                <p class="text-[14px] text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+                  Ushbu testni ishlash uchun premium obunaga ulanishingiz lozim. Obuna sotib olish uchun 
+                  <span class="text-blue-600 dark:text-blue-400 font-medium">"obuna sotib olishga"</span> tugmasini bosing.
+                </p>
+              </div>
+              <div class="flex gap-[12px]">
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  Ortga qaytish
+                </button>
+                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
+                  Obuna sotib olishga
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscription Purchase Modal -->
+      <section class="mb-[48px]">
+        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Obuna Sotib Olish Modal</h2>
+        <div class="flex justify-center">
+          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[500px] w-full">
+            <div class="flex items-center justify-between mb-[24px]">
+              <h3 class="text-[24px] font-bold text-gray-900 dark:text-white">Premium obuna sotib olish</h3>
+              <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
+              </button>
+            </div>
+
+            <!-- Duration Options -->
+            <div class="flex gap-[8px] mb-[24px]">
+              <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                1 oylik
+              </button>
+              <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                6 oylik
+              </button>
+              <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                1 yillik
+              </button>
+            </div>
+
+            <!-- Description -->
+            <p class="text-[14px] text-gray-700 dark:text-gray-300 mb-[24px]">
+              Obuna ichida saytdagi barcha pullik maqolalar va testlarga kirish imkoniyatini taqdim etadi.
+            </p>
+
+            <!-- Pricing -->
+            <div class="mb-[24px]">
+              <div class="flex items-baseline gap-[8px] mb-[4px]">
+                <span class="text-[16px] text-gray-400 dark:text-gray-500 line-through">40 000 so'm</span>
+                <span class="text-[12px] text-gray-400 dark:text-gray-500">-12%</span>
+              </div>
+              <div class="text-[24px] font-bold text-green-600 dark:text-green-400">
+                35 200 so'm / 1 oy uchun
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="mb-[24px]">
+              <label class="text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[12px] block">To'lov usuli</label>
+              <div class="flex gap-[8px]">
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  Payme
+                </button>
+                <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                  Click
+                </button>
+                <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                  Hisobdan
+                </button>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="w-full bg-blue-600 text-white rounded-[12px] py-[14px] px-[16px] font-bold text-[16px] hover:bg-blue-700 transition-colors">
+              Hoziroq sotib olish
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Confirmation Dialogs Section -->
+      <section class="mb-[48px]">
+        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Tasdiqlash Dialoglari</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+          <!-- Telegram Disconnect Confirmation -->
+          <div class="relative">
+            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
+              <div class="flex items-center justify-end mb-[24px]">
+                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
+                </button>
+              </div>
+              <div class="text-center mb-[24px]">
+                <p class="text-[16px] text-gray-900 dark:text-white leading-relaxed">
+                  Telegram akkauntni saytdan uzishni tasdiqlaysizmi?
+                </p>
+              </div>
+              <div class="flex gap-[12px]">
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  Bekor qilish
+                </button>
+                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
+                  Ha, tasdiqlash
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Delete Confirmation with Captcha -->
+          <div class="relative">
+            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
+              <div class="flex items-center justify-end mb-[24px]">
+                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
+                </button>
+              </div>
+              <div class="text-center mb-[24px]">
+                <p class="text-[16px] text-gray-900 dark:text-white leading-relaxed mb-[16px]">
+                  Siz rostdan ham saytdan akkauntingizni o'chirasizmi?
+                </p>
+                <input type="text" placeholder="captchani kiriting"
+                  class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[12px] py-[12px] px-[16px] text-[14px] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 mb-[8px]">
+                <p class="text-[12px] text-red-600 dark:text-red-400 text-left">
+                  captcha: 78B23SjkNmk15
+                </p>
+              </div>
+              <div class="flex gap-[12px]">
+                <button class="flex-1 bg-red-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-red-700 transition-colors">
+                  Ha, o'chirish
+                </button>
+                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  Bekor qilish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle functionality (if needed)
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add any interactive functionality here if needed
+    });
+  </script>
+</body>
+
+</html>

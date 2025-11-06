@@ -49,6 +49,192 @@
       window.closeMobileMenu = closeMobileMenu;
     });
 
+    // Mobile Profile Dropdown Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileProfileBtn = document.getElementById('mobile-profile-btn');
+      const mobileProfileDropdown = document.getElementById('mobile-profile-dropdown');
+      const mobileDarkModeToggle = document.getElementById('mobile-dark-mode-toggle');
+
+      if (mobileProfileBtn && mobileProfileDropdown) {
+        // Toggle dropdown visibility
+        mobileProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          mobileProfileDropdown.classList.toggle('opacity-0');
+          mobileProfileDropdown.classList.toggle('invisible');
+          mobileProfileDropdown.classList.toggle('opacity-100');
+          mobileProfileDropdown.classList.toggle('visible');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!mobileProfileBtn.contains(e.target) && !mobileProfileDropdown.contains(e.target)) {
+            mobileProfileDropdown.classList.add('opacity-0', 'invisible');
+            mobileProfileDropdown.classList.remove('opacity-100', 'visible');
+          }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        mobileProfileDropdown.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+
+        // Dark mode toggle functionality in mobile profile dropdown
+        if (mobileDarkModeToggle) {
+          mobileDarkModeToggle.addEventListener('change', function () {
+            const htmlElement = document.documentElement;
+            const toggleLabel = mobileDarkModeToggle.nextElementSibling;
+            const toggleTrack = toggleLabel.querySelector('div');
+            const toggleSpan = toggleTrack.querySelector('span');
+
+            if (mobileDarkModeToggle.checked) {
+              // Enable dark mode
+              htmlElement.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+              toggleTrack.classList.remove('bg-gray-300');
+              toggleTrack.classList.add('bg-primary');
+              toggleSpan.classList.remove('translate-x-[2px]');
+              toggleSpan.classList.add('translate-x-[22px]');
+
+              // Update desktop toggle
+              const desktopToggle = document.getElementById('dark-mode-toggle');
+              if (desktopToggle) {
+                desktopToggle.checked = true;
+              }
+            } else {
+              // Disable dark mode
+              htmlElement.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+              toggleTrack.classList.remove('bg-primary');
+              toggleTrack.classList.add('bg-gray-300');
+              toggleSpan.classList.remove('translate-x-[22px]');
+              toggleSpan.classList.add('translate-x-[2px]');
+
+              // Update desktop toggle
+              const desktopToggle = document.getElementById('dark-mode-toggle');
+              if (desktopToggle) {
+                desktopToggle.checked = false;
+              }
+            }
+          });
+
+          // Sync mobile toggle with current theme on load
+          const savedTheme = localStorage.getItem('theme');
+          const shouldUseDark = savedTheme === 'dark';
+          if (shouldUseDark) {
+            mobileDarkModeToggle.checked = true;
+            const toggleLabel = mobileDarkModeToggle.nextElementSibling;
+            const toggleTrack = toggleLabel.querySelector('div');
+            const toggleSpan = toggleTrack.querySelector('span');
+            toggleTrack.classList.remove('bg-gray-300');
+            toggleTrack.classList.add('bg-primary');
+            toggleSpan.classList.remove('translate-x-[2px]');
+            toggleSpan.classList.add('translate-x-[22px]');
+          }
+        }
+      }
+    });
+
+    // Notification Dropdown Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const notificationBtn = document.getElementById('notification-btn');
+      const dropdown = document.getElementById('notification-dropdown');
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+      if (notificationBtn && dropdown) {
+        // Toggle dropdown visibility
+        notificationBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('opacity-0');
+          dropdown.classList.toggle('invisible');
+          dropdown.classList.toggle('opacity-100');
+          dropdown.classList.toggle('visible');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!notificationBtn.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add('opacity-0', 'invisible');
+            dropdown.classList.remove('opacity-100', 'visible');
+          }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        dropdown.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // Dark mode toggle functionality in notification popup
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', function () {
+          const htmlElement = document.documentElement;
+          const toggleLabel = darkModeToggle.nextElementSibling;
+          const toggleTrack = toggleLabel.querySelector('div');
+          const toggleSpan = toggleTrack.querySelector('span');
+
+          if (darkModeToggle.checked) {
+            // Enable dark mode
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            toggleTrack.classList.remove('bg-gray-300');
+            toggleTrack.classList.add('bg-primary');
+            toggleSpan.classList.remove('translate-x-[2px]');
+            toggleSpan.classList.add('translate-x-[22px]');
+
+            // Update main navbar toggle icon
+            const mainToggle = document.getElementById('theme-toggle');
+            if (mainToggle) {
+              const icon = mainToggle.querySelector('i');
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+            }
+
+            // Update mobile toggle
+            const mobileToggle = document.getElementById('mobile-dark-mode-toggle');
+            if (mobileToggle) {
+              mobileToggle.checked = true;
+              const mobileToggleLabel = mobileToggle.nextElementSibling;
+              const mobileToggleTrack = mobileToggleLabel.querySelector('div');
+              const mobileToggleSpan = mobileToggleTrack.querySelector('span');
+              mobileToggleTrack.classList.remove('bg-gray-300');
+              mobileToggleTrack.classList.add('bg-primary');
+              mobileToggleSpan.classList.remove('translate-x-[2px]');
+              mobileToggleSpan.classList.add('translate-x-[22px]');
+            }
+          } else {
+            // Disable dark mode
+            htmlElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            toggleTrack.classList.remove('bg-primary');
+            toggleTrack.classList.add('bg-gray-300');
+            toggleSpan.classList.remove('translate-x-[22px]');
+            toggleSpan.classList.add('translate-x-[2px]');
+
+            // Update main navbar toggle icon
+            const mainToggle = document.getElementById('theme-toggle');
+            if (mainToggle) {
+              const icon = mainToggle.querySelector('i');
+              icon.classList.remove('fa-moon');
+              icon.classList.add('fa-sun');
+            }
+
+            // Update mobile toggle
+            const mobileToggle = document.getElementById('mobile-dark-mode-toggle');
+            if (mobileToggle) {
+              mobileToggle.checked = false;
+              const mobileToggleLabel = mobileToggle.nextElementSibling;
+              const mobileToggleTrack = mobileToggleLabel.querySelector('div');
+              const mobileToggleSpan = mobileToggleTrack.querySelector('span');
+              mobileToggleTrack.classList.remove('bg-primary');
+              mobileToggleTrack.classList.add('bg-gray-300');
+              mobileToggleSpan.classList.remove('translate-x-[22px]');
+              mobileToggleSpan.classList.add('translate-x-[2px]');
+            }
+          }
+        });
+      }
+    });
+
 // Initialize theme immediately to prevent flash
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -87,14 +273,94 @@
         <!-- Search and Profile -->
         <div class="flex items-center space-x-[12px]">
           <!-- Search Button -->
-          <button
-            class="bg-white dark:bg-dark-card p-[12px] rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
-            <i class="fas fa-search text-[18px] text-gray-600 dark:text-gray-300"></i>
+          <button id="mobile-search-toggle"
+            class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+            <img src="../assets/icons/search.svg" alt="Search" class="w-[20px] h-[20px]">
           </button>
 
           <!-- Profile Picture -->
-          <div class="bg-white dark:bg-dark-card p-[4px] rounded-[12px] border border-gray-200 dark:border-gray-800">
-            <img src="../assets/ava.png" alt="Profile" class="w-[32px] h-[32px] rounded-full object-cover">
+          <div class="relative">
+            <button id="mobile-profile-btn"
+              class="h-[40px] w-[40px] bg-white dark:bg-dark-card rounded-[12px] flex items-center justify-center">
+              <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
+            </button>
+            <!-- Mobile Profile Dropdown -->
+            <div id="mobile-profile-dropdown"
+              class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
+              <!-- User Profile Header -->
+              <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
+                  <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
+                </div>
+                <div>
+                  <p class="text-[18px] font-medium text-gray-900 dark:text-white">Suxrobjon Xur...</p>
+                </div>
+              </div>
+
+              <!-- Menu Items -->
+              <div class="py-[8px]">
+                <a href="my-results.html"
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div
+                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/icons/checkmark-badge-02.svg" alt="Check" class="w-[20px] h-[20px]">
+                  </div>
+                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Natijalarim</span>
+                </a>
+                <a href="notifications.html"
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div
+                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
+                  </div>
+                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
+                </a>
+                <a href="account.html"
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div
+                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/icons/settings-02.svg" alt="Settings" class="w-[20px] h-[20px]">
+                  </div>
+                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Sozlamalar</span>
+                </a>
+                <div
+                  class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div class="flex items-center">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      <img src="../assets/icons/moon-02.svg" alt="Tungi rejim" class="w-[20px] h-[20px]">
+                    </div>
+                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Tungi rejim</span>
+                  </div>
+                  <!-- Toggle Switch -->
+                  <div class="flex items-center">
+                    <input type="checkbox" id="mobile-dark-mode-toggle" class="sr-only">
+                    <label for="mobile-dark-mode-toggle" class="relative inline-flex items-center cursor-pointer">
+                      <div
+                        class="w-[44px] h-[24px] bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 ease-in-out">
+                        <span
+                          class="absolute top-[2px] left-[2px] w-[20px] h-[20px] bg-white rounded-full transform transition-transform duration-200 ease-in-out"></span>
+                    </label>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="border-t border-[#E4E6EE] dark:border-gray-800"></div>
+
+              <!-- Logout -->
+              <div class="py-[8px]">
+                <a href="#"
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div
+                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
+                  </div>
+                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Profildan chiqish</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -131,80 +397,96 @@
         <!-- Profile Section -->
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
-            <button id="notification-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
-              <div class="bg-white dark:bg-dark-card p-4 rounded-[16px] flex items-center justify-center">
+            <button id="notification" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
+              </div>
+            </button>
+          </div>
+           <div class="relative flex">
+            <button id="notification-btn" class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card rounded-[16px] flex items-center justify-center">
+                <img src="../assets/ava.png" alt="Notifications" class="">
               </div>
               <!-- Notification Dropdown -->
               <div id="notification-dropdown"
-                class="absolute top-full right-0 mt-[8px] w-[280px] max-w-[calc(100vw-32px)] bg-white dark:bg-dark-card rounded-[24px] shadow-lg border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
+                class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] border-b border-gray-100 dark:border-gray-800">
-                  <div class="w-[40px] h-[40px] bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center mr-[12px]">
-                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover">
+                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                  <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                   </div>
                   <div>
-                    <p class="text-[14px] font-medium text-gray-900 dark:text-white">Suxrobjon Xurram...</p>
+                    <p class="text-[18px] font-medium text-gray-900 dark:text-white">Suxrobjon Xur...</p>
                   </div>
                 </div>
 
                 <!-- Menu Items -->
                 <div class="py-[8px]">
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-check text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
+                  <a href="my-results.html"
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      <img src="../assets/icons/checkmark-badge-02.svg" alt="Check" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Natijalarim</span>
+                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Natijalarim</span>
                   </a>
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-bell text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
+                  <a href="notifications.html"
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Bildirishnomalar</span>
+                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
                   </a>
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-cog text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
+                  <a href="account.html"
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      <img src="../assets/icons/settings-02.svg" alt="Settings" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Sozlamalar</span>
+                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Sozlamalar</span>
                   </a>
-                  <div class="flex items-center justify-between px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  <div
+                    class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
                     <div class="flex items-center">
-                      <div class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
-                        <i class="fas fa-moon text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
+                      <div
+                        class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                        <img src="../assets/icons/moon-02.svg" alt="Tungi rejim" class="w-[20px] h-[20px]">
                       </div>
-                      <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Tungi rejim</span>
+                      <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Tungi rejim</span>
                     </div>
-                    <div class="relative">
+                    <!-- Toggle Switch -->
+                    <div class="flex items-center">
                       <input type="checkbox" id="dark-mode-toggle" class="sr-only">
-                      <label for="dark-mode-toggle"
-                        class="block w-[40px] h-[20px] bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-colors">
+                      <label for="dark-mode-toggle" class="relative inline-flex items-center cursor-pointer">
+                        <div
+                          class="w-[44px] h-[24px] bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 ease-in-out">
                         <span
-                          class="block w-[16px] h-[16px] bg-white rounded-full shadow transform transition-transform translate-x-[2px] translate-y-[2px]"></span>
+                            class="absolute top-[2px] left-[2px] w-[20px] h-[20px] bg-white rounded-full transform transition-transform duration-200 ease-in-out"></span>
+                        </div>
                       </label>
                     </div>
                   </div>
                 </div>
 
                 <!-- Divider -->
-                <div class="border-t border-gray-100 dark:border-gray-800"></div>
+                <div class="border-t border-[#E4E6EE] dark:border-gray-800"></div>
 
                 <!-- Logout -->
                 <div class="py-[8px]">
-                  <a href="#" class="flex items-center px-[16px] py-[12px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
-                    <div class="w-[20px] h-[20px] bg-gray-200 dark:bg-[#1a2330] rounded flex items-center justify-center mr-[12px]">
-                      <i class="fas fa-sign-out-alt text-[12px] text-gray-600 dark:text-[#98B4CC]"></i>
+                  <a href="#"
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    <div
+                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[14px] text-gray-700 dark:text-[#98B4CC]">Profildan chiqish</span>
+                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Profildan chiqish</span>
                   </a>
                 </div>
               </div>
             </button>
           </div>
-          <button id="login-btn"
-            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
-            <span class="text-[14px] font-medium">Profilga kirish</span>
-          </button>
         </div>
       </div>
     </div>
