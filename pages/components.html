@@ -17,6 +17,100 @@
     [x-cloak] {
       display: none !important;
     }
+
+    /* Toast container */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      width: calc(100% - 48px);
+    }
+
+    /* Toast notification */
+    .toast {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateX(120%);
+      opacity: 0;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      min-width: 300px;
+    }
+
+    .dark .toast {
+      background: #1a1d24;
+      border-color: #374151;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .toast.hide {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+
+    .toast-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toast-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .toast-message {
+      font-size: 14px;
+      color: #111827;
+      flex: 1;
+    }
+
+    .dark .toast-message {
+      color: white;
+    }
+
+    .toast-close {
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .dark .toast-close {
+      color: #9ca3af;
+    }
+
+    .toast-close:hover {
+      color: #111827;
+    }
+
+    .dark .toast-close:hover {
+      color: white;
+    }
   </style>
 </head>
 
@@ -57,175 +151,73 @@
           <!-- Info/Warning Notification -->
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
             <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
-            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+            <div
+              class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
               <p class="text-[14px] text-gray-900 dark:text-white">Amalni tasdiqlash uchun Captchani kiriting</p>
-              <div class="w-[24px] h-[24px] bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
-                <i class="fas fa-info text-white text-[12px]"></i>
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <img src="../assets/icons/information-circle-1.svg" alt="info" class="w-[20px] h-[20px]">
               </div>
             </div>
+            <button data-toast-type="info" data-toast-message="Amalni tasdiqlash uchun Captchani kiriting"
+              data-toast-icon="../assets/icons/information-circle-1.svg"
+              class="toast-trigger mt-[16px] w-full bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
+              Ko&apos;rsatish
+            </button>
           </div>
 
           <!-- Error Notification -->
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
             <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
-            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+            <div
+              class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
               <p class="text-[14px] text-gray-900 dark:text-white">Amaliyot bajarib bo'lmadi</p>
-              <div class="w-[24px] h-[24px] bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
-                <i class="fas fa-info text-white text-[12px]"></i>
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <img src="../assets/icons/information-circle.svg" alt="info" class="w-[20px] h-[20px]">
               </div>
             </div>
+            <button data-toast-type="error" data-toast-message="Amaliyot bajarib bo'lmadi"
+              data-toast-icon="../assets/icons/information-circle.svg"
+              class="toast-trigger mt-[16px] w-full bg-red-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-red-700 transition-colors">
+              Ko&apos;rsatish
+            </button>
           </div>
 
           <!-- Success Notification -->
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
             <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
-            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+            <div
+              class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
               <p class="text-[14px] text-gray-900 dark:text-white">Muvaffaqiyatli</p>
-              <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
-                <i class="fas fa-check text-white text-[12px]"></i>
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <img src="../assets/icons/checkmark-circle-01.svg" alt="info" class="w-[20px] h-[20px]">
               </div>
             </div>
+            <button data-toast-type="success" data-toast-message="Muvaffaqiyatli"
+              data-toast-icon="../assets/icons/checkmark-circle-01.svg"
+              class="toast-trigger mt-[16px] w-full bg-green-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-green-700 transition-colors">
+              Ko&apos;rsatish
+            </button>
           </div>
 
           <!-- Success Notification (Update) -->
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[24px] shadow-soft">
             <h3 class="text-[16px] font-semibold text-gray-700 dark:text-gray-300 mb-[16px]">notification</h3>
-            <div class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
+            <div
+              class="bg-white dark:bg-dark-card rounded-[16px] border border-gray-200 dark:border-gray-800 p-[16px] flex items-center justify-between">
               <p class="text-[14px] text-gray-900 dark:text-white">Pochta yangilandi</p>
-              <div class="w-[24px] h-[24px] bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
-                <i class="fas fa-check text-white text-[12px]"></i>
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0 ml-[12px]">
+                <img src="../assets/icons/checkmark-circle-01.svg" alt="info" class="w-[20px] h-[20px]">
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Premium Dialogs Section -->
-      <section class="mb-[48px]">
-        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Premium Dialoglar</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
-          <!-- Premium Content Dialog -->
-          <div class="relative">
-            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
-              <div class="flex items-center justify-between mb-[24px]">
-                <h3 class="text-[20px] font-bold text-gray-900 dark:text-white">Premium kontent</h3>
-                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
-                </button>
-              </div>
-              <div class="flex flex-col items-center mb-[24px]">
-                <div class="text-[64px] mb-[16px]">👑</div>
-                <p class="text-[14px] text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                  Ushbu kontentni ko'rish uchun premium obunaga ulanishingiz lozim. Obuna sotib olish uchun 
-                  <span class="text-blue-600 dark:text-blue-400 font-medium">"obuna sotib olishga"</span> tugmasini bosing.
-                </p>
-              </div>
-              <div class="flex gap-[12px]">
-                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  Ortga qaytish
-                </button>
-                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
-                  Obuna sotib olishga
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Premium Test Dialog -->
-          <div class="relative">
-            <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
-              <div class="flex items-center justify-between mb-[24px]">
-                <h3 class="text-[20px] font-bold text-gray-900 dark:text-white">Premium test</h3>
-                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
-                </button>
-              </div>
-              <div class="flex flex-col items-center mb-[24px]">
-                <div class="text-[64px] mb-[16px]">👑</div>
-                <p class="text-[14px] text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                  Ushbu testni ishlash uchun premium obunaga ulanishingiz lozim. Obuna sotib olish uchun 
-                  <span class="text-blue-600 dark:text-blue-400 font-medium">"obuna sotib olishga"</span> tugmasini bosing.
-                </p>
-              </div>
-              <div class="flex gap-[12px]">
-                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  Ortga qaytish
-                </button>
-                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
-                  Obuna sotib olishga
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Subscription Purchase Modal -->
-      <section class="mb-[48px]">
-        <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Obuna Sotib Olish Modal</h2>
-        <div class="flex justify-center">
-          <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[500px] w-full">
-            <div class="flex items-center justify-between mb-[24px]">
-              <h3 class="text-[24px] font-bold text-gray-900 dark:text-white">Premium obuna sotib olish</h3>
-              <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
-              </button>
-            </div>
-
-            <!-- Duration Options -->
-            <div class="flex gap-[8px] mb-[24px]">
-              <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                1 oylik
-              </button>
-              <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                6 oylik
-              </button>
-              <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                1 yillik
-              </button>
-            </div>
-
-            <!-- Description -->
-            <p class="text-[14px] text-gray-700 dark:text-gray-300 mb-[24px]">
-              Obuna ichida saytdagi barcha pullik maqolalar va testlarga kirish imkoniyatini taqdim etadi.
-            </p>
-
-            <!-- Pricing -->
-            <div class="mb-[24px]">
-              <div class="flex items-baseline gap-[8px] mb-[4px]">
-                <span class="text-[16px] text-gray-400 dark:text-gray-500 line-through">40 000 so'm</span>
-                <span class="text-[12px] text-gray-400 dark:text-gray-500">-12%</span>
-              </div>
-              <div class="text-[24px] font-bold text-green-600 dark:text-green-400">
-                35 200 so'm / 1 oy uchun
-              </div>
-            </div>
-
-            <!-- Payment Method -->
-            <div class="mb-[24px]">
-              <label class="text-[14px] font-medium text-gray-700 dark:text-gray-300 mb-[12px] block">To'lov usuli</label>
-              <div class="flex gap-[8px]">
-                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  Payme
-                </button>
-                <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                  Click
-                </button>
-                <button class="flex-1 bg-transparent text-gray-600 dark:text-gray-400 rounded-full py-[10px] px-[16px] font-medium text-[14px] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                  Hisobdan
-                </button>
-              </div>
-            </div>
-
-            <!-- CTA Button -->
-            <button class="w-full bg-blue-600 text-white rounded-[12px] py-[14px] px-[16px] font-bold text-[16px] hover:bg-blue-700 transition-colors">
-              Hoziroq sotib olish
+            <button data-toast-type="success" data-toast-message="Pochta yangilandi"
+              data-toast-icon="../assets/icons/checkmark-circle-01.svg"
+              class="toast-trigger mt-[16px] w-full bg-green-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-green-700 transition-colors">
+              Ko&apos;rsatish
             </button>
           </div>
         </div>
       </section>
 
-      <!-- Confirmation Dialogs Section -->
       <section class="mb-[48px]">
         <h2 class="text-[24px] font-bold text-gray-900 dark:text-white mb-[24px]">Tasdiqlash Dialoglari</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
@@ -233,7 +225,8 @@
           <div class="relative">
             <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
               <div class="flex items-center justify-end mb-[24px]">
-                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                   <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
                 </button>
               </div>
@@ -243,10 +236,12 @@
                 </p>
               </div>
               <div class="flex gap-[12px]">
-                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                   Bekor qilish
                 </button>
-                <button class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
+                <button
+                  class="flex-1 bg-blue-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-blue-700 transition-colors">
                   Ha, tasdiqlash
                 </button>
               </div>
@@ -257,7 +252,8 @@
           <div class="relative">
             <div class="bg-white dark:bg-dark-card rounded-[24px] p-[32px] shadow-soft max-w-[400px] mx-auto">
               <div class="flex items-center justify-end mb-[24px]">
-                <button class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  class="w-[32px] h-[32px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                   <i class="fas fa-times text-gray-600 dark:text-gray-400 text-[14px]"></i>
                 </button>
               </div>
@@ -272,10 +268,12 @@
                 </p>
               </div>
               <div class="flex gap-[12px]">
-                <button class="flex-1 bg-red-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-red-700 transition-colors">
+                <button
+                  class="flex-1 bg-red-600 text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-red-700 transition-colors">
                   Ha, o'chirish
                 </button>
-                <button class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  class="flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-[12px] py-[12px] px-[16px] font-medium text-[14px] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                   Bekor qilish
                 </button>
               </div>
@@ -287,10 +285,71 @@
     </div>
   </div>
 
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
   <script>
     // Theme toggle functionality (if needed)
     document.addEventListener('DOMContentLoaded', function () {
-      // Add any interactive functionality here if needed
+      // Toast notification system
+      function showToast(type, message, iconPath) {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+
+        const toastId = 'toast-' + Date.now();
+        toast.id = toastId;
+
+        toast.innerHTML = `
+          <div class="toast-content">
+            <img src="${iconPath}" alt="${type}" class="toast-icon">
+            <span class="toast-message">${message}</span>
+          </div>
+          <button class="toast-close" data-toast-id="${toastId}">
+            <i class="fas fa-times text-[14px]"></i>
+          </button>
+        `;
+
+        container.appendChild(toast);
+
+        // Add close button event listener
+        const closeBtn = toast.querySelector('.toast-close');
+        closeBtn.addEventListener('click', () => closeToast(toastId));
+
+        // Trigger slide-in animation
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 10);
+
+        // Auto-close after 5 seconds
+        setTimeout(() => {
+          closeToast(toastId);
+        }, 5000);
+      }
+
+      function closeToast(toastId) {
+        const toast = document.getElementById(toastId);
+        if (toast) {
+          toast.classList.remove('show');
+          toast.classList.add('hide');
+
+          // Remove from DOM after animation
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }
+      }
+
+      // Add event listeners to all toast trigger buttons
+      const toastTriggers = document.querySelectorAll('.toast-trigger');
+      toastTriggers.forEach(button => {
+        button.addEventListener('click', function () {
+          const type = this.getAttribute('data-toast-type');
+          const message = this.getAttribute('data-toast-message');
+          const icon = this.getAttribute('data-toast-icon');
+          showToast(type, message, icon);
+        });
+      });
     });
   </script>
 </body>
