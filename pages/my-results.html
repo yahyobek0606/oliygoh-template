@@ -338,54 +338,53 @@
           <!-- Navigation Menu -->
           <nav class="space-y-[8px]">
             <a href="account.html" data-page="account"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div class="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
-                <img src="../assets/icons/user.svg" alt="Shaxsiyat" class="w-[24px] h-[24px] block dark:hidden">
-                <img src="../assets/icons/user-light.svg" alt="Shaxsiyat" class="w-[24px] h-[24px] hidden dark:block">
+                <img src="../assets/icons/user-default.svg" alt="Shaxsiyat" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Shaxsiyat</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">Shaxsiyat</span>
             </a>
             <a href="login-security.html" data-page="login-security"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div
                 class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/settings-02.svg" alt="Kirish va xavfsizlik" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Kirish va xavfsizlik</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">Kirish va xavfsizlik</span>
             </a>
             <a href="notifications.html" data-page="notifications"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div
                 class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Bildirishnomalar" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Bildirishnomalar</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
             </a>
 
             <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
             <a href="subscriptions.html" data-page="subscriptions"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div
                 class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/crown.svg" alt="Obunalar" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Obunalar</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">Obunalar</span>
             </a>
             <a href="wallet.html" data-page="wallet"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div
                 class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/credit-card.svg" alt="Hamyon" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">Hamyon</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">Hamyon</span>
             </a>
             <a href="payment-history.html" data-page="payment-history"
-              class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+              class="flex items-center space-x-[15px] text-[#686E7E] dark:text-[#98B4CC] p-[8px] rounded-[16px]">
               <div
                 class="w-[40px] h-[40px] bg-gray-200  dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/clock-02.svg" alt="To'lovlar tarixi" class="w-[24px] h-[24px]">
               </div>
-              <span class="text-[16px] text-black dark:text-white">To'lovlar tarixi</span>
+              <span class="text-[16px] text-[#686E7E] dark:text-[#98B4CC]">To'lovlar tarixi</span>
             </a>
             <hr class="border-gray-200 dark:border-gray-800 my-[16px]">
             <a href="my-results.html" data-page="my-results"
@@ -555,15 +554,29 @@
       sidebarLinks.forEach(link => {
         if (link.dataset.page === currentPageKey) {
           link.classList.add('bg-gray-200', 'dark:bg-gray-700');
+          link.classList.remove('text-[#686E7E]', 'dark:text-[#98B4CC]');
+          link.classList.add('text-black', 'dark:text-white');
           const iconContainer = link.querySelector('div');
           iconContainer.classList.remove('bg-gray-200', 'dark:bg-gray-800');
           iconContainer.classList.add('bg-white', 'dark:bg-gray-800');
+          const span = link.querySelector('span');
+          if (span) {
+            span.classList.remove('text-[#686E7E]', 'dark:text-[#98B4CC]');
+            span.classList.add('text-black', 'dark:text-white');
+          }
         } else {
           link.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+          link.classList.remove('text-black', 'dark:text-white');
+          link.classList.add('text-[#686E7E]', 'dark:text-[#98B4CC]');
           const iconContainer = link.querySelector('div');
           if (!iconContainer.classList.contains('bg-white')) {
             iconContainer.classList.remove('bg-white', 'dark:bg-gray-800');
             iconContainer.classList.add('bg-gray-200', 'dark:bg-gray-800');
+          }
+          const span = link.querySelector('span');
+          if (span) {
+            span.classList.remove('text-black', 'dark:text-white');
+            span.classList.add('text-[#686E7E]', 'dark:text-[#98B4CC]');
           }
         }
       });
