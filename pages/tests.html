@@ -367,28 +367,28 @@
         <!-- Navigation -->
         <nav class="space-y-[12px] mb-[32px]">
           <a href="index.html" onclick="closeMobileMenu();"
-            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
             </div>
             <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Asosiy sahifa</span>
           </a>
           <a href="tests.html" onclick="closeMobileMenu();"
-            class="flex items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 rounded-[16px]">
+            class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] bg-white dark:bg-gray-800 rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-gray-100 dark:bg-gray-700 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/quiz-02.svg" alt="Tests" class="w-[24px] h-[24px]">
             </div>
             <span class="text-[16px] text-black dark:text-white">Imtihon testlari</span>
           </a>
           <a href="#" onclick="showComingSoon('Mandat 2025'); closeMobileMenu();"
-            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[24px] h-[24px]">
             </div>
             <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Mandat 2025</span>
           </a>
           <a href="oliygoh.html" onclick="closeMobileMenu();"
-            class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
+            class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
             </div>
@@ -445,7 +445,7 @@
               <span class="text-[14px] font-medium text-black dark:text-white">Asosiy sahifa</span>
             </a>
             <div
-              class="flex h-[52px] p-1 items-center bg-white dark:bg-white border border-2 border-gray-200 dark:border-gray-700 rounded-[14px] overflow-hidden">
+              class="flex h-[52px] p-1 items-center bg-white dark:bg-gray-800 border border-2 border-gray-200 dark:border-gray-700 rounded-[14px] overflow-hidden">
               <button id="list-view-btn" class="w-[44px] h-[44px] flex items-center justify-center p-2 focus:outline-none transition-all duration-200
                   rounded-[12px]
                   bg-[#F2F3F7] dark:bg-[#152732]
@@ -471,7 +471,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Prezident maktablari</span>
                 </div>
-                <i class="fas fa-chevron-up text-[12px]"></i>
+                <i class="fas fa-chevron-up text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items -->
               <div class="sub-items mt-[4px] pl-[24px] space-y-[4px]">
@@ -498,7 +498,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Tanlovlar</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items (hidden by default) -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
@@ -517,7 +517,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items (hidden by default) -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
@@ -536,7 +536,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items (hidden by default) -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
@@ -559,10 +559,10 @@
         <div id="test-list-view" class="space-y-[16px]">
           <!-- Test Card 1 -->
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -595,10 +595,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -631,10 +631,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -667,10 +667,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -703,10 +703,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -739,10 +739,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -775,10 +775,10 @@
             </div>
           </div>
           <div
-            class="bg-white dark:bg-gray-800 rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
+            class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -1278,7 +1278,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Prezident maktablari</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
@@ -1305,7 +1305,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Tanlovlar</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items (hidden by default) -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
@@ -1324,7 +1324,7 @@
                   <img src="../assets/icons/checkmark-badge-02.svg" alt="Document" class="w-[16px] h-[16px]">
                   <span class="text-[14px] font-medium">Mavzulashtirilgan testlar</span>
                 </div>
-                <i class="fas fa-chevron-down text-[12px]"></i>
+                <i class="fas fa-chevron-down text-[12px] text-gray-600 dark:text-gray-300"></i>
               </button>
               <!-- Sub-items (hidden by default) -->
               <div class="sub-items hidden mt-[4px] pl-[24px] space-y-[4px]">
