@@ -70,12 +70,12 @@
             <div id="mobile-profile-dropdown"
               class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
               <!-- User Profile Header -->
-              <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#1a2330]">
-                <div class="w-[40px] h-[40px] rounded-[14px] flex items-center justify-center mr-[12px]">
-                  <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-[14px] object-cover">
+              <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
+                  <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                 </div>
                 <div>
-                  <p class="text-[14px] font-medium text-gray-900 dark:text-white">Suxrobjon Xurram...</p>
+                  <p class="text-[18px] font-medium text-gray-900 dark:text-white">Suxrobjon Xur...</p>
                 </div>
               </div>
 
@@ -178,20 +178,27 @@
         <!-- Profile Section -->
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
-            <button id="notification-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
-              <div class="bg-white dark:bg-dark-card p-4 rounded-[16px] flex items-center justify-center">
+            <button id="notification" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
+              </div>
+            </button>
+          </div>
+           <div class="relative flex">
+            <button id="notification-btn" class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card rounded-[16px] flex items-center justify-center">
+                <img src="../assets/ava.png" alt="Notifications" class="">
               </div>
               <!-- Notification Dropdown -->
               <div id="notification-dropdown"
                 class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#1a2330]">
-                  <div class="w-[40px] h-[40px] rounded-[14px] flex items-center justify-center mr-[12px]">
-                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-[14px] object-cover">
+                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                  <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                   </div>
                   <div>
-                    <p class="text-[14px] font-medium text-gray-900 dark:text-white">Suxrobjon Xurram...</p>
+                    <p class="text-[18px] font-medium text-gray-900 dark:text-white">Suxrobjon Xur...</p>
                   </div>
                 </div>
 
@@ -1706,27 +1713,72 @@
         });
       }
 
-      // Dark mode toggle functionality
+      // Dark mode toggle functionality in notification popup
       if (darkModeToggle) {
         darkModeToggle.addEventListener('change', function () {
           const htmlElement = document.documentElement;
           const toggleLabel = darkModeToggle.nextElementSibling;
-          const toggleSpan = toggleLabel.querySelector('span');
+          const toggleTrack = toggleLabel.querySelector('div');
+          const toggleSpan = toggleTrack.querySelector('span');
 
           if (darkModeToggle.checked) {
+            // Enable dark mode
             htmlElement.classList.add('dark');
             localStorage.setItem('theme', 'dark');
-            toggleLabel.classList.remove('bg-gray-300');
-            toggleLabel.classList.add('bg-primary');
+            toggleTrack.classList.remove('bg-gray-300');
+            toggleTrack.classList.add('bg-primary');
             toggleSpan.classList.remove('translate-x-[2px]');
             toggleSpan.classList.add('translate-x-[22px]');
+
+            // Update main navbar toggle icon
+            const mainToggle = document.getElementById('theme-toggle');
+            if (mainToggle) {
+              const icon = mainToggle.querySelector('i');
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+            }
+
+            // Update mobile toggle
+            const mobileToggle = document.getElementById('mobile-dark-mode-toggle');
+            if (mobileToggle) {
+              mobileToggle.checked = true;
+              const mobileToggleLabel = mobileToggle.nextElementSibling;
+              const mobileToggleTrack = mobileToggleLabel.querySelector('div');
+              const mobileToggleSpan = mobileToggleTrack.querySelector('span');
+              mobileToggleTrack.classList.remove('bg-gray-300');
+              mobileToggleTrack.classList.add('bg-primary');
+              mobileToggleSpan.classList.remove('translate-x-[2px]');
+              mobileToggleSpan.classList.add('translate-x-[22px]');
+            }
           } else {
+            // Disable dark mode
             htmlElement.classList.remove('dark');
             localStorage.setItem('theme', 'light');
-            toggleLabel.classList.remove('bg-primary');
-            toggleLabel.classList.add('bg-gray-300');
+            toggleTrack.classList.remove('bg-primary');
+            toggleTrack.classList.add('bg-gray-300');
             toggleSpan.classList.remove('translate-x-[22px]');
             toggleSpan.classList.add('translate-x-[2px]');
+
+            // Update main navbar toggle icon
+            const mainToggle = document.getElementById('theme-toggle');
+            if (mainToggle) {
+              const icon = mainToggle.querySelector('i');
+              icon.classList.remove('fa-moon');
+              icon.classList.add('fa-sun');
+            }
+
+            // Update mobile toggle
+            const mobileToggle = document.getElementById('mobile-dark-mode-toggle');
+            if (mobileToggle) {
+              mobileToggle.checked = false;
+              const mobileToggleLabel = mobileToggle.nextElementSibling;
+              const mobileToggleTrack = mobileToggleLabel.querySelector('div');
+              const mobileToggleSpan = mobileToggleTrack.querySelector('span');
+              mobileToggleTrack.classList.remove('bg-primary');
+              mobileToggleTrack.classList.add('bg-gray-300');
+              mobileToggleSpan.classList.remove('translate-x-[22px]');
+              mobileToggleSpan.classList.add('translate-x-[2px]');
+            }
           }
         });
       }
