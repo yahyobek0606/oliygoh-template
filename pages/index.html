@@ -179,20 +179,27 @@
         <!-- Profile Section -->
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
-            <button id="notification-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
-              <div class="bg-white dark:bg-dark-card p-4 rounded-[16px] flex items-center justify-center">
+            <button id="notification" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
+              </div>
+            </button>
+          </div>
+           <div class="relative flex">
+            <button id="notification-btn" class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
+              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card rounded-[16px] flex items-center justify-center">
+                <img src="../assets/ava.png" alt="Notifications" class="">
               </div>
               <!-- Notification Dropdown -->
               <div id="notification-dropdown"
                 class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#1a2330]">
-                  <div class="w-[40px] h-[40px] rounded-[14px] flex items-center justify-center mr-[12px]">
-                    <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-[14px] object-cover">
+                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                  <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
+                    <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                   </div>
                   <div>
-                    <p class="text-[14px] font-medium text-gray-900 dark:text-white">Suxrobjon Xurram...</p>
+                    <p class="text-[18px] font-medium text-gray-900 dark:text-white">Suxrobjon Xur...</p>
                   </div>
                 </div>
 
@@ -262,10 +269,6 @@
               </div>
             </button>
           </div>
-          <button id="login-btn"
-            class="bg-primary text-white px-6 py-4 rounded-[16px] items-center justify-center hover:bg-primary/90 transition-colors text-[14px] font-medium">
-            <span class="text-[14px] font-medium"></span>Profilga kirish</span>
-          </button>
         </div>
       </div>
     </div>
