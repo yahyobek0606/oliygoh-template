@@ -237,8 +237,7 @@
       <!-- Modal Content -->
       <div class="p-[24px]">
         <!-- Question Text -->
-        <p
-          class="text-[24px] w-5/6 font-semibold text-gray-900 dark:text-white text-start mb-[32px] leading-relaxed">
+        <p class="text-[24px] w-5/6 font-semibold text-gray-900 dark:text-white text-start mb-[32px] leading-relaxed">
           Siz barcha savollarga javob bermasdan imtihonni yakunlamoqchimisiz?
         </p>
 
@@ -264,13 +263,13 @@
   <div id="results-modal"
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
     <div
-      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[600px] transform scale-95 transition-all duration-300">
+      class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[460px] transform scale-95 transition-all duration-300">
       <!-- Modal Header -->
-      <div class="relative flex items-center justify-between p-[24px] border-b border-gray-200 dark:border-gray-700">
-        <h2 class="text-[20px] font-bold text-gray-900 dark:text-white">Test natijalaringiz</h2>
+      <div class="relative flex items-center justify-between p-[24px]">
+        <h2 class="text-[32px] font-bold text-gray-900 dark:text-white">Test natijalaringiz</h2>
         <button id="close-results-modal"
-          class="w-[32px] h-[32px] rounded-[8px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-          <i class="fas fa-times text-[18px] text-gray-600 dark:text-gray-400"></i>
+          class="w-[32px] h-[32px] rounded-[8px] border border-[#E1E2E5] dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
         </button>
       </div>
 
@@ -278,41 +277,57 @@
       <div class="p-[24px]">
         <!-- Results Grid -->
         <div class="grid grid-cols-2 gap-[16px] mb-[24px]">
-          <!-- Time Spent -->
-          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
-            <div class="flex items-center space-x-[12px] mb-[8px]">
-              <i class="fas fa-clock text-[24px] text-gray-600 dark:text-gray-400"></i>
-              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Sarflangan vaqt</span>
+          <!-- Time Spent (as result-like item) -->
+          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+            <div class="flex items-center">
+              <img src="../assets/icons/test-end/timer-start.svg" alt="Time" class="w-[32px] h-[32px]">
             </div>
-            <div class="text-[24px] font-bold text-gray-900 dark:text-white">20:23</div>
+            <div>
+              <span class="text-[14px] font-light text-gray-700 dark:text-gray-300">Sarflangan vaqt</span>
+              <div class="text-[24px] font-semibold text-gray-900 dark:text-white">20:23</div>
+            </div>
           </div>
 
-          <!-- Correct Answers -->
-          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
-            <div class="flex items-center space-x-[12px] mb-[8px]">
-              <i class="fas fa-check-circle text-[24px] text-green-500"></i>
-              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">To'g'ri javoblar</span>
+          <!-- Correct Answers (as result-like item) -->
+          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+            <div class="flex items-center">
+              <img src="../assets/icons/test-end/task-square.svg" alt="Correct" class="w-[32px] h-[32px]">
             </div>
-            <div class="text-[24px] font-bold text-gray-900 dark:text-white">28/105</div>
+            <div>
+              <span class="text-[14px] font-light text-gray-700 dark:text-gray-300">To'g'ri javoblar</span>
+              <div class="text-[24px] font-semibold text-gray-900 dark:text-white">28/105</div>
+            </div>
           </div>
 
-          <!-- Result -->
-          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
-            <div class="flex items-center space-x-[12px] mb-[8px]">
-              <i class="fas fa-chart-bar text-[24px] text-gray-600 dark:text-gray-400"></i>
-              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Natija</span>
+          <!-- Result (styled like others) -->
+          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+            <div class="flex items-center">
+              <img src="../assets/icons/test-end/status-up.svg" alt="Status" class="w-[32px] h-[32px]">
             </div>
-            <div class="text-[24px] font-bold text-gray-900 dark:text-white">25.7%</div>
+            <div>
+              <span class="text-[14px] font-light text-gray-700 dark:text-gray-300">Umumiy natija</span>
+              <div class="text-[24px] font-semibold text-gray-900 dark:text-white">25.7%</div>
+            </div>
           </div>
 
-          <!-- Score -->
-          <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] p-[20px]">
-            <div class="flex items-center space-x-[12px] mb-[8px]">
-              <i class="fas fa-bullseye text-[24px] text-gray-600 dark:text-gray-400"></i>
-              <span class="text-[14px] font-medium text-gray-700 dark:text-gray-300">Ball</span>
+          <!-- Score (as result-like item) -->
+          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+            <div class="flex items-center">
+              <img src="../assets/icons/test-end/verify.svg" alt="Ball" class="w-[32px] h-[32px]">
             </div>
-            <div class="text-[24px] font-bold text-gray-900 dark:text-white">52.8</div>
+            <div>
+              <span class="text-[14px] font-light text-gray-700 dark:text-gray-300">Ball</span>
+              <div class="text-[24px] font-semibold text-gray-900 dark:text-white">52.8</div>
+            </div>
           </div>
+        </div>
+
+        <div class="flex justify-center items-center mb-[20px] w-full">
+          <button
+            class="bg-[#E4E6EE] w-full h-[48px] text-[#2A2C33] font-normal px-[24px] py-[8px] rounded-[16px] text-[16px] flex items-center justify-center gap-2">
+            <img src="../assets/icons/download-04.svg" alt="Sertifikat" class="w-[24px] h-[24px]">
+            Sertifikatni yuklab olish
+          </button>
         </div>
 
         <!-- Action Buttons -->
