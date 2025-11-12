@@ -15,7 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
+<body class="gradient-bg bg-bg-light dark:bg-bg-dark min-h-screen">
   <script>
     // Initialize theme immediately to prevent flash
     (function () {
@@ -30,14 +30,14 @@
     })();
   </script>
   <!-- Top Banner -->
-  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white">
+  <div class="bg-bg-header dark:bg-bg-dark text-white">
     <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
     <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
   </div>
 
   <!-- Mobile Header -->
   <header
-    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+    class="lg:hidden bg-bg-light dark:bg-bg-dark rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
@@ -70,7 +70,7 @@
             <div id="mobile-profile-dropdown"
               class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
               <!-- User Profile Header -->
-              <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+              <div class="flex items-center p-[16px] rounded-[16px] bg-bg-light dark:bg-bg-dark">
                 <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
                   <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                 </div>
@@ -82,37 +82,37 @@
               <!-- Menu Items -->
               <div class="py-[8px]">
                 <a href="my-results.html"
-                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                   <div
-                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/icons/checkmark-badge-02.svg" alt="Check" class="w-[20px] h-[20px]">
                   </div>
-                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Natijalarim</span>
+                  <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Natijalarim</span>
                 </a>
                 <a href="notifications.html"
-                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                   <div
-                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
                   </div>
-                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
+                  <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Bildirishnomalar</span>
                 </a>
                 <a href="account.html"
-                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                   <div
-                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/icons/settings-02.svg" alt="Settings" class="w-[20px] h-[20px]">
                   </div>
-                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Sozlamalar</span>
+                  <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Sozlamalar</span>
                 </a>
                 <div
-                  class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                   <div class="flex items-center">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/moon-02.svg" alt="Tungi rejim" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Tungi rejim</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Tungi rejim</span>
                   </div>
                   <!-- Toggle Switch -->
                   <div class="flex items-center">
@@ -129,17 +129,17 @@
               </div>
 
               <!-- Divider -->
-              <div class="border-t border-[#E4E6EE] dark:border-gray-800"></div>
+              <div class="border-t border-bg-tab dark:border-gray-800"></div>
 
               <!-- Logout -->
               <div class="py-[8px]">
                 <a href="#"
-                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                  class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                   <div
-                    class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                    class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
                   </div>
-                  <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Profildan chiqish</span>
+                  <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Profildan chiqish</span>
                 </a>
               </div>
             </div>
@@ -193,7 +193,7 @@
               <div id="notification-dropdown"
                 class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#09131A]">
+                <div class="flex items-center p-[16px] rounded-[16px] bg-bg-light dark:bg-bg-dark">
                   <div class="w-[40px] h-[40px] rounded-[16px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/ava.png" alt="Profile" class="w-[40px] h-[40px] rounded-[12px] object-cover">
                   </div>
@@ -205,37 +205,37 @@
                 <!-- Menu Items -->
                 <div class="py-[8px]">
                   <a href="my-results.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/checkmark-badge-02.svg" alt="Check" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Natijalarim</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Natijalarim</span>
                   </a>
                   <a href="notifications.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Bildirishnomalar</span>
                   </a>
                   <a href="account.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/settings-02.svg" alt="Settings" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Sozlamalar</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Sozlamalar</span>
                   </a>
                   <div
-                    class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div class="flex items-center">
                       <div
-                        class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                        class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                         <img src="../assets/icons/moon-02.svg" alt="Tungi rejim" class="w-[20px] h-[20px]">
                       </div>
-                      <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Tungi rejim</span>
+                      <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Tungi rejim</span>
                     </div>
                     <!-- Toggle Switch -->
                     <div class="flex items-center">
@@ -252,17 +252,17 @@
                 </div>
 
                 <!-- Divider -->
-                <div class="border-t border-[#E4E6EE] dark:border-gray-800"></div>
+                <div class="border-t border-bg-tab dark:border-gray-800"></div>
 
                 <!-- Logout -->
                 <div class="py-[8px]">
                   <a href="#"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Profildan chiqish</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Profildan chiqish</span>
                   </a>
                 </div>
               </div>
@@ -279,15 +279,15 @@
 
   <!-- Mobile Search Overlay -->
   <div id="mobile-search-overlay"
-    class="lg:hidden fixed inset-0 bg-[#F2F3F7] dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    class="lg:hidden fixed inset-0 bg-bg-light dark:bg-bg-dark z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
     <div class="w-full h-full flex flex-col">
       <!-- Mobile Ad Banner -->
-      <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white">
+      <div class="bg-bg-header dark:bg-bg-dark text-white">
         <img src="../assets/top-banner-mobile.png" alt="Advertisement" class="w-full h-auto">
       </div>
 
       <!-- Search Header with Back Button and Search Bar -->
-      <div class="bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pt-[16px] pb-[16px]">
+      <div class="bg-bg-light dark:bg-bg-dark px-[16px] pt-[16px] pb-[16px]">
         <div class="flex items-center gap-[12px]">
           <!-- Back Button (Separated) -->
           <button id="mobile-search-close"
@@ -307,11 +307,11 @@
       </div>
 
       <!-- Separator -->
-      <div id="mobile-search-separator" class="border-t border-[#E1E2E5] dark:border-[#1a2330]"></div>
+      <div id="mobile-search-separator" class="border-t border-bg-border dark:border-dark-hover"></div>
 
       <!-- Search Results Container -->
       <div id="mobile-search-results"
-        class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+        class="flex-1 overflow-y-auto bg-bg-light dark:bg-bg-dark px-[16px] pb-[24px] hidden">
         <h3 class="text-[16px] font-semibold text-gray-900 dark:text-white mb-[16px] mt-[16px]">Qidiruv natijalari</h3>
         <div id="mobile-search-results-grid" class="space-y-[16px]">
           <!-- Results will be populated here -->
@@ -320,7 +320,7 @@
 
       <!-- Empty State -->
       <div id="mobile-search-empty"
-        class="flex-1 overflow-y-auto bg-[#F2F3F7] dark:bg-[#09131A] px-[16px] pb-[24px] hidden">
+        class="flex-1 overflow-y-auto bg-bg-light dark:bg-bg-dark px-[16px] pb-[24px] hidden">
         <div class="text-center py-[48px]">
           <div
             class="w-[80px] h-[80px] bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-[16px]">
@@ -335,11 +335,11 @@
 
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu-overlay"
-    class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    class="lg:hidden fixed inset-0 bg-white dark:bg-bg-dark z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu-drawer" class="w-full h-full">
       <!-- Menu Header -->
-      <div class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px]">
+      <div class="bg-bg-light dark:bg-bg-dark flex items-center justify-between p-[16px]">
         <button id="mobile-menu-close"
           class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[13px] flex items-center justify-center">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
@@ -378,7 +378,7 @@
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/home-active.svg" alt="Home" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Asosiy sahifa</span>
+            <span class="text-[16px] text-text-muted dark:text-gray-300">Asosiy sahifa</span>
           </a>
           <a href="tests.html" onclick="closeMobileMenu();"
             class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] bg-white dark:bg-gray-800 rounded-[16px]">
@@ -392,19 +392,19 @@
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Mandat 2025</span>
+            <span class="text-[16px] text-text-muted dark:text-gray-300">Mandat 2025</span>
           </a>
           <a href="oliygoh.html" onclick="closeMobileMenu();"
             class="flex items-center space-x-[15px] text-black dark:text-white p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/university.svg" alt="Universities" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Oliygohlar</span>
+            <span class="text-[16px] text-text-muted dark:text-gray-300">Oliygohlar</span>
           </a>
         </nav>
 
         <!-- Footer Links -->
-        <div class="space-y-[8px] text-[13px] text-[#686E7E] dark:text-gray-400 mb-[24px]">
+        <div class="space-y-[8px] text-[13px] text-text-muted dark:text-gray-400 mb-[24px]">
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Reklama</a>
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Biz haqimizda</a>
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Foydalanish
@@ -414,15 +414,15 @@
         <!-- Social Media -->
         <div class="flex space-x-[12px] mb-[24px]">
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[20px] h-[20px]">
           </a>
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <img src="../assets/icons/telegram-white.svg" alt="Telegram" class="w-[20px] h-[20px]">
           </a>
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <i class="fab fa-facebook-f text-[20px] text-white"></i>
           </a>
         </div>
@@ -446,7 +446,7 @@
             <a href="index.html" onclick="closeMobileMenu();"
               class="flex h-[52px] items-center space-x-[15px] text-black p-[8px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[16px]">
               <div
-                class="w-[40px] h-[40px] bg-gray-200 dark:bg-[#F2F3F7] rounded-[10px] flex items-center justify-center">
+                class="w-[40px] h-[40px] bg-gray-200 dark:bg-bg-light rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/arrow-left-02.svg" alt="Home" class="block dark:hidden w-[24px] h-[24px]">
                 <img src="../assets/icons/arrow-left-02-light.svg" alt="Home" class="hidden dark:block w-[24px] h-[24px]">
               </div>
@@ -456,7 +456,7 @@
               class="flex h-[52px] p-1 items-center bg-white dark:bg-gray-800 border border-2 border-gray-200 dark:border-gray-700 rounded-[14px] overflow-hidden">
               <button id="list-view-btn" class="w-[44px] h-[44px] flex items-center justify-center p-2 focus:outline-none transition-all duration-200
                   rounded-[12px]
-                  bg-[#F2F3F7] dark:bg-[#152732]
+                  bg-bg-light dark:bg-bg-card-dark
                   hover:opacity-90" data-active="true">
                 <img src="../assets/icons/list-view-active.svg" alt="List" class="list-view-icon w-[20px] h-[20px]">
               </button>
@@ -570,7 +570,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -584,12 +584,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -606,7 +606,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -620,12 +620,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -642,7 +642,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -656,12 +656,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -678,7 +678,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -692,12 +692,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -714,7 +714,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -728,12 +728,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -750,7 +750,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -764,12 +764,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -786,7 +786,7 @@
             class="bg-white dark:bg-dark-card rounded-[16px] p-[20px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px]">
             <div class="flex-1 w-full">
               <div class="flex items-center space-x-[12px] mb-[12px]">
-                <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+                <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                   <span class="text-[12px] text-gray-600 dark:text-gray-400">17-sentabr</span>
                   <span>
                     <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -800,12 +800,12 @@
               <div class="flex justify-between items-center flex-wrap gap-[12px]">
                 <div class="flex items-center gap-[12px]">
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">20 ta savol</span>
                   </div>
                   <div
-                    class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                    class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                     <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                     <span class="text-[14px] text-gray-600 dark:text-gray-400">4,060 ta qatnashuvchi</span>
                   </div>
@@ -826,7 +826,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -843,12 +843,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -864,7 +864,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -881,12 +881,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -902,7 +902,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -919,12 +919,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -940,7 +940,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -957,12 +957,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -978,7 +978,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -995,12 +995,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -1016,7 +1016,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -1033,12 +1033,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -1054,7 +1054,7 @@
           <div class="bg-white dark:bg-dark-card rounded-[24px] p-[20px] flex flex-col">
             <!-- Date and Time Badge -->
             <div class="flex items-center mb-[12px]">
-              <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px]">
+              <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px]">
                 <span class="text-[12px] text-gray-600 dark:text-gray-400">12-oktabr</span>
                 <span>
                   <img src="../assets/icons/caption.svg" alt="Time" class="w-[12px] h-[12px]">
@@ -1071,12 +1071,12 @@
             <!-- Test Details/Statistics Badges -->
             <div class="flex flex-wrap gap-[8px] mb-[16px]">
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/quiz-02.svg" alt="Question" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">20 ta savol</span>
               </div>
               <div
-                class="flex items-center space-x-[6px] bg-[#F2F3F7] dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
+                class="flex items-center space-x-[6px] bg-bg-light dark:bg-gray-700 rounded-[8px] px-[8px] py-[4px]">
                 <img src="../assets/icons/user-group-03.svg" alt="Users" class="w-[16px] h-[16px]">
                 <span class="text-[16px] text-gray-600 dark:text-gray-400">4,060</span>
               </div>
@@ -1190,12 +1190,12 @@
 
   <!-- Filter Modal -->
   <div id="filter-modal"
-    class="fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto lg:bg-black lg:bg-opacity-50 lg:flex lg:items-center lg:justify-center">
+    class="fixed inset-0 bg-white dark:bg-bg-dark z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto lg:bg-black lg:bg-opacity-50 lg:flex lg:items-center lg:justify-center">
     <div
       class="w-full h-full lg:h-auto lg:bg-white lg:dark:bg-gray-800 lg:rounded-[24px] lg:w-[500px] lg:max-w-[90vw] lg:transform lg:scale-95 lg:transition-all lg:duration-300">
       <!-- Modal Header - Mobile Style -->
       <div
-        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800 lg:hidden">
+        class="bg-bg-light dark:bg-bg-dark flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800 lg:hidden">
         <button id="close-filter-modal-mobile"
           class="w-[40px] h-[40px] bg-white dark:bg-dark-card rounded-[13px] dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
@@ -1232,7 +1232,7 @@
       <div class="hidden lg:flex items-center justify-between p-[24px]">
         <h2 class="text-[32px] font-bold text-gray-900 dark:text-white">Filtrlash</h2>
         <button id="close-filter-modal"
-          class="w-[48px] h-[48px] rounded-[16px] border border-[#E1E2E5] dark:border-gray-700 flex items-center justify-center hover:bg-[#E1E2E5] dark:hover:bg-gray-700 transition-colors">
+          class="w-[48px] h-[48px] rounded-[16px] border border-bg-border dark:border-gray-700 flex items-center justify-center hover:bg-bg-border dark:hover:bg-gray-700 transition-colors">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[24px] h-[24px]">
         </button>
       </div>
@@ -1905,7 +1905,7 @@
           // Set active button - #F2F3F7 (gray) background
           activeBtn.setAttribute('data-active', 'true');
           activeBtn.classList.remove('bg-transparent', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
-          activeBtn.classList.add('bg-[#F2F3F7]', 'dark:bg-[#152732]', 'hover:opacity-90');
+          activeBtn.classList.add('bg-bg-light', 'dark:bg-bg-card-dark', 'hover:opacity-90');
 
           // Update active button icon
           if (activeIcon) {
@@ -1914,7 +1914,7 @@
 
           // Set inactive button - transparent (no background)
           inactiveBtn.setAttribute('data-active', 'false');
-          inactiveBtn.classList.remove('bg-[#F2F3F7]', 'dark:bg-[#152732]', 'hover:opacity-90');
+          inactiveBtn.classList.remove('bg-bg-light', 'dark:bg-bg-card-dark', 'hover:opacity-90');
           inactiveBtn.classList.add('bg-transparent', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
 
           // Update inactive button icon

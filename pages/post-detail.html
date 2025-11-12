@@ -15,7 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
+<body class="gradient-bg bg-bg-light dark:bg-bg-dark min-h-screen">
   <script>
     // Initialize theme immediately to prevent flash
     (function () {
@@ -30,14 +30,14 @@
     })();
   </script>
   <!-- Top Banner -->
-  <div class="bg-[#2A2C33] dark:bg-[#09131A] text-white">
+  <div class="bg-bg-header dark:bg-bg-dark text-white">
     <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
     <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
   </div>
 
   <!-- Mobile Header -->
   <header
-    class="lg:hidden bg-[#F2F3F7] dark:bg-[#09131A] rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+    class="lg:hidden bg-bg-light dark:bg-bg-dark rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
@@ -107,7 +107,7 @@
               <div id="notification-dropdown"
                 class="absolute top-full p-4 right-0 mt-[8px] w-[280px] bg-white dark:bg-dark-card rounded-[24px] border border-gray-200 dark:border-gray-800 opacity-0 invisible transition-all duration-200 z-50">
                 <!-- User Profile Header -->
-                <div class="flex items-center p-[16px] rounded-[16px] bg-[#F2F3F7] dark:bg-[#1a2330]">
+                <div class="flex items-center p-[16px] rounded-[16px] bg-bg-light dark:bg-dark-hover">
                   <div class="w-[40px] h-[40px] rounded-[14px] flex items-center justify-center mr-[12px]">
                     <img src="../assets/ava.png" alt="Profile" class="w-[36px] h-[36px] rounded-[14px] object-cover">
                   </div>
@@ -119,37 +119,37 @@
                 <!-- Menu Items -->
                 <div class="py-[8px]">
                   <a href="my-results.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/checkmark-badge-02.svg" alt="Check" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Natijalarim</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Natijalarim</span>
                   </a>
                   <a href="notifications.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Bildirishnomalar</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Bildirishnomalar</span>
                   </a>
                   <a href="account.html"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/settings-02.svg" alt="Settings" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Sozlamalar</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Sozlamalar</span>
                   </a>
                   <div
-                    class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center justify-between px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div class="flex items-center">
                       <div
-                        class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                        class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                         <img src="../assets/icons/moon-02.svg" alt="Tungi rejim" class="w-[20px] h-[20px]">
                       </div>
-                      <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Tungi rejim</span>
+                      <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Tungi rejim</span>
                     </div>
                     <!-- Toggle Switch -->
                     <div class="flex items-center">
@@ -166,17 +166,17 @@
                 </div>
 
                 <!-- Divider -->
-                <div class="border-t border-[#E4E6EE] dark:border-gray-800"></div>
+                <div class="border-t border-bg-tab dark:border-gray-800"></div>
 
                 <!-- Logout -->
                 <div class="py-[8px]">
                   <a href="#"
-                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-[#1a2330] transition-colors">
+                    class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
                     <div
-                      class="w-[40px] h-[40px] bg-[#F2F3F7] dark:bg-[#1a2330] rounded-[10px] flex items-center justify-center mr-[12px]">
+                      class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-[#686E7E] dark:text-[#98B4CC]">Profildan chiqish</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Profildan chiqish</span>
                   </a>
                 </div>
               </div>
@@ -193,12 +193,12 @@
 
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu-overlay"
-    class="lg:hidden fixed inset-0 bg-white dark:bg-[#09131A] z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
+    class="lg:hidden fixed inset-0 bg-white dark:bg-bg-dark z-50 opacity-0 invisible transition-all duration-300 overflow-y-auto">
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu-drawer" class="w-full h-full">
       <!-- Menu Header -->
       <div
-        class="bg-[#F2F3F7] dark:bg-[#09131A] flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
+        class="bg-bg-light dark:bg-bg-dark flex items-center justify-between p-[16px] border-b border-gray-200 dark:border-gray-800">
         <button id="mobile-menu-close"
           class="w-[32px] h-[32px] bg-white dark:bg-dark-card rounded-[12px] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[16px] h-[16px]">
@@ -236,14 +236,14 @@
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/quiz-02.svg" alt="Tests" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Imtihon testlari</span>
+            <span class="text-[16px] text-text-muted dark:text-gray-300">Imtihon testlari</span>
           </a>
           <a href="#" onclick="showComingSoon('Mandat 2025'); closeMobileMenu();"
             class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
             <div class="w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-[10px] flex items-center justify-center">
               <img src="../assets/icons/mortarboard-01.svg" alt="Mandat" class="w-[24px] h-[24px]">
             </div>
-            <span class="text-[16px] text-[#686E7E] dark:text-gray-300">Mandat 2025</span>
+            <span class="text-[16px] text-text-muted dark:text-gray-300">Mandat 2025</span>
           </a>
           <a href="oliygoh.html" onclick="closeMobileMenu();"
             class="flex items-center space-x-[15px] text-black p-[8px] rounded-[16px]">
@@ -255,7 +255,7 @@
         </nav>
 
         <!-- Footer Links -->
-        <div class="space-y-[8px] text-[13px] text-[#686E7E] dark:text-gray-400 mb-[24px]">
+        <div class="space-y-[8px] text-[13px] text-text-muted dark:text-gray-400 mb-[24px]">
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Reklama</a>
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Biz haqimizda</a>
           <a href="#" onclick="closeMobileMenu();" class="block hover:text-primary transition-colors">Foydalanish
@@ -265,15 +265,15 @@
         <!-- Social Media -->
         <div class="flex space-x-[12px] mb-[24px]">
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-gray-700 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-gray-700 transition-colors">
             <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[20px] h-[20px]">
           </a>
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <img src="../assets/icons/telegram.svg" alt="Telegram" class="w-[20px] h-[20px]">
           </a>
           <a href="#"
-            class="w-[32px] h-[32px] bg-[#999FABB2] rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
+            class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center hover:bg-primary/90 transition-colors">
             <i class="fab fa-facebook-f text-[20px] text-white"></i>
           </a>
         </div>
@@ -297,13 +297,13 @@
           <div class="mb-[24px]">
             <div class="flex items-center justify-between">
               <button onclick="window.history.back()"
-                class="bg-[#F2F3F7] dark:bg-gray-800 h-[52px] rounded-[16px] p-[8px] pr-[20px] flex items-center space-x-[8px] text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                class="bg-bg-light dark:bg-gray-800 h-[52px] rounded-[16px] p-[8px] pr-[20px] flex items-center space-x-[8px] text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
                 <div class="w-[36px] h-[36px] rounded-[8px] p-4 bg-white dark:bg-gray-700 flex items-center justify-center">
                   <i class="fas fa-arrow-left text-[14px]"></i>
                 </div>
                 <span class="text-[14px] font-medium">Qayitish</span>
               </button>
-              <div class="bg-[#F2F3F7] dark:bg-gray-800 rounded-[18px] p-[8px] flex items-center space-x-[12px]">
+              <div class="bg-bg-light dark:bg-gray-800 rounded-[18px] p-[8px] flex items-center space-x-[12px]">
                 <button
                   class="w-[36px] h-[36px] bg-white dark:bg-gray-700 rounded-[8px] flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                   <i class="fas fa-share-alt text-[14px] text-gray-600 dark:text-gray-300"></i>
@@ -388,7 +388,7 @@
             </div>
 
             <!-- Quote Section -->
-            <div class="bg-[#F2F3F7] dark:bg-gray-700 px-[16px] md:px-[20px] lg:px-[24px] py-[16px] md:py-[18px] lg:py-[20px] rounded-[12px] my-[32px]">
+            <div class="bg-bg-light dark:bg-gray-700 px-[16px] md:px-[20px] lg:px-[24px] py-[16px] md:py-[18px] lg:py-[20px] rounded-[12px] my-[32px]">
               <h4 class="text-[16px] md:text-[18px] lg:text-[20px] font-bold text-gray-900 dark:text-white mb-[12px]">Xulosa</h4>
               <p class="text-[14px] md:text-[15px] lg:text-[16px] text-gray-700 dark:text-gray-300">
                 O‘zbekiston o‘qituvchilariga yaratilgan imtiyozlar ularning mehnatini qadrlash, moddiy rag‘batlantirish
@@ -401,11 +401,11 @@
             <div class="flex flex-wrap gap-[8px]">
               <span class="text-[12px] text-gray-600 dark:text-gray-400 font-normal">Teglar:</span>
               <a href="#"
-                class="bg-[#E4E6EE] dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">ta'lim</a>
+                class="bg-bg-tab dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">ta'lim</a>
               <a href="#"
-                class="bg-[#E4E6EE] dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">o'qituvchilar</a>
+                class="bg-bg-tab dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">o'qituvchilar</a>
               <a href="#"
-                class="bg-[#E4E6EE] dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">O'zbekiston</a>
+                class="bg-bg-tab dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-[12px] py-[4px] rounded-[16px] text-[12px] hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">O'zbekiston</a>
             </div>
           </div>
         </article>
@@ -420,7 +420,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -435,14 +435,14 @@
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <span>17-sentabr</span>
                       <span>
                         <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                       </span>
                       <span>09:45</span>
                     </div>
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
                       <span>67890</span>
                     </div>
@@ -458,7 +458,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -473,14 +473,14 @@
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <span>17-sentabr</span>
                       <span>
                         <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                       </span>
                       <span>09:45</span>
                     </div>
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
                       <span>67890</span>
                     </div>
@@ -496,7 +496,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -511,14 +511,14 @@
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <span>17-sentabr</span>
                       <span>
                         <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                       </span>
                       <span>09:45</span>
                     </div>
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
                       <span>67890</span>
                     </div>
@@ -535,7 +535,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-[#0B7BE366] backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -550,14 +550,14 @@
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <span>17-sentabr</span>
                       <span>
                         <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
                       </span>
                       <span>09:45</span>
                     </div>
-                    <div class="flex items-center space-x-[4px] p-[6px] bg-[#F2F3F7] rounded-[8px]">
+                    <div class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px]">
                       <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
                       <span>67890</span>
                     </div>

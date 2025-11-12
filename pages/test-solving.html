@@ -15,7 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body class="gradient-bg bg-[#F2F3F7] dark:bg-[#09131A] min-h-screen">
+<body class="gradient-bg bg-bg-light dark:bg-bg-dark min-h-screen">
   <script>
     // Initialize theme immediately to prevent flash
     (function () {
@@ -34,9 +34,9 @@
   <header class="lg:hidden bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[12px]">
       <div class="flex items-center justify-between">
-        <div class="text-[28px] font-bold text-[#2A2C33] dark:text-white truncate flex-1 mr-[12px] flex items-baseline">
+        <div class="text-[28px] font-bold text-text-dark dark:text-white truncate flex-1 mr-[12px] flex items-baseline">
           <span>DTM Test 2025&nbsp;</span>
-          <span class="text-[#999FAB] dark:text-[#98B4CC] font-normal">(456789)</span>
+          <span class="text-text-muted-light dark:text-text-secondary font-normal">(456789)</span>
         </div>
         <button id="exit-test-btn-mobile"
           class="bg-red-500 hover:bg-red-600 text-white px-[12px] py-[8px] rounded-[12px] transition-colors text-[12px] font-medium whitespace-nowrap">
@@ -52,7 +52,7 @@
       <div class="flex items-center justify-between">
         <h1 class="text-[18px] md:text-[20px] font-semibold text-gray-900 dark:text-white">DTM Test 2025 (546789)</h1>
         <button id="exit-test-btn"
-          class="bg-[#F94B331F] hover:bg-[#F94B331F] text-[#F94B33] px-[24px] py-[12px] rounded-[16px] transition-colors text-[18px] font-medium">
+          class="bg-error-light hover:bg-error-light text-error px-[24px] py-[12px] rounded-[16px] transition-colors text-[18px] font-medium">
           Imtihondan chiqish
         </button>
       </div>
@@ -230,7 +230,7 @@
       class="bg-white dark:bg-dark-card rounded-[24px] w-[90%] max-w-[500px] transform scale-95 transition-all duration-300 shadow-xl relative">
       <!-- Close Button -->
       <button id="close-exit-modal"
-        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-[#E1E2E5] rounded-[12px] bg-white hover:bg-gray-200 flex items-center justify-center transition-colors">
+        class="absolute right-[24px] top-[24px] w-[40px] h-[40px] border border-bg-border rounded-[12px] bg-white hover:bg-gray-200 flex items-center justify-center transition-colors">
         <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
       </button>
 
@@ -245,7 +245,7 @@
         <div class="flex flex-col space-y-[12px]">
           <!-- Confirm Exit Button -->
           <button id="confirm-exit-btn"
-            class="w-full bg-[#FFE5E5] dark:bg-[#4A1F1F] text-[#FF4444] dark:text-[#FF6B6B] px-[24px] py-[14px] rounded-[16px] hover:bg-[#FFD5D5] dark:hover:bg-[#5A2F2F] transition-colors text-[16px] font-medium">
+            class="w-full bg-error-bg dark:bg-error-bg-dark text-error-text dark:text-error-text-dark px-[24px] py-[14px] rounded-[16px] hover:bg-error-hover dark:hover:bg-error-hover-dark transition-colors text-[16px] font-medium">
             Ha, Imtihonni yakunlash
           </button>
 
@@ -268,7 +268,7 @@
       <div class="relative flex items-center justify-between p-[24px]">
         <h2 class="text-[32px] font-bold text-gray-900 dark:text-white">Test natijalaringiz</h2>
         <button id="close-results-modal"
-          class="w-[32px] h-[32px] rounded-[8px] border border-[#E1E2E5] dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          class="w-[32px] h-[32px] rounded-[8px] border border-bg-border dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
           <img src="../assets/icons/multiplication-sign.svg" alt="Close" class="w-[20px] h-[20px]">
         </button>
       </div>
@@ -278,7 +278,7 @@
         <!-- Results Grid -->
         <div class="grid grid-cols-2 gap-[16px] mb-[24px]">
           <!-- Time Spent (as result-like item) -->
-          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+          <div class="flex items-center gap-[10px] bg-bg-light dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
             <div class="flex items-center">
               <img src="../assets/icons/test-end/timer-start.svg" alt="Time" class="w-[32px] h-[32px]">
             </div>
@@ -289,7 +289,7 @@
           </div>
 
           <!-- Correct Answers (as result-like item) -->
-          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+          <div class="flex items-center gap-[10px] bg-bg-light dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
             <div class="flex items-center">
               <img src="../assets/icons/test-end/task-square.svg" alt="Correct" class="w-[32px] h-[32px]">
             </div>
@@ -300,7 +300,7 @@
           </div>
 
           <!-- Result (styled like others) -->
-          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+          <div class="flex items-center gap-[10px] bg-bg-light dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
             <div class="flex items-center">
               <img src="../assets/icons/test-end/status-up.svg" alt="Status" class="w-[32px] h-[32px]">
             </div>
@@ -311,7 +311,7 @@
           </div>
 
           <!-- Score (as result-like item) -->
-          <div class="flex items-center gap-[10px] bg-[#F2F3F7] dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
+          <div class="flex items-center gap-[10px] bg-bg-light dark:bg-gray-800 rounded-[16px] px-[8px] py-[14px]">
             <div class="flex items-center">
               <img src="../assets/icons/test-end/verify.svg" alt="Ball" class="w-[32px] h-[32px]">
             </div>
@@ -324,7 +324,7 @@
 
         <div class="flex justify-center items-center mb-[20px] w-full">
           <button
-            class="bg-[#E4E6EE] w-full h-[48px] text-[#2A2C33] font-normal px-[24px] py-[8px] rounded-[16px] text-[16px] flex items-center justify-center gap-2">
+            class="bg-bg-tab w-full h-[48px] text-text-dark font-normal px-[24px] py-[8px] rounded-[16px] text-[16px] flex items-center justify-center gap-2">
             <img src="../assets/icons/download-04.svg" alt="Sertifikat" class="w-[24px] h-[24px]">
             Sertifikatni yuklab olish
           </button>
@@ -374,16 +374,16 @@
         // Set initial state
         if (i === 1) {
           // Question 1 is selected (current)
-          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border-2', 'border-[#0B7BE3]');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border-2', 'border-primary');
           testState.questionStates[i] = 'current';
         } else if (i === 2) {
           // Question 2 is marked
-          btn.classList.add('bg-[#0B7BE31F]', 'dark:bg-[#0B7BE31F]', 'text-gray-900', 'dark:text-white');
+          btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
           btn.style.border = '1.5px solid #0B7BE3';
           testState.questionStates[i] = 'marked';
         } else {
           // Default state
-          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border', 'border-[#E1E2E5]', 'dark:border-gray-700');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border', 'border-bg-border', 'dark:border-gray-700');
           testState.questionStates[i] = 'unvisited';
         }
 
@@ -393,7 +393,7 @@
       // Add ellipsis if more questions
       if (testState.totalQuestions > 19) {
         const ellipsis = document.createElement('button');
-        ellipsis.className = 'w-[48px] h-[48px] rounded-[16px] text-[14px] font-medium bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-[#E1E2E5] dark:border-gray-700 flex items-center justify-center';
+        ellipsis.className = 'w-[48px] h-[48px] rounded-[16px] text-[14px] font-medium bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-bg-border dark:border-gray-700 flex items-center justify-center';
         ellipsis.textContent = '...';
         grid.appendChild(ellipsis);
       }
@@ -412,30 +412,30 @@
       switch (state) {
         case 'current':
           // Selected state: 2px solid #0B7BE3 border
-          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border-2', 'border-[#0B7BE3]');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border-2', 'border-primary');
           break;
         case 'marked':
           // Marked state: background #0B7BE31F, border 1.5px solid #0B7BE3
-          btn.classList.add('bg-[#0B7BE31F]', 'dark:bg-[#0B7BE31F]', 'text-gray-900', 'dark:text-white');
+          btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
           btn.style.border = '1.5px solid #0B7BE3';
           break;
         case 'answered':
         case 'visited':
           // Marked state for answered/visited questions
-          btn.classList.add('bg-[#0B7BE31F]', 'dark:bg-[#0B7BE31F]', 'text-gray-900', 'dark:text-white');
+          btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
           btn.style.border = '1.5px solid #0B7BE3';
           break;
         case 'flagged':
-          btn.classList.add('bg-[#0B7BE31F]', 'dark:bg-[#0B7BE31F]', 'text-gray-900', 'dark:text-white');
+          btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
           btn.style.border = '1.5px solid #0B7BE3';
           break;
         case 'correct':
-          btn.classList.add('bg-[#0B7BE31F]', 'dark:bg-[#0B7BE31F]', 'text-gray-900', 'dark:text-white');
+          btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
           btn.style.border = '1.5px solid #0B7BE3';
           break;
         default:
           // Default state: border 1px solid #E1E2E5
-          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border', 'border-[#E1E2E5]', 'dark:border-gray-700');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border', 'border-bg-border', 'dark:border-gray-700');
       }
     }
 
