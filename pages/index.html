@@ -32,12 +32,37 @@
   <!-- Top Banner -->
   <div class="bg-bg-header dark:bg-bg-dark text-white">
     <img src="../assets/top-banner-mobile.png" alt="logo" class="w-full h-auto block md:hidden">
-    <img src="../assets/top-banner.png" alt="logo" class="w-full h-auto hidden md:block">
+    <!-- Desktop Carousel Ad -->
+    <div class="hidden md:block relative w-full overflow-hidden">
+      <div id="banner-carousel" class="relative w-full">
+        <!-- Carousel Container -->
+        <div class="carousel-container relative w-full overflow-hidden">
+          <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+            <!-- Slide 1 -->
+            <div class="carousel-slide flex-shrink-0 relative">
+              <img src="../assets/top-banner.png" alt="Advertisement" class="w-full h-auto">
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide flex-shrink-0 relative">
+              <img src="../assets/top-banner.png" alt="Advertisement" class="w-full h-auto">
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide flex-shrink-0 relative">
+              <img src="../assets/top-banner.png" alt="Advertisement" class="w-full h-auto">
+            </div>
+            <!-- Add more slides here as needed -->
+          </div>
+        </div>
+        <!-- Pagination Dots -->
+        <div id="carousel-dots"
+          class="absolute bottom-[12px] left-1/2 transform -translate-x-1/2 flex items-center space-x-[8px] z-10">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Mobile Header -->
-  <header
-    class="lg:hidden bg-bg-light dark:bg-bg-dark rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
+  <header class="lg:hidden bg-bg-light dark:bg-bg-dark rounded-t-[16px] border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-[16px] py-[16px]">
       <div class="flex items-center justify-between">
         <!-- Hamburger Menu -->
@@ -180,13 +205,15 @@
         <div class="flex items-center space-x-[16px]">
           <div class="relative">
             <button id="notification" class="text-gray-600 dark:text-gray-300 hover:text-primary relative">
-              <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
+              <div
+                class="bg-white w-[48px] h-[48px] dark:bg-dark-card p-2 rounded-[16px] flex items-center justify-center">
                 <img src="../assets/icons/notification-02.svg" alt="Notifications" class="w-[24px] h-[24px]">
               </div>
             </button>
           </div>
-           <div class="relative flex">
-            <button id="notification-btn" class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
+          <div class="relative flex">
+            <button id="notification-btn"
+              class="text-gray-600 w-[48px] h-[48px] dark:text-gray-300 hover:text-primary relative">
               <div class="bg-white w-[48px] h-[48px] dark:bg-dark-card rounded-[16px] flex items-center justify-center">
                 <img src="../assets/ava.png" alt="Notifications" class="">
               </div>
@@ -219,7 +246,8 @@
                       class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/notification-02.svg" alt="Notification" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Bildirishnomalar</span>
+                    <span
+                      class="text-[16px] font-light text-text-muted dark:text-text-secondary">Bildirishnomalar</span>
                   </a>
                   <a href="account.html"
                     class="flex items-center px-[16px] py-[12px] rounded-[16px] hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors">
@@ -263,7 +291,8 @@
                       class="w-[40px] h-[40px] bg-bg-light dark:bg-dark-hover rounded-[10px] flex items-center justify-center mr-[12px]">
                       <img src="../assets/icons/logout-02.svg" alt="Logout" class="w-[20px] h-[20px]">
                     </div>
-                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Profildan chiqish</span>
+                    <span class="text-[16px] font-light text-text-muted dark:text-text-secondary">Profildan
+                      chiqish</span>
                   </a>
                 </div>
               </div>
@@ -447,8 +476,7 @@
               </div>
               <span class="text-[16px] text-black dark:text-white">Asosiy sahifa</span>
             </a>
-            <a href="tests.html"
-              class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
+            <a href="tests.html" class="flex items-center space-x-[15px] text-black p-[8px]  rounded-[16px]">
               <div class="w-[40px] h-[40px] bg-white rounded-[10px] flex items-center justify-center">
                 <img src="../assets/icons/quiz-02.svg" alt="Tests" class="w-[24px] h-[24px]">
               </div>
@@ -583,7 +611,7 @@
             <button id="tab-all"
               class="h-[52px] bg-primary text-white px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors flex-shrink-0">
               <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
-                <img src="../assets/icons/infinity.svg" alt="All" class="w-[24px] h-[24px]">
+                <img src="../assets/icons/ranking.svg" alt="Talabalar" class="w-[24px] h-[24px]">
               </div>
               <span class="text-[16px] font-medium">Hammasi</span>
             </button>
@@ -597,14 +625,14 @@
             <button id="tab-mandat"
               class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
               <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
-                <img src="../assets/icons/cursor.svg" alt="Mandat" class="w-[24px] h-[24px]">
+                <img src="../assets/icons/ranking.svg" alt="Talabalar" class="w-[24px] h-[24px]">
               </div>
               <span class="text-[16px] font-medium">Mandat 2023</span>
             </button>
             <button id="tab-contests"
               class="h-[52px] bg-tab-gray text-gray-900 px-[12px] py-[8px] rounded-[100px] flex items-center space-x-[8px] transition-colors hover:bg-tab-gray/80 flex-shrink-0">
               <div class="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center">
-                <img src="../assets/icons/sun_and_moon.svg" alt="Tanlovlar" class="w-[24px] h-[24px]">
+                <img src="../assets/icons/ranking.svg" alt="Talabalar" class="w-[24px] h-[24px]">
               </div>
               <span class="text-[16px] font-medium">Tanlovlar</span>
             </button>
@@ -619,7 +647,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -630,12 +658,14 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
                     <div
-                      class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px] dark:bg-bg-dark text-text-secondary-opacity">
+                      class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px] dark:bg-bg-dark dark:text-text-secondary-opacity">
                       <span>17-sentabr</span>
                       <span>
                         <img src="../assets/icons/caption.svg" alt="Views" class="w-[12px] h-[12px]">
@@ -643,7 +673,7 @@
                       <span>09:45</span>
                     </div>
                     <div
-                      class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px] dark:bg-bg-dark text-text-secondary-opacity">
+                      class="flex items-center space-x-[4px] p-[6px] bg-bg-light rounded-[8px] dark:bg-bg-dark dark:text-text-secondary-opacity">
                       <img src="../assets/icons/view.svg" alt="Clock" class="w-[12px] h-[12px]">
                       <span>67890</span>
                     </div>
@@ -659,7 +689,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -670,7 +700,9 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
@@ -705,7 +737,9 @@
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] cursor-pointer">
                   <h4
                     class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
-                    Nordic International University'da Orientation Week start oldi!
+                    <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                      Nordic International University'da Orientation Week start oldi!
+                    </a>
                   </h4>
                   <div class="flex flex-wrap items-center justify-between gap-[8px]">
                     <div class="flex flex-wrap items-center gap-[8px] text-[12px] text-gray-600 dark:text-gray-400">
@@ -795,7 +829,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -806,7 +840,9 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
@@ -835,7 +871,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -846,7 +882,9 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
@@ -875,7 +913,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -886,7 +924,9 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
@@ -915,7 +955,7 @@
               <!-- Header with category badge and view count -->
               <div class="absolute top-[8px] left-[8px] z-10">
                 <span
-                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary-medium backdrop-blur-[12px]">Mandat
+                  class="h-[26px] text-white px-[12px] py-[4px] rounded-[8px] text-[12px] font-semibold bg-primary backdrop-blur-[12px]">Mandat
                   2023</span>
               </div>
               <!-- Main image -->
@@ -926,7 +966,9 @@
               <!-- Content -->
               <div class="p-[16px]">
                 <h3 class="font-semibold text-gray-800 mb-[8px] text-[14px] leading-tight break-words">
-                  Mandat 2025 uchun yangi testlar va imtihonlar
+                  <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                    Mandat 2025 uchun yangi testlar va imtihonlar
+                  </a>
                 </h3>
                 <div class="flex flex-wrap items-center justify-between gap-[8px] text-[12px] text-gray-500">
                   <div class="flex flex-wrap items-center gap-[8px]">
@@ -977,7 +1019,9 @@
             <div
               class="bg-gray-100 dark:bg-gray-800 rounded-[24px] p-[16px] news-item-hover cursor-pointer overflow-hidden">
               <h4 class="font-semibold text-gray-900 dark:text-white mb-[12px] text-[14px] leading-[1.4] break-words">
-                Nordic International University'da Orientation Week start oldi!
+                <a href="post-detail.html" class="hover:text-primary transition-colors cursor-pointer">
+                  Nordic International University'da Orientation Week start oldi!
+                </a>
               </h4>
               <div class="flex flex-wrap items-center justify-between gap-[8px]">
                 <div class="flex flex-wrap items-center gap-[8px] text-[12px] text-gray-600 dark:text-gray-400">
@@ -1131,7 +1175,8 @@
           <img src="../assets/icons/logo_oliygoh_dark.svg" alt="Oliygoh" class="hidden dark:block h-[24px]">
         </div>
         <div class="flex items-center space-x-[12px]">
-          <button class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
+          <button
+            class="h-[40px] w-[40px] bg-white dark:bg-dark-card p-[10px] rounded-[13px] flex items-center justify-center">
             <img src="../assets/icons/search.svg" class="w-[20px] h-[20px]" alt="">
           </button>
           <div class="h-[40px] w-[40px] bg-white dark:bg-dark-card rounded-[13px] dark:border-gray-800">
@@ -1205,12 +1250,12 @@
           <h3 class="text-[18px] font-bold text-gray-900 mb-[16px]">Kategoriya bo'yicha</h3>
           <div class="flex flex-wrap gap-[12px]">
             <button
-              class="category-filter-btn h-[56px] flex items-center space-x-[8px] px-[8px] py-[8px] pr-[20px] bg-gray-100 rounded-[100px] hover:bg-gray-200 transition-colors"
+              class="category-filter-btn bg-primary text-white h-[56px] flex items-center space-x-[8px] px-[8px] py-[8px] pr-[20px] rounded-[100px] hover:bg-gray-200 transition-colors"
               data-category="students">
               <div class="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center">
                 <img src="../assets/icons/ranking.svg" alt="Students" class="w-[32px] h-[32px]">
               </div>
-              <span class="text-[16px] text-gray-700">Talabalar</span>
+              <span class="text-[16px] text-white">Talabalar</span>
             </button>
             <button
               class="category-filter-btn h-[56px] flex items-center space-x-[8px] px-[8px] py-[8px] pr-[20px] bg-gray-100 rounded-[100px] hover:bg-gray-200 transition-colors"
@@ -1334,7 +1379,10 @@
       </div>
     </div>
   </div>
-  <script>
+
+
+
+   <script>
     // Mobile Search Functionality
     document.addEventListener('DOMContentLoaded', function () {
       const mobileSearchToggle = document.getElementById('mobile-search-toggle');
@@ -1778,6 +1826,19 @@
           this.classList.toggle('text-white');
           this.classList.toggle('bg-gray-100');
 
+          // Update text span color
+          const spans = this.querySelectorAll('span');
+          const textSpan = Array.from(spans).find(span => span.textContent.trim() && !span.querySelector('img'));
+          if (textSpan) {
+            if (this.classList.contains('bg-primary')) {
+              textSpan.classList.remove('text-gray-700');
+              textSpan.classList.add('text-white');
+            } else {
+              textSpan.classList.remove('text-white');
+              textSpan.classList.add('text-gray-700');
+            }
+          }
+
           // Update icon color
           const icon = this.querySelector('i, span, div, img');
           if (this.classList.contains('bg-primary')) {
@@ -2168,7 +2229,8 @@
       // Initialize with all cards visible
       window.applyFilters();
     });
-
+  </script>
+  <script>
     // Theme toggle functionality with localStorage persistence
     document.addEventListener('DOMContentLoaded', function () {
       const themeToggle = document.getElementById('theme-toggle');
@@ -2260,6 +2322,143 @@
     function showComingSoon(feature) {
       alert(`${feature} funksiyasi tez orada qo'shiladi!`);
     }
+
+    // Banner Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.getElementById('banner-carousel');
+      if (!carousel) return;
+
+      const track = carousel.querySelector('.carousel-track');
+      const dotsContainer = document.getElementById('carousel-dots');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+
+      if (slides.length === 0) return;
+
+      const totalSlides = slides.length;
+      const container = carousel.querySelector('.carousel-container');
+
+      function setSlideWidths() {
+        const containerWidth = container.offsetWidth;
+        track.style.width = `${totalSlides * containerWidth}px`;
+        slides.forEach(slide => {
+          slide.style.width = `${containerWidth}px`;
+          slide.style.flexShrink = '0';
+        });
+      }
+
+      // Set initial widths
+      setSlideWidths();
+
+      // Create dots dynamically based on number of slides
+      if (totalSlides > 1 && dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          if (i === 0) {
+            // Active dot: bright white, bigger and longer (oval)
+            dot.className = 'carousel-dot transition-all duration-300 cursor-pointer bg-white rounded-full';
+            dot.style.width = '16px';
+            dot.style.height = '6px';
+          } else {
+            // Inactive dot: smaller circular
+            dot.className = 'carousel-dot transition-all duration-300 cursor-pointer bg-white opacity-40 rounded-full';
+            dot.style.width = '6px';
+            dot.style.height = '6px';
+          }
+          dot.setAttribute('data-slide', i);
+          dotsContainer.appendChild(dot);
+        }
+      } else if (totalSlides === 1 && dotsContainer) {
+        // Hide dots if only one slide
+        dotsContainer.style.display = 'none';
+      }
+
+      // Get dots after creating them
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      let currentSlide = 0;
+      let autoPlayInterval;
+
+      function updateCarousel() {
+        const container = carousel.querySelector('.carousel-container');
+        const containerWidth = container.offsetWidth;
+        const translateX = -currentSlide * containerWidth;
+        track.style.transform = `translateX(${translateX}px)`;
+
+        // Update dots - active dot is bigger and longer (oval), inactive are smaller circular
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            // Active: bright white, bigger and longer
+            dot.style.width = '16px';
+            dot.style.height = '6px';
+            dot.style.opacity = '1';
+            dot.classList.remove('opacity-40');
+            dot.classList.add('bg-white');
+          } else {
+            // Inactive: smaller circular
+            dot.style.width = '6px';
+            dot.style.height = '6px';
+            dot.style.opacity = '0.4';
+            dot.classList.add('opacity-40');
+            dot.classList.add('bg-white');
+          }
+        });
+      }
+
+      function nextSlide() {
+        if (totalSlides > 1) {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+        resetAutoPlay();
+      }
+
+      function startAutoPlay() {
+        if (totalSlides > 1) {
+          autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+      }
+
+      function stopAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+        }
+      }
+
+      function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+      }
+
+      // Dot click handlers
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+      });
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      // Update on resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          setSlideWidths();
+          updateCarousel();
+        }, 100);
+      });
+
+      // Initialize
+      updateCarousel();
+      if (totalSlides > 1) {
+        startAutoPlay();
+      }
+    });
   </script>
 
 </html>
