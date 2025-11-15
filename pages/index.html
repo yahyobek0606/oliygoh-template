@@ -545,15 +545,15 @@
           <!-- Social Media -->
           <div class="flex space-x-[12px] mb-[16px]">
             <a href="#"
-              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-[#536777B2]">
+              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-dark-social-bg">
               <img src="../assets/icons/instagram.svg" alt="Instagram" class="w-[20px] h-[20px]">
             </a>
             <a href="#"
-              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-[#536777B2]">
+              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-dark-social-bg">
               <img src="../assets/icons/telegram-white.svg" alt="Telegram" class="w-[20px] h-[20px]">
             </a>
             <a href="#"
-              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-[#536777B2]">
+              class="w-[32px] h-[32px] bg-text-muted-light/70 rounded-[8px] flex items-center justify-center text-white hover:bg-primary/90 transition-colors dark:bg-dark-social-bg">
               <i class="fab fa-facebook-f text-[20px]"></i>
             </a>
           </div>
@@ -567,41 +567,137 @@
 
       <!-- Main Content Area -->
       <main class="lg:col-span-2">
-        <!-- Featured University Card -->
-        <div class="bg-white rounded-[24px] overflow-hidden">
-          <div class="flex flex-col md:flex-row px-2 overflow-hidden">
-            <!-- Left Section - Text Content -->
-            <div class="flex-1 p-[16px] md:p-[24px] min-w-0 overflow-hidden">
-              <h2 class="text-[16px] md:text-[20px] font-bold text-gray-900 mb-[12px] leading-tight break-words">
-                Tashkent International University of Education xalqaro universiteti
-              </h2>
+        <!-- Featured University Card Carousel -->
+        <div class="relative">
+          <div id="university-carousel" class="relative w-full">
+            <!-- Carousel Container -->
+            <div class="university-carousel-container relative w-full overflow-hidden">
+              <div class="university-carousel-track flex transition-transform duration-500 ease-in-out">
+                <!-- Slide 1 -->
+                <div class="university-carousel-slide flex-shrink-0 relative">
+                  <div class="bg-white rounded-[24px] overflow-hidden">
+                    <div class="flex flex-col md:flex-row overflow-hidden">
+                      <!-- Left Section - Text Content -->
+                      <div class="flex-1 p-[16px] md:p-[24px] min-w-0 overflow-hidden">
+                        <h2
+                          class="text-[16px] md:text-[20px] font-bold text-gray-900 mb-[12px] leading-tight break-words">
+                          Tashkent International University of Education xalqaro universiteti
+                        </h2>
 
-              <!-- Rating and Location Pills -->
-              <div class="flex flex-wrap items-center gap-[8px] md:space-x-[12px] mb-[20px]">
-                <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
-                  <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
-                  <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
+                        <!-- Rating and Location Pills -->
+                        <div class="flex flex-wrap items-center gap-[8px] md:space-x-[12px] mb-[20px]">
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
+                          </div>
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
+                          </div>
+                        </div>
+
+                        <!-- Batafsil Button -->
+                        <button
+                          class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+                          Batafsil
+                        </button>
+                      </div>
+
+                      <!-- Right Section - Image -->
+                      <div class="flex items-center justify-center md:justify-center p-[16px] md:p-0 flex-shrink-0">
+                        <div class="w-full md:w-[250px] md:flex-shrink-0">
+                          <img src="../assets/uni.png" alt="University Building"
+                            class="w-full h-full object-cover rounded-[12px] md:rounded-none">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
-                  <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
-                  <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
+                <!-- Slide 2 -->
+                <div class="university-carousel-slide flex-shrink-0 relative">
+                  <div class="bg-white rounded-[24px] overflow-hidden">
+                    <div class="flex flex-col md:flex-row overflow-hidden">
+                      <!-- Left Section - Text Content -->
+                      <div class="flex-1 p-[16px] md:p-[24px] min-w-0 overflow-hidden">
+                        <h2
+                          class="text-[16px] md:text-[20px] font-bold text-gray-900 mb-[12px] leading-tight break-words">
+                          Tashkent International University of Education xalqaro universiteti
+                        </h2>
+
+                        <!-- Rating and Location Pills -->
+                        <div class="flex flex-wrap items-center gap-[8px] md:space-x-[12px] mb-[20px]">
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
+                          </div>
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
+                          </div>
+                        </div>
+
+                        <!-- Batafsil Button -->
+                        <button
+                          class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+                          Batafsil
+                        </button>
+                      </div>
+
+                      <!-- Right Section - Image -->
+                      <div class="flex items-center justify-center md:justify-center p-[16px] md:p-0 flex-shrink-0">
+                        <div class="w-full md:w-[250px] md:flex-shrink-0">
+                          <img src="../assets/uni.png" alt="University Building"
+                            class="w-full h-full object-cover rounded-[12px] md:rounded-none">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="university-carousel-slide flex-shrink-0 relative">
+                  <div class="bg-white rounded-[24px] overflow-hidden">
+                    <div class="flex flex-col md:flex-row overflow-hidden">
+                      <!-- Left Section - Text Content -->
+                      <div class="flex-1 p-[16px] md:p-[24px] min-w-0 overflow-hidden">
+                        <h2
+                          class="text-[16px] md:text-[20px] font-bold text-gray-900 mb-[12px] leading-tight break-words">
+                          Tashkent International University of Education xalqaro universiteti
+                        </h2>
+
+                        <!-- Rating and Location Pills -->
+                        <div class="flex flex-wrap items-center gap-[8px] md:space-x-[12px] mb-[20px]">
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <img src="../assets/icons/star.svg" alt="Star" class="w-[14px] h-[14px]">
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">7.8 (18 ta izoh)</span>
+                          </div>
+                          <div class="flex items-center space-x-[6px] bg-gray-100 px-[12px] py-[6px] rounded-[24px]">
+                            <i class="fas fa-map-marker-alt text-[12px] text-gray-600"></i>
+                            <span class="text-[12px] md:text-[13px] text-gray-700 font-medium">Toshkent sh.</span>
+                          </div>
+                        </div>
+
+                        <!-- Batafsil Button -->
+                        <button
+                          class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
+                          Batafsil
+                        </button>
+                      </div>
+
+                      <!-- Right Section - Image -->
+                      <div class="flex items-center justify-center md:justify-center p-[16px] md:p-0 flex-shrink-0">
+                        <div class="w-full md:w-[250px] md:flex-shrink-0">
+                          <img src="../assets/uni.png" alt="University Building"
+                            class="w-full h-full object-cover rounded-[12px] md:rounded-none">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <!-- Batafsil Button -->
-              <button
-                class="w-full bg-primary text-white px-[20px] py-[10px] rounded-[24px] hover:bg-primary/90 transition-colors text-[14px] font-medium">
-                Batafsil
-              </button>
             </div>
-
-            <!-- Right Section - Image -->
-            <div class="flex items-center justify-center md:justify-center p-[16px] md:p-0 flex-shrink-0">
-              <div class="w-full md:w-[250px] md:flex-shrink-0">
-                <img src="../assets/uni.png" alt="University Building"
-                  class="w-full h-full object-cover rounded-[12px] md:rounded-none">
-              </div>
-            </div>
+          </div>
+          <!-- Pagination Dots - Outside the component -->
+          <div id="university-carousel-dots" class="flex items-center justify-center space-x-[8px] mt-[16px]">
           </div>
         </div>
 
@@ -1088,12 +1184,12 @@
         <form id="login-form" class="space-y-[16px]">
           <div>
             <input type="text" id="email-phone" placeholder="Email yoki telefon raqami"
-              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px]"
               required />
           </div>
           <div class="relative">
             <input type="password" id="password" placeholder="Parol"
-              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px]"
               required />
             <button type="button" id="toggle-password"
               class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -1110,17 +1206,17 @@
         <form id="register-form" class="space-y-[16px] hidden">
           <div>
             <input type="text" id="register-name" placeholder="Ism yoki nom yozing"
-              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-primary text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-[14px]"
               required />
           </div>
           <div>
             <input type="text" id="register-email-phone" placeholder="Email yoki telefon raqami"
-              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px]"
               required />
           </div>
           <div class="relative">
             <input type="password" id="register-password" placeholder="Parol"
-              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px]"
+              class="w-full h-[52px] px-[16px] py-[8px] pr-[40px] border-2 border-bg-border rounded-[16px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px]"
               required />
             <button type="button" id="toggle-register-password"
               class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -1149,7 +1245,7 @@
             <span>Telegram orqali</span>
           </button>
           <button
-            class="h-[52px] w-full bg-blue-500 text-white px-[24px] py-[12px] rounded-[16px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            class="h-[52px] w-full bg-primary text-white px-[24px] py-[12px] rounded-[16px] hover:bg-primary/90 transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
             <img src="../assets/icons/google.svg" alt="Google" class="w-[24px] h-[24px]">
             <span>Google orqali</span>
           </button>
@@ -2032,7 +2128,7 @@
       });
 
       // Social login buttons
-      document.querySelectorAll('.bg-blue-500').forEach(btn => {
+      document.querySelectorAll('.bg-primary').forEach(btn => {
         btn.addEventListener('click', function () {
           const provider = this.textContent.includes('Telegram') ? 'Telegram' : 'Google';
           console.log(`${provider} login clicked`);
@@ -2436,6 +2532,142 @@
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => goToSlide(index));
       });
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      // Update on resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          setSlideWidths();
+          updateCarousel();
+        }, 100);
+      });
+
+      // Initialize
+      updateCarousel();
+      if (totalSlides > 1) {
+        startAutoPlay();
+      }
+    });
+
+    // University Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.getElementById('university-carousel');
+      if (!carousel) return;
+
+      const track = carousel.querySelector('.university-carousel-track');
+      const dotsContainer = document.getElementById('university-carousel-dots');
+      const slides = carousel.querySelectorAll('.university-carousel-slide');
+
+      if (slides.length === 0) return;
+
+      const totalSlides = slides.length;
+      const container = carousel.querySelector('.university-carousel-container');
+
+      function setSlideWidths() {
+        const containerWidth = container.offsetWidth;
+        track.style.width = `${totalSlides * containerWidth}px`;
+        slides.forEach(slide => {
+          slide.style.width = `${containerWidth}px`;
+          slide.style.flexShrink = '0';
+        });
+      }
+
+      // Set initial widths
+      setSlideWidths();
+
+      let currentSlide = 0;
+      let autoPlayInterval;
+
+      // Create dots dynamically based on number of slides
+      if (totalSlides > 1 && dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          if (i === 0) {
+            // Active dot: grey, bigger and longer (oval)
+            dot.className = 'university-carousel-dot transition-all duration-300 cursor-pointer bg-gray-400 rounded-full';
+            dot.style.width = '16px';
+            dot.style.height = '6px';
+          } else {
+            // Inactive dot: smaller circular, white
+            dot.className = 'university-carousel-dot transition-all duration-300 cursor-pointer bg-white rounded-full';
+            dot.style.width = '6px';
+            dot.style.height = '6px';
+          }
+          dot.setAttribute('data-slide', i);
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+      } else if (totalSlides === 1 && dotsContainer) {
+        // Hide dots if only one slide
+        dotsContainer.style.display = 'none';
+      }
+
+      // Get dots after creating them
+      const dots = dotsContainer ? dotsContainer.querySelectorAll('.university-carousel-dot') : [];
+
+      function updateCarousel() {
+        const container = carousel.querySelector('.university-carousel-container');
+        const containerWidth = container.offsetWidth;
+        const translateX = -currentSlide * containerWidth;
+        track.style.transform = `translateX(${translateX}px)`;
+
+        // Update dots - active dot is bigger and longer (oval), inactive are smaller circular
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            // Active: grey, bigger and longer
+            dot.style.width = '16px';
+            dot.style.height = '6px';
+            dot.classList.remove('bg-white');
+            dot.classList.add('bg-gray-400');
+            dot.style.border = 'none';
+          } else {
+            // Inactive: smaller circular, white
+            dot.style.width = '6px';
+            dot.style.height = '6px';
+            dot.classList.remove('bg-gray-400');
+            dot.classList.add('bg-white');
+            dot.style.border = 'none';
+          }
+        });
+      }
+
+      function nextSlide() {
+        if (totalSlides > 1) {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }
+      }
+
+      function goToSlide(index) {
+        if (index >= 0 && index < totalSlides) {
+          currentSlide = index;
+          updateCarousel();
+          resetAutoPlay();
+        }
+      }
+
+      function startAutoPlay() {
+        if (totalSlides > 1) {
+          autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+      }
+
+      function stopAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+        }
+      }
+
+      function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+      }
 
       // Pause on hover
       carousel.addEventListener('mouseenter', stopAutoPlay);

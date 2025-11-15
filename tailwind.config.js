@@ -50,17 +50,18 @@ module.exports = {
         'text-secondary-opacity': '#98B4CCCC',
         'text-muted': '#686E7E',
         'text-muted-light': '#999FAB',
+        // Dark mode specific colors
+        'dark-social-bg': '#536777B2',
         // Dark mode hover/background
         'dark-hover': '#1a2330',
-        'dark-border': '#2E3338',
-        'dark-bg-alt': '#0E1A22',
+        'dark-border': '#152732',
         'dark-border-alt': '#1D2A33',
+        'dark-bg-alt': '#0E1A22',
         // Dark mode colors
         'dark-bg': '#09131A',
         'dark-card': '#152732',
         'dark-text-primary': '#e5e7eb',
         'dark-text-secondary': '#98B4CC',
-        'dark-border': '#152732',
         'tab-gray-dark': '#152732',
         'tab-gray': '#E4E6EE',
       },

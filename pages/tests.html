@@ -1173,12 +1173,12 @@
         <form id="login-form" class="space-y-[16px]">
           <div>
             <input type="text" id="email-phone" placeholder="Email yoki telefon raqami"
-              class="w-full px-[16px] py-[12px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full px-[16px] py-[12px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               required />
           </div>
           <div class="relative">
             <input type="password" id="password" placeholder="Parol"
-              class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full px-[16px] py-[12px] pr-[40px] border border-gray-300 dark:border-gray-600 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[14px] bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               required />
             <button type="button" id="toggle-password"
               class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -1202,12 +1202,12 @@
         <!-- Social Login -->
         <div class="mt-[24px] space-y-[12px]">
           <button
-            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            class="w-full bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
             <i class="fab fa-telegram text-[16px]"></i>
             <span>Telegram orqali</span>
           </button>
           <button
-            class="w-full bg-blue-500 text-white py-[12px] rounded-[24px] hover:bg-primary transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
+            class="w-full bg-primary text-white py-[12px] rounded-[24px] hover:bg-primary/90 transition-colors flex items-center justify-center space-x-[8px] text-[14px] font-medium">
             <i class="fab fa-google text-[16px]"></i>
             <span>Google orqali</span>
           </button>
@@ -1908,7 +1908,7 @@
       }
 
       // Social login buttons
-      document.querySelectorAll('.bg-blue-500').forEach(btn => {
+      document.querySelectorAll('.bg-primary').forEach(btn => {
         btn.addEventListener('click', function () {
           const provider = this.textContent.includes('Telegram') ? 'Telegram' : 'Google';
           console.log(`${provider} login clicked`);
@@ -1930,7 +1930,7 @@
 
         // Function to set active state
         function setActiveButton(activeBtn, inactiveBtn, activeIcon, inactiveIcon, activeIconPath, inactiveIconPath) {
-          // Set active button - #F2F3F7 (gray) background
+          // Set active button - bg-light background
           activeBtn.setAttribute('data-active', 'true');
           activeBtn.classList.remove('bg-transparent', 'hover:bg-gray-100', 'dark:hover:bg-gray-700');
           activeBtn.classList.add('bg-bg-light', 'dark:bg-bg-card-dark', 'hover:opacity-90');

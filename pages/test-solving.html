@@ -48,7 +48,7 @@
       <div class="flex items-center justify-between">
         <div class="flex gap-2">
           <h1 class="text-[18px] md:text-[28px] font-bold text-gray-900 dark:text-white">DTM Test 2025 </h1>
-          <span class="text-[18px] md:text-[28px] font-bold text-[#999FAB] dark:text-white">(546789)</span>
+          <span class="text-[18px] md:text-[28px] font-bold text-text-muted-light dark:text-white">(546789)</span>
         </div>
         <button id="exit-test-btn"
           class="bg-error-light hover:bg-error-light text-error px-[24px] py-[12px] rounded-[16px] transition-colors text-[18px] font-medium">
@@ -386,7 +386,8 @@
         } else if (i === 2) {
           // Question 2 is marked
           btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
-          btn.style.border = '1.5px solid #0B7BE3';
+          btn.style.border = '1.5px solid';
+          btn.style.borderColor = 'rgb(11, 123, 227)'; // primary color
           testState.questionStates[i] = 'marked';
         } else {
           // Default state
@@ -424,24 +425,28 @@
         case 'marked':
           // Marked state: background #0B7BE31F, border 1.5px solid #0B7BE3
           btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
-          btn.style.border = '1.5px solid #0B7BE3';
+          btn.style.border = '1.5px solid';
+          btn.style.borderColor = 'rgb(11, 123, 227)'; // primary color
           break;
         case 'answered':
         case 'visited':
           // Marked state for answered/visited questions
           btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
-          btn.style.border = '1.5px solid #0B7BE3';
+          btn.style.border = '1.5px solid';
+          btn.style.borderColor = 'rgb(11, 123, 227)'; // primary color
           break;
         case 'flagged':
           btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
-          btn.style.border = '1.5px solid #0B7BE3';
+          btn.style.border = '1.5px solid';
+          btn.style.borderColor = 'rgb(11, 123, 227)'; // primary color
           break;
         case 'correct':
           btn.classList.add('bg-primary-light', 'dark:bg-primary-light', 'text-gray-900', 'dark:text-white');
-          btn.style.border = '1.5px solid #0B7BE3';
+          btn.style.border = '1.5px solid';
+          btn.style.borderColor = 'rgb(11, 123, 227)'; // primary color
           break;
         default:
-          // Default state: border 1px solid #E1E2E5
+          // Default state: border 1px solid bg-border
           btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'border', 'border-bg-border', 'dark:border-gray-700');
       }
     }
